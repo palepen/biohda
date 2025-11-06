@@ -1,23 +1,23 @@
 """
-Step 9: Biological Validation using BLAST
-==========================================
-Validate candidate novel taxa by BLASTing against reference databases
+Step 9: Online BLAST Validation
+================================
+Validate candidate novel taxa using NCBI online BLAST
 
-This regenerated version includes new logic to:
-- Define paths for ALL THREE marker databases (ITS, LSU, SSU).
-- Dynamically select the correct database based on the candidate's
-  'marker' column ('ITS', 'LSU', 'SSU').
-- Use the ITS database as the default for 'mixed' clusters.
+This version uses NCBI's online BLAST service (NCBIWWW) instead of local databases.
+Rate-limited to avoid overloading NCBI servers.
+
+Dependencies:
+- Biopython (Bio.Blast.NCBIWWW, Bio.Blast.NCBIXML)
 """
 
-import subprocess
-import tempfile
+import time
 from pathlib import Path
 import logging
 from typing import Dict, List, Tuple, Optional
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
+from Bio.Blast import NCBIWWW, NCBIXML
 import pandas as pd
 import numpy as np
 from collections import Counter
@@ -32,77 +32,51 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-class BLASTValidator:
-    """BLAST-based validation of candidate novel taxa"""
+class OnlineBLASTValidator:
+    """Online BLAST-based validation of candidate novel taxa"""
     
     def __init__(self,
                  novelty_dir: str = "dataset/novelty",
                  fasta_dir: str = "dataset/processed",
-                 blast_db_paths: Dict[str, str] = None, # <-- Changed
                  output_dir: str = "dataset/validation",
                  identity_threshold_novel: float = 95.0,
                  identity_threshold_species: float = 97.0,
-                 evalue_threshold: float = 1e-10,
-                 max_target_seqs: int = 10,
-                 num_threads: int = 4):
+                 max_candidates: int = 50,
+                 delay_between_requests: float = 3.0,
+                 database: str = "nt"):
         """
-        Initialize BLAST validator
+        Initialize online BLAST validator
         
         Args:
             novelty_dir: Directory with novelty detection results
             fasta_dir: Directory with cleaned FASTA files
-            blast_db_paths: Dictionary mapping 'ITS', 'LSU', 'SSU' to their DB paths
             output_dir: Directory to save validation results
             identity_threshold_novel: Below this % identity = potentially novel
             identity_threshold_species: Above this % identity = same species
-            evalue_threshold: E-value threshold for BLAST
-            max_target_seqs: Number of BLAST hits to retrieve
-            num_threads: Number of CPU threads for BLAST
+            max_candidates: Maximum number of candidates to BLAST (to avoid rate limits)
+            delay_between_requests: Seconds to wait between BLAST requests
+            database: NCBI database (nt, nr, etc.)
         """
         self.novelty_dir = Path(novelty_dir)
         self.fasta_dir = Path(fasta_dir)
-        
-        # --- NEW DATABASE LOGIC ---
-        self.blast_db_paths = blast_db_paths
-        if self.blast_db_paths is None:
-            logger.warning("No BLAST database paths provided. BLAST validation will be skipped.")
-            self.dbs_available = False
-        else:
-            self.dbs_available = True
-            logger.info("BLAST databases configured:")
-            for marker, path in self.blast_db_paths.items():
-                logger.info(f"  {marker}: {path}")
-        # --- END NEW LOGIC ---
-
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
         self.identity_threshold_novel = identity_threshold_novel
         self.identity_threshold_species = identity_threshold_species
-        self.evalue_threshold = evalue_threshold
-        self.max_target_seqs = max_target_seqs
-        self.num_threads = num_threads
+        self.max_candidates = max_candidates
+        self.delay_between_requests = delay_between_requests
+        self.database = database
         
-        logger.info(f"BLAST Validation Configuration:")
+        logger.info(f"Online BLAST Validation Configuration:")
         logger.info(f"  Novel threshold: <{identity_threshold_novel}% identity")
         logger.info(f"  Species threshold: >{identity_threshold_species}% identity")
-        logger.info(f"  E-value threshold: {evalue_threshold}")
-        logger.info(f"  BLAST threads: {num_threads}")
-    
-    def check_blast_installation(self) -> bool:
-        """Check if blastn is available"""
-        try:
-            result = subprocess.run(
-                ['blastn', '-version'],
-                capture_output=True,
-                text=True,
-                check=True
-            )
-            logger.info(f"BLAST+ found: {result.stdout.split()[1]}")
-            return True
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            logger.error("blastn not found. Please install BLAST+ tools.")
-            return False
+        logger.info(f"  Max candidates to BLAST: {max_candidates}")
+        logger.info(f"  Delay between requests: {delay_between_requests}s")
+        logger.info(f"  Database: {database}")
+        
+        logger.warning(f"\nIMPORTANT: Online BLAST is rate-limited by NCBI.")
+        logger.warning(f"This process may take several minutes to hours depending on number of candidates.")
     
     def load_candidates(self) -> pd.DataFrame:
         """Load candidate novel taxa"""
@@ -115,6 +89,19 @@ class BLASTValidator:
         candidates_df = pd.read_csv(candidates_file)
         logger.info(f"  Total candidates: {len(candidates_df)}")
         logger.info(f"  Total sequences: {candidates_df['size'].sum():,}")
+        
+        # Prioritize by novelty score if available, otherwise by size
+        if 'novelty_score' in candidates_df.columns:
+            candidates_df = candidates_df.sort_values('novelty_score', ascending=False)
+            logger.info(f"  Sorted by novelty score (highest first)")
+        else:
+            candidates_df = candidates_df.sort_values('size', ascending=False)
+            logger.info(f"  Sorted by size (largest first)")
+        
+        # Limit to max_candidates
+        if len(candidates_df) > self.max_candidates:
+            logger.warning(f"  Limiting to top {self.max_candidates} candidates to avoid rate limits")
+            candidates_df = candidates_df.head(self.max_candidates)
         
         return candidates_df
     
@@ -137,7 +124,6 @@ class BLASTValidator:
         sequences = {}
         
         if marker.lower() == 'mixed':
-            # Load all markers
             markers_to_load = ['ITS', 'LSU', 'SSU']
         else:
             markers_to_load = [marker.upper()]
@@ -158,9 +144,7 @@ class BLASTValidator:
     def extract_sequences_for_candidate(self,
                                        candidate_row: pd.Series,
                                        all_sequences: Dict[str, str]) -> List[str]:
-        """
-        Extract sequences for a candidate
-        """
+        """Extract sequences for a candidate"""
         seqids = str(candidate_row['representative_seqids']).split(',')
         sequences = []
         
@@ -172,9 +156,7 @@ class BLASTValidator:
         return sequences
     
     def generate_consensus_sequence(self, sequences: List[str]) -> Optional[str]:
-        """
-        Generate consensus sequence from multiple sequences
-        """
+        """Generate consensus sequence from multiple sequences"""
         if not sequences:
             return None
         
@@ -196,73 +178,77 @@ class BLASTValidator:
             logger.error(f"Error generating consensus: {e}")
             return None
     
-    def run_blastn(self,
-                  query_file: Path,
-                  output_file: Path,
-                  db_path: str) -> bool: # db_path is now required
+    def blast_online(self, sequence: str) -> Optional[Dict]:
         """
-        Run blastn search
+        BLAST a sequence against NCBI online
+        
+        Args:
+            sequence: DNA sequence string
+        
+        Returns:
+            Dictionary with top hit information, or None if no hits
         """
-        logger.info(f"  BLASTing against: {db_path}")
-        
-        # BLAST command
-        cmd = [
-            'blastn',
-            '-query', str(query_file),
-            '-db', db_path,
-            '-out', str(output_file),
-            '-outfmt', '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore stitle',
-            '-evalue', str(self.evalue_threshold),
-            '-max_target_seqs', str(self.max_target_seqs),
-            '-num_threads', str(self.num_threads)
-        ]
-        
         try:
-            subprocess.run(cmd, check=True, capture_output=True, text=True)
-            return True
-        except subprocess.CalledProcessError as e:
-            logger.error(f"BLAST failed: {e.stderr}")
-            return False
+            logger.info(f"    Submitting BLAST query (length: {len(sequence)} bp)...")
+            
+            # Submit BLAST query
+            result_handle = NCBIWWW.qblast(
+                program="blastn",
+                database=self.database,
+                sequence=sequence,
+                hitlist_size=10,
+                expect=1e-10,
+                megablast=True  # Faster for highly similar sequences
+            )
+            
+            # Parse results
+            blast_records = list(NCBIXML.parse(result_handle))
+            result_handle.close()
+            
+            if not blast_records or not blast_records[0].alignments:
+                logger.info(f"    No BLAST hits found")
+                return None
+            
+            # Get top alignment
+            top_alignment = blast_records[0].alignments[0]
+            top_hsp = top_alignment.hsps[0]
+            
+            # Calculate percent identity
+            identity = (top_hsp.identities / top_hsp.align_length) * 100
+            
+            result = {
+                'hit_id': top_alignment.hit_id,
+                'hit_def': top_alignment.hit_def,
+                'identity': identity,
+                'alignment_length': top_hsp.align_length,
+                'evalue': top_hsp.expect,
+                'bitscore': top_hsp.bits,
+                'query_start': top_hsp.query_start,
+                'query_end': top_hsp.query_end
+            }
+            
+            logger.info(f"    Top hit: {identity:.2f}% identity - {top_alignment.hit_def[:60]}")
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"    BLAST error: {e}")
+            return None
     
-    def parse_blast_results(self, blast_output_file: Path) -> List[Dict]:
+    def classify_novelty(self, blast_result: Optional[Dict]) -> Tuple[str, str]:
         """
-        Parse BLAST output
-        """
-        if not blast_output_file.exists() or blast_output_file.stat().st_size == 0:
-            return []
+        Classify novelty based on BLAST result
         
-        hits = []
+        Args:
+            blast_result: Dictionary with BLAST hit information
         
-        with open(blast_output_file, 'r') as f:
-            for line in f:
-                fields = line.strip().split('\t')
-                if len(fields) >= 13:
-                    hits.append({
-                        'query_id': fields[0],
-                        'subject_id': fields[1],
-                        'identity': float(fields[2]),
-                        'alignment_length': int(fields[3]),
-                        'mismatches': int(fields[4]),
-                        'gap_opens': int(fields[5]),
-                        'query_start': int(fields[6]),
-                        'query_end': int(fields[7]),
-                        'subject_start': int(fields[8]),
-                        'subject_end': int(fields[9]),
-                        'evalue': float(fields[10]),
-                        'bitscore': float(fields[11]),
-                        'subject_title': fields[12] if len(fields) > 12 else ''
-                    })
-        
-        return hits
-    
-    def classify_novelty(self, top_hit: Optional[Dict]) -> Tuple[str, str]:
+        Returns:
+            (novelty_level, description) tuple
         """
-        Classify novelty based on top BLAST hit
-        """
-        if top_hit is None:
+        if blast_result is None:
             return 'HIGH', 'No BLAST hits found'
         
-        identity = top_hit['identity']
+        identity = blast_result['identity']
         
         if identity < self.identity_threshold_novel:
             return 'HIGH', f'Top hit: {identity:.1f}% identity (potentially novel genus/family)'
@@ -274,42 +260,30 @@ class BLASTValidator:
     def validate_candidate(self,
                           candidate_row: pd.Series,
                           all_sequences: Dict[str, str],
-                          temp_dir: Path) -> Dict:
+                          candidate_num: int,
+                          total_candidates: int) -> Dict:
         """
-        Validate a single candidate using BLAST
+        Validate a single candidate using online BLAST
+        
+        Args:
+            candidate_row: Candidate row from DataFrame
+            all_sequences: All available sequences
+            candidate_num: Current candidate number (for logging)
+            total_candidates: Total number of candidates
+        
+        Returns:
+            Dictionary with validation results
         """
         candidate_id = candidate_row['candidate_id']
         marker = str(candidate_row['marker']).upper()
         
-        # --- NEW LOGIC: Select correct DB ---
-        db_path = None
-        if marker == 'ITS':
-            db_path = self.blast_db_paths.get('ITS')
-        elif marker == 'LSU':
-            db_path = self.blast_db_paths.get('LSU')
-        elif marker == 'SSU':
-            db_path = self.blast_db_paths.get('SSU')
-        elif marker == 'MIXED':
-            # Default to ITS for mixed clusters (usually largest)
-            db_path = self.blast_db_paths.get('ITS')
-            logger.info(f"  Candidate {candidate_id} is 'mixed', defaulting to ITS db.")
+        logger.info(f"\n[{candidate_num}/{total_candidates}] Validating Candidate {candidate_id} (marker: {marker})")
         
-        if db_path is None:
-            logger.warning(f"  No database found for marker '{marker}'. Skipping candidate {candidate_id}.")
-            return {
-                'candidate_id': candidate_id,
-                'validation_status': 'SKIPPED',
-                'novelty_level': 'UNKNOWN',
-                'top_identity': None,
-                'top_hit_name': None,
-                'description': f'BLAST skipped (no DB for marker {marker})'
-            }
-        # --- END NEW LOGIC ---
-
         # Extract sequences
         sequences = self.extract_sequences_for_candidate(candidate_row, all_sequences)
         
         if not sequences:
+            logger.warning(f"  No sequences found for candidate {candidate_id}")
             return {
                 'candidate_id': candidate_id,
                 'validation_status': 'FAILED',
@@ -323,6 +297,7 @@ class BLASTValidator:
         consensus = self.generate_consensus_sequence(sequences)
         
         if not consensus:
+            logger.warning(f"  Failed to generate consensus for candidate {candidate_id}")
             return {
                 'candidate_id': candidate_id,
                 'validation_status': 'FAILED',
@@ -332,51 +307,31 @@ class BLASTValidator:
                 'description': 'Failed to generate consensus'
             }
         
-        # Create query file
-        query_file = temp_dir / f"candidate_{candidate_id}.fasta"
-        with open(query_file, 'w') as f:
-            record = SeqRecord(
-                Seq(consensus),
-                id=f"candidate_{candidate_id}",
-                description=f"Consensus sequence for candidate {candidate_id} (marker: {marker})"
-            )
-            SeqIO.write(record, f, 'fasta')
+        logger.info(f"  Consensus length: {len(consensus)} bp")
         
-        # Run BLAST
-        blast_output = temp_dir / f"candidate_{candidate_id}_blast.txt"
-        blast_success = self.run_blastn(query_file, blast_output, db_path)
+        # BLAST online
+        blast_result = self.blast_online(consensus)
         
-        if not blast_success:
-            return {
-                'candidate_id': candidate_id,
-                'validation_status': 'FAILED',
-                'novelty_level': 'UNKNOWN',
-                'top_identity': None,
-                'top_hit_name': None,
-                'description': 'BLAST run failed'
-            }
+        # Rate limiting delay
+        if candidate_num < total_candidates:
+            logger.info(f"  Waiting {self.delay_between_requests}s before next query...")
+            time.sleep(self.delay_between_requests)
         
-        # Parse BLAST results
-        hits = self.parse_blast_results(blast_output)
+        # Classify novelty
+        novelty_level, description = self.classify_novelty(blast_result)
         
-        if hits:
-            top_hit = hits[0]
-            novelty_level, description = self.classify_novelty(top_hit)
-            
+        if blast_result:
             return {
                 'candidate_id': candidate_id,
                 'validation_status': 'SUCCESS',
                 'novelty_level': novelty_level,
-                'top_identity': top_hit['identity'],
-                'top_hit_name': top_hit['subject_title'],
-                'top_evalue': top_hit['evalue'],
-                'top_bitscore': top_hit['bitscore'],
-                'num_hits': len(hits),
+                'top_identity': blast_result['identity'],
+                'top_hit_name': blast_result['hit_def'],
+                'top_evalue': blast_result['evalue'],
+                'top_bitscore': blast_result['bitscore'],
                 'description': description
             }
         else:
-            novelty_level, description = self.classify_novelty(None)
-            
             return {
                 'candidate_id': candidate_id,
                 'validation_status': 'SUCCESS',
@@ -385,33 +340,16 @@ class BLASTValidator:
                 'top_hit_name': None,
                 'top_evalue': None,
                 'top_bitscore': None,
-                'num_hits': 0,
                 'description': description
             }
     
     def validate_all_candidates(self, candidates_df: pd.DataFrame) -> pd.DataFrame:
-        """
-        Validate all candidates
-        """
+        """Validate all candidates"""
         logger.info(f"\n{'='*60}")
-        logger.info("Validating Candidates with BLAST")
+        logger.info("Validating Candidates with Online BLAST")
         logger.info(f"{'='*60}")
         
-        if not self.dbs_available:
-            logger.warning("\nNo BLAST databases configured! Skipping all BLAST validation.\n")
-            results = []
-            for _, row in candidates_df.iterrows():
-                results.append({
-                    'candidate_id': row['candidate_id'],
-                    'validation_status': 'SKIPPED',
-                    'novelty_level': 'UNKNOWN',
-                    'top_identity': None,
-                    'top_hit_name': None,
-                    'description': 'BLAST validation skipped (no database)'
-                })
-            return pd.DataFrame(results)
-        
-        # Load all sequences (ITS, LSU, SSU)
+        # Load all sequences
         logger.info("\nLoading all sequences (ITS, LSU, SSU)...")
         all_sequences = {}
         all_sequences.update(self.load_fasta_sequences('ITS'))
@@ -420,18 +358,16 @@ class BLASTValidator:
         
         logger.info(f"  Loaded {len(all_sequences):,} total sequences")
         
-        # Create temporary directory
-        with tempfile.TemporaryDirectory() as temp_dir:
-            temp_path = Path(temp_dir)
-            results = []
-            
-            # Validate each candidate
-            for _, row in tqdm(candidates_df.iterrows(), 
-                             total=len(candidates_df),
-                             desc="Validating candidates"):
-                
-                result = self.validate_candidate(row, all_sequences, temp_path)
-                results.append(result)
+        # Validate each candidate
+        results = []
+        total_candidates = len(candidates_df)
+        
+        logger.info(f"\nStarting validation of {total_candidates} candidates...")
+        logger.info(f"Estimated time: ~{total_candidates * (self.delay_between_requests + 30) / 60:.1f} minutes")
+        
+        for idx, (_, row) in enumerate(candidates_df.iterrows(), 1):
+            result = self.validate_candidate(row, all_sequences, idx, total_candidates)
+            results.append(result)
         
         results_df = pd.DataFrame(results)
         
@@ -455,22 +391,18 @@ class BLASTValidator:
     def save_results(self, 
                     candidates_df: pd.DataFrame,
                     validation_df: pd.DataFrame):
-        """
-        Save validation results
-        """
+        """Save validation results"""
         logger.info(f"\n{'='*60}")
         logger.info("Saving Validation Results")
         logger.info(f"{'='*60}")
         
         # Merge candidates with validation results
-        # Drop old validation columns if they exist
         cols_to_drop = ['validation_status', 'novelty_level', 'top_identity', 
                         'top_hit_name', 'description_y', 'top_evalue', 
-                        'top_bitscore', 'num_hits', 'description']
+                        'top_bitscore', 'description']
         
         candidates_clean = candidates_df.drop(columns=[col for col in cols_to_drop if col in candidates_df.columns], errors='ignore')
         
-        # Rename description_x to avoid clash
         if 'description_x' in candidates_clean.columns:
             candidates_clean = candidates_clean.rename(columns={'description_x': 'candidate_description'})
         
@@ -494,12 +426,12 @@ class BLASTValidator:
         summary = {
             'total_candidates': len(merged_df),
             'validated': int((merged_df['validation_status'] == 'SUCCESS').sum()),
-            'skipped': int((merged_df['validation_status'] == 'SKIPPED').sum()),
             'failed': int((merged_df['validation_status'] == 'FAILED').sum()),
             'parameters': {
                 'identity_threshold_novel': self.identity_threshold_novel,
                 'identity_threshold_species': self.identity_threshold_species,
-                'evalue_threshold': self.evalue_threshold
+                'database': self.database,
+                'max_candidates': self.max_candidates
             }
         }
         
@@ -514,13 +446,8 @@ class BLASTValidator:
     def run_complete_pipeline(self):
         """Execute complete validation pipeline"""
         logger.info(f"\n{'='*60}")
-        logger.info("BLAST VALIDATION PIPELINE")
+        logger.info("ONLINE BLAST VALIDATION PIPELINE")
         logger.info(f"{'='*60}\n")
-        
-        # Check BLAST installation
-        if not self.check_blast_installation():
-            logger.error("BLAST not available. Cannot proceed.")
-            return
         
         # Load candidates
         candidates_df = self.load_candidates()
@@ -545,26 +472,16 @@ class BLASTValidator:
 def main():
     """Main execution"""
     
-    # --- THIS IS THE PART TO EDIT ---
-    # Define the paths to your 3 databases
-    db_paths = {
-        "ITS": "dataset/raw/ITS_eukaryote_sequences/ITS_eukaryote_sequences",
-        "LSU": "dataset/raw/LSU_eukaryote_rRNA/LSU_eukaryote_rRNA",
-        "SSU": "dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
-    }
-    # --------------------------------
-    
     # Initialize validator
-    validator = BLASTValidator(
+    validator = OnlineBLASTValidator(
         novelty_dir="dataset/novelty",
         fasta_dir="dataset/processed",
-        blast_db_paths=db_paths,  # <-- Pass the dictionary here
         output_dir="dataset/validation",
         identity_threshold_novel=95.0,
         identity_threshold_species=97.0,
-        evalue_threshold=1e-10,
-        max_target_seqs=10,
-        num_threads=4 # Adjust this to the number of CPU cores you want to use
+        max_candidates=50,  # Limit to avoid rate limits
+        delay_between_requests=3.0,  # NCBI recommends 3+ seconds
+        database="nt"  # Can also use "nr" for proteins
     )
     
     try:
