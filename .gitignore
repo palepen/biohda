@@ -1,2 +1,5 @@
 dataset/*
 models/*
+!dataset/clusters
+dataset/clusters/hdbscan_model.pkl
+dataset/clusters/scaler.pkl

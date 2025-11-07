@@ -85,7 +85,7 @@ class HDBSCANClustering:
                 min_samples=self.min_samples,
                 cluster_selection_epsilon=self.cluster_selection_epsilon,
                 metric=self.metric,
-                cluster_selection_method='eom',
+                cluster_selection_method='leaf',
                 prediction_data=True
             )
         else:
@@ -95,7 +95,7 @@ class HDBSCANClustering:
                 min_samples=self.min_samples,
                 cluster_selection_epsilon=self.cluster_selection_epsilon,
                 metric=self.metric,
-                cluster_selection_method='eom',
+                cluster_selection_method='leaf',
                 core_dist_n_jobs=-1
             )
         
@@ -288,9 +288,9 @@ def main():
         embeddings_dir="dataset/embeddings",
         metadata_file="dataset/metadata.csv",
         output_dir="dataset/clusters",
-        min_cluster_size=25,
-        min_samples=5,
-        cluster_selection_epsilon=0.1,
+        min_cluster_size=2,
+        min_samples=2,
+        cluster_selection_epsilon=0.02,
         metric='euclidean',
         normalize=True
     )
