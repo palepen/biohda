@@ -1,0 +1,64 @@
+# Unified Configuration for Novel Taxa Discovery Pipeline
+
+# Directory paths
+paths:
+  raw_dir: "dataset/raw"
+  fasta_dir: "dataset/fasta"
+  processed_dir: "dataset/processed"
+  cgr_dir: "dataset/cgr"
+  models_dir: "models"
+  embeddings_dir: "dataset/embeddings"
+  clusters_dir: "dataset/clusters"
+  novelty_dir: "dataset/novelty"
+  evaluation_dir: "dataset/evaluation"
+  validation_dir: "dataset/validation"
+  visualization_dir: "dataset/visualizations"
+  taxonomy_file: "dataset/ssu_accession_full_lineage.tsv"
+
+# Preprocessing parameters
+preprocessing:
+  min_length: 100
+  max_ambiguous_ratio: 0.10
+
+# CGR transformation parameters
+cgr:
+  image_size: 128
+  log_transform: true
+
+# CNN encoder parameters
+encoder:
+  embedding_dim: 128
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.001
+  device: "cuda"
+
+# HDBSCAN clustering parameters
+clustering:
+  min_cluster_size: 2
+  min_samples: 2
+  cluster_selection_epsilon: 0.02
+  metric: "euclidean"
+  normalize: true
+
+# Novelty detection parameters
+novelty:
+  novelty_threshold: 0.5
+  min_cluster_size: 1
+  unassigned_weight: 0.4
+  diversity_weight: 0.3
+  probability_weight: 0.2
+  size_weight: 0.1
+
+# BLAST validation parameters
+blast:
+  identity_threshold_novel: 95.0
+  identity_threshold_species: 97.0
+  max_candidates: 50
+  delay_between_requests: 3.0
+  database: "nt"
+
+# Visualization parameters
+visualization:
+  max_umap_points: 20000
+  top_clusters_display: 20

@@ -13,7 +13,7 @@
     "n_sequences": 8784
   },
   "metrics": {
-    "silhouette_score": 0.24281413853168488,
+    "silhouette_score": 0.24281412363052368,
     "calinski_harabasz_score": 206.82289123535156,
     "davies_bouldin_score": 0.9434989431096037
   }

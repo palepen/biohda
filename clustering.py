@@ -1,7 +1,5 @@
 """
 Step 7: HDBSCAN Clustering with cuML (GPU Accelerated)
-========================================================
-Uses cuML's GPU-accelerated HDBSCAN with tuned parameters for better cluster discovery.
 """
 
 import numpy as np
@@ -9,19 +7,19 @@ import pandas as pd
 import pickle
 from pathlib import Path
 import logging
-from typing import Dict, Tuple
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 import json
 from collections import Counter
 from tqdm import tqdm
+import yaml
 
 try:
     from cuml.cluster import HDBSCAN as cuHDBSCAN
     CUML_AVAILABLE = True
 except ImportError:
     CUML_AVAILABLE = False
-    logging.warning("cuML not available. Falling back to CPU HDBSCAN.")
+    logging.warning("cuML not available. Using CPU HDBSCAN.")
     import hdbscan
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -29,26 +27,29 @@ logger = logging.getLogger(__name__)
 
 
 class HDBSCANClustering:
-    """GPU-accelerated HDBSCAN clustering with optimized parameters"""
-    def __init__(self, embeddings_dir="dataset/embeddings", metadata_file="dataset/metadata.csv",
-                 output_dir="dataset/clusters", min_cluster_size=25, min_samples=5,
-                 cluster_selection_epsilon=0.1, metric='euclidean', normalize=True):
-        self.embeddings_dir = Path(embeddings_dir)
-        self.metadata_file = Path(metadata_file)
-        self.output_dir = Path(output_dir)
+    """GPU-accelerated HDBSCAN clustering"""
+    
+    def __init__(self, config_path: str = "config.yaml"):
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        
+        self.embeddings_dir = Path(config['paths']['embeddings_dir'])
+        self.metadata_file = Path(config['paths']['processed_dir']).parent / "metadata.csv"
+        self.output_dir = Path(config['paths']['clusters_dir'])
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        self.min_cluster_size = min_cluster_size
-        self.min_samples = min_samples
-        self.cluster_selection_epsilon = cluster_selection_epsilon
-        self.metric = metric
-        self.normalize = normalize
+        cluster_cfg = config['clustering']
+        self.min_cluster_size = cluster_cfg['min_cluster_size']
+        self.min_samples = cluster_cfg['min_samples']
+        self.cluster_selection_epsilon = cluster_cfg['cluster_selection_epsilon']
+        self.metric = cluster_cfg['metric']
+        self.normalize = cluster_cfg['normalize']
         
         logger.info("HDBSCAN Configuration:")
-        logger.info(f"  min_cluster_size: {min_cluster_size}")
-        logger.info(f"  min_samples: {min_samples}")
-        logger.info(f"  cluster_selection_epsilon: {cluster_selection_epsilon}")
-        logger.info(f"  metric: {metric}")
+        logger.info(f"  min_cluster_size: {self.min_cluster_size}")
+        logger.info(f"  min_samples: {self.min_samples}")
+        logger.info(f"  cluster_selection_epsilon: {self.cluster_selection_epsilon}")
+        logger.info(f"  metric: {self.metric}")
         logger.info(f"  GPU: {CUML_AVAILABLE}")
 
     def load_embeddings(self):
@@ -64,7 +65,7 @@ class HDBSCANClustering:
 
     def load_taxonomy(self):
         logger.info("Loading taxonomy...")
-        metadata_df = pd.read_csv(self.metadata_file)
+        metadata_df = pd.read_csv(self.metadata_file, dtype={'taxID': str})
         logger.info(f"Records: {len(metadata_df):,}")
         return metadata_df
 
@@ -193,7 +194,6 @@ class HDBSCANClustering:
                 'has_taxonomy': len(valid_taxids) > 0
             })
         
-        # Noise
         noise_mask = labels == -1
         n_noise = noise_mask.sum()
         if n_noise > 0:
@@ -280,20 +280,11 @@ class HDBSCANClustering:
         
         self.save_results(clusterer, labels, probs, emb_metadata, cluster_analysis, metrics)
         
-        logger.info("\nClustering complete!")
+        logger.info("\nClustering complete")
 
 
 def main():
-    clustering = HDBSCANClustering(
-        embeddings_dir="dataset/embeddings",
-        metadata_file="dataset/metadata.csv",
-        output_dir="dataset/clusters",
-        min_cluster_size=2,
-        min_samples=2,
-        cluster_selection_epsilon=0.02,
-        metric='euclidean',
-        normalize=True
-    )
+    clustering = HDBSCANClustering(config_path="config.yaml")
     
     try:
         clustering.run()

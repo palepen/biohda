@@ -1,250 +1,128 @@
 """
-Step 3: Metadata Extraction (Regenerated)
-=========================================
-Extract taxonomic information from cleaned FASTA file HEADERS.
-
-This version is fixed to work with BLAST databases that lack
-a complete taxonomy.sqlite3 file. It extracts the
-seqID, taxID, and scientific_name directly from the FASTA header.
-
-It no longer attempts to connect to the .sqlite3 database.
+Step 3: Metadata Extraction
+Extract taxonomic information directly from TSV file, not FASTA headers.
 """
 
-import sqlite3
 from pathlib import Path
 import logging
-from typing import Dict, List, Optional, Tuple
-from Bio import SeqIO
 import pandas as pd
-import re
-from collections import defaultdict
+import yaml
 
-# Setup logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 
 class MetadataExtractor:
-    """Extract taxonomic metadata from FASTA headers"""
+    """Extract taxonomic metadata from TSV file"""
     
-    def __init__(self, 
-                 fasta_dir: str = "dataset/processed",
-                 output_dir: str = "dataset"):
-        """
-        Initialize metadata extractor
+    def __init__(self, config_path: str = "config.yaml"):
+        with open(config_path, 'r') as f:
+            self.config = yaml.safe_load(f)
         
-        Args:
-            fasta_dir: Directory with cleaned FASTA files
-            output_dir: Directory to save metadata.csv
-        """
-        self.fasta_dir = Path(fasta_dir)
-        self.output_dir = Path(output_dir)
+        self.fasta_dir = Path(self.config['paths']['processed_dir'])
+        self.output_dir = Path(self.config['paths']['processed_dir']).parent
+        self.taxonomy_file = Path(self.config['paths']['taxonomy_file'])
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        # FASTA files
         self.fasta_files = {
             'ITS': 'ITS_clean.fasta',
             'LSU': 'LSU_clean.fasta',
             'SSU': 'SSU_clean.fasta'
         }
     
-    def parse_fasta_header(self, header: str) -> Tuple[str, Optional[str], str]:
-        """
-        Parse FASTA header to extract seqID, taxID, and scientific_name
+    def load_taxonomy_tsv(self) -> pd.DataFrame:
+        """Load taxonomy TSV file"""
+        logger.info(f"Loading taxonomy from {self.taxonomy_file}...")
         
-        Assumes NCBI FASTA header format like:
-        >NC_001234.1 Homo sapiens [taxid:9606]
-        or
-        >gi|123456|ref|NC_001234.1| Homo sapiens [taxid:9606]
+        tax_df = pd.read_csv(
+            self.taxonomy_file,
+            sep='\t',
+            header=None,
+            names=['seqID', 'taxID', 'scientific_name', 'lineage'],
+            dtype=str,
+            keep_default_na=False
+        )
         
-        Args:
-            header: FASTA header line (without '>')
+        tax_df['lineage'] = tax_df['lineage'].replace('', pd.NA)
+        logger.info(f"Loaded {len(tax_df):,} taxonomy records")
         
-        Returns:
-            (seqID, taxID, scientific_name) tuple
-        """
-        header = header.lstrip('>')
-        
-        # 1. Extract taxID
-        taxid_match = re.search(r'\[taxid:(\d+)\]', header)
-        taxid = taxid_match.group(1) if taxid_match else None
-        
-        # 2. Extract seqID
-        # Remove the taxid part to avoid confusion
-        header_no_taxid = re.sub(r'\[taxid:\d+\]', '', header).strip()
-        
-        seqid_parts = header_no_taxid.split()[0].split('|')
-        if len(seqid_parts) > 1:
-            # Handle gi|xxx|ref|ACCESSION format
-            seqid = seqid_parts[-1]
-        else:
-            seqid = seqid_parts[0]
-            
-        # 3. Extract scientific_name
-        # It's usually the text after the seqID and before the taxid
-        name = 'NA'
-        try:
-            # Get everything after the first token (seqID)
-            name_part = header_no_taxid.split(' ', 1)[1].strip()
-            # Clean up common organism names
-            name = re.sub(r'\[.*?\]', '', name_part).strip() # Remove any other [brackets]
-            name = re.sub(r' mitochondrion.*', '', name, flags=re.IGNORECASE).strip()
-            name = re.sub(r' complete genome.*', '', name, flags=re.IGNORECASE).strip()
-            name = re.sub(r' SSU ITS1 5.8S ITS2 LSU.*', '', name, flags=re.IGNORECASE).strip()
-            
-            if not name:
-                name = 'NA'
-        except IndexError:
-            # No scientific name found after seqID
-            name = 'NA'
-        
-        return seqid, taxid, name
+        return tax_df
     
-    def extract_seqids_from_fasta(self, fasta_file: Path, marker: str) -> List[Dict]:
-        """
-        Extract all seqIDs, taxIDs, and names from a FASTA file
+    def extract_seqids_from_fasta(self, fasta_file: Path, marker: str) -> list:
+        """Extract seqIDs from FASTA file"""
+        from Bio import SeqIO
         
-        Args:
-            fasta_file: Path to FASTA file
-            marker: Marker name (ITS, LSU, SSU)
+        logger.info(f"Extracting seqIDs from {fasta_file.name}...")
+        seqids = []
         
-        Returns:
-            List of metadata dictionaries
-        """
-        logger.info(f"Extracting metadata from {fasta_file.name}...")
+        for record in SeqIO.parse(fasta_file, 'fasta'):
+            seqids.append(record.id)
         
-        records = []
-        count = 0
-        taxid_found = 0
-        name_found = 0
-        
-        try:
-            for record in SeqIO.parse(fasta_file, 'fasta'):
-                seqid, taxid, name = self.parse_fasta_header(record.description)
-                
-                records.append({
-                    'seqID': seqid,
-                    'marker': marker,
-                    'taxID': taxid if taxid else 'NA',
-                    'scientific_name': name if name else 'NA',
-                    'rank': 'NA',  # Cannot get rank from header
-                    'lineage': 'NA' # Cannot get lineage from header
-                })
-                
-                count += 1
-                if taxid:
-                    taxid_found += 1
-                if name != 'NA':
-                    name_found += 1
-                
-                if count % 100000 == 0:
-                    logger.info(f"  Processed {count:,} sequences...")
-            
-            logger.info(f"  Total sequences: {count:,}")
-            logger.info(f"  TaxIDs found in headers: {taxid_found:,} ({taxid_found/count:.1%})")
-            logger.info(f"  Names found in headers: {name_found:,} ({name_found/count:.1%})")
-            
-        except FileNotFoundError:
-            logger.error(f"File not found: {fasta_file}")
-        except Exception as e:
-            logger.error(f"Error reading {fasta_file}: {e}")
-        
-        return records
+        logger.info(f"Found {len(seqids):,} sequences")
+        return seqids
     
-    def build_complete_metadata(self) -> pd.DataFrame:
-        """
-        Build complete metadata for all markers
+    def build_metadata(self) -> pd.DataFrame:
+        """Build metadata by joining FASTA seqIDs with taxonomy TSV"""
         
-        Returns:
-            Combined DataFrame with all metadata
-        """
+        taxonomy_df = self.load_taxonomy_tsv()
         all_records = []
         
         for marker, fasta_name in self.fasta_files.items():
-            logger.info(f"\n{'='*60}")
-            logger.info(f"Processing marker: {marker}")
-            logger.info(f"{'='*60}")
+            logger.info(f"\nProcessing marker: {marker}")
             
             fasta_file = self.fasta_dir / fasta_name
             if not fasta_file.exists():
-                logger.warning(f"FASTA file not found, skipping: {fasta_file}")
+                logger.warning(f"FASTA file not found: {fasta_file}")
                 continue
-
-            records = self.extract_seqids_from_fasta(fasta_file, marker)
-            if records:
-                all_records.extend(records)
+            
+            seqids = self.extract_seqids_from_fasta(fasta_file, marker)
+            
+            marker_df = pd.DataFrame({'seqID': seqids, 'marker': marker})
+            marker_df = marker_df.merge(taxonomy_df, on='seqID', how='left')
+            
+            marker_df['taxID'] = marker_df['taxID'].fillna('NA')
+            marker_df['scientific_name'] = marker_df['scientific_name'].fillna('NA')
+            marker_df['lineage'] = marker_df['lineage'].fillna('NA')
+            
+            all_records.append(marker_df)
+            
+            matched = (marker_df['taxID'] != 'NA').sum()
+            logger.info(f"Matched {matched:,} / {len(seqids):,} ({matched/len(seqids):.1%})")
         
         if not all_records:
-            logger.error("No metadata extracted from any marker")
+            logger.error("No metadata extracted")
             return pd.DataFrame()
         
-        # Combine all markers
-        combined_df = pd.DataFrame(all_records)
-        
-        return combined_df
+        return pd.concat(all_records, ignore_index=True)
     
-    def save_metadata(self, df: pd.DataFrame, output_file: str = "metadata.csv"):
-        """
-        Save metadata to CSV
+    def save_metadata(self, df: pd.DataFrame):
+        """Save metadata to CSV"""
+        output_path = self.output_dir / "metadata.csv"
         
-        Args:
-            df: Metadata DataFrame
-            output_file: Output filename
-        """
-        output_path = self.output_dir / output_file
+        df.to_csv(output_path, index=False)
+        logger.info(f"\nSaved metadata to: {output_path}")
+        logger.info(f"Total records: {len(df):,}")
+        logger.info(f"File size: {output_path.stat().st_size / (1024**2):.2f} MB")
         
-        try:
-            # Ensure 'NA' is saved as a string, not left empty
-            df = df.fillna('NA')
-            df.to_csv(output_path, index=False)
-            logger.info(f"\n✓ Metadata saved to: {output_path}")
-            logger.info(f"  Total records: {len(df):,}")
-            logger.info(f"  File size: {output_path.stat().st_size / (1024**2):.2f} MB")
-            
-            # Summary statistics
-            logger.info(f"\n{'='*60}")
-            logger.info("METADATA SUMMARY")
-            logger.info(f"{'='*60}")
-            logger.info(f"Records by marker:")
-            for marker in df['marker'].unique():
-                count = len(df[df['marker'] == marker])
-                logger.info(f"  {marker}: {count:,}")
-            
-            logger.info(f"\nTaxonomic coverage:")
-            has_taxid = (df['taxID'] != 'NA').sum()
-            has_name = (df['scientific_name'] != 'NA').sum()
-            logger.info(f"  Has taxID: {has_taxid:,} ({has_taxid/len(df):.1%})")
-            logger.info(f"  Has scientific name: {has_name:,} ({has_name/len(df):.1%})")
-            logger.info(f"  (Rank and Lineage are expected to be 'NA')")
-            
-        except Exception as e:
-            logger.error(f"Error saving metadata: {e}")
+        logger.info("\nMetadata Summary:")
+        for marker in df['marker'].unique():
+            count = len(df[df['marker'] == marker])
+            logger.info(f"  {marker}: {count:,}")
+        
+        has_taxid = (df['taxID'] != 'NA').sum()
+        logger.info(f"\nTaxonomic coverage: {has_taxid:,} / {len(df):,} ({has_taxid/len(df):.1%})")
 
 
 def main():
-    """Main execution"""
-    
-    # Initialize extractor
-    extractor = MetadataExtractor(
-        fasta_dir="dataset/processed",
-        output_dir="dataset"
-    )
-    
-    # Build complete metadata
-    logger.info("Starting metadata extraction from FASTA headers...")
-    metadata_df = extractor.build_complete_metadata()
+    extractor = MetadataExtractor(config_path="config.yaml")
+    metadata_df = extractor.build_metadata()
     
     if metadata_df.empty:
         logger.error("Failed to extract metadata")
         return 1
     
-    # Save to CSV
     extractor.save_metadata(metadata_df)
-    
-    logger.info("\n✓ Metadata extraction complete!")
+    logger.info("\nMetadata extraction complete")
     return 0
 
 

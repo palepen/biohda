@@ -1,1272 +1,1272 @@
 cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_taxonomy
-0,2,2,0.5,,"Nosema oryzaephili small subunit ribosomal RNA gene, partial sequence",1,True
-1,5,5,0.2,,"Encephalitozoon cuniculi small subunit ribosomal RNA gene, complete sequence",1,True
-2,6,6,0.16666666666666666,,"Nuclearia delicatula small subunit ribosomal RNA gene, partial sequence",1,True
-3,5,5,0.2,,"Monocercomonoides acer Tene79 small subunit ribosomal RNA gene, partial sequence",1,True
-4,3,3,0.3333333333333333,,"Pachypsylla venusta small subunit ribosomal RNA gene, partial sequence",1,True
-5,7,7,0.14285714285714285,,"Anopheles punctulatus small subunit ribosomal RNA gene, partial sequence",1,True
-6,5,5,0.2,,"Gambierdiscus belizeanus small subunit ribosomal RNA gene, partial sequence",1,True
-7,4,4,0.25,,"Pleomothra apletocheles small subunit ribosomal RNA gene, partial sequence",1,True
-8,4,4,0.25,,"Avitellina centripunctata small subunit ribosomal RNA gene, partial sequence",1,True
-9,4,4,0.25,,"Nosema ceranae C7 small subunit ribosomal RNA gene, complete sequence",1,True
-10,5,5,0.2,,"Novothelohania ovalae small subunit ribosomal RNA gene, partial sequence",1,True
-11,3,3,0.3333333333333333,,"Neonaesa rugosa small subunit ribosomal RNA gene, partial sequence",1,True
-12,2,2,0.5,,"Galdieria sulphuraria SAG21.92 small subunit ribosomal RNA gene, partial sequence",1,True
-13,13,13,0.07692307692307693,,"Phacus skujae Daeri010910E small subunit ribosomal RNA gene, partial sequence",1,True
-14,2,2,0.5,,"Neozygites cinarae small subunit ribosomal RNA gene, partial sequence",1,True
-15,2,2,0.5,,"Merocystis kathae small subunit ribosomal RNA gene, partial sequence",1,True
-16,3,3,0.3333333333333333,,"Chroomonas pochmannii UTEX 2779 small subunit ribosomal RNA gene, partial sequence",1,True
-17,8,8,0.125,,"Wellcomia siamensis small subunit ribosomal RNA gene, partial sequence",1,True
-18,11,11,0.09090909090909091,,"Vairimorpha subcoccinellae SV52 small subunit ribosomal RNA gene, partial sequence",1,True
-19,4,4,0.25,,"Euglena agilis MI71 small subunit ribosomal RNA gene, partial sequence",1,True
-20,3,3,0.3333333333333333,,"Trypanosoma vivax small subunit ribosomal RNA gene, partial sequence",1,True
-21,2,2,0.5,,"Collosphaera tuberosa small subunit ribosomal RNA gene, partial sequence",1,True
-22,2,2,0.5,,"Plasmodium inui small subunit ribosomal RNA gene, complete sequence",1,True
-23,3,3,0.3333333333333333,,"Plasmodium cathemerium small subunit ribosomal RNA gene, partial sequence",1,True
-24,7,7,0.14285714285714285,,"Enterocytospora artemiae small subunit ribosomal RNA gene, partial sequence",1,True
-25,4,4,0.25,,"Rhizomastix libera OLB6AN small subunit ribosomal RNA gene, partial sequence",1,True
-26,5,5,0.2,,"Dysmachus trigonus small subunit ribosomal RNA gene, partial sequence",1,True
-27,5,5,0.2,,"Rhizomastix elongata VAVRH small subunit ribosomal RNA gene, partial sequence",1,True
-28,5,5,0.2,,"Rhizomastix vacuolata GOL1 small subunit ribosomal RNA gene, partial sequence",1,True
-29,2,2,0.5,,"Edwardsina gigantea small subunit ribosomal RNA gene, partial sequence",1,True
-30,10,10,0.1,,"Pyemotes herfsi small subunit ribosomal RNA gene, partial sequence",1,True
-31,8,8,0.125,,"Rhizomastix bicoronata VELKA small subunit ribosomal RNA gene, partial sequence",1,True
-32,2,2,0.5,,"Flabellina trilineata small subunit ribosomal RNA gene, partial sequence",1,True
-33,4,4,0.25,,"Tritonia festiva small subunit ribosomal RNA gene, partial sequence",1,True
-34,3,3,0.3333333333333333,,"Raphidiophrys ambigua small subunit ribosomal RNA gene, partial sequence",1,True
-35,8,8,0.125,,"Paramoeba atlantica CCAP 1560/9 small subunit ribosomal RNA gene, partial sequence",1,True
-36,5,5,0.2,,"Proceraea madeirensis small subunit ribosomal RNA gene, partial sequence",1,True
-37,5,5,0.2,,"Ligidium germanicum small subunit ribosomal RNA gene, partial sequence",1,True
-38,6,6,0.16666666666666666,,"Takaokaspora nipponicus small subunit ribosomal RNA gene, partial sequence",1,True
-39,6,6,0.16666666666666666,,"Neozygites floridana ARSEF 5376 small subunit ribosomal RNA gene, partial sequence",1,True
-40,11,11,0.09090909090909091,,"Phacus limnophila Banryong092609G small subunit ribosomal RNA gene, partial sequence",1,True
-41,2,2,0.5,,"Carapus acus small subunit ribosomal RNA gene, partial sequence",1,True
-42,2,2,0.5,,"Ommatius tibialis small subunit ribosomal RNA gene, partial sequence",1,True
-43,3,3,0.3333333333333333,,"Mastigella erinacea LARNAKA2N small subunit ribosomal RNA gene, partial sequence",1,True
-44,2,2,0.5,,"Joeropsis coralicola small subunit ribosomal RNA gene, complete sequence",1,True
-45,10,10,0.1,,"Nucleospora salmonis small subunit ribosomal RNA gene, partial sequence",1,True
-46,4,4,0.25,,"Metrius contractus small subunit ribosomal RNA gene, partial sequence",1,True
-47,6,6,0.16666666666666666,,"Euglena agilis OR 04 small subunit ribosomal RNA gene, partial sequence",1,True
-48,2,2,0.5,,"Ceramium diaphanum small subunit ribosomal RNA gene, partial sequence",1,True
-49,5,5,0.2,,"Peltodytes dispersus small subunit ribosomal RNA gene, partial sequence",1,True
-50,2,2,0.5,,"Leniwytsmania orientalisvar small subunit ribosomal RNA gene, partial sequence",1,True
-51,2,2,0.5,,"Oxyethira dualis small subunit ribosomal RNA gene, partial sequence",1,True
-52,2,2,0.5,,"Eucallia boussingaultii small subunit ribosomal RNA gene, partial sequence",1,True
-53,5,5,0.2,,"Spironucleus salmonicida small subunit ribosomal RNA gene, partial sequence",1,True
-54,2,2,0.5,,"Jassa slatteryi small subunit ribosomal RNA gene, partial sequence",1,True
-55,5,5,0.2,,"Pleuronichthys cornutus small subunit ribosomal RNA gene, partial sequence",1,True
-56,2,2,0.5,,"Ophiocordyceps clavata NBRC 106962 small subunit ribosomal RNA gene, partial sequence",1,True
-57,2,2,0.5,,"Phacus acuminatus small subunit ribosomal RNA gene, partial sequence",1,True
-58,3,3,0.3333333333333333,,"Corlissina maricaensis small subunit ribosomal RNA gene, partial sequence",1,True
-59,2,2,0.5,,"Metatrichia vesparium small subunit ribosomal RNA gene, partial sequence",1,True
-60,2,2,0.5,,"Parathelohania tomski small subunit ribosomal RNA gene, partial sequence",1,True
-61,6,6,0.16666666666666666,,"Pseudotrichonympha pearti small subunit ribosomal RNA gene, partial sequence",1,True
-62,3,3,0.3333333333333333,,"Endostelium crystalliferum small subunit ribosomal RNA gene, partial sequence",1,True
-63,2,2,0.5,,"Luapeleamoeba arachisporum small subunit ribosomal RNA gene, partial sequence",1,True
-64,4,4,0.25,,"Siphonosoma vastum small subunit ribosomal RNA gene, partial sequence",1,True
-65,4,4,0.25,,"Parainocellia bicolor small subunit ribosomal RNA gene, partial sequence",1,True
-66,2,2,0.5,,"Calophya schini small subunit ribosomal RNA gene, partial sequence",1,True
-67,2,2,0.5,,"Acropora horrida small subunit ribosomal RNA gene, partial sequence",1,True
-68,2,2,0.5,,"Lepocinclis spirogyroides Gahang033107D small subunit ribosomal RNA gene, partial sequence",1,True
-69,2,2,0.5,,"Euglypha rotunda Costa Rica small subunit ribosomal RNA gene, partial sequence",1,True
-70,3,3,0.3333333333333333,,"Hyalinocysta chapmani small subunit ribosomal RNA gene, partial sequence",1,True
-71,4,4,0.25,,"Batoteuthis skolops small subunit ribosomal RNA gene, partial sequence",1,True
-72,2,2,0.5,,"Eubranchus sanjuanensis small subunit ribosomal RNA gene, partial sequence",1,True
-73,4,4,0.25,,"Nucleospora salmonis small subunit ribosomal RNA gene, partial sequence",1,True
-74,2,2,0.5,,"Paratanais malignus small subunit ribosomal RNA gene, partial sequence",1,True
-75,2,2,0.5,,"Dinenympha fimbriata small subunit ribosomal RNA gene, partial sequence",1,True
-76,2,2,0.5,,"Cyclaxyra politula small subunit ribosomal RNA gene, partial sequence",1,True
-77,2,2,0.5,,"Omalodera limbata small subunit ribosomal RNA gene, partial sequence",1,True
-78,2,2,0.5,,"Odontocheila cayennensis small subunit ribosomal RNA gene, partial sequence",1,True
-79,4,4,0.25,,"Ataxiodinium choane small subunit ribosomal RNA gene, partial sequence",1,True
-80,4,4,0.25,,"Clonorchis sinensis NH small subunit ribosomal RNA gene, partial sequence",1,True
-81,2,2,0.5,,"Euglena terricola SAG 1224-34b small subunit ribosomal RNA gene, partial sequence",1,True
-82,4,4,0.25,,"Calliblepharis saidana small subunit ribosomal RNA gene, partial sequence",1,True
-83,6,6,0.16666666666666666,,"Degeeriella fulva small subunit ribosomal RNA gene, partial sequence",1,True
-84,2,2,0.5,,"Paramoeba eilhardi CCAP 1560/2 small subunit ribosomal RNA gene, partial sequence",1,True
-85,3,3,0.3333333333333333,,"Nosema apis small subunit ribosomal RNA gene, partial sequence",1,True
-86,2,2,0.5,,"Quadracus urticarius small subunit ribosomal RNA gene, partial sequence",1,True
-87,6,6,0.16666666666666666,,"Conwentzia pineticola small subunit ribosomal RNA gene, partial sequence",1,True
-88,2,2,0.5,,"Glossomastix chrysoplasta CCMP1537 small subunit ribosomal RNA gene, partial sequence",1,True
-89,5,5,0.2,,"Phacus paraorbicularis Dongbakdongsan060609D small subunit ribosomal RNA gene, partial sequence",1,True
-90,8,8,0.125,,"Neosilurus hyrtlii small subunit ribosomal RNA gene, partial sequence",1,True
-91,2,2,0.5,,"Luidia clathrata small subunit ribosomal RNA gene, partial sequence",1,True
-92,2,2,0.5,,"Lottia gigantea small subunit ribosomal RNA gene, partial sequence",1,True
-93,2,2,0.5,,"Endostelium amerosporum small subunit ribosomal RNA gene, partial sequence",1,True
-94,2,2,0.5,,"Ironus longicaudatus small subunit ribosomal RNA gene, partial sequence",1,True
-95,2,2,0.5,,"Diplonema papillatum ATCC50162 small subunit ribosomal RNA gene, partial sequence",1,True
-96,2,2,0.5,,"Iphionella risensis small subunit ribosomal RNA gene, partial sequence",1,True
-97,4,4,0.25,,"Isobactrus uniscutatus small subunit ribosomal RNA gene, partial sequence",1,True
-98,3,3,0.3333333333333333,,"Tubulinosema hippodamiae small subunit ribosomal RNA gene, partial sequence",1,True
-99,2,2,0.5,,"Tetranchyroderma megastomum small subunit ribosomal RNA gene, partial sequence",1,True
-100,2,2,0.5,,"Entamoeba coli HU-1:CDC small subunit ribosomal RNA gene, partial sequence",1,True
-101,2,2,0.5,,"Haemogregarina balli small subunit ribosomal RNA gene, partial sequence",1,True
-102,8,8,0.125,,"Phacus limnophila Gungnamji052507L small subunit ribosomal RNA gene, partial sequence",1,True
-103,10,10,0.1,,"Merothrips floridensis small subunit ribosomal RNA gene, partial sequence",1,True
-104,4,4,0.25,,"Campylodiscus ralfsii small subunit ribosomal RNA gene, partial sequence",1,True
-105,2,2,0.5,,"Semperella schulzei small subunit ribosomal RNA gene, partial sequence",1,True
-106,7,7,0.14285714285714285,,"Paramoeba perurans GD-D1/4 small subunit ribosomal RNA gene, partial sequence",1,True
-107,4,4,0.25,,"Eriauchenius workmani small subunit ribosomal RNA gene, partial sequence",1,True
-108,3,3,0.3333333333333333,,"Intruda signata small subunit ribosomal RNA gene, partial sequence",1,True
-109,4,4,0.25,,"Bonamia exitiosa small subunit ribosomal RNA gene, partial sequence",1,True
-110,2,2,0.5,,"Megalobrama amblycephala small subunit ribosomal RNA gene, partial sequence",1,True
-111,3,3,0.3333333333333333,,"Nolandia orientalis small subunit ribosomal RNA gene, partial sequence",1,True
-112,3,3,0.3333333333333333,,"Schizoplasmodiopsis amoeboidea ATCC 46948 small subunit ribosomal RNA gene, partial sequence",1,True
-113,4,4,0.25,,"Blastocrithidia largi small subunit ribosomal RNA gene, partial sequence",1,True
-114,12,12,0.08333333333333333,,"Neovahlkampfia nana small subunit ribosomal RNA gene, partial sequence",1,True
-115,3,3,0.3333333333333333,,"Ptychopera unicornis small subunit ribosomal RNA gene, partial sequence",1,True
-116,2,2,0.5,,"Neophyllura bicolor small subunit ribosomal RNA gene, partial sequence",1,True
-117,2,2,0.5,,"Fallacia pygmaea UTEX FD294 small subunit ribosomal RNA gene, partial sequence",1,True
-118,3,3,0.3333333333333333,,"Hepatozoon canis small subunit ribosomal RNA gene, partial sequence",1,True
-119,2,2,0.5,,"Porcellionides pruinosus small subunit ribosomal RNA gene, partial sequence",1,True
-120,2,2,0.5,,"Pottsia serenei small subunit ribosomal RNA gene, partial sequence",1,True
-121,11,11,0.09090909090909091,,"Chironomus tepperi small subunit ribosomal RNA gene, partial sequence",1,True
-122,2,2,0.5,,"Prorhynchus tasmaniensis small subunit ribosomal RNA gene, partial sequence",1,True
-123,4,4,0.25,,"Decastava edaphica CCAP 1265/2 small subunit ribosomal RNA gene, partial sequence",1,True
-124,7,7,0.14285714285714285,,"Testudodinium magnum HG229 small subunit ribosomal RNA gene, partial sequence",1,True
-125,4,4,0.25,,"Tubulanus punctatus small subunit ribosomal RNA gene, partial sequence",1,True
-126,5,5,0.2,,"Panorbis viscosus A231-2B small subunit ribosomal RNA gene, partial sequence",1,True
-127,5,5,0.2,,"Swima bombiviridis small subunit ribosomal RNA gene, complete sequence",1,True
-128,6,6,0.16666666666666666,,"Gambierdiscus toxicus small subunit ribosomal RNA gene, partial sequence",1,True
-129,3,3,0.3333333333333333,,"Heliconympha glossotermitis small subunit ribosomal RNA gene, partial sequence",1,True
-130,3,3,0.3333333333333333,,"Peridinium limbatum small subunit ribosomal RNA gene, partial sequence",1,True
-131,3,3,0.3333333333333333,,"Phialina salinarum small subunit ribosomal RNA gene, partial sequence",1,True
-132,4,4,0.25,,"Ketosoma werneri small subunit ribosomal RNA gene, partial sequence",1,True
-133,4,4,0.25,,"Cryptostemma wygodzinskyi small subunit ribosomal RNA gene, partial sequence",1,True
-134,3,3,0.3333333333333333,,"Eosentomon megaglenum small subunit ribosomal RNA gene, partial sequence",1,True
-135,5,5,0.2,,"Trichonympha collaris small subunit ribosomal RNA gene, partial sequence",1,True
-136,5,5,0.2,,"Platyamoeba contorta small subunit ribosomal RNA gene, partial sequence",1,True
-137,2,2,0.5,,"Avagina marci small subunit ribosomal RNA gene, partial sequence",1,True
-138,2,2,0.5,,"Bryopa melitensis small subunit ribosomal RNA gene, partial sequence",1,True
-139,2,2,0.5,,"Culex pipiens small subunit ribosomal RNA gene, partial sequence",1,True
-140,2,2,0.5,,"Leptomonas scantii F221 small subunit ribosomal RNA gene, partial sequence",1,True
-141,3,3,0.3333333333333333,,"Cricophorus nutrix small subunit ribosomal RNA gene, partial sequence",1,True
-142,2,2,0.5,,"Sialis hamata small subunit ribosomal RNA gene, partial sequence",1,True
-143,2,2,0.5,,"Trichoniscus pygmaeus small subunit ribosomal RNA gene, partial sequence",1,True
-144,2,2,0.5,,"Novodamus nodatus small subunit ribosomal RNA gene, partial sequence",1,True
-145,4,4,0.25,,"Acerentulus sinensis small subunit ribosomal RNA gene, partial sequence",1,True
-146,8,8,0.125,,"Amblyospora excrucii small subunit ribosomal RNA gene, partial sequence",1,True
-147,2,2,0.5,,"Galathealinum brachiosum small subunit ribosomal RNA gene, partial sequence",1,True
-148,5,5,0.2,,"Coelopleurus floridanus small subunit ribosomal RNA gene, partial sequence",1,True
-149,4,4,0.25,,"Nosema pieriae small subunit ribosomal RNA gene, partial sequence",1,True
-150,2,2,0.5,,"Nyssomyia neivai small subunit ribosomal RNA gene, partial sequence",1,True
-151,2,2,0.5,,"Montandoniola moraguesi small subunit ribosomal RNA gene, partial sequence",1,True
-152,2,2,0.5,,"Ailadinium reticulatum small subunit ribosomal RNA gene, partial sequence",1,True
-153,3,3,0.3333333333333333,,"Trimastix marina small subunit ribosomal RNA gene, partial sequence",1,True
-154,5,5,0.2,,"Myxobolus taibaiensis small subunit ribosomal RNA gene, partial sequence",1,True
-155,3,3,0.3333333333333333,,"Parvochelus russus small subunit ribosomal RNA gene, partial sequence",1,True
-156,3,3,0.3333333333333333,,"Globulispora mitoportans small subunit ribosomal RNA gene, partial sequence",1,True
-157,2,2,0.5,,"Hemistasia phaeocysticola small subunit ribosomal RNA gene, partial sequence",1,True
-158,3,3,0.3333333333333333,,"Cerylon ferrugineum small subunit ribosomal RNA gene, partial sequence",1,True
-159,3,3,0.3333333333333333,,"Thaumastocoris safordi small subunit ribosomal RNA gene, partial sequence",1,True
-160,4,4,0.25,,"Malbranchea cinnamomea CBS 960.72 small subunit ribosomal RNA gene, partial sequence",1,True
-161,2,2,0.5,,"Eriauchenius jeanneli small subunit ribosomal RNA gene, partial sequence",1,True
-162,5,5,0.2,,"Gambierdiscus balechii small subunit ribosomal RNA gene, partial sequence",1,True
-163,4,4,0.25,,"Callithamnion pikeanum small subunit ribosomal RNA gene, partial sequence",1,True
-164,3,3,0.3333333333333333,,"Sonderopelta coriacea small subunit ribosomal RNA gene, partial sequence",1,True
-165,5,5,0.2,,"Amblyospora rugosa small subunit ribosomal RNA gene, partial sequence",1,True
-166,12,12,0.08333333333333333,,"Eupelops hirtus small subunit ribosomal RNA gene, partial sequence",1,True
-167,2,2,0.5,,"Agauopsis legionium small subunit ribosomal RNA gene, partial sequence",1,True
-168,13,13,0.07692307692307693,,"Pleuronichthys cornutus small subunit ribosomal RNA gene, partial sequence",1,True
-169,2,2,0.5,,"Bellerochea malleus small subunit ribosomal RNA gene, partial sequence",1,True
-170,2,2,0.5,,"Uroptychus scambus small subunit ribosomal RNA gene, partial sequence",1,True
-171,16,16,0.0625,,"Bitectipora retepora small subunit ribosomal RNA gene, partial sequence",1,True
-172,7,7,0.14285714285714285,,"Porphyridium sordidum small subunit ribosomal RNA gene, partial sequence",1,True
-173,3,3,0.3333333333333333,,"Gennadas valens small subunit ribosomal RNA gene, partial sequence",1,True
-174,2,2,0.5,,"Saccinobaculus doroaxostylus small subunit ribosomal RNA gene, partial sequence",1,True
-175,7,7,0.14285714285714285,,"Gambierdiscus toxicus small subunit ribosomal RNA gene, partial sequence",1,True
-176,3,3,0.3333333333333333,,"Panorpodes pulcher small subunit ribosomal RNA gene, partial sequence",1,True
-177,3,3,0.3333333333333333,,"Dictyoplax lecus small subunit ribosomal RNA gene, partial sequence",1,True
-178,2,2,0.5,,"Polycosta turniae small subunit ribosomal RNA gene, partial sequence",1,True
-179,2,2,0.5,,"Ceratomyxa leatherjacketi small subunit ribosomal RNA gene, partial sequence",1,True
-180,3,3,0.3333333333333333,,"Deladenus durus small subunit ribosomal RNA gene, partial sequence",1,True
-181,2,2,0.5,,"Macrotrichomonoides restis small subunit ribosomal RNA gene, partial sequence",1,True
-182,4,4,0.25,,"Trichonympha deweyi small subunit ribosomal RNA gene, partial sequence",1,True
-183,3,3,0.3333333333333333,,"Chantransia pygmaea 93 small subunit ribosomal RNA gene, partial sequence",1,True
-184,4,4,0.25,,"Hemicriconemoides paracamelliae small subunit ribosomal RNA gene, partial sequence",1,True
-185,2,2,0.5,,"Trypanosoma simiae small subunit ribosomal RNA gene, partial sequence",1,True
-186,5,5,0.2,,"Bodo saltans small subunit ribosomal RNA gene, partial sequence",1,True
-187,2,2,0.5,,"Parthenopea subterranea small subunit ribosomal RNA gene, partial sequence",1,True
-188,4,4,0.25,,"Raillietiella orientalis small subunit ribosomal RNA gene, partial sequence",1,True
-189,4,4,0.25,,"Henneguya akule small subunit ribosomal RNA gene, partial sequence",1,True
-190,2,2,0.5,,"Hirsutocythere hanaii small subunit ribosomal RNA gene, partial sequence",1,True
-191,5,5,0.2,,"Trachelomonas variabilis SAG1283-24 small subunit ribosomal RNA gene, partial sequence",1,True
-192,4,4,0.25,,"Sarcocystis fayeri small subunit ribosomal RNA gene, partial sequence",1,True
-193,2,2,0.5,,"Endodesmia calophylloides small subunit ribosomal RNA gene, partial sequence",1,True
-194,3,3,0.3333333333333333,,"Trioza remota small subunit ribosomal RNA gene, partial sequence",1,True
-195,3,3,0.3333333333333333,,"Arytainilla spartiophila small subunit ribosomal RNA gene, partial sequence",1,True
-196,2,2,0.5,,"Wraios longiembolus small subunit ribosomal RNA gene, partial sequence",1,True
-197,3,3,0.3333333333333333,,"Spraguea lophii small subunit ribosomal RNA gene, partial sequence",1,True
-198,9,9,0.1111111111111111,,"Neglectella peisonis SAG 37.96 small subunit ribosomal RNA gene, partial sequence",1,True
-199,5,5,0.2,,"Neoparamoeba longipodia DIVA3 574/3 small subunit ribosomal RNA gene, partial sequence",1,True
-200,2,2,0.5,,"Hysteromorpha triloba small subunit ribosomal RNA gene, partial sequence",1,True
-201,2,2,0.5,,"Pectinopygus sulae small subunit ribosomal RNA gene, partial sequence",1,True
-202,2,2,0.5,,"Anthobothrium laciniatum small subunit ribosomal RNA gene, partial sequence",1,True
-203,6,6,0.16666666666666666,,"Leptomonas rigidus PL small subunit ribosomal RNA gene, partial sequence",1,True
-204,3,3,0.3333333333333333,,"Meloidogyne incognita small subunit ribosomal RNA gene, partial sequence",1,True
-205,2,2,0.5,,"Brachypterolus pulicarius small subunit ribosomal RNA gene, partial sequence",1,True
-206,2,2,0.5,,"Phreatoicopsis raffae small subunit ribosomal RNA gene, partial sequence",1,True
-207,2,2,0.5,,"Daptonema procerus small subunit ribosomal RNA gene, partial sequence",1,True
-208,4,4,0.25,,"Actinocythereis costata small subunit ribosomal RNA gene, partial sequence",1,True
-209,3,3,0.3333333333333333,,"Capillaria anatis small subunit ribosomal RNA gene, partial sequence",1,True
-210,2,2,0.5,,"Gromia melinus small subunit ribosomal RNA gene, partial sequence",1,True
-211,5,5,0.2,,"Amathia verticillata small subunit ribosomal RNA gene, partial sequence",1,True
-212,5,5,0.2,,"Demodex folliculorum small subunit ribosomal RNA gene, partial sequence",1,True
-213,2,2,0.5,,"Mesophyllum sphaericum CH1891 small subunit ribosomal RNA gene, partial sequence",1,True
-214,3,3,0.3333333333333333,,"Monopylocystis visvesvarai TSUKIM small subunit ribosomal RNA gene, partial sequence",1,True
-215,4,4,0.25,,"Haementeria gracilis small subunit ribosomal RNA gene, partial sequence",1,True
-216,2,2,0.5,,"Oxyrrhis marina NIES494 small subunit ribosomal RNA gene, partial sequence",1,True
-217,2,2,0.5,,"Claviger longicornis small subunit ribosomal RNA gene, partial sequence",1,True
-218,2,2,0.5,,"Aphanostoma bruscai small subunit ribosomal RNA gene, partial sequence",1,True
-219,3,3,0.3333333333333333,,"Nannoperca oxleyana small subunit ribosomal RNA gene, partial sequence",1,True
-220,4,4,0.25,,"Notocaryoplana arctica small subunit ribosomal RNA gene, partial sequence",1,True
-221,2,2,0.5,,"Monomorphina rudicula ASW08035 small subunit ribosomal RNA gene, partial sequence",1,True
-222,2,2,0.5,,"Nematalosa erebi small subunit ribosomal RNA gene, partial sequence",1,True
-223,3,3,0.3333333333333333,,"Cavenderia bifurcata small subunit ribosomal RNA gene, partial sequence",1,True
-224,4,4,0.25,,"Stygamoeba regulata ATCC 50892 small subunit ribosomal RNA gene, partial sequence",1,True
-225,2,2,0.5,,"Plicaturopsis crispa FP-101310-SP small subunit ribosomal RNA gene, partial sequence",1,True
-226,2,2,0.5,,"Buxtonella sulcata small subunit ribosomal RNA gene, partial sequence",1,True
-227,3,3,0.3333333333333333,,"Apotomus rufithorax small subunit ribosomal RNA gene, partial sequence",1,True
-228,2,2,0.5,,"Dallocardia muricata small subunit ribosomal RNA gene, partial sequence",1,True
-229,2,2,0.5,,"Pandora neoaphidis KVL 633 small subunit ribosomal RNA gene, partial sequence",1,True
-230,2,2,0.5,,"Pterospora floridiensis small subunit ribosomal RNA gene, partial sequence",1,True
-231,2,2,0.5,,"Thraciopsis angustata small subunit ribosomal RNA gene, partial sequence",1,True
-232,2,2,0.5,,"Haliotrema cromileptis small subunit ribosomal RNA gene, partial sequence",1,True
-233,3,3,0.3333333333333333,,"Cavenderia microspora small subunit ribosomal RNA gene, complete sequence",1,True
-234,4,4,0.25,,"Chaetospania thoracica small subunit ribosomal RNA gene, partial sequence",1,True
-235,2,2,0.5,,"Holothuria hilla small subunit ribosomal RNA gene, partial sequence",1,True
-236,2,2,0.5,,"Lamproderma scintillans small subunit ribosomal RNA gene, partial sequence",1,True
-237,2,2,0.5,,"Antarctoscyphus spiralis small subunit ribosomal RNA gene, partial sequence",1,True
-238,8,8,0.125,,"Lernentoma asellina small subunit ribosomal RNA gene, complete sequence",1,True
-239,2,2,0.5,,"Lamyctes africanus small subunit ribosomal RNA gene, partial sequence",1,True
-240,7,7,0.14285714285714285,,"Macrotrophurus arbusticola small subunit ribosomal RNA gene, partial sequence",1,True
-241,3,3,0.3333333333333333,,"Ballarra longipalpus small subunit ribosomal RNA gene, partial sequence",1,True
-242,4,4,0.25,,"Balanophora fungosa small subunit ribosomal RNA gene, partial sequence",1,True
-243,5,5,0.2,,"Glossina morsitans small subunit ribosomal RNA gene, partial sequence",1,True
-244,2,2,0.5,,"Neobodo curvifilus small subunit ribosomal RNA gene, partial sequence",1,True
-245,2,2,0.5,,"Epigamia alexandri small subunit ribosomal RNA gene, partial sequence",1,True
-246,2,2,0.5,,"Meloe decorus small subunit ribosomal RNA gene, partial sequence",1,True
-247,2,2,0.5,,"Pandora nouryi small subunit ribosomal RNA gene, partial sequence",1,True
-248,2,2,0.5,,"Pyramidodinium atrofuscum HG226 small subunit ribosomal RNA gene, partial sequence",1,True
-249,18,18,0.05555555555555555,,"Bembidion variegatum small subunit ribosomal RNA gene, partial sequence",1,True
-250,8,8,0.125,,"Bembidarenas reicheellum small subunit ribosomal RNA gene, partial sequence",1,True
-251,2,2,0.5,,"Gieysztoria beltrani small subunit ribosomal RNA gene, partial sequence",1,True
-252,2,2,0.5,,"Heterodoxus calabyi small subunit ribosomal RNA gene, partial sequence",1,True
-253,2,2,0.5,,"Barbronia arcana small subunit ribosomal RNA gene, partial sequence",1,True
-254,5,5,0.2,,"Ctenarytaina eucalypti small subunit ribosomal RNA gene, partial sequence",1,True
-255,2,2,0.5,,"Kentomonas sorsogonicus small subunit ribosomal RNA gene, partial sequence",1,True
-256,2,2,0.5,,"Thelohanellus seni small subunit ribosomal RNA gene, partial sequence",1,True
-257,2,2,0.5,,"Paramblopusa borealis small subunit ribosomal RNA gene, partial sequence",1,True
-258,3,3,0.3333333333333333,,"Chrysocapsa vernalis CCMP278 small subunit ribosomal RNA gene, partial sequence",1,True
-259,2,2,0.5,,"Furia neopyralidarum ARSEF1145 small subunit ribosomal RNA gene, partial sequence",1,True
-260,2,2,0.5,,"Plasmodium ovale wallikeri small subunit ribosomal RNA gene, complete sequence",1,True
-261,4,4,0.25,,"Cryptobia dahli small subunit ribosomal RNA gene, partial sequence",1,True
-262,2,2,0.5,,"Heteropsylla texana small subunit ribosomal RNA gene, partial sequence",1,True
-263,3,3,0.3333333333333333,,"Eryniopsis caroliniana ARSEF641 small subunit ribosomal RNA gene, partial sequence",1,True
-264,2,2,0.5,,"Cephennium gallicum small subunit ribosomal RNA gene, partial sequence",1,True
-265,5,5,0.2,,"Schizoporella dunkeri small subunit ribosomal RNA gene, partial sequence",1,True
-266,2,2,0.5,,"Nesticella mogera small subunit ribosomal RNA gene, partial sequence",1,True
-267,4,4,0.25,,"Pachyphlodes melanoxanthus small subunit ribosomal RNA gene, partial sequence",1,True
-268,2,2,0.5,,"Zygosaccharomyces rouxii IFO 0506 small subunit ribosomal RNA gene, partial sequence",1,True
-269,2,2,0.5,,"Flamella arnhemensis KWK; CCAP 1525/2 small subunit ribosomal RNA gene, partial sequence",1,True
-270,11,11,0.09090909090909091,,"Alexandrium tamarense SJC9516 small subunit ribosomal RNA gene, complete sequence",1,True
-271,2,2,0.5,,"Protoaricia oerstedii small subunit ribosomal RNA gene, partial sequence",1,True
-272,3,3,0.3333333333333333,,"Lepas anserifera small subunit ribosomal RNA gene, partial sequence",1,True
-273,3,3,0.3333333333333333,,"Brachypanorpa carolinensis small subunit ribosomal RNA gene, partial sequence",1,True
-274,2,2,0.5,,"Hypotrichomonas hampli KLRUD small subunit ribosomal RNA gene, partial sequence",1,True
-275,13,13,0.07692307692307693,,"Calliphara nobilis small subunit ribosomal RNA gene, complete sequence",1,True
-276,4,4,0.25,,"Discotricha papillifera small subunit ribosomal RNA gene, partial sequence",1,True
-277,3,3,0.3333333333333333,,"Thysanotohaptor rex small subunit ribosomal RNA gene, partial sequence",1,True
-278,7,7,0.14285714285714285,,"Stellarchytrium dubum small subunit ribosomal RNA gene, partial sequence",1,True
-279,2,2,0.5,,"Elasis hirsuta small subunit ribosomal RNA gene, partial sequence",1,True
-280,4,4,0.25,,"Acremonium curvulum CBS 430.66 small subunit ribosomal RNA gene, partial sequence",1,True
-281,2,2,0.5,,"Hatschekia pagrosomi small subunit ribosomal RNA gene, partial sequence",1,True
-282,4,4,0.25,,"Axonchium propinquum small subunit ribosomal RNA gene, partial sequence",1,True
-283,2,2,0.5,,"Tychosporium acutostipes NZ05-15a small subunit ribosomal RNA gene, partial sequence",1,True
-284,5,5,0.2,,"Dactylopodola typhle small subunit ribosomal RNA gene, partial sequence",1,True
-285,2,2,0.5,,"Stygiella agilis small subunit ribosomal RNA gene, partial sequence",1,True
-286,7,7,0.14285714285714285,,"Trichomitopsis minor small subunit ribosomal RNA gene, partial sequence",1,True
-287,2,2,0.5,,"Monomastix minuta small subunit ribosomal RNA gene, partial sequence",1,True
-288,2,2,0.5,,"Sphaeroforma tapetis small subunit ribosomal RNA gene, partial sequence",1,True
-289,4,4,0.25,,"Ophidiogorgia kuekenthali small subunit ribosomal RNA gene, partial sequence",1,True
-290,16,16,0.0625,,"Athoracophorus bitentaculatus small subunit ribosomal RNA gene, partial sequence",1,True
-291,3,3,0.3333333333333333,,"Slooffia tsugae JCM 2960 small subunit ribosomal RNA gene, partial sequence",1,True
-292,2,2,0.5,,"Chlorosarcinopsis eremi BCP-FI5LVF16 small subunit ribosomal RNA gene, partial sequence",1,True
-293,2,2,0.5,,"Heteromysis formosa small subunit ribosomal RNA gene, partial sequence",1,True
-294,7,7,0.14285714285714285,,"Subanguina radicicola wild isolate small subunit ribosomal RNA gene, partial sequence",1,True
-295,3,3,0.3333333333333333,,"Dubinectes nodosus small subunit ribosomal RNA gene, partial sequence",1,True
-296,4,4,0.25,,"Pegesimallus laticornis small subunit ribosomal RNA gene, partial sequence",1,True
-297,3,3,0.3333333333333333,,"Protostelium mycophagum HI07-20L-IV small subunit ribosomal RNA gene, partial sequence",1,True
-298,3,3,0.3333333333333333,,"Acanthephyra acutifrons small subunit ribosomal RNA gene, partial sequence",1,True
-299,2,2,0.5,,"Typosyllis heronislandensis small subunit ribosomal RNA gene, partial sequence",1,True
-300,5,5,0.2,,"Ceratopera axi small subunit ribosomal RNA gene, partial sequence",1,True
-301,2,2,0.5,,"Leptomyxa valladaresi LLT small subunit ribosomal RNA gene, partial sequence",1,True
-302,2,2,0.5,,"Coscinodiscus radiatus CCMP310 small subunit ribosomal RNA gene, partial sequence",1,True
-303,2,2,0.5,,"Psyllopsis fraxinicola small subunit ribosomal RNA gene, partial sequence",1,True
-304,2,2,0.5,,"Pseudodactylogyrus haze small subunit ribosomal RNA gene, partial sequence",1,True
-305,2,2,0.5,,"Sphaeromyxa balbianii small subunit ribosomal RNA gene, partial sequence",1,True
-306,2,2,0.5,,"Polycystis ali small subunit ribosomal RNA gene, partial sequence",1,True
-307,3,3,0.3333333333333333,,"Brisingaster robillardi small subunit ribosomal RNA gene, partial sequence",1,True
-308,2,2,0.5,,"Homotoma ficus small subunit ribosomal RNA gene, partial sequence",1,True
-309,4,4,0.25,,"Pleuronichthys cornutus small subunit ribosomal RNA gene, partial sequence",1,True
-310,2,2,0.5,,"Marcelleina persoonii small subunit ribosomal RNA gene, partial sequence",1,True
-311,3,3,0.3333333333333333,,"Nesticella wanzaiensis small subunit ribosomal RNA gene, partial sequence",1,True
-312,2,2,0.5,,"Demodex brevis small subunit ribosomal RNA gene, partial sequence",1,True
-313,2,2,0.5,,"Flabellula citata CCAP1529/2 small subunit ribosomal RNA gene, partial sequence",1,True
-314,4,4,0.25,,"Idiellana pristis small subunit ribosomal RNA gene, partial sequence",1,True
-315,2,2,0.5,,"Pseudocandona tenuirostris small subunit ribosomal RNA gene, partial sequence",1,True
-316,4,4,0.25,,"Microrhagus pygmaeus small subunit ribosomal RNA gene, partial sequence",1,True
-317,4,4,0.25,,"Hypotrichomonas osmaniae CYCL2 small subunit ribosomal RNA gene, partial sequence",1,True
-318,3,3,0.3333333333333333,,"Polykrikos herdmaniae small subunit ribosomal RNA gene, partial sequence",1,True
-319,2,2,0.5,,"Thrips simplex small subunit ribosomal RNA gene, partial sequence",1,True
-320,4,4,0.25,,"Aquatides aquaticus NygoAqu1 small subunit ribosomal RNA gene, partial sequence",1,True
-321,2,2,0.5,,"Microplana nana small subunit ribosomal RNA gene, partial sequence",1,True
-322,2,2,0.5,,"Cavenderia granulophora small subunit ribosomal RNA gene, partial sequence",1,True
-323,3,3,0.3333333333333333,,"Anncaliia algerae small subunit ribosomal RNA gene, partial sequence",1,True
-324,2,2,0.5,,"Scirtes hemisphaericus small subunit ribosomal RNA gene, partial sequence",1,True
-325,2,2,0.5,,"Radicipes gracilis small subunit ribosomal RNA gene, partial sequence",1,True
-326,2,2,0.5,,"Caprithrips moundi small subunit ribosomal RNA gene, partial sequence",1,True
-327,2,2,0.5,,"Gambierdiscus belizeanus small subunit ribosomal RNA gene, partial sequence",1,True
-328,4,4,0.25,,"Chaetoceros setoense IT07-C11 small subunit ribosomal RNA gene, partial sequence",1,True
-329,2,2,0.5,,"Anaplecta lateralis small subunit ribosomal RNA gene, partial sequence",1,True
-330,11,11,0.09090909090909091,,"Isotricha prostoma small subunit ribosomal RNA gene, partial sequence",1,True
-331,2,2,0.5,,"Calyptospora funduli small subunit ribosomal RNA gene, partial sequence",1,True
-332,3,3,0.3333333333333333,,"Myxidium cuneiforme small subunit ribosomal RNA gene, partial sequence",1,True
-333,7,7,0.14285714285714285,,"Bysmatrum subsalsum TIO406 small subunit ribosomal RNA gene, partial sequence",1,True
-334,2,2,0.5,,"Tetratrichomonas buttreyi small subunit ribosomal RNA gene, partial sequence",1,True
-335,7,7,0.14285714285714285,,"Stylocheiron maximum small subunit ribosomal RNA gene, partial sequence",1,True
-336,7,7,0.14285714285714285,,"Skeletonema japonicum FTY079 small subunit ribosomal RNA gene, partial sequence",1,True
-337,2,2,0.5,,"Sphaerularia bombi small subunit ribosomal RNA gene, partial sequence",1,True
-338,2,2,0.5,,"Caberea boryi small subunit ribosomal RNA gene, partial sequence",1,True
-339,2,2,0.5,,"Micromonas pusilla small subunit ribosomal RNA gene, partial sequence",1,True
-340,8,8,0.125,,"Euglypha tuberculata Millstream small subunit ribosomal RNA gene, partial sequence",1,True
-341,2,2,0.5,,"Cordierites guianensis small subunit ribosomal RNA gene, partial sequence",1,True
-342,2,2,0.5,,"Echinamoeba silvestris UKNCC:CCAP1519/1 small subunit ribosomal RNA gene, partial sequence",1,True
-343,2,2,0.5,,"Salpingoeca oahu small subunit ribosomal RNA gene, partial sequence",1,True
-344,2,2,0.5,,"Chromera velia small subunit ribosomal RNA gene, partial sequence",1,True
-345,4,4,0.25,,"Aphalaroida inermis small subunit ribosomal RNA gene, partial sequence",1,True
-346,6,6,0.16666666666666666,,"Blechomonas campbelli small subunit ribosomal RNA gene, partial sequence",1,True
-347,6,6,0.16666666666666666,,"Diaperoecia purpurascens small subunit ribosomal RNA gene, partial sequence",1,True
-348,2,2,0.5,,"Wrangelia plumosa GWS197 small subunit ribosomal RNA gene, partial sequence",1,True
-349,2,2,0.5,,"Boveria subcylindrica FXP2009030301 small subunit ribosomal RNA gene, partial sequence",1,True
-350,2,2,0.5,,"Chattonella marina var. antiqua NIES-1 small subunit ribosomal RNA gene, partial sequence",1,True
-351,2,2,0.5,,"Syllis gracilis small subunit ribosomal RNA gene, partial sequence",1,True
-352,3,3,0.3333333333333333,,"Rossella nuda small subunit ribosomal RNA gene, partial sequence",1,True
-353,2,2,0.5,,"Champia lubrica small subunit ribosomal RNA gene, partial sequence",1,True
-354,3,3,0.3333333333333333,,"Myxobolus musseliusae small subunit ribosomal RNA gene, partial sequence",1,True
-355,2,2,0.5,,"Dictyostelium maeandriforme OH604 small subunit ribosomal RNA gene, partial sequence",1,True
-356,4,4,0.25,,"Ornithodoros yumatensis small subunit ribosomal RNA gene, partial sequence",1,True
-357,2,2,0.5,,"Euplotes aediculatus Lahorensis small subunit ribosomal RNA gene, partial sequence",1,True
-358,5,5,0.2,,"Kulamanamana haumeaae small subunit ribosomal RNA gene, partial sequence",1,True
-359,3,3,0.3333333333333333,,"Polycelis felina small subunit ribosomal RNA gene, partial sequence",1,True
-360,2,2,0.5,,"Orfelia nemoralis small subunit ribosomal RNA gene, partial sequence",1,True
-361,4,4,0.25,,"Blechomonas danrayi small subunit ribosomal RNA gene, partial sequence",1,True
-362,3,3,0.3333333333333333,,"Branchioglossum bipinnatifidum small subunit ribosomal RNA gene, partial sequence",1,True
-363,6,6,0.16666666666666666,,"Mayaca fluviatilis small subunit ribosomal RNA gene, partial sequence",1,True
-364,3,3,0.3333333333333333,,"Plagiopyla nasuta small subunit ribosomal RNA gene, partial sequence",1,True
-365,2,2,0.5,,"Sogerianthe sessiflora small subunit ribosomal RNA gene, partial sequence",1,True
-366,2,2,0.5,,"Dysmorphococcus globosus SAG 20-1 small subunit ribosomal RNA gene, partial sequence",1,True
-367,2,2,0.5,,"Placus salinus small subunit ribosomal RNA gene, partial sequence",1,True
-368,4,4,0.25,,"Trypanosoma wauwau small subunit ribosomal RNA gene, partial sequence",1,True
-369,4,4,0.25,,"Harpagon schusteri VITSED small subunit ribosomal RNA gene, partial sequence",1,True
-370,2,2,0.5,,"Flamella pleistocenica flam1 small subunit ribosomal RNA gene, partial sequence",1,True
-371,2,2,0.5,,"Oecobius cellariorum small subunit ribosomal RNA gene, partial sequence",1,True
-372,5,5,0.2,,"Hemicycliophora subbotini small subunit ribosomal RNA gene, partial sequence",1,True
-373,2,2,0.5,,"Seirospora interrupta small subunit ribosomal RNA gene, partial sequence",1,True
-374,3,3,0.3333333333333333,,"Echimytricalges guyanensis small subunit ribosomal RNA gene, partial sequence",1,True
-375,2,2,0.5,,"Nectoneanthes oxypoda small subunit ribosomal RNA gene, partial sequence",1,True
-376,3,3,0.3333333333333333,,"Uthina luzonica small subunit ribosomal RNA gene, partial sequence",1,True
-377,2,2,0.5,,"Ochroconis constricta NBRC 9375 small subunit ribosomal RNA gene, partial sequence",1,True
-378,2,2,0.5,,"Kipferlia bialata small subunit ribosomal RNA gene, partial sequence",1,True
-379,5,5,0.2,,"Characium acuminatum SAG 40.91 small subunit ribosomal RNA gene, partial sequence",1,True
-380,6,6,0.16666666666666666,,"Acipenser fulvescens small subunit ribosomal RNA gene, partial sequence",1,True
-381,2,2,0.5,,"Botryococcus braunii Yayoi small subunit ribosomal RNA gene, partial sequence",1,True
-382,2,2,0.5,,"Linguatula arctica small subunit ribosomal RNA gene, partial sequence",1,True
-383,2,2,0.5,,"Leguminivora glycinivorella small subunit ribosomal RNA gene, partial sequence",1,True
-384,4,4,0.25,,"Edaphochlorella mirabilis SAG 211-11r small subunit ribosomal RNA gene, partial sequence",1,True
-385,4,4,0.25,,"Ictalurus punctatus small subunit ribosomal RNA gene, partial sequence",1,True
-386,3,3,0.3333333333333333,,"Scleroderma laeve 27936 small subunit ribosomal RNA gene, partial sequence",1,True
-387,5,5,0.2,,"Rhynchomonas nasuta small subunit ribosomal RNA gene, partial sequence",1,True
-388,3,3,0.3333333333333333,,"Ozarchaea platnicki small subunit ribosomal RNA gene, partial sequence",1,True
-389,2,2,0.5,,"Gotocotyla secunda small subunit ribosomal RNA gene, partial sequence",1,True
-390,2,2,0.5,,"Stackhousia monogyna small subunit ribosomal RNA gene, partial sequence",1,True
-391,2,2,0.5,,"Phascolion strombus small subunit ribosomal RNA gene, partial sequence",1,True
-392,3,3,0.3333333333333333,,"Xestospongia testudinaria small subunit ribosomal RNA gene, partial sequence",1,True
-393,4,4,0.25,,"Mastophora rosea small subunit ribosomal RNA gene, partial sequence",1,True
-394,2,2,0.5,,"Aphelenchoides saprophilus small subunit ribosomal RNA gene, partial sequence",1,True
-395,2,2,0.5,,"Navicula phyllepta 84 small subunit ribosomal RNA gene, partial sequence",1,True
-396,4,4,0.25,,"Lankesteria cystodytae small subunit ribosomal RNA gene, partial sequence",1,True
-397,2,2,0.5,,"Condylostoma arenarium small subunit ribosomal RNA gene, partial sequence",1,True
-398,4,4,0.25,,"Encephalitozoon hellem IPZ:CH-H2 small subunit ribosomal RNA gene, complete sequence",1,True
-399,4,4,0.25,,"Longidorus henanus small subunit ribosomal RNA gene, partial sequence",1,True
-400,2,2,0.5,,"Rurikoplites armatus small subunit ribosomal RNA gene, partial sequence",1,True
-401,4,4,0.25,,"Iathrippa trilobatus small subunit ribosomal RNA gene, complete sequence",1,True
-402,4,4,0.25,,"Securidaca diversifolia small subunit ribosomal RNA gene, partial sequence",1,True
-403,2,2,0.5,,"Archidispus minor small subunit ribosomal RNA gene, partial sequence",1,True
-404,2,2,0.5,,"Callithamnion collabens small subunit ribosomal RNA gene, partial sequence",1,True
-405,3,3,0.3333333333333333,,"Nanaspis tonsa small subunit ribosomal RNA gene, partial sequence",1,True
-406,2,2,0.5,,"Choeradoplana abaiba small subunit ribosomal RNA gene, partial sequence",1,True
-407,2,2,0.5,,"Halopteris minuta small subunit ribosomal RNA gene, partial sequence",1,True
-408,12,12,0.08333333333333333,,"Bursaphelenchus chengi small subunit ribosomal RNA gene, partial sequence",1,True
-409,4,4,0.25,,"Onychognathia rhombocephala small subunit ribosomal RNA gene, partial sequence",1,True
-410,2,2,0.5,,"Chlamydomonas raudensis small subunit ribosomal RNA gene, partial sequence",1,True
-411,2,2,0.5,,"Crouania mucosa small subunit ribosomal RNA gene, partial sequence",1,True
-412,2,2,0.5,,"Bryometopus atypicus small subunit ribosomal RNA gene, partial sequence",1,True
-413,2,2,0.5,,"Sigmomyxa sphaerica small subunit ribosomal RNA gene, partial sequence",1,True
-414,4,4,0.25,,"Cliona viridis small subunit ribosomal RNA gene, partial sequence",1,True
-415,3,3,0.3333333333333333,,"Dacrymyces san-augustinii MAFF 240141 small subunit ribosomal RNA gene, partial sequence",1,True
-416,2,2,0.5,,"Childia brachyposthium small subunit ribosomal RNA gene, partial sequence",1,True
-417,7,7,0.14285714285714285,,"Piptocephalis xenophila small subunit ribosomal RNA gene, partial sequence",1,True
-418,4,4,0.25,,"Rostrostelium ellipticum small subunit ribosomal RNA gene, partial sequence",1,True
-419,2,2,0.5,,"Thismia megalongensis small subunit ribosomal RNA gene, partial sequence",1,True
-420,3,3,0.3333333333333333,,"Trachelomonas similis Suwol060709E small subunit ribosomal RNA gene, partial sequence",1,True
-421,4,4,0.25,,"Trachelius ovum small subunit ribosomal RNA gene, partial sequence",1,True
-422,2,2,0.5,,"Chattonidium setense small subunit ribosomal RNA gene, partial sequence",1,True
-423,3,3,0.3333333333333333,,"Metopus fuscus small subunit ribosomal RNA gene, partial sequence",1,True
-424,4,4,0.25,,"Bandia deveneyi small subunit ribosomal RNA gene, partial sequence",1,True
-425,2,2,0.5,,"Sphenorchidium deightonii small subunit ribosomal RNA gene, partial sequence",1,True
-426,3,3,0.3333333333333333,,"Oxyporus maxillosus small subunit ribosomal RNA gene, partial sequence",1,True
-427,2,2,0.5,,"Neogoniolithon brassica-florida NZC2043 small subunit ribosomal RNA gene, partial sequence",1,True
-428,11,11,0.09090909090909091,,"Nyctotherus ovalis small subunit ribosomal RNA gene, partial sequence",1,True
-429,2,2,0.5,,"Afrolistrophorus congoicola small subunit ribosomal RNA gene, partial sequence",1,True
-430,2,2,0.5,,"Tricolia variabilis small subunit ribosomal RNA gene, partial sequence",1,True
-431,2,2,0.5,,"Aphanostoma sanguineum small subunit ribosomal RNA gene, partial sequence",1,True
-432,2,2,0.5,,"Coeloperix sleighi small subunit ribosomal RNA gene, partial sequence",1,True
-433,5,5,0.2,,"Myllaena infuscata small subunit ribosomal RNA gene, partial sequence",1,True
-434,3,3,0.3333333333333333,,"Dacrymyces flabelliformis HHB-18308 small subunit ribosomal RNA gene, partial sequence",1,True
-435,2,2,0.5,,"Stichorchis subtriquetrus small subunit ribosomal RNA gene, partial sequence",1,True
-436,2,2,0.5,,"Arabella iricolor small subunit ribosomal RNA gene, partial sequence",1,True
-437,3,3,0.3333333333333333,,"Dacrymyces novae-zelandiae TUFC12827 small subunit ribosomal RNA gene, partial sequence",1,True
-438,2,2,0.5,,"Aletris fauriei small subunit ribosomal RNA gene, partial sequence",1,True
-439,4,4,0.25,,"Herpetomonas ztiplika small subunit ribosomal RNA gene, partial sequence",1,True
-440,2,2,0.5,,"Thecadinium inclinatum ccmp1890 small subunit ribosomal RNA gene, partial sequence",1,True
-441,2,2,0.5,,"Lemonniera terrestris ccm-F125 small subunit ribosomal RNA gene, partial sequence",1,True
-442,2,2,0.5,,"Solenozetes carinatus small subunit ribosomal RNA gene, partial sequence",1,True
-443,2,2,0.5,,"Euaesthetus ruficapillus small subunit ribosomal RNA gene, partial sequence",1,True
-444,2,2,0.5,,"Psettarium nolani small subunit ribosomal RNA gene, partial sequence",1,True
-445,2,2,0.5,,"Philocelis brueggemanni small subunit ribosomal RNA gene, partial sequence",1,True
-446,2,2,0.5,,"Saccharomyces cerevisiae KCCM200284 small subunit ribosomal RNA gene, partial sequence",1,True
-447,4,4,0.25,,"Dentitheca bidentata small subunit ribosomal RNA gene, partial sequence",1,True
-448,2,2,0.5,,"Ospreyella depressa small subunit ribosomal RNA gene, partial sequence",1,True
-449,5,5,0.2,,"Batrachospermum macrosporum ES8 small subunit ribosomal RNA gene, partial sequence",1,True
-450,3,3,0.3333333333333333,,"Stylodinium littorale NY017 small subunit ribosomal RNA gene, partial sequence",1,True
-451,4,4,0.25,,"Lankatrema mannarense small subunit ribosomal RNA gene, partial sequence",1,True
-452,2,2,0.5,,"Azadinium poporum small subunit ribosomal RNA gene, partial sequence",1,True
-453,7,7,0.14285714285714285,,"Vulcanodinium rugosum small subunit ribosomal RNA gene, partial sequence",1,True
-454,3,3,0.3333333333333333,,"Zoothamnium florens small subunit ribosomal RNA gene, partial sequence",1,True
-455,5,5,0.2,,"Henneguya laseeae small subunit ribosomal RNA gene, partial sequence",1,True
-456,5,5,0.2,,"Anelasmocephalus cambridgei small subunit ribosomal RNA gene, partial sequence",1,True
-457,2,2,0.5,,"Pinnularia acuminata Pin 876 TM small subunit ribosomal RNA gene, partial sequence",1,True
-458,2,2,0.5,,"Rhadinorhynchus pristis Adb_81-82 small subunit ribosomal RNA gene, partial sequence",1,True
-459,2,2,0.5,,"Echinosphaeridium nordstedtii NIES-137 small subunit ribosomal RNA gene, partial sequence",1,True
-460,4,4,0.25,,"Namalycastis hawaiiensis small subunit ribosomal RNA gene, partial sequence",1,True
-461,5,5,0.2,,"Williophrya maedai small subunit ribosomal RNA gene, partial sequence",1,True
-462,2,2,0.5,,"Heterias exul small subunit ribosomal RNA gene, partial sequence",1,True
-463,2,2,0.5,,"Vischeria stellata small subunit ribosomal RNA gene, partial sequence",1,True
-464,7,7,0.14285714285714285,,"Nosema bombycis small subunit ribosomal RNA gene, complete sequence",1,True
-465,4,4,0.25,,"Liparocephalus litoralis small subunit ribosomal RNA gene, partial sequence",1,True
-466,6,6,0.16666666666666666,,"Protodinium simplex small subunit ribosomal RNA gene, partial sequence",1,True
-467,2,2,0.5,,"Durinskia agilis IFR10-452 small subunit ribosomal RNA gene, partial sequence",1,True
-468,4,4,0.25,,"Chlamydomonas mexicana SAG 11-60a small subunit ribosomal RNA gene, partial sequence",1,True
-469,2,2,0.5,,"Plethodon cinereus small subunit ribosomal RNA gene, partial sequence",1,True
-470,2,2,0.5,,"Southwellina hispida small subunit ribosomal RNA gene, partial sequence",1,True
-471,6,6,0.16666666666666666,,"Eimeria ahsata MEO2015 small subunit ribosomal RNA gene, partial sequence",1,True
-472,5,5,0.2,,"Metopus es small subunit ribosomal RNA gene, partial sequence",1,True
-473,2,2,0.5,,"Caenorhabditis wallacei JU1873 small subunit ribosomal RNA gene, partial sequence",1,True
-474,2,2,0.5,,"Gonapodya polymorpha small subunit ribosomal RNA gene, partial sequence",1,True
-475,2,2,0.5,,"Axinella flustra small subunit ribosomal RNA gene, partial sequence",1,True
-476,3,3,0.3333333333333333,,"Neobodo designis DH small subunit ribosomal RNA gene, partial sequence",1,True
-477,2,2,0.5,,"Licmophora grandis small subunit ribosomal RNA gene, partial sequence",1,True
-478,2,2,0.5,,"Kareius bicoloratus small subunit ribosomal RNA gene, partial sequence",1,True
-479,2,2,0.5,,"Protoperidinium punctulatum small subunit ribosomal RNA gene, partial sequence",1,True
-480,5,5,0.2,,"Saccharomycopsis fodiens CBS 8332 small subunit ribosomal RNA gene, partial sequence",1,True
-481,2,2,0.5,,"Holocnemus pluchei small subunit ribosomal RNA gene, partial sequence",1,True
-482,2,2,0.5,,"Salinamexus koreanus small subunit ribosomal RNA gene, partial sequence",1,True
-483,3,3,0.3333333333333333,,"Colpophyllia natans small subunit ribosomal RNA gene, partial sequence",1,True
-484,3,3,0.3333333333333333,,"Galloisiana yezoensis small subunit ribosomal RNA gene, partial sequence",1,True
-485,5,5,0.2,,"Spathidium papilliferum small subunit ribosomal RNA gene, partial sequence",1,True
-486,2,2,0.5,,"Ephelota gemmipara small subunit ribosomal RNA gene, partial sequence",1,True
-487,14,14,0.07142857142857142,,"Ripella tribonemae SK1 small subunit ribosomal RNA gene, partial sequence",1,True
-488,6,6,0.16666666666666666,,"Thylacorhynchus conglobatus small subunit ribosomal RNA gene, partial sequence",1,True
-489,2,2,0.5,,"Plakortis angulospiculatus small subunit ribosomal RNA gene, partial sequence",1,True
-490,2,2,0.5,,"Trochochilodon flavus small subunit ribosomal RNA gene, partial sequence",1,True
-491,4,4,0.25,,"Pseudostaurastrum enorme ACOI 2026 small subunit ribosomal RNA gene, partial sequence",1,True
-492,6,6,0.16666666666666666,,"Insulatricha hippai small subunit ribosomal RNA gene, partial sequence",1,True
-493,4,4,0.25,,"Enterobius vermicularis small subunit ribosomal RNA gene, partial sequence",1,True
-494,3,3,0.3333333333333333,,"Hydriastele pinangoides small subunit ribosomal RNA gene, partial sequence",1,True
-495,4,4,0.25,,"Trypanosoma culicavium small subunit ribosomal RNA gene, partial sequence",1,True
-496,2,2,0.5,,"Cyniclomyces guttulatus NRRL Y-17561 small subunit ribosomal RNA gene, partial sequence",1,True
-497,2,2,0.5,,"Javania insignis small subunit ribosomal RNA gene, partial sequence",1,True
-498,2,2,0.5,,"Cyclotella meneghiniana SAG 1020-1a small subunit ribosomal RNA gene, partial sequence",1,True
-499,4,4,0.25,,"Hartaetosiga balthica IOW94 small subunit ribosomal RNA gene, partial sequence",1,True
-500,2,2,0.5,,"Brachonella contorta small subunit ribosomal RNA gene, partial sequence",1,True
-501,3,3,0.3333333333333333,,"Tetracapsuloides bryosalmonae small subunit ribosomal RNA gene, partial sequence",1,True
-502,9,9,0.1111111111111111,,"Karlodinium veneficum small subunit ribosomal RNA gene, partial sequence",1,True
-503,2,2,0.5,,"Convolutriloba longifissura small subunit ribosomal RNA gene, partial sequence",1,True
-504,2,2,0.5,,"Sulfonecta uniserialis small subunit ribosomal RNA gene, partial sequence",1,True
-505,3,3,0.3333333333333333,,"Merluccius merluccius small subunit ribosomal RNA gene, partial sequence",1,True
-506,2,2,0.5,,"Dioscorea alata small subunit ribosomal RNA gene, partial sequence",1,True
-507,3,3,0.3333333333333333,,"Aspidytes niobe small subunit ribosomal RNA gene, partial sequence",1,True
-508,5,5,0.2,,"Babesia gibsoni small subunit ribosomal RNA gene, partial sequence",1,True
-509,2,2,0.5,,"Pseudohydnum gelatinosum small subunit ribosomal RNA gene, partial sequence",1,True
-510,4,4,0.25,,"Diphterophora obesa small subunit ribosomal RNA gene, partial sequence",1,True
-511,2,2,0.5,,"Ciliophrys infusionum YPF1207 small subunit ribosomal RNA gene, partial sequence",1,True
-512,2,2,0.5,,"Dugesia gonocephala small subunit ribosomal RNA gene, partial sequence",1,True
-513,2,2,0.5,,"Dorylaimus stagnalis small subunit ribosomal RNA gene, partial sequence",1,True
-514,3,3,0.3333333333333333,,"Melasis buprestoides small subunit ribosomal RNA gene, partial sequence",1,True
-515,7,7,0.14285714285714285,,"Tectocepheus minor small subunit ribosomal RNA gene, partial sequence",1,True
-516,2,2,0.5,,"Isotomurus palustris small subunit ribosomal RNA gene, partial sequence",1,True
-517,2,2,0.5,,"Lecania cyrtella small subunit ribosomal RNA gene, partial sequence",1,True
-518,2,2,0.5,,"Odontella aurita ECT3772-Odontella small subunit ribosomal RNA gene, partial sequence",1,True
-519,3,3,0.3333333333333333,,"Xestospongia muta small subunit ribosomal RNA gene, partial sequence",1,True
-520,2,2,0.5,,"Spirostomum minus SKS731 small subunit ribosomal RNA gene, partial sequence",1,True
-521,3,3,0.3333333333333333,,"Ctenoides scaber small subunit ribosomal RNA gene, partial sequence",1,True
-522,2,2,0.5,,"Conticribra weissflogii small subunit ribosomal RNA gene, partial sequence",1,True
-523,2,2,0.5,,"Actinoposthia haplovata small subunit ribosomal RNA gene, partial sequence",1,True
-524,2,2,0.5,,"Trechispora alnicola CBS577.83 small subunit ribosomal RNA gene, partial sequence",1,True
-525,2,2,0.5,,"Belonolaimus longicaudatus small subunit ribosomal RNA gene, partial sequence",1,True
-526,2,2,0.5,,"Althepus languensis small subunit ribosomal RNA gene, partial sequence",1,True
-527,4,4,0.25,,"Abolboda americana small subunit ribosomal RNA gene, partial sequence",1,True
-528,2,2,0.5,,"Pseudogaleomma japonica small subunit ribosomal RNA gene, partial sequence",1,True
-529,2,2,0.5,,"Plectosphaerella cucumerina NRRL 20430 small subunit ribosomal RNA gene, partial sequence",1,True
-530,2,2,0.5,,"Discocoris drakei small subunit ribosomal RNA gene, partial sequence",1,True
-531,2,2,0.5,,"Syllis hyalina small subunit ribosomal RNA gene, partial sequence",1,True
-532,2,2,0.5,,"Tergestia laticollis small subunit ribosomal RNA gene, partial sequence",1,True
-533,7,7,0.14285714285714285,,"Crusticorallina painei small subunit ribosomal RNA gene, partial sequence",1,True
-534,4,4,0.25,,"Serrasentis sagittifer small subunit ribosomal RNA gene, partial sequence",1,True
-535,8,8,0.125,,"Nicocles politus small subunit ribosomal RNA gene, partial sequence",1,True
-536,3,3,0.3333333333333333,,"Paedomecynostomum bruneum small subunit ribosomal RNA gene, partial sequence",1,True
-537,3,3,0.3333333333333333,,"Sarocladium zeae CBS 801.69 small subunit ribosomal RNA gene, partial sequence",1,True
-538,2,2,0.5,,"Steringophorus margolisi small subunit ribosomal RNA gene, partial sequence",1,True
-539,4,4,0.25,,"Endocincta punctata small subunit ribosomal RNA gene, partial sequence",1,True
-540,2,2,0.5,,"Thismia hillii small subunit ribosomal RNA gene, partial sequence",1,True
-541,2,2,0.5,,"Althepus duan small subunit ribosomal RNA gene, partial sequence",1,True
-542,4,4,0.25,,"Bystus ulkei small subunit ribosomal RNA gene, partial sequence",1,True
-543,2,2,0.5,,"Sellaphora laevissima small subunit ribosomal RNA gene, partial sequence",1,True
-544,2,2,0.5,,"Lissosabinea unispinosa small subunit ribosomal RNA gene, partial sequence",1,True
-545,5,5,0.2,,"Amphidiniopsis korewalensis small subunit ribosomal RNA gene, partial sequence",1,True
-546,2,2,0.5,,"Madanidinium loirii IFR12-257 small subunit ribosomal RNA gene, partial sequence",1,True
-547,2,2,0.5,,"Saccharomyces cerevisiae cp111 small subunit ribosomal RNA gene, partial sequence",1,True
-548,3,3,0.3333333333333333,,"Cypripedium calceolus small subunit ribosomal RNA gene, partial sequence",1,True
-549,3,3,0.3333333333333333,,"Mesochaetopterus sagittarius small subunit ribosomal RNA gene, partial sequence",1,True
-550,3,3,0.3333333333333333,,"Enypniastes eximia small subunit ribosomal RNA gene, partial sequence",1,True
-551,2,2,0.5,,"Parasonderia vestita small subunit ribosomal RNA gene, partial sequence",1,True
-552,2,2,0.5,,"Tychosporium acutostipes KE11AL small subunit ribosomal RNA gene, partial sequence",1,True
-553,2,2,0.5,,"Etoschophrya inornata small subunit ribosomal RNA gene, partial sequence",1,True
-554,4,4,0.25,,"Wickerhamiella galacta JCM 8257 small subunit ribosomal RNA gene, partial sequence",1,True
-555,2,2,0.5,,"Ephelota gigantea small subunit ribosomal RNA gene, partial sequence",1,True
-556,2,2,0.5,,"Damalis monochaetes small subunit ribosomal RNA gene, partial sequence",1,True
-557,2,2,0.5,,"Plumularia setacea small subunit ribosomal RNA gene, partial sequence",1,True
-558,2,2,0.5,,"Humidicutis marginata DUKE JM96/33 small subunit ribosomal RNA gene, partial sequence",1,True
-559,2,2,0.5,,"Impagidinium caspienense small subunit ribosomal RNA gene, partial sequence",1,True
-560,2,2,0.5,,"Parvicardium minimum small subunit ribosomal RNA gene, partial sequence",1,True
-561,2,2,0.5,,"Coelogynopora gynocotyla small subunit ribosomal RNA gene, partial sequence",1,True
-562,3,3,0.3333333333333333,,"Ophichthus rex small subunit ribosomal RNA gene, partial sequence",1,True
-563,2,2,0.5,,"Gregarina ormierei small subunit ribosomal RNA gene, partial sequence",1,True
-564,2,2,0.5,,"Loimia medusa small subunit ribosomal RNA gene, partial sequence",1,True
-565,5,5,0.2,,"Oscheius chongmingensis Tumian small subunit ribosomal RNA gene, partial sequence",1,True
-566,10,10,0.1,,"Brachylecithum lobatum small subunit ribosomal RNA gene, partial sequence",1,True
-567,7,7,0.14285714285714285,,"Uebelmesseromyces harderi JEL171 small subunit ribosomal RNA gene, partial sequence",1,True
-568,2,2,0.5,,"Oophila amblystomatis small subunit ribosomal RNA gene, partial sequence",1,True
-569,4,4,0.25,,"Gittella variabilis small subunit ribosomal RNA gene, complete sequence",1,True
-570,2,2,0.5,,"Eukoenenia florenciae small subunit ribosomal RNA gene, partial sequence",1,True
-571,2,2,0.5,,"Ptyalorhynchus coecus small subunit ribosomal RNA gene, partial sequence",1,True
-572,2,2,0.5,,"Zebrias crossolepis small subunit ribosomal RNA gene, partial sequence",1,True
-573,2,2,0.5,,"Golenkinia brevispicula Hegewald 1981-68 small subunit ribosomal RNA gene, partial sequence",1,True
-574,2,2,0.5,,"Parvilucifera corolla Lanzarote small subunit ribosomal RNA gene, partial sequence",1,True
-575,2,2,0.5,,"Protostelium mycophagum PRA-128 small subunit ribosomal RNA gene, partial sequence",1,True
-576,2,2,0.5,,"Echinocephalus overstreeti small subunit ribosomal RNA gene, partial sequence",1,True
-577,2,2,0.5,,"Characiopodium hindakii SAG 26.85 small subunit ribosomal RNA gene, partial sequence",1,True
-578,4,4,0.25,,"Paridris laeviceps small subunit ribosomal RNA gene, partial sequence",1,True
-579,2,2,0.5,,"Lycorma delicatula small subunit ribosomal RNA gene, partial sequence",1,True
-580,3,3,0.3333333333333333,,"Canetellia beauchampi small subunit ribosomal RNA gene, partial sequence",1,True
-581,2,2,0.5,,"Osyridicarpos schimperianus small subunit ribosomal RNA gene, partial sequence",1,True
-582,3,3,0.3333333333333333,,"Chloromyxum leydigi small subunit ribosomal RNA gene, partial sequence",1,True
-583,2,2,0.5,,"Protaphorura fimata small subunit ribosomal RNA gene, partial sequence",1,True
-584,3,3,0.3333333333333333,,"Nesticella hongheensis small subunit ribosomal RNA gene, partial sequence",1,True
-585,2,2,0.5,,"Crisia sigmoidea small subunit ribosomal RNA gene, partial sequence",1,True
-586,3,3,0.3333333333333333,,"Vorticellides astyliformis small subunit ribosomal RNA gene, partial sequence",1,True
-587,2,2,0.5,,"Potimirim mexicana small subunit ribosomal RNA gene, partial sequence",1,True
-588,16,16,0.0625,,"Pleuronichthys cornutus small subunit ribosomal RNA gene, partial sequence",1,True
-589,5,5,0.2,,"Pungentus silvestris small subunit ribosomal RNA gene, partial sequence",1,True
-590,2,2,0.5,,"Surirella striatula small subunit ribosomal RNA gene, partial sequence",1,True
-591,4,4,0.25,,"Sinophysis ebriola small subunit ribosomal RNA gene, partial sequence",1,True
-592,2,2,0.5,,"Chroodactylon ornatum SAG B 103.79 small subunit ribosomal RNA gene, partial sequence",1,True
-593,2,2,0.5,,"Mesodinium pulex small subunit ribosomal RNA gene, partial sequence",1,True
-594,5,5,0.2,,"Volvox tertius NIES-544 small subunit ribosomal RNA gene, partial sequence",1,True
-595,2,2,0.5,,"Lithophyllum riosmenae small subunit ribosomal RNA gene, partial sequence",1,True
-596,4,4,0.25,,"Geocharax gracilis small subunit ribosomal RNA gene, partial sequence",1,True
-597,3,3,0.3333333333333333,,"Crisia denticulata small subunit ribosomal RNA gene, partial sequence",1,True
-598,4,4,0.25,,"Althepus stonei small subunit ribosomal RNA gene, partial sequence",1,True
-599,2,2,0.5,,"Dacrymyces stillatus small subunit ribosomal RNA gene, partial sequence",1,True
-600,2,2,0.5,,"Stylobasium spathulatum small subunit ribosomal RNA gene, partial sequence",1,True
-601,2,2,0.5,,"Skeletonema ardens FDK002S small subunit ribosomal RNA gene, partial sequence",1,True
-602,4,4,0.25,,"Licmophora abbreviata small subunit ribosomal RNA gene, partial sequence",1,True
-603,4,4,0.25,,"Botryocladia iridescens small subunit ribosomal RNA gene, partial sequence",1,True
-604,2,2,0.5,,"Psammocythere oviformis small subunit ribosomal RNA gene, partial sequence",1,True
-605,4,4,0.25,,"Eunotogramma laevis s0382 small subunit ribosomal RNA gene, partial sequence",1,True
-606,2,2,0.5,,"Phacus caudatus M1127 small subunit ribosomal RNA gene, partial sequence",1,True
-607,2,2,0.5,,"Phacus caudatus Buan092609S small subunit ribosomal RNA gene, partial sequence",1,True
-608,2,2,0.5,,"Ascogregarina taiwanensis small subunit ribosomal RNA gene, partial sequence",1,True
-609,6,6,0.16666666666666666,,"Inonotus hispidus FPL 3597 small subunit ribosomal RNA gene, partial sequence",1,True
-610,4,4,0.25,,"Pilobolus sphaerosporus IUE 0007 small subunit ribosomal RNA gene, partial sequence",1,True
-611,2,2,0.5,,"Stephanoeca diplocostata small subunit ribosomal RNA gene, partial sequence",1,True
-612,3,3,0.3333333333333333,,"Palpimanus transvaalicus small subunit ribosomal RNA gene, partial sequence",1,True
-613,2,2,0.5,,"Euplotes euryhalinus B22 small subunit ribosomal RNA gene, partial sequence",1,True
-614,2,2,0.5,,"Bankia gouldi small subunit ribosomal RNA gene, partial sequence",1,True
-615,3,3,0.3333333333333333,,"Campylodiscus clypeus small subunit ribosomal RNA gene, partial sequence",1,True
-616,2,2,0.5,,"Novistrombidium apsheronicum small subunit ribosomal RNA gene, partial sequence",1,True
-617,2,2,0.5,,"Mesomyzostoma katoi small subunit ribosomal RNA gene, partial sequence",1,True
-618,2,2,0.5,,"Euastacus sulcatus small subunit ribosomal RNA gene, partial sequence",1,True
-619,14,14,0.07142857142857142,,"Ripella decalvata Negev 3-2c small subunit ribosomal RNA gene, partial sequence",1,True
-620,2,2,0.5,,"Tozeuma serratum small subunit ribosomal RNA gene, partial sequence",1,True
-621,2,2,0.5,,"Abollifer globosa DA172 small subunit ribosomal RNA gene, partial sequence",1,True
-622,2,2,0.5,,"Pseudodiaptomus euryhalinus small subunit ribosomal RNA gene, partial sequence",1,True
-623,3,3,0.3333333333333333,,"Lissorchis kritskyi small subunit ribosomal RNA gene, partial sequence",1,True
-624,4,4,0.25,,"Diadocidia valida small subunit ribosomal RNA gene, partial sequence",1,True
-625,2,2,0.5,,"Exorista larvarum small subunit ribosomal RNA gene, partial sequence",1,True
-626,2,2,0.5,,"Kryptonesticus eremita small subunit ribosomal RNA gene, partial sequence",1,True
-627,4,4,0.25,,"Russula exalbicans REG MB 95-111 small subunit ribosomal RNA gene, partial sequence",1,True
-628,4,4,0.25,,"Psiloderces suthepensis small subunit ribosomal RNA gene, partial sequence",1,True
-629,5,5,0.2,,"Raspailia ramosa small subunit ribosomal RNA gene, partial sequence",1,True
-630,7,7,0.14285714285714285,,"Latyspora scomberomori small subunit ribosomal RNA gene, partial sequence",1,True
-631,2,2,0.5,,"Mutela hargeri small subunit ribosomal RNA gene, partial sequence",1,True
-632,2,2,0.5,,"Oxynoe viridis small subunit ribosomal RNA gene, partial sequence",1,True
-633,3,3,0.3333333333333333,,"Heteromolpadia tridens small subunit ribosomal RNA gene, partial sequence",1,True
-634,2,2,0.5,,"Salacca zalacca small subunit ribosomal RNA gene, partial sequence",1,True
-635,2,2,0.5,,"Placorhynchus octaculeatus small subunit ribosomal RNA gene, partial sequence",1,True
-636,6,6,0.16666666666666666,,"Nesticella xixia small subunit ribosomal RNA gene, partial sequence",1,True
-637,2,2,0.5,,"Strongylostoma devleeschouweri small subunit ribosomal RNA gene, partial sequence",1,True
-638,2,2,0.5,,"Galbulimima belgraveana small subunit ribosomal RNA gene, partial sequence",1,True
-639,4,4,0.25,,"Fumontana deprehendor small subunit ribosomal RNA gene, partial sequence",1,True
-640,2,2,0.5,,"Kuraishia capsulata JCM 1997 small subunit ribosomal RNA gene, partial sequence",1,True
-641,2,2,0.5,,"Storena cyanea small subunit ribosomal RNA gene, partial sequence",1,True
-642,2,2,0.5,,"Saccharomycopsis selenospora NRRL Y-1357 small subunit ribosomal RNA gene, partial sequence",1,True
-643,2,2,0.5,,"Achromadora ruricola AchrRur small subunit ribosomal RNA gene, partial sequence",1,True
-644,2,2,0.5,,"Prymnesium palpebrale UIO 133 small subunit ribosomal RNA gene, partial sequence",1,True
-645,2,2,0.5,,"Metopus setosus small subunit ribosomal RNA gene, partial sequence",1,True
-646,5,5,0.2,,"Caligus elongatus small subunit ribosomal RNA gene, complete sequence",1,True
-647,2,2,0.5,,"Falcicyclidium atractodes small subunit ribosomal RNA gene, partial sequence",1,True
-648,2,2,0.5,,"Trochicola entericus small subunit ribosomal RNA gene, partial sequence",1,True
-649,3,3,0.3333333333333333,,"Paraplea frontalis small subunit ribosomal RNA gene, partial sequence",1,True
-650,2,2,0.5,,"Tectocepheus velatus small subunit ribosomal RNA gene, partial sequence",1,True
-651,4,4,0.25,,"Althepus lakmueangensis small subunit ribosomal RNA gene, partial sequence",1,True
-652,2,2,0.5,,"Paratritirachium cylindroconium CBS 838.71 small subunit ribosomal RNA gene, partial sequence",1,True
-653,3,3,0.3333333333333333,,"Nosema granulosis small subunit ribosomal RNA gene, partial sequence",1,True
-654,2,2,0.5,,"Macrobiotus hufelandi small subunit ribosomal RNA gene, partial sequence",1,True
-655,5,5,0.2,,"Plesionika hsuehyui small subunit ribosomal RNA gene, partial sequence",1,True
-656,2,2,0.5,,"Haplosporidium patagon small subunit ribosomal RNA gene, partial sequence",1,True
-657,2,2,0.5,,"Proteonematalycus wagneri small subunit ribosomal RNA gene, partial sequence",1,True
-658,3,3,0.3333333333333333,,"Mesognatharia remanei small subunit ribosomal RNA gene, partial sequence",1,True
-659,2,2,0.5,,"Heterosaccus dollfusi small subunit ribosomal RNA gene, partial sequence",1,True
-660,6,6,0.16666666666666666,,"Crucella scotiae small subunit ribosomal RNA gene, partial sequence",1,True
-661,3,3,0.3333333333333333,,"Pseudotachidius bipartitus small subunit ribosomal RNA gene, partial sequence",1,True
-662,5,5,0.2,,"Spiniferites ramosus small subunit ribosomal RNA gene, partial sequence",1,True
-663,2,2,0.5,,"Brignolia parumpunctata small subunit ribosomal RNA gene, partial sequence",1,True
-664,2,2,0.5,,"Eurytemora affinis small subunit ribosomal RNA gene, partial sequence",1,True
-665,2,2,0.5,,"Phacus viridioryza Sondang060709L small subunit ribosomal RNA gene, partial sequence",1,True
-666,2,2,0.5,,"Kudoa whippsi small subunit ribosomal RNA gene, partial sequence",1,True
-667,2,2,0.5,,"Salpingoeca macrocollata ATCC 50938 small subunit ribosomal RNA gene, partial sequence",1,True
-668,5,5,0.2,,"Philactinoposthia saliens small subunit ribosomal RNA gene, partial sequence",1,True
-669,4,4,0.25,,"Gracilariopsis lemaneiformis small subunit ribosomal RNA gene, partial sequence",1,True
-670,2,2,0.5,,"Cyrtopogon rattus small subunit ribosomal RNA gene, partial sequence",1,True
-671,3,3,0.3333333333333333,,"Chlorobotrys regularis ACOI 307 small subunit ribosomal RNA gene, partial sequence",1,True
-672,3,3,0.3333333333333333,,"Blastomussa omanensis small subunit ribosomal RNA gene, partial sequence",1,True
-673,3,3,0.3333333333333333,,"Phytomyza ilicicola small subunit ribosomal RNA gene, partial sequence",1,True
-674,2,2,0.5,,"Tetratrichomonas gallinarum KATASAMEC small subunit ribosomal RNA gene, partial sequence",1,True
-675,2,2,0.5,,"Aenigmaticum californicum small subunit ribosomal RNA gene, partial sequence",1,True
-676,2,2,0.5,,"Tolypella porteri X-907 small subunit ribosomal RNA gene, partial sequence",1,True
-677,2,2,0.5,,"Idmidronea atlantica small subunit ribosomal RNA gene, partial sequence",1,True
-678,2,2,0.5,,"Xenasma rimicola FP-133272-sp small subunit ribosomal RNA gene, partial sequence",1,True
-679,2,2,0.5,,"Phylo foetida small subunit ribosomal RNA gene, partial sequence",1,True
-680,2,2,0.5,,"Rangelia vitalii small subunit ribosomal RNA gene, partial sequence",1,True
-681,2,2,0.5,,"Surirella angusta small subunit ribosomal RNA gene, partial sequence",1,True
-682,4,4,0.25,,"Apostichopus japonicus small subunit ribosomal RNA gene, partial sequence",1,True
-683,4,4,0.25,,"Mesenchytraeus nivalis small subunit ribosomal RNA gene, partial sequence",1,True
-684,2,2,0.5,,"Holothuria impatiens small subunit ribosomal RNA gene, partial sequence",1,True
-685,3,3,0.3333333333333333,,"Helgicirrha cari small subunit ribosomal RNA gene, partial sequence",1,True
-686,2,2,0.5,,"Peziza gerardii small subunit ribosomal RNA gene, partial sequence",1,True
-687,3,3,0.3333333333333333,,"Myzostoma josefinae small subunit ribosomal RNA gene, partial sequence",1,True
-688,3,3,0.3333333333333333,,"Helminthosporium genistae L128 small subunit ribosomal RNA gene, partial sequence",1,True
-689,2,2,0.5,,"Nephroselmis anterostigmatica Saeki-S small subunit ribosomal RNA gene, partial sequence",1,True
-690,2,2,0.5,,"Cololejeunea biddlecomiae small subunit ribosomal RNA gene, partial sequence",1,True
-691,3,3,0.3333333333333333,,"Nesticella phami small subunit ribosomal RNA gene, partial sequence",1,True
-692,2,2,0.5,,"Sugiyamaella castrensis JCM 9585 small subunit ribosomal RNA gene, partial sequence",1,True
-693,2,2,0.5,,"Catenophlyctis variabilis JEL298 (J.E. Longcore) small subunit ribosomal RNA gene, partial sequence",1,True
-694,3,3,0.3333333333333333,,"Rhizophagus clarus small subunit ribosomal RNA gene, partial sequence",1,True
-695,7,7,0.14285714285714285,,"Sinophysis microcephala small subunit ribosomal RNA gene, partial sequence",1,True
-696,3,3,0.3333333333333333,,"Enchelys gasterosteus small subunit ribosomal RNA gene, partial sequence",1,True
-697,7,7,0.14285714285714285,,"Pasiphaea sirenkoi small subunit ribosomal RNA gene, partial sequence",1,True
-698,4,4,0.25,,"Radopholus similis small subunit ribosomal RNA gene, partial sequence",1,True
-699,2,2,0.5,,"Idgia flavirostris small subunit ribosomal RNA gene, partial sequence",1,True
-700,2,2,0.5,,"Clausocalanus furcatus small subunit ribosomal RNA gene, partial sequence",1,True
-701,3,3,0.3333333333333333,,"Neomormonilla minor small subunit ribosomal RNA gene, partial sequence",1,True
-702,5,5,0.2,,"Vombisidris bilongrudi small subunit ribosomal RNA gene, partial sequence",1,True
-703,2,2,0.5,,"Mesobdella gemmata small subunit ribosomal RNA gene, partial sequence",1,True
-704,2,2,0.5,,"Atolla wyvillei small subunit ribosomal RNA gene, partial sequence",1,True
-705,7,7,0.14285714285714285,,"Caenorhabditis plicata SB355 small subunit ribosomal RNA gene, partial sequence",1,True
-706,4,4,0.25,,"Isolda pulchella small subunit ribosomal RNA gene, partial sequence",1,True
-707,7,7,0.14285714285714285,,"Nanidorus nanus small subunit ribosomal RNA gene, partial sequence",1,True
-708,4,4,0.25,,"Emphysomera pallidapex small subunit ribosomal RNA gene, partial sequence",1,True
-709,5,5,0.2,,"Saitoella complicata IAM 12963; OSC100046 small subunit ribosomal RNA gene, partial sequence",1,True
-710,2,2,0.5,,"Pandalus montagui small subunit ribosomal RNA gene, partial sequence",1,True
-711,4,4,0.25,,"Gloeomonas rubrifilum SAG 3.85 small subunit ribosomal RNA gene, partial sequence",1,True
-712,2,2,0.5,,"Halodaphnea panulirata NJM 9832 small subunit ribosomal RNA gene, partial sequence",1,True
-713,2,2,0.5,,"Branchiosyllis exilis small subunit ribosomal RNA gene, partial sequence",1,True
-714,2,2,0.5,,"Kudoa islandica small subunit ribosomal RNA gene, partial sequence",1,True
-715,5,5,0.2,,"Carcharodorhynchus flavidus small subunit ribosomal RNA gene, partial sequence",1,True
-716,4,4,0.25,,"Dintheria tenuissima small subunit ribosomal RNA gene, partial sequence",1,True
-717,2,2,0.5,,"Brania pusilla small subunit ribosomal RNA gene, partial sequence",1,True
-718,11,11,0.09090909090909091,,"Zoothamnium niveum small subunit ribosomal RNA gene, partial sequence",1,True
-719,5,5,0.2,,"Bacidia rosella small subunit ribosomal RNA gene, partial sequence",1,True
-720,2,2,0.5,,"Gliophorus laetus PBM2280 small subunit ribosomal RNA gene, complete sequence",1,True
-721,4,4,0.25,,"Minutocellus polymorphus CCMP497 small subunit ribosomal RNA gene, partial sequence",1,True
-722,2,2,0.5,,"Saccharomycopsis schoenii NRRL Y-17595 small subunit ribosomal RNA gene, partial sequence",1,True
-723,2,2,0.5,,"Peridinium sociale small subunit ribosomal RNA gene, partial sequence",1,True
-724,2,2,0.5,,"Exopassalora zambiae CPC 1228 small subunit ribosomal RNA gene, partial sequence",1,True
-725,2,2,0.5,,"Mysmena leichhardti small subunit ribosomal RNA gene, partial sequence",1,True
-726,2,2,0.5,,"Aphelocheirus ellipsoideus small subunit ribosomal RNA gene, partial sequence",1,True
-727,3,3,0.3333333333333333,,"Phacus viridioryza Mulryang090509G small subunit ribosomal RNA gene, partial sequence",1,True
-728,2,2,0.5,,"Impagidinium pallidum small subunit ribosomal RNA gene, partial sequence",1,True
-729,2,2,0.5,,"Scutellospora striata small subunit ribosomal RNA gene, partial sequence",1,True
-730,7,7,0.14285714285714285,,"Symbiodinium microadriaticum small subunit ribosomal RNA gene, partial sequence",1,True
-731,4,4,0.25,,"Acaulospora lacunosa BEG78 small subunit ribosomal RNA gene, partial sequence",1,True
-732,3,3,0.3333333333333333,,"Galaxea astreata small subunit ribosomal RNA gene, partial sequence",1,True
-733,3,3,0.3333333333333333,,"Cumathamnion serrulatum small subunit ribosomal RNA gene, partial sequence",1,True
-734,2,2,0.5,,"Eucephalobus striatus small subunit ribosomal RNA gene, partial sequence",1,True
-735,4,4,0.25,,"Progyrator mamertinus small subunit ribosomal RNA gene, partial sequence",1,True
-736,2,2,0.5,,"Pichia terricola NRRL YB-4310 small subunit ribosomal RNA gene, partial sequence",1,True
-737,4,4,0.25,,"Myzobdella lugubris small subunit ribosomal RNA gene, partial sequence",1,True
-738,6,6,0.16666666666666666,,"Anaplecta asema small subunit ribosomal RNA gene, partial sequence",1,True
-739,2,2,0.5,,"Heterosaccus lunatus small subunit ribosomal RNA gene, partial sequence",1,True
-740,2,2,0.5,,"Polykrikos lebourae small subunit ribosomal RNA gene, partial sequence",1,True
-741,2,2,0.5,,"Axiopsis serratifrons small subunit ribosomal RNA gene, partial sequence",1,True
-742,2,2,0.5,,"Oulenziella bakeri small subunit ribosomal RNA gene, partial sequence",1,True
-743,8,8,0.125,,"Babesia ovis OB1 small subunit ribosomal RNA gene, partial sequence",1,True
-744,3,3,0.3333333333333333,,"Sinophysis grandis small subunit ribosomal RNA gene, partial sequence",1,True
-745,2,2,0.5,,"Novistrombidium testaceum S1 small subunit ribosomal RNA gene, partial sequence",1,True
-746,2,2,0.5,,"Conocephalum conicum small subunit ribosomal RNA gene, partial sequence",1,True
-747,2,2,0.5,,"Fonticula alba ATCC 38817 small subunit ribosomal RNA gene, partial sequence",1,True
-748,3,3,0.3333333333333333,,"Minibiotus gumersindoi small subunit ribosomal RNA gene, partial sequence",1,True
-749,2,2,0.5,,"Acartia longiremis small subunit ribosomal RNA gene, partial sequence",1,True
-750,6,6,0.16666666666666666,,"Stenopterobia curvula L541 small subunit ribosomal RNA gene, partial sequence",1,True
-751,6,6,0.16666666666666666,,"Helicotheca tamesis small subunit ribosomal RNA gene, partial sequence",1,True
-752,2,2,0.5,,"Vitreochlamys aulata SAG 69.72 small subunit ribosomal RNA gene, partial sequence",1,True
-753,2,2,0.5,,"Mallomonas insignis Josanji041710D small subunit ribosomal RNA gene, partial sequence",1,True
-754,2,2,0.5,,"Galeola lindleyana small subunit ribosomal RNA gene, partial sequence",1,True
-755,2,2,0.5,,"Filisoma rizalinum Adb_79 small subunit ribosomal RNA gene, partial sequence",1,True
-756,3,3,0.3333333333333333,,"Sphindus dubius small subunit ribosomal RNA gene, partial sequence",1,True
-757,2,2,0.5,,"Unguizetes incertus small subunit ribosomal RNA gene, complete sequence",1,True
-758,3,3,0.3333333333333333,,"Paracanthonchus caecus small subunit ribosomal RNA gene, partial sequence",1,True
-759,2,2,0.5,,"Gambierdiscus scabrosus U1G small subunit ribosomal RNA gene, partial sequence",1,True
-760,2,2,0.5,,"Syllis alternata small subunit ribosomal RNA gene, partial sequence",1,True
-761,2,2,0.5,,"Surirella striatula small subunit ribosomal RNA gene, partial sequence",1,True
-762,2,2,0.5,,"Scolelepis squamata small subunit ribosomal RNA gene, partial sequence",1,True
-763,2,2,0.5,,"Horreolanus orphanus small subunit ribosomal RNA gene, partial sequence",1,True
-764,2,2,0.5,,"Phacellophora camtschatica small subunit ribosomal RNA gene, partial sequence",1,True
-765,3,3,0.3333333333333333,,"Eunice vittata small subunit ribosomal RNA gene, partial sequence",1,True
-766,2,2,0.5,,"Glaciozyma antarctica USM PI12 small subunit ribosomal RNA gene, partial sequence",1,True
-767,2,2,0.5,,"Sterreria rubra small subunit ribosomal RNA gene, partial sequence",1,True
-768,3,3,0.3333333333333333,,"Prorocentrum glenanicum small subunit ribosomal RNA gene, partial sequence",1,True
-769,2,2,0.5,,"Kudoa thyrsites small subunit ribosomal RNA gene, partial sequence",1,True
-770,4,4,0.25,,"Haementeria lutzi small subunit ribosomal RNA gene, partial sequence",1,True
-771,2,2,0.5,,"Paranebalia longipes small subunit ribosomal RNA gene, partial sequence",1,True
-772,2,2,0.5,,"Antarctonemertes valida small subunit ribosomal RNA gene, partial sequence",1,True
-773,2,2,0.5,,"Gyptis hians small subunit ribosomal RNA gene, partial sequence",1,True
-774,2,2,0.5,,"Coleochlamys oleifera SAG 6.90 small subunit ribosomal RNA gene, partial sequence",1,True
-775,2,2,0.5,,"Milnesium tardigradum small subunit ribosomal RNA gene, partial sequence",1,True
-776,4,4,0.25,,"Salda littoralis small subunit ribosomal RNA gene, partial sequence",1,True
-777,4,4,0.25,,"Tetrameres fissipina small subunit ribosomal RNA gene, partial sequence",1,True
-778,2,2,0.5,,"Magnolia tripetala small subunit ribosomal RNA gene, partial sequence",1,True
-779,3,3,0.3333333333333333,,"Galgupha australis small subunit ribosomal RNA gene, partial sequence",1,True
-780,4,4,0.25,,"Tremella huuskonenii small subunit ribosomal RNA gene, partial sequence",1,True
-781,10,10,0.1,,"Amphisiella sinica small subunit ribosomal RNA gene, partial sequence",1,True
-782,3,3,0.3333333333333333,,"Pararhagadochir flavicollis small subunit ribosomal RNA gene, partial sequence",1,True
-783,3,3,0.3333333333333333,,"Salpingoeca punica ATCC 50788 small subunit ribosomal RNA gene, partial sequence",1,True
-784,3,3,0.3333333333333333,,"Olindias phosphorica small subunit ribosomal RNA gene, partial sequence",1,True
-785,2,2,0.5,,"Volvatella viridis small subunit ribosomal RNA gene, partial sequence",1,True
-786,2,2,0.5,,"Sarcocystis tenella small subunit ribosomal RNA gene, partial sequence",1,True
-787,3,3,0.3333333333333333,,"Echinoderes komatsui HY 2014a small subunit ribosomal RNA gene, partial sequence",1,True
-788,2,2,0.5,,"Phyxelida bifoveata small subunit ribosomal RNA gene, partial sequence",1,True
-789,2,2,0.5,,"Prymnesium pienaarii Xmm1S4 small subunit ribosomal RNA gene, partial sequence",1,True
-790,3,3,0.3333333333333333,,"Chtonobdella tanae small subunit ribosomal RNA gene, partial sequence",1,True
-791,2,2,0.5,,"Kudoa crumena small subunit ribosomal RNA gene, partial sequence",1,True
-792,5,5,0.2,,"Metopus minor small subunit ribosomal RNA gene, partial sequence",1,True
-793,3,3,0.3333333333333333,,"Mecomerinx heterocentroti small subunit ribosomal RNA gene, partial sequence",1,True
-794,3,3,0.3333333333333333,,"Micromonas pusilla RCC 434 small subunit ribosomal RNA gene, partial sequence",1,True
-795,7,7,0.14285714285714285,,"Nosema bombycis SC 3 small subunit ribosomal RNA gene, complete sequence",1,True
-796,4,4,0.25,,"Calcigorgia beringi small subunit ribosomal RNA gene, partial sequence",1,True
-797,2,2,0.5,,"Filenchus aquilonius FileAqu2 small subunit ribosomal RNA gene, partial sequence",1,True
-798,3,3,0.3333333333333333,,"Drepanogigas albolineatus small subunit ribosomal RNA gene, partial sequence",1,True
-799,5,5,0.2,,"Didymocystis inermis SAG 23.95 small subunit ribosomal RNA gene, partial sequence",1,True
-800,4,4,0.25,,"Solmundella bitentaculata small subunit ribosomal RNA gene, partial sequence",1,True
-801,2,2,0.5,,"Zearchaea fiordensis small subunit ribosomal RNA gene, partial sequence",1,True
-802,4,4,0.25,,"Kappamyces laurelensis small subunit ribosomal RNA gene, partial sequence",1,True
-803,5,5,0.2,,"Octospora hygrohypnophila small subunit ribosomal RNA gene, partial sequence",1,True
-804,2,2,0.5,,"Spiophanes bombyx small subunit ribosomal RNA gene, partial sequence",1,True
-805,2,2,0.5,,"Saron marmoratus small subunit ribosomal RNA gene, partial sequence",1,True
-806,2,2,0.5,,"Chloropicon sieburthii RCC297 small subunit ribosomal RNA gene, partial sequence",1,True
-807,3,3,0.3333333333333333,,"Calliotropis pagodiformis small subunit ribosomal RNA gene, partial sequence",1,True
-808,4,4,0.25,,"Chara foliolosa X-883 small subunit ribosomal RNA gene, partial sequence",1,True
-809,3,3,0.3333333333333333,,"Craspedacusta sowerbii small subunit ribosomal RNA gene, partial sequence",1,True
-810,2,2,0.5,,"Thonus minutus small subunit ribosomal RNA gene, partial sequence",1,True
-811,2,2,0.5,,"Colpophyllia natans small subunit ribosomal RNA gene, partial sequence",1,True
-812,3,3,0.3333333333333333,,"Petrochirus diogenes small subunit ribosomal RNA gene, partial sequence",1,True
-813,3,3,0.3333333333333333,,"Cyclotella choctawhatcheeana small subunit ribosomal RNA gene, partial sequence",1,True
-814,2,2,0.5,,"Meterythrops robusta small subunit ribosomal RNA gene, partial sequence",1,True
-815,3,3,0.3333333333333333,,"Gymnodinium dorsalisulcum KDAAD small subunit ribosomal RNA gene, partial sequence",1,True
-816,2,2,0.5,,"Tetratrichomonas gallinarum 1-11-M2 small subunit ribosomal RNA gene, partial sequence",1,True
-817,2,2,0.5,,"Saccharomycopsis lassenensis NRRL YB-3657 small subunit ribosomal RNA gene, partial sequence",1,True
-818,7,7,0.14285714285714285,,"Gomphonema subclavatum var. commutatum FD98 small subunit ribosomal RNA gene, partial sequence",1,True
-819,7,7,0.14285714285714285,,"Poseidonemertes maslakovae small subunit ribosomal RNA gene, partial sequence",1,True
-820,4,4,0.25,,"Eimeria meleagrimitis small subunit ribosomal RNA gene, partial sequence",1,True
-821,3,3,0.3333333333333333,,"Picocystis salinarum SSFB small subunit ribosomal RNA gene, partial sequence",1,True
-822,6,6,0.16666666666666666,,"Pteroclava krempfi small subunit ribosomal RNA gene, partial sequence",1,True
-823,2,2,0.5,,"Lulwoidea lignoarenaria ATCC 64644 small subunit ribosomal RNA gene, partial sequence",1,True
-824,3,3,0.3333333333333333,,"Uncinorhynchus flavidus small subunit ribosomal RNA gene, partial sequence",1,True
-825,2,2,0.5,,"Babesia duncani small subunit ribosomal RNA gene, complete sequence",1,True
-826,2,2,0.5,,"Macrobrachium aemulum small subunit ribosomal RNA gene, partial sequence",1,True
-827,2,2,0.5,,"Cylindrocapsa geminella GR-32 small subunit ribosomal RNA gene, partial sequence",1,True
-828,2,2,0.5,,"Pseudobensingtonia musae JCM 8801 small subunit ribosomal RNA gene, partial sequence",1,True
-829,3,3,0.3333333333333333,,"Chlorokybus atmophyticus SAG 34.48 small subunit ribosomal RNA gene, partial sequence",1,True
-830,4,4,0.25,,"Baculofractum insigne small subunit ribosomal RNA gene, partial sequence",1,True
-831,3,3,0.3333333333333333,,"Scolia verticalis small subunit ribosomal RNA gene, partial sequence",1,True
-832,3,3,0.3333333333333333,,"Scopalina lophyropoda small subunit ribosomal RNA gene, partial sequence",1,True
-833,2,2,0.5,,"Cyphoderia ampulla small subunit ribosomal RNA gene, partial sequence",1,True
-834,2,2,0.5,,"Isospora serinuse small subunit ribosomal RNA gene, partial sequence",1,True
-835,5,5,0.2,,"Americobdella valdiviana small subunit ribosomal RNA gene, partial sequence",1,True
-836,3,3,0.3333333333333333,,"Ichthyodinium chabelardi small subunit ribosomal RNA gene, partial sequence",1,True
-837,4,4,0.25,,"Sarcocystis aucheniae small subunit ribosomal RNA gene, partial sequence",1,True
-838,2,2,0.5,,"Laxus oneistus small subunit ribosomal RNA gene, partial sequence",1,True
-839,2,2,0.5,,"Vidole capensis small subunit ribosomal RNA gene, partial sequence",1,True
-840,5,5,0.2,,"Earleria quadrata small subunit ribosomal RNA gene, partial sequence",1,True
-841,2,2,0.5,,"Radiococcus polycoccus SAG 217-1c small subunit ribosomal RNA gene, partial sequence",1,True
-842,2,2,0.5,,"Antholoba achates small subunit ribosomal RNA gene, partial sequence",1,True
-843,2,2,0.5,,"Anotylus hamatus small subunit ribosomal RNA gene, partial sequence",1,True
-844,5,5,0.2,,"Salpingoeca urceolata small subunit ribosomal RNA gene, partial sequence",1,True
-845,6,6,0.16666666666666666,,"Vorticella convallaria small subunit ribosomal RNA gene, partial sequence",1,True
-846,2,2,0.5,,"Gymnodinium microreticulatum small subunit ribosomal RNA gene, partial sequence",1,True
-847,2,2,0.5,,"Cephalothrix filiformis small subunit ribosomal RNA gene, partial sequence",1,True
-848,2,2,0.5,,"Helvella columnaris small subunit ribosomal RNA gene, partial sequence",1,True
-849,4,4,0.25,,"Cephaleuros virescens small subunit ribosomal RNA gene, partial sequence",1,True
-850,2,2,0.5,,"Hydraena riparia small subunit ribosomal RNA gene, partial sequence",1,True
-851,4,4,0.25,,"Loxanthera speciosa small subunit ribosomal RNA gene, partial sequence",1,True
-852,2,2,0.5,,"Chaunochiton kappleri small subunit ribosomal RNA gene, partial sequence",1,True
-853,2,2,0.5,,"Psammodrilus fauveli small subunit ribosomal RNA gene, partial sequence",1,True
-854,2,2,0.5,,"Chlorella sorokiniana LB75 small subunit ribosomal RNA gene, partial sequence",1,True
-855,2,2,0.5,,"Clavicaudoides trophurus small subunit ribosomal RNA gene, partial sequence",1,True
-856,2,2,0.5,,"Apostasia stylidioides small subunit ribosomal RNA gene, partial sequence",1,True
-857,2,2,0.5,,"Antrodiaetus unicolor small subunit ribosomal RNA gene, partial sequence",1,True
-858,4,4,0.25,,"Nesticella falcata small subunit ribosomal RNA gene, partial sequence",1,True
-859,2,2,0.5,,"Microvelia douglasi small subunit ribosomal RNA gene, partial sequence",1,True
-860,3,3,0.3333333333333333,,"Biddulphia alternans small subunit ribosomal RNA gene, partial sequence",1,True
-861,4,4,0.25,,"Opercularella lacerata small subunit ribosomal RNA gene, partial sequence",1,True
-862,2,2,0.5,,"Chlamydomonas chlamydogama UTEX 103 small subunit ribosomal RNA gene, partial sequence",1,True
-863,4,4,0.25,,"Lichina pygmaea small subunit ribosomal RNA gene, partial sequence",1,True
-864,5,5,0.2,,"Cymatopleura elliptica L1333 small subunit ribosomal RNA gene, partial sequence",1,True
-865,3,3,0.3333333333333333,,"Cyphoderia littoralis small subunit ribosomal RNA gene, partial sequence",1,True
-866,2,2,0.5,,"Paracentrophyes anurus small subunit ribosomal RNA gene, partial sequence",1,True
-867,2,2,0.5,,"Metanophrys sinensis small subunit ribosomal RNA gene, partial sequence",1,True
-868,2,2,0.5,,"Aulacoseira granulata UTEX FD301 small subunit ribosomal RNA gene, partial sequence",1,True
-869,4,4,0.25,,"Frontonia mengi small subunit ribosomal RNA gene, partial sequence",1,True
-870,6,6,0.16666666666666666,,"Opisthocystis goettei small subunit ribosomal RNA gene, partial sequence",1,True
-871,4,4,0.25,,"Nucula atacellana small subunit ribosomal RNA gene, partial sequence",1,True
-872,2,2,0.5,,"Pseudopleurococcus printzii SAG 467-1 small subunit ribosomal RNA gene, partial sequence",1,True
-873,6,6,0.16666666666666666,,"Mangua gunni small subunit ribosomal RNA gene, partial sequence",1,True
-874,4,4,0.25,,"Eubrianax edwardsii small subunit ribosomal RNA gene, partial sequence",1,True
-875,2,2,0.5,,"Mayamaea atomus small subunit ribosomal RNA gene, partial sequence",1,True
-876,2,2,0.5,,"Inocybe mutata small subunit ribosomal RNA gene, complete sequence",1,True
-877,3,3,0.3333333333333333,,"Sinophysis grandis small subunit ribosomal RNA gene, partial sequence",1,True
-878,6,6,0.16666666666666666,,"Spirocerca lupi small subunit ribosomal RNA gene, partial sequence",1,True
-879,2,2,0.5,,"Sciurothamnion stegengae small subunit ribosomal RNA gene, partial sequence",1,True
-880,2,2,0.5,,"Pyropia onoi small subunit ribosomal RNA gene, partial sequence",1,True
-881,3,3,0.3333333333333333,,"Haematoloechus longiplexus small subunit ribosomal RNA gene, partial sequence",1,True
-882,2,2,0.5,,"Helicotheca tamesis small subunit ribosomal RNA gene, partial sequence",1,True
-883,4,4,0.25,,"Saccocirrus pussicus small subunit ribosomal RNA gene, partial sequence",1,True
-884,2,2,0.5,,"Goniochloris smithii ACOI 1859 small subunit ribosomal RNA gene, partial sequence",1,True
-885,5,5,0.2,,"Longidorus hangzhouensis small subunit ribosomal RNA gene, partial sequence",1,True
-886,3,3,0.3333333333333333,,"Crotonia reticulata small subunit ribosomal RNA gene, complete sequence",1,True
-887,2,2,0.5,,"Graphium penicillioides JCM9300 (CBS320.72) small subunit ribosomal RNA gene, partial sequence",1,True
-888,3,3,0.3333333333333333,,"Gaertneriomyces semiglobifer BK91-10 small subunit ribosomal RNA gene, partial sequence",1,True
-889,2,2,0.5,,"Aglaophamus elamellata small subunit ribosomal RNA gene, partial sequence",1,True
-890,3,3,0.3333333333333333,,"Metarhombognathus armatus small subunit ribosomal RNA gene, partial sequence",1,True
-891,5,5,0.2,,"Nocticola babindaensis small subunit ribosomal RNA gene, partial sequence",1,True
-892,5,5,0.2,,"Pratylenchus araucensis small subunit ribosomal RNA gene, partial sequence",1,True
-893,2,2,0.5,,"Nesticella kaohsiungensis small subunit ribosomal RNA gene, partial sequence",1,True
-894,2,2,0.5,,"Nesticella yui small subunit ribosomal RNA gene, partial sequence",1,True
-895,2,2,0.5,,"Discocephalus pararotatorius small subunit ribosomal RNA gene, partial sequence",1,True
-896,3,3,0.3333333333333333,,"Peridinium palatinum small subunit ribosomal RNA gene, partial sequence",1,True
-897,4,4,0.25,,"Surirella minuta UTEX FD320 small subunit ribosomal RNA gene, partial sequence",1,True
-898,3,3,0.3333333333333333,,"Galeidinium rugatum small subunit ribosomal RNA gene, partial sequence",1,True
-899,4,4,0.25,,"Ripella platypodia CCAP 1589/2 small subunit ribosomal RNA gene, partial sequence",1,True
-900,3,3,0.3333333333333333,,"Centropages furcatus small subunit ribosomal RNA gene, partial sequence",1,True
-901,2,2,0.5,,"Ditylum brightwellii CCMP358 small subunit ribosomal RNA gene, partial sequence",1,True
-902,3,3,0.3333333333333333,,"Rhigonema thysanophora small subunit ribosomal RNA gene, partial sequence",1,True
-903,6,6,0.16666666666666666,,"Spathiphyllum wallisii small subunit ribosomal RNA gene, partial sequence",1,True
-904,7,7,0.14285714285714285,,"Exophiala alcalophila CBS 520.82 small subunit ribosomal RNA gene, partial sequence",1,True
-905,2,2,0.5,,"Proterospongia choanojuncta ATCC 50455 small subunit ribosomal RNA gene, partial sequence",1,True
-906,10,10,0.1,,"Monosporus pedicellatus CH014 small subunit ribosomal RNA gene, partial sequence",1,True
-907,2,2,0.5,,"Lepidodermella squamata small subunit ribosomal RNA gene, partial sequence",1,True
-908,6,6,0.16666666666666666,,"Nematocarcinus crosnieri small subunit ribosomal RNA gene, partial sequence",1,True
-909,2,2,0.5,,"Bangiopsis subsimplex PR21 small subunit ribosomal RNA gene, partial sequence",1,True
-910,2,2,0.5,,"Ceuthophilus utahensis small subunit ribosomal RNA gene, partial sequence",1,True
-911,2,2,0.5,,"Nakazawaea holstii NRRL Y-2155 small subunit ribosomal RNA gene, partial sequence",1,True
-912,7,7,0.14285714285714285,,"Pseudokeronopsis erythrina CP1 small subunit ribosomal RNA gene, partial sequence",1,True
-913,3,3,0.3333333333333333,,"Rimostrombidium veniliae small subunit ribosomal RNA gene, partial sequence",1,True
-914,9,9,0.1111111111111111,,"Prorhynchus alpinus small subunit ribosomal RNA gene, partial sequence",1,True
-915,3,3,0.3333333333333333,,"Euchaeta concinna small subunit ribosomal RNA gene, partial sequence",1,True
-916,5,5,0.2,,"Margarites helicinus small subunit ribosomal RNA gene, partial sequence",1,True
-917,3,3,0.3333333333333333,,"Pontocythere subjaponica small subunit ribosomal RNA gene, partial sequence",1,True
-918,2,2,0.5,,"Biddulphia tridens small subunit ribosomal RNA gene, partial sequence",1,True
-919,7,7,0.14285714285714285,,"Chlamydomonas sordida SAG 18.73 small subunit ribosomal RNA gene, partial sequence",1,True
-920,3,3,0.3333333333333333,,"Clio pyramidata antarctica small subunit ribosomal RNA gene, partial sequence",1,True
-921,2,2,0.5,,"Monanchora arbuscula small subunit ribosomal RNA gene, partial sequence",1,True
-922,6,6,0.16666666666666666,,"Curimopsis setigera small subunit ribosomal RNA gene, partial sequence",1,True
-923,2,2,0.5,,"Cypria exsculpta small subunit ribosomal RNA gene, partial sequence",1,True
-924,2,2,0.5,,"Viviania marifolia small subunit ribosomal RNA gene, partial sequence",1,True
-925,3,3,0.3333333333333333,,"Pleurodasys helgolandicus small subunit ribosomal RNA gene, partial sequence",1,True
-926,4,4,0.25,,"Vanniopsis howense small subunit ribosomal RNA gene, partial sequence",1,True
-927,4,4,0.25,,"Odontocepheus oblongus small subunit ribosomal RNA gene, partial sequence",1,True
-928,4,4,0.25,,"Rhinosporidium seeberi small subunit ribosomal RNA gene, partial sequence",1,True
-929,2,2,0.5,,"Kondoa miscanthi JCM 5733 small subunit ribosomal RNA gene, partial sequence",1,True
-930,2,2,0.5,,"Cartodere constricta small subunit ribosomal RNA gene, partial sequence",1,True
-931,4,4,0.25,,"Mesothuria oktaknemus small subunit ribosomal RNA gene, partial sequence",1,True
-932,2,2,0.5,,"Ulothrix fimbriata small subunit ribosomal RNA gene, partial sequence",1,True
-933,3,3,0.3333333333333333,,"Omegastrombidium elegans small subunit ribosomal RNA gene, partial sequence",1,True
-934,2,2,0.5,,"Chloromonas actinochloris SAG 34.72 small subunit ribosomal RNA gene, partial sequence",1,True
-935,2,2,0.5,,"Tubiluchus soyoae small subunit ribosomal RNA gene, partial sequence",1,True
-936,5,5,0.2,,"Vibone vetusta small subunit ribosomal RNA gene, partial sequence",1,True
-937,2,2,0.5,,"Sertularella sanmatiasensis small subunit ribosomal RNA gene, partial sequence",1,True
-938,4,4,0.25,,"Micropodarke dubia small subunit ribosomal RNA gene, partial sequence",1,True
-939,2,2,0.5,,"Calanus helgolandicus small subunit ribosomal RNA gene, partial sequence",1,True
-940,3,3,0.3333333333333333,,"Clione limacina small subunit ribosomal RNA gene, partial sequence",1,True
-941,2,2,0.5,,"Bakericheyla chanayi small subunit ribosomal RNA gene, partial sequence",1,True
-942,4,4,0.25,,"Sagriva vittata small subunit ribosomal RNA gene, partial sequence",1,True
-943,2,2,0.5,,"Basiliolella grayi small subunit ribosomal RNA gene, partial sequence",1,True
-944,2,2,0.5,,"Prostheceraeus vittatus small subunit ribosomal RNA gene, partial sequence",1,True
-945,3,3,0.3333333333333333,,"Paxillus filamentosus REG304 small subunit ribosomal RNA gene, partial sequence",1,True
-946,2,2,0.5,,"Babesia rodhaini small subunit ribosomal RNA gene, partial sequence",1,True
-947,2,2,0.5,,"Phonognatha graeffei small subunit ribosomal RNA gene, partial sequence",1,True
-948,2,2,0.5,,"Hemidinium nasutum small subunit ribosomal RNA gene, partial sequence",1,True
-949,2,2,0.5,,"Rhamphospora nymphaeae CBS 72.38 small subunit ribosomal RNA gene, partial sequence",1,True
-950,2,2,0.5,,"Polydora onagawaensis small subunit ribosomal RNA gene, partial sequence",1,True
-951,5,5,0.2,,"Histiostoma inquilinum small subunit ribosomal RNA gene, partial sequence",1,True
-952,3,3,0.3333333333333333,,"Akalyptoischion atrichos small subunit ribosomal RNA gene, partial sequence",1,True
-953,2,2,0.5,,"Pseudotontonia simplicidens small subunit ribosomal RNA gene, partial sequence",1,True
-954,3,3,0.3333333333333333,,"Balanoglossus carnosus small subunit ribosomal RNA gene, partial sequence",1,True
-955,2,2,0.5,,"Thoracostoma trachygaster small subunit ribosomal RNA gene, partial sequence",1,True
-956,2,2,0.5,,"Protodrilus gracilis small subunit ribosomal RNA gene, partial sequence",1,True
-957,2,2,0.5,,"Troglophilus neglectus small subunit ribosomal RNA gene, partial sequence",1,True
-958,3,3,0.3333333333333333,,"Rhizosolenia setigera CCMP1330 small subunit ribosomal RNA gene, partial sequence",1,True
-959,2,2,0.5,,"Rhabditis rainai PS1191 small subunit ribosomal RNA gene, partial sequence",1,True
-960,2,2,0.5,,"Entomoneis pulchra small subunit ribosomal RNA gene, partial sequence",1,True
-961,2,2,0.5,,"Heterocypris incongruens small subunit ribosomal RNA gene, partial sequence",1,True
-962,5,5,0.2,,"Exophiala castellanii CBS 158.58 small subunit ribosomal RNA gene, partial sequence",1,True
-963,2,2,0.5,,"Aepinus septemspinosus small subunit ribosomal RNA gene, partial sequence",1,True
-964,4,4,0.25,,"Cantao ocellatus small subunit ribosomal RNA gene, partial sequence",1,True
-965,2,2,0.5,,"Hymeniacidon kitchingi small subunit ribosomal RNA gene, partial sequence",1,True
-966,2,2,0.5,,"Wilbertia typica FXP-2008-061103 small subunit ribosomal RNA gene, partial sequence",1,True
-967,2,2,0.5,,"Exumella mediterranea small subunit ribosomal RNA gene, complete sequence",1,True
-968,3,3,0.3333333333333333,,"Ptinella errabunda small subunit ribosomal RNA gene, partial sequence",1,True
-969,2,2,0.5,,"Musculus cupreus small subunit ribosomal RNA gene, partial sequence",1,True
-970,5,5,0.2,,"Gambierdiscus pacificus small subunit ribosomal RNA gene, partial sequence",1,True
-971,3,3,0.3333333333333333,,"Isomermis lairdi small subunit ribosomal RNA gene, partial sequence",1,True
-972,4,4,0.25,,"Ascoidea asiatica NRRL Y-17632 small subunit ribosomal RNA gene, partial sequence",1,True
-973,2,2,0.5,,"Tursiocola alata small subunit ribosomal RNA gene, partial sequence",1,True
-974,2,2,0.5,,"Halacarus omului small subunit ribosomal RNA gene, partial sequence",1,True
-975,2,2,0.5,,"Phytophthora nicotianae small subunit ribosomal RNA gene, partial sequence",1,True
-976,2,2,0.5,,"Annectocyma tubulosa small subunit ribosomal RNA gene, partial sequence",1,True
-977,2,2,0.5,,"Centroderes spinosus small subunit ribosomal RNA gene, partial sequence",1,True
-978,2,2,0.5,,"Pentapycnon charcoti small subunit ribosomal RNA gene, partial sequence",1,True
-979,2,2,0.5,,"Spongotrochus glacialis small subunit ribosomal RNA gene, partial sequence",1,True
-980,6,6,0.16666666666666666,,"Terebella lapidaria small subunit ribosomal RNA gene, partial sequence",1,True
-981,3,3,0.3333333333333333,,"Goffeauzyma gastrica JCM 3691 small subunit ribosomal RNA gene, partial sequence",1,True
-982,2,2,0.5,,"Sthenelais limicola small subunit ribosomal RNA gene, partial sequence",1,True
-983,3,3,0.3333333333333333,,"Diplosolen obelia small subunit ribosomal RNA gene, partial sequence",1,True
-984,2,2,0.5,,"Anisodevonia ohshimai small subunit ribosomal RNA gene, partial sequence",1,True
-985,2,2,0.5,,"Conorhinopsylla stanfordi small subunit ribosomal RNA gene, partial sequence",1,True
-986,2,2,0.5,,"Erebomaster flavescens flavescens small subunit ribosomal RNA gene, partial sequence",1,True
-987,2,2,0.5,,"Cohnilembus verminus small subunit ribosomal RNA gene, partial sequence",1,True
-988,4,4,0.25,,"Acharax gadirae small subunit ribosomal RNA gene, partial sequence",1,True
-989,2,2,0.5,,"Kanakythyris pachyrhynchos small subunit ribosomal RNA gene, partial sequence",1,True
-990,8,8,0.125,,"Kudoa igami small subunit ribosomal RNA gene, partial sequence",1,True
-991,4,4,0.25,,"Amphisiella milnei small subunit ribosomal RNA gene, partial sequence",1,True
-992,2,2,0.5,,"Ancistrum mytili HB 1 small subunit ribosomal RNA gene, partial sequence",1,True
-993,4,4,0.25,,"Freya decorata small subunit ribosomal RNA gene, partial sequence",1,True
-994,2,2,0.5,,"Chloromonas nivalis UTEX SNO66 small subunit ribosomal RNA gene, partial sequence",1,True
-995,7,7,0.14285714285714285,,"Psammodrilus norenburgi small subunit ribosomal RNA gene, partial sequence",1,True
-996,2,2,0.5,,"Cynoscionicola branquialis small subunit ribosomal RNA gene, partial sequence",1,True
-997,2,2,0.5,,"Hantzschia amphioxys var. major A4 small subunit ribosomal RNA gene, partial sequence",1,True
-998,2,2,0.5,,"Protoplanella simplex small subunit ribosomal RNA gene, partial sequence",1,True
-999,2,2,0.5,,"Aegina citrea small subunit ribosomal RNA gene, partial sequence",1,True
-1000,4,4,0.25,,"Ochromonas danica CCMP588 small subunit ribosomal RNA gene, partial sequence",1,True
-1001,2,2,0.5,,"Loxomitra mizugamaensis small subunit ribosomal RNA gene, partial sequence",1,True
-1002,6,6,0.16666666666666666,,"Pseudodiploria strigosa small subunit ribosomal RNA gene, partial sequence",1,True
-1003,2,2,0.5,,"Dictyococcus varians UTEX LB 62 small subunit ribosomal RNA gene, partial sequence",1,True
-1004,2,2,0.5,,"Malbranchea gypsea small subunit ribosomal RNA gene, partial sequence",1,True
-1005,12,12,0.08333333333333333,,"Chloromonas remiasii CCCryo 005-99 small subunit ribosomal RNA gene, partial sequence",1,True
-1006,2,2,0.5,,"Kuraishia hungarica NRRL Y-27594 small subunit ribosomal RNA gene, partial sequence",1,True
-1007,2,2,0.5,,"Sugiyamaella paludigena JCM 9614 small subunit ribosomal RNA gene, partial sequence",1,True
-1008,2,2,0.5,,"Pseudomicrostroma phylloplanum type strain: CBS8073 = HB1014 small subunit ribosomal RNA gene, partial sequence",1,True
-1009,3,3,0.3333333333333333,,"Bastiania gracilis small subunit ribosomal RNA gene, partial sequence",1,True
-1010,7,7,0.14285714285714285,,"Psammodrilus didomenicoi small subunit ribosomal RNA gene, partial sequence",1,True
-1011,2,2,0.5,,"Parastacus varicosus small subunit ribosomal RNA gene, partial sequence",1,True
-1012,3,3,0.3333333333333333,,"Phagocata vitta small subunit ribosomal RNA gene, partial sequence",1,True
-1013,2,2,0.5,,"Myllaena dubia small subunit ribosomal RNA gene, partial sequence",1,True
-1014,3,3,0.3333333333333333,,"Monoraphidium neglectum SAG 48.87 small subunit ribosomal RNA gene, partial sequence",1,True
-1015,4,4,0.25,,"Exogone fustifera small subunit ribosomal RNA gene, partial sequence",1,True
-1016,3,3,0.3333333333333333,,"Hebrus nipponicus small subunit ribosomal RNA gene, partial sequence",1,True
-1017,2,2,0.5,,"Pavelius uschakovi small subunit ribosomal RNA gene, partial sequence",1,True
-1018,4,4,0.25,,"Asterostroma andinum HHB-8546-sp. small subunit ribosomal RNA gene, partial sequence",1,True
-1019,3,3,0.3333333333333333,,"Enoplometopus macrodontus small subunit ribosomal RNA gene, partial sequence",1,True
-1020,3,3,0.3333333333333333,,"Neodangemannia microcystis SAG 2022 small subunit ribosomal RNA gene, partial sequence",1,True
-1021,5,5,0.2,,"Paratrichodorus teres small subunit ribosomal RNA gene, partial sequence",1,True
-1022,8,8,0.125,,"Pannychia moseleyi small subunit ribosomal RNA gene, partial sequence",1,True
-1023,6,6,0.16666666666666666,,"Longitarsus melanocephalus small subunit ribosomal RNA gene, partial sequence",1,True
-1024,7,7,0.14285714285714285,,"Erpobdella obscura small subunit ribosomal RNA gene, partial sequence",1,True
-1025,3,3,0.3333333333333333,,"Labyrinthulochytrium arktikum small subunit ribosomal RNA gene, partial sequence",1,True
-1026,2,2,0.5,,"Buckleyzyma armeniaca JCM 8977 small subunit ribosomal RNA gene, partial sequence",1,True
-1027,2,2,0.5,,"Neochlorosarcina pseudominor UTEX1702 small subunit ribosomal RNA gene, partial sequence",1,True
-1028,2,2,0.5,,"Bathypalaemonetes brevirostris small subunit ribosomal RNA gene, partial sequence",1,True
-1029,2,2,0.5,,"Hornera foliacea small subunit ribosomal RNA gene, partial sequence",1,True
-1030,7,7,0.14285714285714285,,"Nipponnemertes ogumai small subunit ribosomal RNA gene, partial sequence",1,True
-1031,3,3,0.3333333333333333,,"nitratophila NRRL YB-3654 small subunit ribosomal RNA gene, partial sequence",1,True
-1032,2,2,0.5,,"Temora longicornis small subunit ribosomal RNA gene, partial sequence",1,True
-1033,4,4,0.25,,"Dacrymyces punctiformis TUFC13053 small subunit ribosomal RNA gene, partial sequence",1,True
-1034,2,2,0.5,,"Inachoides laevis small subunit ribosomal RNA gene, partial sequence",1,True
-1035,5,5,0.2,,"Eusphalerum torquatum small subunit ribosomal RNA gene, partial sequence",1,True
-1036,2,2,0.5,,"Ambispora granatensis small subunit ribosomal RNA gene, partial sequence",1,True
-1037,2,2,0.5,,"Sarcodon imbricatus REG Sim1 small subunit ribosomal RNA gene, partial sequence",1,True
-1038,2,2,0.5,,"Cyclocanna welshi small subunit ribosomal RNA gene, partial sequence",1,True
-1039,4,4,0.25,,"Endelus gyoerfii small subunit ribosomal RNA gene, partial sequence",1,True
-1040,2,2,0.5,,"Rotylenchus robustus RotyFal1 small subunit ribosomal RNA gene, partial sequence",1,True
-1041,4,4,0.25,,"Filinia longiseta small subunit ribosomal RNA gene, partial sequence",1,True
-1042,4,4,0.25,,"Kroyeria sphyrnae small subunit ribosomal RNA gene, partial sequence",1,True
-1043,2,2,0.5,,"Rhabdochona guerreroensis small subunit ribosomal RNA gene, partial sequence",1,True
-1044,5,5,0.2,,"Saccharomycopsis synnaedendra NRRL Y-7466 small subunit ribosomal RNA gene, partial sequence",1,True
-1045,2,2,0.5,,"Urostyla grandis small subunit ribosomal RNA gene, complete sequence",1,True
-1046,3,3,0.3333333333333333,,"Coeloseris mayeri small subunit ribosomal RNA gene, partial sequence",1,True
-1047,4,4,0.25,,"Nucleotaenium eifelense M3006 small subunit ribosomal RNA gene, partial sequence",1,True
-1048,2,2,0.5,,"Micrura dellechiajei small subunit ribosomal RNA gene, partial sequence",1,True
-1049,2,2,0.5,,"Phytophthora undulata small subunit ribosomal RNA gene, partial sequence",1,True
-1050,4,4,0.25,,"Uronychia sinica small subunit ribosomal RNA gene, partial sequence",1,True
-1051,6,6,0.16666666666666666,,"Aglaura hemistoma small subunit ribosomal RNA gene, partial sequence",1,True
-1052,2,2,0.5,,"Contracaecum multipapillatum small subunit ribosomal RNA gene, partial sequence",1,True
-1053,2,2,0.5,,"Monoraphidium pusillum MDL 1/12-5 small subunit ribosomal RNA gene, partial sequence",1,True
-1054,3,3,0.3333333333333333,,"Paramytha ossicola small subunit ribosomal RNA gene, partial sequence",1,True
-1055,2,2,0.5,,"Ascaridia galli small subunit ribosomal RNA gene, partial sequence",1,True
-1056,3,3,0.3333333333333333,,"Dictyonella obtusa small subunit ribosomal RNA gene, partial sequence",1,True
-1057,4,4,0.25,,"Phascolosoma stephensoni small subunit ribosomal RNA gene, partial sequence",1,True
-1058,4,4,0.25,,"Phlebia albomellea CBS 275.92 small subunit ribosomal RNA gene, partial sequence",1,True
-1059,5,5,0.2,,"Campylodiscus clypeus L951 small subunit ribosomal RNA gene, partial sequence",1,True
-1060,2,2,0.5,,"Leptochiton saitoi small subunit ribosomal RNA gene, partial sequence",1,True
-1061,3,3,0.3333333333333333,,"Puccinia poarum small subunit ribosomal RNA gene, partial sequence",1,True
-1062,4,4,0.25,,"Juncus effusus small subunit ribosomal RNA gene, partial sequence",1,True
-1063,3,3,0.3333333333333333,,"Haplognathia rosea small subunit ribosomal RNA gene, partial sequence",1,True
-1064,2,2,0.5,,"Dipolydora bidentata small subunit ribosomal RNA gene, partial sequence",1,True
-1065,4,4,0.25,,"Scymnus suturalis small subunit ribosomal RNA gene, partial sequence",1,True
-1066,2,2,0.5,,"Nematobrachion flexipes small subunit ribosomal RNA gene, partial sequence",1,True
-1067,4,4,0.25,,"Fallacia monoculata UTEX FD254 small subunit ribosomal RNA gene, partial sequence",1,True
-1068,3,3,0.3333333333333333,,"Ogataea naganishii NRRL Y-7654 small subunit ribosomal RNA gene, partial sequence",1,True
-1069,5,5,0.2,,"Uroleptus stueberi small subunit ribosomal RNA gene, partial sequence",1,True
-1070,3,3,0.3333333333333333,,"Buckleyzyma salicina JCM 2959 small subunit ribosomal RNA gene, partial sequence",1,True
-1071,2,2,0.5,,"Pseudosuccinea columella small subunit ribosomal RNA gene, partial sequence",1,True
-1072,2,2,0.5,,"Enicmus transversus small subunit ribosomal RNA gene, partial sequence",1,True
-1073,2,2,0.5,,"Botryococcus braunii Yamanaka small subunit ribosomal RNA gene, partial sequence",1,True
-1074,3,3,0.3333333333333333,,"Dasycerus carolinensis small subunit ribosomal RNA gene, partial sequence",1,True
-1075,3,3,0.3333333333333333,,"Chloromonas vernalis ACOI-3241 small subunit ribosomal RNA gene, partial sequence",1,True
-1076,4,4,0.25,,"Sonnenemertes cantelli small subunit ribosomal RNA gene, partial sequence",1,True
-1077,2,2,0.5,,"Neosabellides lizae small subunit ribosomal RNA gene, partial sequence",1,True
-1078,2,2,0.5,,"Phonorhynchella biarcuata small subunit ribosomal RNA gene, partial sequence",1,True
-1079,2,2,0.5,,"Collotheca campanulata small subunit ribosomal RNA gene, partial sequence",1,True
-1080,5,5,0.2,,"Catostylus mosaicus small subunit ribosomal RNA gene, partial sequence",1,True
-1081,2,2,0.5,,"Chloromonas augustae SAG 13.89 small subunit ribosomal RNA gene, partial sequence",1,True
-1082,2,2,0.5,,"Parascedosporium putredinis JCM8082 small subunit ribosomal RNA gene, partial sequence",1,True
-1083,6,6,0.16666666666666666,,"Pontoeciella abyssicola small subunit ribosomal RNA gene, partial sequence",1,True
-1084,2,2,0.5,,"Ascuta parornata small subunit ribosomal RNA gene, partial sequence",1,True
-1085,2,2,0.5,,"Melliteryx puncticulata small subunit ribosomal RNA gene, partial sequence",1,True
-1086,4,4,0.25,,"Nuncia roeweri seditiosa small subunit ribosomal RNA gene, partial sequence",1,True
-1087,6,6,0.16666666666666666,,"Tenagobia incerta small subunit ribosomal RNA gene, partial sequence",1,True
-1088,3,3,0.3333333333333333,,"Helobdella stagnalis small subunit ribosomal RNA gene, partial sequence",1,True
-1089,2,2,0.5,,"Ambispora granatensis small subunit ribosomal RNA gene, partial sequence",1,True
-1090,2,2,0.5,,"Psychropotes longicauda small subunit ribosomal RNA gene, partial sequence",1,True
-1091,7,7,0.14285714285714285,,"Gyratrix hermaphroditus small subunit ribosomal RNA gene, partial sequence",1,True
-1092,7,7,0.14285714285714285,,"Oxyuris equi small subunit ribosomal RNA gene, partial sequence",1,True
-1093,4,4,0.25,,"Atypoides gertschi small subunit ribosomal RNA gene, partial sequence",1,True
-1094,2,2,0.5,,"Conchophthirus lamellidens FZ 1 small subunit ribosomal RNA gene, partial sequence",1,True
-1095,3,3,0.3333333333333333,,"Aplysia parvula small subunit ribosomal RNA gene, partial sequence",1,True
-1096,4,4,0.25,,"Paraenchelys terricola small subunit ribosomal RNA gene, partial sequence",1,True
-1097,2,2,0.5,,"Chaerilus julietteae small subunit ribosomal RNA gene, partial sequence",1,True
-1098,2,2,0.5,,"Stedocys pagodas small subunit ribosomal RNA gene, partial sequence",1,True
-1099,5,5,0.2,,"Erpobdella ochoterenai small subunit ribosomal RNA gene, partial sequence",1,True
-1100,4,4,0.25,,"Orchipedum tracheicola small subunit ribosomal RNA gene, partial sequence",1,True
-1101,2,2,0.5,,"Nemertinoides elongatus small subunit ribosomal RNA gene, partial sequence",1,True
-1102,4,4,0.25,,"Eunice notata small subunit ribosomal RNA gene, partial sequence",1,True
-1103,4,4,0.25,,"Baicalellia canadensis small subunit ribosomal RNA gene, partial sequence",1,True
-1104,2,2,0.5,,"Hygrophorus poetarum small subunit ribosomal RNA gene, partial sequence",1,True
-1105,3,3,0.3333333333333333,,"Psammorhynchus tubulipenis small subunit ribosomal RNA gene, partial sequence",1,True
-1106,3,3,0.3333333333333333,,"Sorogena stoianovitchae ATCC 50031 small subunit ribosomal RNA gene, partial sequence",1,True
-1107,2,2,0.5,,"Protodriloides chaetifer small subunit ribosomal RNA gene, partial sequence",1,True
-1108,2,2,0.5,,"Pseudobensingtonia musae CBS 7965 small subunit ribosomal RNA gene, partial sequence",1,True
-1109,2,2,0.5,,"Higginsia anfractuosa small subunit ribosomal RNA gene, partial sequence",1,True
-1110,11,11,0.09090909090909091,,"Spirocamallanus istiblenni small subunit ribosomal RNA gene, partial sequence",1,True
-1111,2,2,0.5,,"Zosterodasys agamalievi small subunit ribosomal RNA gene, partial sequence",1,True
-1112,6,6,0.16666666666666666,,"Epizoanthus illoricatus small subunit ribosomal RNA gene, partial sequence",1,True
-1113,2,2,0.5,,"Grania brasiliensis small subunit ribosomal RNA gene, partial sequence",1,True
-1114,9,9,0.1111111111111111,,"Heterochlamydomonas inaequalis small subunit ribosomal RNA gene, partial sequence",1,True
-1115,2,2,0.5,,"Micrura fasciolata small subunit ribosomal RNA gene, partial sequence",1,True
-1116,3,3,0.3333333333333333,,"Chara australis X-709 small subunit ribosomal RNA gene, partial sequence",1,True
-1117,3,3,0.3333333333333333,,"Heterochlorella luteoviridis SAG 2196 small subunit ribosomal RNA gene, partial sequence",1,True
-1118,2,2,0.5,,"Auchenoplax worsfoldi small subunit ribosomal RNA gene, partial sequence",1,True
-1119,5,5,0.2,,"Heterocheilus tunicatus small subunit ribosomal RNA gene, partial sequence",1,True
-1120,3,3,0.3333333333333333,,"Neocallichirus denticulatus small subunit ribosomal RNA gene, partial sequence",1,True
-1121,2,2,0.5,,"Burmannia itoana small subunit ribosomal RNA gene, partial sequence",1,True
-1122,2,2,0.5,,"Euastacus bispinosus small subunit ribosomal RNA gene, partial sequence",1,True
-1123,3,3,0.3333333333333333,,"Eimeria intestinalis small subunit ribosomal RNA gene, partial sequence",1,True
-1124,6,6,0.16666666666666666,,"Sistotrema sernanderi FCUG1049 small subunit ribosomal RNA gene, partial sequence",1,True
-1125,3,3,0.3333333333333333,,"Coeloplana anthostella small subunit ribosomal RNA gene, partial sequence",1,True
-1126,2,2,0.5,,"Rhizophydium sphaerotheca small subunit ribosomal RNA gene, partial sequence",1,True
-1127,2,2,0.5,,"Hygrocybe noninquinans small subunit ribosomal RNA gene, partial sequence",1,True
-1128,2,2,0.5,,"Austrognatharia strunki small subunit ribosomal RNA gene, partial sequence",1,True
-1129,5,5,0.2,,"Rachicladosporium inconspicuum CCFEE 5388 small subunit ribosomal RNA gene, partial sequence",1,True
-1130,3,3,0.3333333333333333,,"Oxyspirura petrowi small subunit ribosomal RNA gene, partial sequence",1,True
-1131,6,6,0.16666666666666666,,"Pycnophyes zelinkaei small subunit ribosomal RNA gene, partial sequence",1,True
-1132,4,4,0.25,,"Pseudocercospora fijiensis X300 small subunit ribosomal RNA gene, partial sequence",1,True
-1133,3,3,0.3333333333333333,,"Piesma maculatum small subunit ribosomal RNA gene, partial sequence",1,True
-1134,2,2,0.5,,"Chlamydomonas acidophila UTCC 354 small subunit ribosomal RNA gene, partial sequence",1,True
-1135,2,2,0.5,,"Nia vibrissa small subunit ribosomal RNA gene, partial sequence",1,True
-1136,3,3,0.3333333333333333,,"Paeon elongatus small subunit ribosomal RNA gene, partial sequence",1,True
-1137,2,2,0.5,,"Acholades asteris small subunit ribosomal RNA gene, partial sequence",1,True
-1138,2,2,0.5,,"Araucaria excelsa small subunit ribosomal RNA gene, partial sequence",1,True
-1139,2,2,0.5,,"Scabies crispata small subunit ribosomal RNA gene, partial sequence",1,True
-1140,3,3,0.3333333333333333,,"Anthohebella parasitica small subunit ribosomal RNA gene, partial sequence",1,True
-1141,3,3,0.3333333333333333,,"Psammodrilus swedmarki small subunit ribosomal RNA gene, partial sequence",1,True
-1142,2,2,0.5,,"Micronephthys stammeri small subunit ribosomal RNA gene, partial sequence",1,True
-1143,4,4,0.25,,"Theileria equi small subunit ribosomal RNA gene, partial sequence",1,True
-1144,2,2,0.5,,"Rhizorhina ohtsukai small subunit ribosomal RNA gene, partial sequence",1,True
-1145,4,4,0.25,,"Miamiensis avidus Ma/2 small subunit ribosomal RNA gene, partial sequence",1,True
-1146,2,2,0.5,,"Pseudopedinella elastica NIES-3879 small subunit ribosomal RNA gene, partial sequence",1,True
-1147,7,7,0.14285714285714285,,"Pseudogymnoascus destructans small subunit ribosomal RNA gene, partial sequence",1,True
-1148,2,2,0.5,,"Tilletiopsis washingtonensis RBF1008 = PB393 small subunit ribosomal RNA gene, partial sequence",1,True
-1149,4,4,0.25,,"Pseudolatirus pallidus small subunit ribosomal RNA gene, partial sequence",1,True
-1150,3,3,0.3333333333333333,,"Teleophrys cristulipes small subunit ribosomal RNA gene, partial sequence",1,True
-1151,4,4,0.25,,"Hodophilus hymenocephalus DJL98-081505 small subunit ribosomal RNA gene, partial sequence",1,True
-1152,2,2,0.5,,"Levicoleps biwae small subunit ribosomal RNA gene, partial sequence",1,True
-1153,5,5,0.2,,"Thrips nigropilosus small subunit ribosomal RNA gene, partial sequence",1,True
-1154,4,4,0.25,,"Hubrechtella dubia small subunit ribosomal RNA gene, partial sequence",1,True
-1155,2,2,0.5,,"Halamphora catenulafalsa small subunit ribosomal RNA gene, partial sequence",1,True
-1156,3,3,0.3333333333333333,,"Arthopyrenia salicis CBS 368.94 small subunit ribosomal RNA gene, partial sequence",1,True
-1157,2,2,0.5,,"Laetiporus sulphureus FH-DSH97-151 small subunit ribosomal RNA gene, partial sequence",1,True
-1158,2,2,0.5,,"Pellobunus insularis small subunit ribosomal RNA gene, partial sequence",1,True
-1159,2,2,0.5,,"Ankistrodesmus fusiformis Itas 8/18 M-7w small subunit ribosomal RNA gene, partial sequence",1,True
-1160,3,3,0.3333333333333333,,"Dorometra aegyptica small subunit ribosomal RNA gene, partial sequence",1,True
-1161,3,3,0.3333333333333333,,"Calohypsibius verrucosus small subunit ribosomal RNA gene, partial sequence",1,True
-1162,2,2,0.5,,"Phymatotrichopsis omnivora OKAlf8 small subunit ribosomal RNA gene, partial sequence",1,True
-1163,5,5,0.2,,"Merizocera cruciata small subunit ribosomal RNA gene, partial sequence",1,True
-1164,4,4,0.25,,"Catenulostroma elginense CPC 1958 small subunit ribosomal RNA gene, partial sequence",1,True
-1165,2,2,0.5,,"Metopus hasei small subunit ribosomal RNA gene, partial sequence",1,True
-1166,2,2,0.5,,"Hymeniacidon sinapium small subunit ribosomal RNA gene, partial sequence",1,True
-1167,3,3,0.3333333333333333,,"Leucocryptos marina small subunit ribosomal RNA gene, partial sequence",1,True
-1168,4,4,0.25,,"Byssoloma leucoblepharum small subunit ribosomal RNA gene, partial sequence",1,True
-1169,3,3,0.3333333333333333,,"Semnoderes armiger small subunit ribosomal RNA gene, partial sequence",1,True
-1170,2,2,0.5,,"Fragilaria construens UTEX FD232 small subunit ribosomal RNA gene, partial sequence",1,True
-1171,4,4,0.25,,"Afrothismia amietii small subunit ribosomal RNA gene, partial sequence",1,True
-1172,4,4,0.25,,"Pelagospilus aureus CCMP1410 small subunit ribosomal RNA gene, partial sequence",1,True
-1173,3,3,0.3333333333333333,,"Geranomyces hawaiiensis small subunit ribosomal RNA gene, partial sequence",1,True
-1174,5,5,0.2,,"Maoriata magna small subunit ribosomal RNA gene, partial sequence",1,True
-1175,2,2,0.5,,"Chaetopterus cautus small subunit ribosomal RNA gene, partial sequence",1,True
-1176,2,2,0.5,,"Rogersella griseliniae small subunit ribosomal RNA gene, partial sequence",1,True
-1177,4,4,0.25,,"Centruroides exilicauda small subunit ribosomal RNA gene, partial sequence",1,True
-1178,3,3,0.3333333333333333,,"Cruzia americana small subunit ribosomal RNA gene, partial sequence",1,True
-1179,2,2,0.5,,"Globba curtisii small subunit ribosomal RNA gene, partial sequence",1,True
-1180,2,2,0.5,,"Naganishia albida JCM 2334 small subunit ribosomal RNA gene, partial sequence",1,True
-1181,2,2,0.5,,"Trigonostomum tori small subunit ribosomal RNA gene, partial sequence",1,True
-1182,3,3,0.3333333333333333,,"Aotearoa magna small subunit ribosomal RNA gene, partial sequence",1,True
-1183,3,3,0.3333333333333333,,"Rotylenchus striaticeps small subunit ribosomal RNA gene, partial sequence",1,True
-1184,2,2,0.5,,"Corynelia africana small subunit ribosomal RNA gene, partial sequence",1,True
-1185,2,2,0.5,,"Endogone pisiformis DAOM 233144 small subunit ribosomal RNA gene, partial sequence",1,True
-1186,4,4,0.25,,"Planomonas micra ATCC 50267 small subunit ribosomal RNA gene, partial sequence",1,True
-1187,3,3,0.3333333333333333,,"Leucotelium pruni-persicae small subunit ribosomal RNA gene, partial sequence",1,True
-1188,7,7,0.14285714285714285,,"Dendostrea frons small subunit ribosomal RNA gene, partial sequence",1,True
-1189,2,2,0.5,,"Polychytrium aggregatum JEL109 small subunit ribosomal RNA gene, partial sequence",1,True
-1190,2,2,0.5,,"Trichodorus similis small subunit ribosomal RNA gene, partial sequence",1,True
-1191,3,3,0.3333333333333333,,"Metatithaeus rubidus small subunit ribosomal RNA gene, partial sequence",1,True
-1192,2,2,0.5,,"Trigonostomum watsoni small subunit ribosomal RNA gene, partial sequence",1,True
-1193,3,3,0.3333333333333333,,"Kuraishia floccosa NRRL Y-27951 small subunit ribosomal RNA gene, partial sequence",1,True
-1194,5,5,0.2,,"Martiniozyma asiatica JCM 11058 small subunit ribosomal RNA gene, partial sequence",1,True
-1195,4,4,0.25,,"Neozimiris pubescens small subunit ribosomal RNA gene, partial sequence",1,True
-1196,2,2,0.5,,"Paramonas globosa ATCC 50531 small subunit ribosomal RNA gene, partial sequence",1,True
-1197,2,2,0.5,,"Neogyptis hinehina small subunit ribosomal RNA gene, partial sequence",1,True
-1198,3,3,0.3333333333333333,,"Axiothella rubrocincta small subunit ribosomal RNA gene, partial sequence",1,True
-1199,3,3,0.3333333333333333,,"Pinnularia substreptoraphe AT-70.09 small subunit ribosomal RNA gene, partial sequence",1,True
-1200,6,6,0.16666666666666666,,"Symmetrospora gracilis JCM 2963 small subunit ribosomal RNA gene, partial sequence",1,True
-1201,4,4,0.25,,"Glossus humanus small subunit ribosomal RNA gene, partial sequence",1,True
-1202,3,3,0.3333333333333333,,"Dendrolycosa cruciata cruciata small subunit ribosomal RNA gene, partial sequence",1,True
-1203,8,8,0.125,,"Neocatenulostroma germanicum CBS 539.88 small subunit ribosomal RNA gene, partial sequence",1,True
-1204,3,3,0.3333333333333333,,"Cymatodera californica small subunit ribosomal RNA gene, partial sequence",1,True
-1205,4,4,0.25,,"Cirrophorus branchiatus small subunit ribosomal RNA gene, partial sequence",1,True
-1206,2,2,0.5,,"Heyderia abietis HMAS71954 small subunit ribosomal RNA gene, partial sequence",1,True
-1207,6,6,0.16666666666666666,,"Enterospora nucleophila small subunit ribosomal RNA gene, partial sequence",1,True
-1208,2,2,0.5,,"Millerozyma farinosa JCM 10734 small subunit ribosomal RNA gene, partial sequence",1,True
-1209,2,2,0.5,,"Frontonia magna small subunit ribosomal RNA gene, partial sequence",1,True
-1210,3,3,0.3333333333333333,,"Cladophialophora boppii CBS 126.86T small subunit ribosomal RNA gene, partial sequence",1,True
-1211,3,3,0.3333333333333333,,"Ancistrum japonicum HN 5 small subunit ribosomal RNA gene, partial sequence",1,True
-1212,2,2,0.5,,"Promesostoma cochleare small subunit ribosomal RNA gene, partial sequence",1,True
-1213,2,2,0.5,,"Cethegus fugax small subunit ribosomal RNA gene, partial sequence",1,True
-1214,2,2,0.5,,"Caeoma torreyae small subunit ribosomal RNA gene, partial sequence",1,True
-1215,2,2,0.5,,"Cladophora vagabunda small subunit ribosomal RNA gene, partial sequence",1,True
-1216,3,3,0.3333333333333333,,"Pheopolykrikos beauchampii small subunit ribosomal RNA gene, partial sequence",1,True
-1217,2,2,0.5,,"Phaeomarasmius proximans PBM1951 small subunit ribosomal RNA gene, partial sequence",1,True
-1218,10,10,0.1,,"Achaeta bifollicula small subunit ribosomal RNA gene, partial sequence",1,True
-1219,2,2,0.5,,"Glauconema trihymene PRA-270 small subunit ribosomal RNA gene, partial sequence",1,True
-1220,5,5,0.2,,"Leiochone japonica small subunit ribosomal RNA gene, partial sequence",1,True
-1221,5,5,0.2,,"Limnohalacarus cultellatus small subunit ribosomal RNA gene, partial sequence",1,True
-1222,2,2,0.5,,"Bulgariella pulla small subunit ribosomal RNA gene, partial sequence",1,True
-1223,3,3,0.3333333333333333,,"Pseudanaphothrips araucariae small subunit ribosomal RNA gene, partial sequence",1,True
-1224,3,3,0.3333333333333333,,"Arcuseries petzi small subunit ribosomal RNA gene, partial sequence",1,True
-1225,2,2,0.5,,"Crassostrea virginica small subunit ribosomal RNA gene, partial sequence",1,True
-1226,2,2,0.5,,"Alloptes crassipes small subunit ribosomal RNA gene, partial sequence",1,True
-1227,3,3,0.3333333333333333,,"Sicuophora multigranularis small subunit ribosomal RNA gene, partial sequence",1,True
-1228,3,3,0.3333333333333333,,"Chara zeylanica X-251 small subunit ribosomal RNA gene, partial sequence",1,True
-1229,2,2,0.5,,"Ripella tribonemae SK1 small subunit ribosomal RNA gene, partial sequence",1,True
-1230,2,2,0.5,,"Lepidochaetus zelinkai small subunit ribosomal RNA gene, partial sequence",1,True
-1231,2,2,0.5,,"Lecanora intumescens small subunit ribosomal RNA gene, partial sequence",1,True
-1232,3,3,0.3333333333333333,,"Cryomyces antarcticus CCFEE 456 small subunit ribosomal RNA gene, partial sequence",1,True
-1233,3,3,0.3333333333333333,,"Teredo navalis small subunit ribosomal RNA gene, partial sequence",1,True
-1234,2,2,0.5,,"Lissodendoryx isodictyalis small subunit ribosomal RNA gene, partial sequence",1,True
-1235,2,2,0.5,,"Ripella tribonemae SK1 small subunit ribosomal RNA gene, partial sequence",1,True
-1236,5,5,0.2,,"Phanotea sathegyna small subunit ribosomal RNA gene, partial sequence",1,True
-1237,3,3,0.3333333333333333,,"Zoropsis spinimana small subunit ribosomal RNA gene, partial sequence",1,True
-1238,2,2,0.5,,"Crassatella subquadrata small subunit ribosomal RNA gene, partial sequence",1,True
-1239,2,2,0.5,,"Neopsylla bidentatiformis small subunit ribosomal RNA gene, partial sequence",1,True
-1240,3,3,0.3333333333333333,,"Micropsephodes lundgreni small subunit ribosomal RNA gene, partial sequence",1,True
-1241,2,2,0.5,,"Colponema vietnamica Colp-7 small subunit ribosomal RNA gene, partial sequence",1,True
-1242,3,3,0.3333333333333333,,"Tengella radiata small subunit ribosomal RNA gene, partial sequence",1,True
-1243,5,5,0.2,,"Tunga monositus small subunit ribosomal RNA gene, partial sequence",1,True
-1244,2,2,0.5,,"Cryomyces antarcticus CCFEE 453 small subunit ribosomal RNA gene, partial sequence",1,True
-1245,3,3,0.3333333333333333,,"Cladorhiza abyssicola small subunit ribosomal RNA gene, partial sequence",1,True
-1246,3,3,0.3333333333333333,,"Pythium splendens RBB-5 small subunit ribosomal RNA gene, partial sequence",1,True
-1247,2,2,0.5,,"Mopalia muscosa small subunit ribosomal RNA gene, partial sequence",1,True
-1248,5,5,0.2,,"Habronestes raveni small subunit ribosomal RNA gene, partial sequence",1,True
-1249,2,2,0.5,,"Subantarctia fiordensis small subunit ribosomal RNA gene, partial sequence",1,True
-1250,2,2,0.5,,"Notoligotoma hardyi small subunit ribosomal RNA gene, partial sequence",1,True
-1251,2,2,0.5,,"Pisione hartmannschroederae small subunit ribosomal RNA gene, partial sequence",1,True
-1252,2,2,0.5,,"Erinaceusyllis serratosetosa small subunit ribosomal RNA gene, partial sequence",1,True
-1253,5,5,0.2,,"Ripella platypodia CCAP 1589/2 small subunit ribosomal RNA gene, partial sequence",1,True
-1254,3,3,0.3333333333333333,,"Sphaerosyllis hirsuta small subunit ribosomal RNA gene, partial sequence",1,True
-1255,2,2,0.5,,"Coptopsylla africana small subunit ribosomal RNA gene, partial sequence",1,True
-1256,3,3,0.3333333333333333,,"Velesunio ambiguus small subunit ribosomal RNA gene, partial sequence",1,True
-1257,3,3,0.3333333333333333,,"Bangia atropurpurea small subunit ribosomal RNA gene, partial sequence",1,True
-1258,3,3,0.3333333333333333,,"Xylogone sphaerospora KACC 41221 small subunit ribosomal RNA gene, partial sequence",1,True
-1259,3,3,0.3333333333333333,,"Teminius insularis small subunit ribosomal RNA gene, partial sequence",1,True
-1260,2,2,0.5,,"Ripella tribonemae SK1 small subunit ribosomal RNA gene, partial sequence",1,True
-1261,3,3,0.3333333333333333,,"Caloscypha incarnata small subunit ribosomal RNA gene, partial sequence",1,True
-1262,2,2,0.5,,"Coniochaeta fodinicola FRL small subunit ribosomal RNA gene, partial sequence",1,True
-1263,2,2,0.5,,"Pimoa rupicola small subunit ribosomal RNA gene, partial sequence",1,True
-1264,3,3,0.3333333333333333,,"Ripella tribonemae SK1 small subunit ribosomal RNA gene, partial sequence",1,True
-1265,3,3,0.3333333333333333,,"Sacculospora baltica small subunit ribosomal RNA gene, partial sequence",1,True
-1266,3,3,0.3333333333333333,,"Kilyana hendersoni small subunit ribosomal RNA gene, partial sequence",1,True
-1267,2,2,0.5,,"Nosema bombycis SC 4 small subunit ribosomal RNA gene, complete sequence",1,True
-1268,3,3,0.3333333333333333,,"Candelabrochaete africana FP-102987-sp. small subunit ribosomal RNA gene, partial sequence",1,True
-1269,15,15,0.06666666666666667,,"Nosema bombycis small subunit ribosomal RNA gene, complete sequence",1,True
--1,4597,4597,0.0,NOISE,NOISE,0,True
+0,2,2,0.5,759752,Paranosema oryzaephili,1,True
+1,5,2,0.8,,,4,True
+2,6,4,0.5,,,3,True
+3,5,5,0.2,2049360,Monocercomonoides acer,1,True
+4,3,3,0.3333333333333333,38123,Pachypsylla venusta,1,True
+5,7,7,0.14285714285714285,30068,Anopheles punctulatus,1,True
+6,5,2,0.8,,,4,True
+7,4,4,0.25,588424,Pleomothra apletocheles,1,True
+8,4,4,0.25,1141744,Avitellina centripunctata,1,True
+9,4,2,0.75,,,3,True
+10,5,5,0.2,1129576,Novothelohania ovalae,1,True
+11,3,3,0.3333333333333333,1131513,Neonaesa rugosa,1,True
+12,2,2,0.5,130081,Galdieria sulphuraria,1,True
+13,13,11,0.23076923076923078,,,3,True
+14,2,2,0.5,1310155,Neozygites cinarae,1,True
+15,2,2,0.5,2203272,Merocystis kathae,1,True
+16,3,3,0.3333333333333333,195502,Chroomonas nordstedtii,1,True
+17,8,8,0.125,435744,Wellcomia siamensis,1,True
+18,11,10,0.18181818181818182,,,2,True
+19,4,4,0.25,,,1,True
+20,3,3,0.3333333333333333,5699,Trypanosoma vivax,1,True
+21,2,2,0.5,1655641,Collosphaera tuberosa,1,True
+22,2,2,0.5,52288,Plasmodium inui,1,True
+23,3,3,0.3333333333333333,255879,Plasmodium cathemerium,1,True
+24,7,6,0.2857142857142857,,,2,True
+25,4,2,0.75,,,3,True
+26,5,5,0.2,468725,Dysmachus trigonus,1,True
+27,5,5,0.2,,,1,True
+28,5,3,0.6,,,3,True
+29,2,2,0.5,560712,Edwardsina gigantea,1,True
+30,10,10,0.1,2051683,Pyemotes herfsi,1,True
+31,8,6,0.375,,,3,True
+32,2,2,0.5,763128,Orienthella trilineata,1,True
+33,4,4,0.25,763133,Tritonia festiva,1,True
+34,3,3,0.3333333333333333,,,1,True
+35,8,8,0.125,1077153,Paramoeba atlantica,1,True
+36,5,5,0.2,927768,Proceraea madeirensis,1,True
+37,5,5,0.2,172001,Ligidium germanicum,1,True
+38,6,6,0.16666666666666666,,,1,True
+39,6,6,0.16666666666666666,,,1,True
+40,11,6,0.5454545454545454,,,6,True
+41,2,2,0.5,1491482,Carapus acus,1,True
+42,2,2,0.5,468774,Ommatius tibialis,1,True
+43,3,2,0.6666666666666666,,,2,True
+44,2,2,0.5,161568,Joeropsis coralicola,1,True
+45,10,3,0.8,,,8,True
+46,4,4,0.25,,,1,True
+47,6,4,0.5,,,3,True
+48,2,2,0.5,31381,Ceramium diaphanum,1,True
+49,5,5,0.2,538611,Peltodytes dispersus,1,True
+50,2,2,0.5,289466,Leniwytsmania orientalisvar,1,True
+51,2,2,0.5,173797,Oxyethira dualis,1,True
+52,2,2,0.5,175613,Eucallia boussingaultii,1,True
+53,5,5,0.2,348837,Spironucleus salmonicida,1,True
+54,2,2,0.5,429038,Jassa slatteryi,1,True
+55,5,2,0.8,,,4,True
+56,2,2,0.5,1126680,Ophiocordyceps clavata,1,True
+57,2,2,0.5,130316,Phacus acuminatus,1,True
+58,3,3,0.3333333333333333,1701258,Corlissina maricaensis,1,True
+59,2,2,0.5,208474,Metatrichia vesparium,1,True
+60,2,2,0.5,1129594,Parathelohania tomski,1,True
+61,6,6,0.16666666666666666,2014993,Pseudotrichonympha pearti,1,True
+62,3,3,0.3333333333333333,1485074,Endostelium crystalliferum,1,True
+63,2,2,0.5,668371,Luapeleamoeba arachisporum,1,True
+64,4,4,0.25,248767,Siphonosoma vastum,1,True
+65,4,4,0.25,560932,Parainocellia bicolor,1,True
+66,2,2,0.5,121824,Calophya schini,1,True
+67,2,2,0.5,513067,Acropora horrida,1,True
+68,2,1,1.0,,,2,True
+69,2,2,0.5,39714,Euglypha rotunda,1,True
+70,3,3,0.3333333333333333,,,1,True
+71,4,4,0.25,283045,Batoteuthis skolops,1,True
+72,2,2,0.5,763126,Eubranchus sanjuanensis,1,True
+73,4,2,0.75,,,3,True
+74,2,2,0.5,314089,Paratanais malignus,1,True
+75,2,2,0.5,208475,Dinenympha fimbriata,1,True
+76,2,2,0.5,295932,Cyclaxyra politula,1,True
+77,2,2,0.5,931381,Omalodera limbata,1,True
+78,2,2,0.5,48638,Odontocheila cayennensis,1,True
+79,4,4,0.25,1973089,Ataxiodinium choane,1,True
+80,4,4,0.25,79923,Clonorchis sinensis,1,True
+81,2,2,0.5,167851,Euglena terricola,1,True
+82,4,4,0.25,2070215,Calliblepharis saidana,1,True
+83,6,6,0.16666666666666666,186209,Degeeriella fulva,1,True
+84,2,2,0.5,200891,Paramoeba eilhardi,1,True
+85,3,3,0.3333333333333333,,,1,True
+86,2,2,0.5,1670768,Quadracus urticarius,1,True
+87,6,6,0.16666666666666666,560876,Conwentzia pineticola,1,True
+88,2,2,0.5,172669,Glossomastix chrysoplasta,1,True
+89,5,4,0.4,,,2,True
+90,8,8,0.125,301284,Neosilurus hyrtlii,1,True
+91,2,2,0.5,133437,Luidia clathrata,1,True
+92,2,2,0.5,225164,Lottia gigantea,1,True
+93,2,2,0.5,1485075,Endostelium amerosporum,1,True
+94,2,2,0.5,560202,Ironus longicaudatus,1,True
+95,2,2,0.5,91374,Diplonema papillatum,1,True
+96,2,2,0.5,2022416,Thermiphione risensis,1,True
+97,4,4,0.25,2060460,Isobactrus uniscutatus,1,True
+98,3,3,0.3333333333333333,1151109,Tubulinosema hippodamiae,1,True
+99,2,2,0.5,1318627,Tetranchyroderma megastomum,1,True
+100,2,2,0.5,,,1,True
+101,2,2,0.5,1072581,Haemogregarina balli,1,True
+102,8,8,0.125,,,1,True
+103,10,9,0.2,,,2,True
+104,4,2,0.75,,,3,True
+105,2,2,0.5,472211,Semperella schulzei,1,True
+106,7,4,0.5714285714285714,,,4,True
+107,4,4,0.25,,,1,True
+108,3,3,0.3333333333333333,1956452,Intruda signata,1,True
+109,4,4,0.25,362532,Bonamia exitiosa,1,True
+110,2,2,0.5,75352,Megalobrama amblycephala,1,True
+111,3,3,0.3333333333333333,1607835,Nolandia orientalis,1,True
+112,3,3,0.3333333333333333,435420,Schizoplasmodiopsis amoeboidea,1,True
+113,4,4,0.25,648696,Blastocrithidia largi,1,True
+114,12,7,0.5,,,6,True
+115,3,3,0.3333333333333333,2068663,Ptychopera unicornis,1,True
+116,2,2,0.5,2218057,Neophyllura bicolor,1,True
+117,2,2,0.5,1003054,Fallacia pygmaea,1,True
+118,3,3,0.3333333333333333,110120,Hepatozoon canis,1,True
+119,2,2,0.5,96870,Porcellionides pruinosus,1,True
+120,2,2,0.5,399066,Pottsia serenei,1,True
+121,11,11,0.09090909090909091,113505,Chironomus tepperi,1,True
+122,2,2,0.5,1468202,Prorhynchus tasmaniensis,1,True
+123,4,4,0.25,1732396,Decastava edaphica,1,True
+124,7,7,0.14285714285714285,1861914,Testudodinium magnum,1,True
+125,4,4,0.25,187812,Tubulanus punctatus,1,True
+126,5,5,0.2,,,1,True
+127,5,5,0.2,702660,Swima bombiviridis,1,True
+128,6,4,0.5,,,3,True
+129,3,2,0.6666666666666666,,,2,True
+130,3,3,0.3333333333333333,1112788,Dolerocypria mukaishimensis,1,True
+131,3,3,0.3333333333333333,,,1,True
+132,4,4,0.25,2093352,Ketosoma werneri,1,True
+133,4,4,0.25,1589674,Cryptostemma wygodzinskyi,1,True
+134,3,3,0.3333333333333333,533271,Eosentomon megaglenum,1,True
+135,5,5,0.2,521161,Trichonympha collaris,1,True
+136,5,3,0.6,,,3,True
+137,2,2,0.5,996720,Avagina marci,1,True
+138,2,2,0.5,1920002,Bryopa melitensis,1,True
+139,2,2,0.5,7175,Culex pipiens,1,True
+140,2,2,0.5,1131781,Leptomonas scantii,1,True
+141,3,3,0.3333333333333333,1742628,Cricophorus nutrix,1,True
+142,2,2,0.5,173823,Sialis hamata,1,True
+143,2,2,0.5,1091204,Trichoniscus pygmaeus,1,True
+144,2,2,0.5,1956328,Novodamus nodatus,1,True
+145,4,4,0.25,533270,Acerentulus sinensis,1,True
+146,8,8,0.125,1129591,Amblyospora shegaria,1,True
+147,2,2,0.5,53701,Galathealinum brachiosum,1,True
+148,5,5,0.2,337420,Coelopleurus floridanus,1,True
+149,4,4,0.25,1329970,Nosema pieriae,1,True
+150,2,2,0.5,330878,Nyssomyia neivai,1,True
+151,2,2,0.5,85314,Montandoniola moraguesi,1,True
+152,2,2,0.5,1582353,Ailadinium reticulatum,1,True
+153,3,2,0.6666666666666666,,,2,True
+154,5,5,0.2,1955015,Myxobolus taibaiensis,1,True
+155,3,3,0.3333333333333333,1497649,Parvochelus russus,1,True
+156,3,3,0.3333333333333333,1798883,Globulispora mitoportans,1,True
+157,2,2,0.5,1503927,Hemistasia phaeocysticola,1,True
+158,3,3,0.3333333333333333,347308,Cerylon ferrugineum,1,True
+159,3,3,0.3333333333333333,1589682,Thaumastocoris safordi,1,True
+160,4,4,0.25,5041,Malbranchea cinnamomea,1,True
+161,2,2,0.5,,,1,True
+162,5,2,0.8,,,4,True
+163,4,4,0.25,189623,Callithamnion pikeanum,1,True
+164,3,3,0.3333333333333333,257588,Sonderopelta coriacea,1,True
+165,5,4,0.4,,,2,True
+166,12,12,0.08333333333333333,198281,Eupelops hirtus,1,True
+167,2,2,0.5,2060437,Agauopsis legionium,1,True
+168,13,6,0.6153846153846154,,,8,True
+169,2,2,0.5,210444,Bellerochea malleus,1,True
+170,2,2,0.5,541022,Uroptychus scambus,1,True
+171,16,16,0.0625,2138262,Bitectipora retepora,1,True
+172,7,7,0.14285714285714285,28024,Porphyridium sordidum,1,True
+173,3,3,0.3333333333333333,1213267,Gennadas valens,1,True
+174,2,2,0.5,,,1,True
+175,7,1,1.0,,,7,True
+176,3,3,0.3333333333333333,115641,Panorpodes pulcher,1,True
+177,3,3,0.3333333333333333,396898,Dictyoplax lecus,1,True
+178,2,2,0.5,163357,Polycosta turniae,1,True
+179,2,2,0.5,1579382,Ceratomyxa leatherjacketi,1,True
+180,3,3,0.3333333333333333,1209611,Deladenus durus,1,True
+181,2,2,0.5,47798,Macrotrichomonoides restis,1,True
+182,4,4,0.25,2012621,Trichonympha deweyi,1,True
+183,3,3,0.3333333333333333,,,1,True
+184,4,4,0.25,2184876,Hemicriconemoides paracamelliae,1,True
+185,2,2,0.5,5701,Trypanosoma simiae,1,True
+186,5,3,0.6,,,3,True
+187,2,2,0.5,399062,Parthenopea subterranea,1,True
+188,4,4,0.25,1382697,Raillietiella orientalis,1,True
+189,4,4,0.25,472957,Henneguya akule,1,True
+190,2,2,0.5,182616,Hirsutocythere hanaii,1,True
+191,5,5,0.2,253956,Trachelomonas variabilis,1,True
+192,4,4,0.25,,,1,True
+193,2,2,0.5,279256,Endodesmia calophylloides,1,True
+194,3,3,0.3333333333333333,1715813,Trioza remota,1,True
+195,3,3,0.3333333333333333,178948,Arytainilla spartiophila,1,True
+196,2,2,0.5,2049391,Wraios longiembolus,1,True
+197,3,3,0.3333333333333333,,,1,True
+198,9,9,0.1111111111111111,1521698,Neglectella peisonis,1,True
+199,5,2,0.8,,,4,True
+200,2,2,0.5,234889,Hysteromorpha triloba,1,True
+201,2,2,0.5,186213,Pectinopygus sulae,1,True
+202,2,2,0.5,108280,Anthobothrium laciniatum,1,True
+203,6,6,0.16666666666666666,1101367,Leptomonas rigidus,1,True
+204,3,3,0.3333333333333333,6306,Meloidogyne incognita,1,True
+205,2,2,0.5,442125,Brachypterolus pulicarius,1,True
+206,2,2,0.5,764590,Phreatoicopsis raffae,1,True
+207,2,2,0.5,73925,,1,True
+208,4,4,0.25,182614,Actinocythereis costata,1,True
+209,3,3,0.3333333333333333,1647939,Capillaria anatis,1,True
+210,2,2,0.5,2053823,Gromia melinus,1,True
+211,5,5,0.2,1928862,Amathia verticillata,1,True
+212,5,4,0.4,,,2,True
+213,2,2,0.5,1277936,Mesophyllum sphaericum,1,True
+214,3,2,0.6666666666666666,,,2,True
+215,4,4,0.25,60952,Haementeria gracilis,1,True
+216,2,2,0.5,2969,Oxyrrhis marina,1,True
+217,2,2,0.5,1535453,Claviger longicornis,1,True
+218,2,2,0.5,188024,Aphanostoma bruscai,1,True
+219,3,3,0.3333333333333333,135772,Nannoperca oxleyana,1,True
+220,4,4,0.25,993670,Notocaryoplana arctica,1,True
+221,2,2,0.5,298300,Monomorphina rudicula,1,True
+222,2,2,0.5,316163,Nematalosa erebi,1,True
+223,3,3,0.3333333333333333,361114,Cavenderia bifurcata,1,True
+224,4,4,0.25,1042828,Stygamoeba regulata,1,True
+225,2,2,0.5,139390,Plicaturopsis crispa,1,True
+226,2,2,0.5,1144346,Buxtonella sulcata,1,True
+227,3,3,0.3333333333333333,63960,Apotomus rufithorax,1,True
+228,2,2,0.5,1920005,Dallocardia muricata,1,True
+229,2,2,0.5,76017,Pandora neoaphidis,1,True
+230,2,2,0.5,340201,Pterospora floridiensis,1,True
+231,2,2,0.5,,,1,True
+232,2,2,0.5,388780,Haliotrema cromileptis,1,True
+233,3,3,0.3333333333333333,361120,Cavenderia microspora,1,True
+234,4,4,0.25,1836921,Chaetospania thoracica,1,True
+235,2,2,0.5,566290,Holothuria hilla,1,True
+236,2,2,0.5,1115720,Lamproderma scintillans,1,True
+237,2,2,0.5,655730,Antarctoscyphus spiralis,1,True
+238,8,8,0.125,298433,Lernentoma asellina,1,True
+239,2,2,0.5,172261,Lamyctes africanus,1,True
+240,7,7,0.14285714285714285,293572,Macrotrophurus arbusticola,1,True
+241,3,3,0.3333333333333333,1574029,Ballarra longipalpus,1,True
+242,4,4,0.25,,,1,True
+243,5,5,0.2,7394,Glossina morsitans,1,True
+244,2,2,0.5,,,1,True
+245,2,2,0.5,880886,Epigamia alexandri,1,True
+246,2,2,0.5,433050,Meloe decorus,1,True
+247,2,2,0.5,933988,Pandora nouryi,1,True
+248,2,2,0.5,1935389,Pyramidodinium atrofuscum,1,True
+249,18,18,0.05555555555555555,1166770,Bembidion variegatum,1,True
+250,8,8,0.125,1166946,Bembidarenas reicheellum,1,True
+251,2,2,0.5,1311883,Gieysztoria beltrani,1,True
+252,2,2,0.5,186195,Heterodoxus calabyi,1,True
+253,2,2,0.5,356160,Barbronia arcana,1,True
+254,5,3,0.6,,,3,True
+255,2,2,0.5,1576587,Kentomonas sorsogonicus,1,True
+256,2,2,0.5,1494747,Thelohanellus seni,1,True
+257,2,2,0.5,619350,Paramblopusa borealis,1,True
+258,3,3,0.3333333333333333,96791,Chrysocapsa vernalis,1,True
+259,2,2,0.5,181055,Furia neopyralidarum,1,True
+260,2,2,0.5,864142,Plasmodium ovale wallikeri,1,True
+261,4,2,0.75,,,3,True
+262,2,2,0.5,121850,Heteropsylla texana,1,True
+263,3,3,0.3333333333333333,181054,Eryniopsis caroliniana,1,True
+264,2,2,0.5,347305,Cephennium gallicum,1,True
+265,5,5,0.2,1118970,Schizoporella dunkeri,1,True
+266,2,2,0.5,1400031,,1,True
+267,4,4,0.25,2797268,Pachyphlodes melanoxantha,1,True
+268,2,2,0.5,4956,Zygosaccharomyces rouxii,1,True
+269,2,2,0.5,490515,Flamella arnhemensis,1,True
+270,11,6,0.5454545454545454,,,6,True
+271,2,2,0.5,205118,Protoaricia oerstedii,1,True
+272,3,3,0.3333333333333333,245079,Lepas anserifera,1,True
+273,3,3,0.3333333333333333,140746,Brachypanorpa carolinensis,1,True
+274,2,2,0.5,1490879,Hypotrichomonas hampli,1,True
+275,13,13,0.07692307692307693,696912,Calliphara nobilis,1,True
+276,4,4,0.25,1230094,Discotricha papillifera,1,True
+277,3,3,0.3333333333333333,1449959,Thysanotohaptor rex,1,True
+278,7,6,0.2857142857142857,,,2,True
+279,2,2,0.5,44995,Elasis hirsuta,1,True
+280,4,4,0.25,687987,Chlamydocillium curvulum,1,True
+281,2,2,0.5,298493,Hatschekia pagrosomi,1,True
+282,4,4,0.25,288455,Axonchium propinquum,1,True
+283,2,2,0.5,,,1,True
+284,5,5,0.2,233135,Dactylopodola typhle,1,True
+285,2,2,0.5,1712415,Stygiella agilis,1,True
+286,7,7,0.14285714285714285,1312421,Trichomitopsis minor,1,True
+287,2,2,0.5,631452,Monomastix minuta,1,True
+288,2,2,0.5,1283839,Sphaeroforma tapetis,1,True
+289,4,4,0.25,1593410,Ophidiogorgia kuekenthali,1,True
+290,16,16,0.0625,73113,Athoracophorus bitentaculatus,1,True
+291,3,3,0.3333333333333333,5447,Slooffia tsugae,1,True
+292,2,2,0.5,332213,Chlorosarcinopsis eremi,1,True
+293,2,2,0.5,88017,Heteromysis formosa,1,True
+294,7,7,0.14285714285714285,114906,Subanguina radicicola,1,True
+295,3,3,0.3333333333333333,516603,Dubinectes nodosus,1,True
+296,4,4,0.25,468778,Pegesimallus laticornis,1,True
+297,3,3,0.3333333333333333,,,1,True
+298,3,3,0.3333333333333333,1582863,Acanthephyra acutifrons,1,True
+299,2,2,0.5,1045444,Typosyllis heronislandensis,1,True
+300,5,5,0.2,2068658,Ceratopera axi,1,True
+301,2,2,0.5,2018056,Leptomyxa valladaresi,1,True
+302,2,2,0.5,33642,Coscinodiscus radiatus,1,True
+303,2,2,0.5,1585347,Psyllopsis fraxinicola,1,True
+304,2,2,0.5,165851,Pseudodactylogyrus haze,1,True
+305,2,2,0.5,650989,Sphaeromyxa balbianii,1,True
+306,2,2,0.5,1524986,Polycystis ali,1,True
+307,3,3,0.3333333333333333,105867,Brisingaster robillardi,1,True
+308,2,2,0.5,2218120,Homotoma ficus,1,True
+309,4,2,0.75,,,3,True
+310,2,2,0.5,173108,Marcelleina persoonii,1,True
+311,3,3,0.3333333333333333,1925705,,1,True
+312,2,2,0.5,574145,Demodex brevis,1,True
+313,2,2,0.5,569951,Flabellula citata,1,True
+314,4,4,0.25,1769415,Idiellana pristis,1,True
+315,2,2,0.5,1112809,Pseudocandona tenuirostris,1,True
+316,4,4,0.25,445480,Microrhagus pygmaeus,1,True
+317,4,4,0.25,1490869,Hypotrichomonas osmaniae,1,True
+318,3,3,0.3333333333333333,401260,Polykrikos herdmaniae,1,True
+319,2,2,0.5,1291314,Thrips simplex,1,True
+320,4,4,0.25,1510642,Aquatides aquaticus,1,True
+321,2,2,0.5,69517,Microplana nana,1,True
+322,2,2,0.5,361093,Cavenderia granulophora,1,True
+323,3,3,0.3333333333333333,,,1,True
+324,2,2,0.5,351519,Scirtes hemisphaericus,1,True
+325,2,2,0.5,360004,Radicipes gracilis,1,True
+326,2,2,0.5,1291249,Caprithrips moundi,1,True
+327,2,2,0.5,,,1,True
+328,4,4,0.25,1290580,,1,True
+329,2,2,0.5,1554548,Anaplecta lateralis,1,True
+330,11,10,0.18181818181818182,,,2,True
+331,2,2,0.5,700704,Calyptospora funduli,1,True
+332,3,3,0.3333333333333333,371548,Myxidium cuneiforme,1,True
+333,7,6,0.2857142857142857,,,2,True
+334,2,2,0.5,321954,Tetratrichomonas buttreyi,1,True
+335,7,7,0.14285714285714285,150495,Stylocheiron maximum,1,True
+336,7,7,0.14285714285714285,267983,Skeletonema japonicum,1,True
+337,2,2,0.5,364607,Sphaerularia bombi,1,True
+338,2,2,0.5,120990,Caberea boryi,1,True
+339,2,2,0.5,,,1,True
+340,8,8,0.125,178361,Euglypha tuberculata,1,True
+341,2,2,0.5,480486,Cordierites guianensis,1,True
+342,2,2,0.5,1215984,Echinamoeba silvestris,1,True
+343,2,2,0.5,1742606,Salpingoeca oahu,1,True
+344,2,2,0.5,505693,Chromera velia,1,True
+345,4,4,0.25,2218086,Aphalaroida inermis,1,True
+346,6,3,0.6666666666666666,,,4,True
+347,6,6,0.16666666666666666,1662491,Diaperoecia purpurascens,1,True
+348,2,2,0.5,536614,Wrangelia plumosa,1,True
+349,2,2,0.5,693871,Boveria subcylindrica,1,True
+350,2,2,0.5,859642,Chattonella marina var. antiqua,1,True
+351,2,2,0.5,418370,Syllis gracilis,1,True
+352,3,3,0.3333333333333333,472228,Rossella nuda,1,True
+353,2,2,0.5,1136339,Champia lubrica,1,True
+354,3,3,0.3333333333333333,679502,Myxobolus musseliusae,1,True
+355,2,2,0.5,1037948,Dictyostelium maeandriforme,1,True
+356,4,4,0.25,1712429,Alectorobius yumatensis,1,True
+357,2,2,0.5,,,1,True
+358,5,5,0.2,1285675,Kulamanamana haumeaae,1,True
+359,3,3,0.3333333333333333,39785,Polycelis felina,1,True
+360,2,2,0.5,1588145,Orfelia nemoralis,1,True
+361,4,4,0.25,1463350,Blechomonas danrayi,1,True
+362,3,3,0.3333333333333333,1206570,Branchioglossum bipinnatifidum,1,True
+363,6,6,0.16666666666666666,75425,Mayaca fluviatilis,1,True
+364,3,3,0.3333333333333333,35118,Plagiopyla nasuta,1,True
+365,2,2,0.5,529595,Sogerianthe sessiflora,1,True
+366,2,2,0.5,52964,Dysmorphococcus globosus,1,True
+367,2,2,0.5,693143,Placus salinus,1,True
+368,4,4,0.25,1775638,Trypanosoma wauwau,1,True
+369,4,2,0.75,,,3,True
+370,2,2,0.5,1577843,Flamella pleistocenica,1,True
+371,2,2,0.5,198414,Oecobius cellariorum,1,True
+372,5,5,0.2,2232096,Hemicycliophora subbotini,1,True
+373,2,2,0.5,193184,Seirospora interrupta,1,True
+374,3,3,0.3333333333333333,474185,Echimytricalges guyanensis,1,True
+375,2,2,0.5,1879264,Nectoneanthes oxypoda,1,True
+376,3,3,0.3333333333333333,1561996,Uthina luzonica,1,True
+377,2,2,0.5,227046,Scolecobasidium constrictum,1,True
+378,2,2,0.5,,,1,True
+379,5,5,0.2,1745963,Hydrocytium acuminatum,1,True
+380,6,5,0.3333333333333333,,,2,True
+381,2,2,0.5,,,1,True
+382,2,2,0.5,1346601,Linguatula arctica,1,True
+383,2,2,0.5,1035111,Leguminivora glycinivorella,1,True
+384,4,4,0.25,3083,Edaphochlorella mirabilis,1,True
+385,4,4,0.25,884647,Myrianida convoluta,1,True
+386,3,3,0.3333333333333333,90416,Scleroderma laeve,1,True
+387,5,2,0.8,,,4,True
+388,3,3,0.3333333333333333,1956498,Ozarchaea platnicki,1,True
+389,2,2,0.5,66928,Gotocotyla secunda,1,True
+390,2,2,0.5,123499,Stackhousia monogyna,1,True
+391,2,2,0.5,74861,Phascolion strombus,1,True
+392,3,2,0.6666666666666666,,,2,True
+393,4,4,0.25,871656,Mastophora rosea,1,True
+394,2,2,0.5,560199,Aphelenchoides saprophilus,1,True
+395,2,2,0.5,265527,Navicula phyllepta,1,True
+396,4,4,0.25,,,1,True
+397,2,2,0.5,1216359,Condylostoma arenarium,1,True
+398,4,2,0.75,,,3,True
+399,4,4,0.25,435737,Protozoophaga obesa,1,True
+400,2,2,0.5,1652649,Rurikoplites armatus,1,True
+401,4,4,0.25,161566,Iathrippa trilobatus,1,True
+402,4,4,0.25,4278,Securidaca diversifolia,1,True
+403,2,2,0.5,2051695,Archidispus minor,1,True
+404,2,2,0.5,193348,Callithamnion collabens,1,True
+405,3,3,0.3333333333333333,298501,Nanaspis tonsa,1,True
+406,2,2,0.5,2184046,Choeradoplana abaiba,1,True
+407,2,2,0.5,308621,Halopteris minuta,1,True
+408,12,12,0.08333333333333333,466938,Bursaphelenchus chengi,1,True
+409,4,4,0.25,338262,Onychognathia rhombocephala,1,True
+410,2,2,0.5,284013,Chlamydomonas raudensis,1,True
+411,2,2,0.5,2080267,Crouania mucosa,1,True
+412,2,2,0.5,459245,Bryometopus atypicus,1,True
+413,2,2,0.5,1051106,Sigmomyxa sphaerica,1,True
+414,4,4,0.25,76786,Cliona viridis,1,True
+415,3,3,0.3333333333333333,433966,Dacrymyces san-augustinii,1,True
+416,2,2,0.5,243777,Childia brachyposthium,1,True
+417,7,7,0.14285714285714285,1286917,Piptocephalis xenophila,1,True
+418,4,4,0.25,361140,Rostrostelium ellipticum,1,True
+419,2,2,0.5,1539158,Thismia megalongensis,1,True
+420,3,3,0.3333333333333333,,,1,True
+421,4,4,0.25,993383,Trachelius ovum,1,True
+422,2,2,0.5,397339,Chattonidium setense,1,True
+423,3,3,0.3333333333333333,1454043,Castula fusca,1,True
+424,4,4,0.25,256679,Bandia deveneyi,1,True
+425,2,2,0.5,1563472,Sphenorchidium deightonii,1,True
+426,3,3,0.3333333333333333,295610,Oxyporus maxillosus,1,True
+427,2,2,0.5,221933,Neogoniolithon brassica-florida,1,True
+428,11,11,0.09090909090909091,,,1,True
+429,2,2,0.5,1111205,Afrolistrophorus congoicola,1,True
+430,2,2,0.5,479611,Hiloa variabilis,1,True
+431,2,2,0.5,188025,Aphanostoma sanguineum,1,True
+432,2,2,0.5,1348404,Coeloperix sleighi,1,True
+433,5,5,0.2,1143071,Myllaena infuscata,1,True
+434,3,3,0.3333333333333333,1175233,Dacrymyces flabelliformis,1,True
+435,2,2,0.5,234897,Stichorchis subtriquetrus,1,True
+436,2,2,0.5,65494,Arabella iricolor,1,True
+437,3,3,0.3333333333333333,581173,Dacrymyces novae-zelandiae,1,True
+438,2,2,0.5,1112724,Aletris fauriei,1,True
+439,4,4,0.25,245069,Herpetomonas ztiplika,1,True
+440,2,2,0.5,2576753,Psammodinium inclinatum,1,True
+441,2,2,0.5,,,1,True
+442,2,2,0.5,1797451,Solenozetes carinatus,1,True
+443,2,2,0.5,295609,Euaesthetus ruficapillus,1,True
+444,2,2,0.5,1856855,Psettarium nolani,1,True
+445,2,2,0.5,188046,Philocelis brueggemanni,1,True
+446,2,2,0.5,,,1,True
+447,4,4,0.25,401951,Dentitheca bidentata,1,True
+448,2,2,0.5,1316795,Ospreyella depressa,1,True
+449,5,4,0.4,,,2,True
+450,3,3,0.3333333333333333,1656905,Stylodinium littorale,1,True
+451,4,4,0.25,232664,Lankatrema mannarense,1,True
+452,2,2,0.5,1034652,Azadinium poporum,1,True
+453,7,7,0.14285714285714285,936283,Vulcanodinium rugosum,1,True
+454,3,3,0.3333333333333333,1974276,Zoothamnium florens,1,True
+455,5,5,0.2,1940169,Henneguya laseeae,1,True
+456,5,5,0.2,591633,Anelasmocephalus cambridgei,1,True
+457,2,2,0.5,1089217,Pinnularia acuminata,1,True
+458,2,2,0.5,1155701,Rhadinorhynchus pristis,1,True
+459,2,2,0.5,1912068,Echinosphaeridium nordstedtii,1,True
+460,4,4,0.25,1938906,Namalycastis hawaiiensis,1,True
+461,5,5,0.2,696187,Williophrya maedai,1,True
+462,2,2,0.5,1985122,Heterias exul,1,True
+463,2,2,0.5,1104407,Vischeria stellata,1,True
+464,7,5,0.42857142857142855,,,3,True
+465,4,4,0.25,619348,Liparocephalus litoralis,1,True
+466,6,6,0.16666666666666666,2957,Protodinium simplex,1,True
+467,2,2,0.5,1129382,Durinskia agilis,1,True
+468,4,4,0.25,28460,Chlamydomonas mexicana,1,True
+469,2,2,0.5,141976,Plethodon cinereus,1,True
+470,2,2,0.5,449650,Southwellina hispida,1,True
+471,6,6,0.16666666666666666,155206,Eimeria ahsata,1,True
+472,5,5,0.2,392813,Metopus es,1,True
+473,2,2,0.5,1094326,Caenorhabditis wallacei,1,True
+474,2,2,0.5,252678,Gonapodya polymorpha,1,True
+475,2,2,0.5,1336842,Axinella flustra,1,True
+476,3,2,0.6666666666666666,,,2,True
+477,2,2,0.5,,,1,True
+478,2,2,0.5,143345,Kareius bicoloratus,1,True
+479,2,2,0.5,281614,Protoperidinium punctulatum,1,True
+480,5,5,0.2,1305767,Saccharomycopsis fodiens,1,True
+481,2,2,0.5,280394,Holocnemus pluchei,1,True
+482,2,2,0.5,619355,Salinamexus koreanus,1,True
+483,3,3,0.3333333333333333,,,1,True
+484,3,3,0.3333333333333333,228471,Lyonsia norwegica,1,True
+485,5,5,0.2,1543324,Dysteria nabia,1,True
+486,2,2,0.5,398671,Ephelota gemmipara,1,True
+487,14,1,1.0,,,14,True
+488,6,6,0.16666666666666666,1524988,Thylacorhynchus conglobatus,1,True
+489,2,2,0.5,295227,Plakortis angulospiculatus,1,True
+490,2,2,0.5,1170548,Trochochilodon flavus,1,True
+491,4,4,0.25,,,1,True
+492,6,6,0.16666666666666666,1689133,Insulatricha hippai,1,True
+493,4,4,0.25,51028,Enterobius vermicularis,1,True
+494,3,3,0.3333333333333333,145689,Hydriastele pinangoides,1,True
+495,4,4,0.25,1052859,Trypanosoma culicavium,1,True
+496,2,2,0.5,54199,Cyniclomyces guttulatus,1,True
+497,2,2,0.5,91457,Javania insignis,1,True
+498,2,2,0.5,,,1,True
+499,4,4,0.25,1194294,Hartaetosiga balthica,1,True
+500,2,2,0.5,1931086,Brachonella contorta,1,True
+501,3,3,0.3333333333333333,271932,Tetracapsuloides bryosalmonae,1,True
+502,9,7,0.3333333333333333,,,3,True
+503,2,2,0.5,536236,Convolutriloba longifissura,1,True
+504,2,2,0.5,2040455,Sulfonecta uniserialis,1,True
+505,3,3,0.3333333333333333,8063,Merluccius merluccius,1,True
+506,2,2,0.5,55571,Dioscorea alata,1,True
+507,3,3,0.3333333333333333,183865,Aspidytes niobe,1,True
+508,5,2,0.8,,,4,True
+509,2,2,0.5,29895,Pseudohydnum gelatinosum,1,True
+510,4,4,0.25,,,1,True
+511,2,2,0.5,38824,Ciliophrys infusionum,1,True
+512,2,2,0.5,56551,Dugesia gonocephala,1,True
+513,2,2,0.5,288431,Dorylaimus stagnalis,1,True
+514,3,3,0.3333333333333333,195231,Melasis buprestoides,1,True
+515,7,7,0.14285714285714285,198302,Tectocepheus minor,1,True
+516,2,2,0.5,,,1,True
+517,2,2,0.5,93116,Lecania cyrtella,1,True
+518,2,2,0.5,,,1,True
+519,3,3,0.3333333333333333,178552,Xestospongia muta,1,True
+520,2,2,0.5,,,1,True
+521,3,3,0.3333333333333333,1411920,Ctenoides scaber,1,True
+522,2,2,0.5,1577725,Conticribra weissflogii,1,True
+523,2,2,0.5,996655,Actinoposthia haplovata,1,True
+524,2,2,0.5,282310,Trechispora alnicola,1,True
+525,2,2,0.5,57562,Belonolaimus longicaudatus,1,True
+526,2,2,0.5,2212870,Althepus languensis,1,True
+527,4,4,0.25,101605,Abolboda americana,1,True
+528,2,2,0.5,457692,Pseudogaleomma japonica,1,True
+529,2,2,0.5,40658,Plectosphaerella cucumerina,1,True
+530,2,2,0.5,528126,Discocoris drakei,1,True
+531,2,2,0.5,418371,Syllis hyalina,1,True
+532,2,2,0.5,116957,Tergestia laticollis,1,True
+533,7,7,0.14285714285714285,1883119,Crusticorallina painei,1,True
+534,4,4,0.25,1202473,Serrasentis sagittifer,1,True
+535,8,8,0.125,468771,Nicocles politus,1,True
+536,3,2,0.6666666666666666,,,2,True
+537,3,3,0.3333333333333333,1036732,Sarocladium zeae,1,True
+538,2,2,0.5,116953,Steringophorus margolisi,1,True
+539,4,4,0.25,996727,Endocincta punctata,1,True
+540,2,2,0.5,1961076,Thismia hillii,1,True
+541,2,2,0.5,2212862,Althepus duan,1,True
+542,4,4,0.25,764614,Bystus ulkei,1,True
+543,2,2,0.5,221717,Sellaphora laevissima,1,True
+544,2,2,0.5,1616698,Lissosabinea unispinosa,1,True
+545,5,4,0.4,,,2,True
+546,2,2,0.5,1501395,Madanidinium loirii,1,True
+547,2,1,1.0,,,2,True
+548,3,3,0.3333333333333333,53038,Cypripedium calceolus,1,True
+549,3,3,0.3333333333333333,2025167,Mesochaetopterus sagittarius,1,True
+550,3,3,0.3333333333333333,1902855,Enypniastes eximia,1,True
+551,2,2,0.5,1171960,Parasonderia vestita,1,True
+552,2,2,0.5,668358,Tychosporium acutostipes,1,True
+553,2,2,0.5,1170431,Etoschophrya inornata,1,True
+554,4,4,0.25,45553,Wickerhamiella galacta,1,True
+555,2,2,0.5,1529017,Ephelota gigantea,1,True
+556,2,2,0.5,468717,Damalis monochaetes,1,True
+557,2,2,0.5,308574,Plumularia setacea,1,True
+558,2,2,0.5,71940,Humidicutis marginata,1,True
+559,2,2,0.5,1973080,Impagidinium caspienense,1,True
+560,2,2,0.5,358435,Parvicardium minimum,1,True
+561,2,2,0.5,44229,Coelogynopora gynocotyla,1,True
+562,3,3,0.3333333333333333,54918,Ophichthus rex,1,True
+563,2,2,0.5,1617370,Gregarina ormierei,1,True
+564,2,2,0.5,167822,Loimia medusa,1,True
+565,5,5,0.2,486159,Oscheius chongmingensis,1,True
+566,10,10,0.1,232701,Brachylecithum lobatum,1,True
+567,7,7,0.14285714285714285,109966,Uebelmesseromyces harderi,1,True
+568,2,2,0.5,1008953,Oophila amblystomatis,1,True
+569,4,4,0.25,1797435,Gittella variabilis,1,True
+570,2,2,0.5,1539564,Eukoenenia florenciae,1,True
+571,2,2,0.5,1525066,Ptyalorhynchus coecus,1,True
+572,2,2,0.5,366939,Zebrias crossolepis,1,True
+573,2,2,0.5,204991,Golenkinia brevispicula,1,True
+574,2,2,0.5,1955061,Parvilucifera corolla,1,True
+575,2,2,0.5,,,1,True
+576,2,2,0.5,1080940,Echinocephalus overstreeti,1,True
+577,2,2,0.5,3092,Characiopodium hindakii,1,True
+578,4,4,0.25,1306371,Paridris laeviceps,1,True
+579,2,2,0.5,130591,Lycorma delicatula,1,True
+580,3,3,0.3333333333333333,1311971,Canetellia beauchampi,1,True
+581,2,2,0.5,463671,Osyridicarpos schimperianus,1,True
+582,3,3,0.3333333333333333,1236110,Chloromyxum clavatum,1,True
+583,2,2,0.5,1519113,Protaphorura fimata,1,True
+584,3,3,0.3333333333333333,1925689,Nesticella hongheensis,1,True
+585,2,2,0.5,646144,Crisia sigmoidea,1,True
+586,3,3,0.3333333333333333,1173325,Vorticellides astyliformis,1,True
+587,2,2,0.5,576183,Potimirim mexicana,1,True
+588,16,9,0.5,,,8,True
+589,5,5,0.2,289012,Pungentus silvestris,1,True
+590,2,2,0.5,,,1,True
+591,4,4,0.25,1162806,Sinophysis ebriola,1,True
+592,2,2,0.5,,,1,True
+593,2,2,0.5,,,1,True
+594,5,5,0.2,47292,Volvox tertius,1,True
+595,2,2,0.5,2492700,Corallinales sp. R_Twist_2019,1,True
+596,4,4,0.25,,,1,True
+597,3,3,0.3333333333333333,134926,Crisia denticulata,1,True
+598,4,4,0.25,2212874,Althepus stonei,1,True
+599,2,2,0.5,29887,Dacrymyces stillatus,1,True
+600,2,2,0.5,32255,Stylobasium spathulatum,1,True
+601,2,2,0.5,371682,Skeletonema ardens,1,True
+602,4,4,0.25,297518,Licmophora abbreviata,1,True
+603,4,4,0.25,1130814,Spiromimus triaureus,1,True
+604,2,2,0.5,1112800,Psammocythere oviformis,1,True
+605,4,4,0.25,515461,Eunotogramma laevis,1,True
+606,2,2,0.5,,,1,True
+607,2,2,0.5,,,1,True
+608,2,2,0.5,158379,Ascogregarina taiwanensis,1,True
+609,6,6,0.16666666666666666,40469,Inonotus hispidus,1,True
+610,4,4,0.25,331074,Pilobolus sphaerosporus,1,True
+611,2,2,0.5,,,1,True
+612,3,3,0.3333333333333333,1956334,Palpimanus transvaalicus,1,True
+613,2,2,0.5,,,1,True
+614,2,2,0.5,300633,Bankia gouldi,1,True
+615,3,3,0.3333333333333333,1003025,Campylodiscus clypeus,1,True
+616,2,2,0.5,1346497,Novistrombidium apsheronicum,1,True
+617,2,2,0.5,356435,Mesomyzostoma katoi,1,True
+618,2,2,0.5,238029,Euastacus sulcatus,1,True
+619,14,1,1.0,,,14,True
+620,2,2,0.5,576190,Tozeuma serratum,1,True
+621,2,2,0.5,1562322,Abollifer globosa,1,True
+622,2,2,0.5,1352462,Pseudodiaptomus euryhalinus,1,True
+623,3,3,0.3333333333333333,415298,Lissorchis kritskyi,1,True
+624,4,4,0.25,608667,Diadocidia valida,1,True
+625,2,2,0.5,380514,Exorista larvarum,1,True
+626,2,2,0.5,1959303,Kryptonesticus eremita,1,True
+627,4,4,0.25,152959,Russula exalbicans,1,True
+628,4,4,0.25,2212936,Psiloderces suthepensis,1,True
+629,5,5,0.2,942655,Raspailia ramosa,1,True
+630,7,7,0.14285714285714285,913928,Latyspora scomberomori,1,True
+631,2,2,0.5,1920013,Mutela hargeri,1,True
+632,2,2,0.5,483978,Oxynoe viridis,1,True
+633,3,3,0.3333333333333333,1902859,Heteromolpadia tridens,1,True
+634,2,2,0.5,145711,Salacca zalacca,1,True
+635,2,2,0.5,1311802,Placorhynchus octaculeatus,1,True
+636,6,6,0.16666666666666666,1925706,Nesticella xixia,1,True
+637,2,2,0.5,1311917,Strongylostoma devleeschouweri,1,True
+638,2,2,0.5,13535,Galbulimima belgraveana,1,True
+639,4,4,0.25,476021,Fumontana deprehendor,1,True
+640,2,2,0.5,317047,Kuraishia capsulata,1,True
+641,2,2,0.5,1956550,Storena cyanea,1,True
+642,2,2,0.5,43975,Saccharomycopsis selenospora,1,True
+643,2,2,0.5,288558,Achromadora ruricola,1,True
+644,2,2,0.5,462884,Prymnesium palpebrale,1,True
+645,2,2,0.5,,,1,True
+646,5,5,0.2,257370,Caligus elongatus,1,True
+647,2,2,0.5,1344038,Falcicyclidium atractodes,1,True
+648,2,2,0.5,298441,Trochicola entericus,1,True
+649,3,3,0.3333333333333333,575836,Paraplea frontalis,1,True
+650,2,2,0.5,229869,Tectocepheus velatus,1,True
+651,4,4,0.25,2212869,Althepus lakmueangensis,1,True
+652,2,2,0.5,1167464,Paratritirachium cylindroconium,1,True
+653,3,3,0.3333333333333333,,,1,True
+654,2,2,0.5,48693,Macrobiotus hufelandi,1,True
+655,5,5,0.2,342611,Plesionika hsuehyui,1,True
+656,2,2,0.5,1492743,Haplosporidium patagon,1,True
+657,2,2,0.5,2051725,Proteonematalycus wagneri,1,True
+658,3,3,0.3333333333333333,338301,Mesognatharia remanei,1,True
+659,2,2,0.5,197786,Heterosaccus dollfusi,1,True
+660,6,6,0.16666666666666666,864640,Crucella scotiae,1,True
+661,3,3,0.3333333333333333,2030947,Pseudotachidius bipartitus,1,True
+662,5,4,0.4,,,2,True
+663,2,2,0.5,1712224,Brignolia parumpunctata,1,True
+664,2,2,0.5,88015,Eurytemora affinis,1,True
+665,2,2,0.5,,,1,True
+666,2,2,0.5,692980,Kudoa whippsi,1,True
+667,2,2,0.5,1924736,Salpingoeca macrocollata,1,True
+668,5,5,0.2,84155,Philactinoposthia saliens,1,True
+669,4,4,0.25,2782,Gracilariopsis lemaneiformis,1,True
+670,2,2,0.5,468714,Cyrtopogon rattus,1,True
+671,3,3,0.3333333333333333,1431835,Chlorobotrys regularis,1,True
+672,3,3,0.3333333333333333,1917241,Blastomussa omanensis,1,True
+673,3,3,0.3333333333333333,132625,Phytomyza ilicicola,1,True
+674,2,2,0.5,,,1,True
+675,2,2,0.5,1285127,Aenigmaticum californicum,1,True
+676,2,2,0.5,37934,Tolypella porteri,1,True
+677,2,2,0.5,646410,,1,True
+678,2,2,0.5,234823,Xenasma rimicola,1,True
+679,2,2,0.5,,,1,True
+680,2,2,0.5,1401992,Rangelia vitalii,1,True
+681,2,2,0.5,303409,Surirella angusta,1,True
+682,4,4,0.25,307972,Apostichopus japonicus,1,True
+683,4,4,0.25,1588040,Mesenchytraeus nivalis,1,True
+684,2,2,0.5,206671,Holothuria impatiens,1,True
+685,3,3,0.3333333333333333,1978353,Helgicirrha cari,1,True
+686,2,2,0.5,173132,Ionopezia gerardii,1,True
+687,3,3,0.3333333333333333,1541899,Myzostoma josefinae,1,True
+688,3,3,0.3333333333333333,2017521,Helminthosporium genistae,1,True
+689,2,2,0.5,259377,Nephroselmis anterostigmatica,1,True
+690,2,2,0.5,389493,Cololejeunea biddlecomiae,1,True
+691,3,3,0.3333333333333333,,,1,True
+692,2,2,0.5,45535,Sugiyamaella castrensis,1,True
+693,2,2,0.5,945688,Catenophlyctis variabilis,1,True
+694,3,3,0.3333333333333333,,,1,True
+695,7,7,0.14285714285714285,1162739,Sinophysis microcephala,1,True
+696,3,3,0.3333333333333333,989645,Enchelys gasterosteus,1,True
+697,7,7,0.14285714285714285,1616691,Pasiphaea sirenkoi,1,True
+698,4,4,0.25,46012,Radopholus similis,1,True
+699,2,2,0.5,1404351,Idgia flavirostris,1,True
+700,2,2,0.5,149001,Clausocalanus furcatus,1,True
+701,3,3,0.3333333333333333,2030961,Neomormonilla minor,1,True
+702,5,5,0.2,629184,Vombisidris bilongrudi,1,True
+703,2,2,0.5,251249,Mesobdella gemmata,1,True
+704,2,2,0.5,645345,Atolla wyvillei,1,True
+705,7,7,0.14285714285714285,281681,Caenorhabditis plicata,1,True
+706,4,4,0.25,547537,Isolda pulchella,1,True
+707,7,7,0.14285714285714285,560217,Nanidorus nanus,1,True
+708,4,4,0.25,468728,Emphysomera pallidapex,1,True
+709,5,5,0.2,5606,Saitoella complicata,1,True
+710,2,2,0.5,397978,Pandalus montagui,1,True
+711,4,4,0.25,158506,Gloeomonas rubrifilum,1,True
+712,2,2,0.5,413849,Halodaphnea panulirata,1,True
+713,2,2,0.5,418328,Branchiosyllis exilis,1,True
+714,2,2,0.5,1541139,Kudoa islandica,1,True
+715,5,5,0.2,1525013,Carcharodorhynchus flavidus,1,True
+716,4,4,0.25,560211,Dintheria tenuissima,1,True
+717,2,2,0.5,418330,Brania pusilla,1,True
+718,11,11,0.09090909090909091,404942,Zoothamnium niveum,1,True
+719,5,5,0.2,93112,Bacidia rosella,1,True
+720,2,2,0.5,181991,Gliophorus laetus,1,True
+721,4,4,0.25,265543,Minutocellus polymorphus,1,True
+722,2,2,0.5,44080,Saccharomycopsis schoenii,1,True
+723,2,2,0.5,454282,Peridinium sociale,1,True
+724,2,2,0.5,2059835,Exopassalora zambiae,1,True
+725,2,2,0.5,926011,Mysmena leichhardti,1,True
+726,2,2,0.5,575831,Aphelocheirus ellipsoideus,1,True
+727,3,3,0.3333333333333333,1431103,Phacus viridioryza,1,True
+728,2,2,0.5,1973076,Impagidinium pallidum,1,True
+729,2,2,0.5,1077140,Scutellospora striata,1,True
+730,7,6,0.2857142857142857,,,2,True
+731,4,4,0.25,,,1,True
+732,3,3,0.3333333333333333,154325,Galaxea astreata,1,True
+733,3,3,0.3333333333333333,1206573,Cumathamnion serrulatum,1,True
+734,2,2,0.5,293681,Eucephalobus striatus,1,True
+735,4,4,0.25,1525062,Progyrator mamertinus,1,True
+736,2,2,0.5,54551,Pichia terricola,1,True
+737,4,4,0.25,60948,Myzobdella lugubris,1,True
+738,6,6,0.16666666666666666,1554544,Anaplecta asema,1,True
+739,2,2,0.5,331383,Heterosaccus lunatus,1,True
+740,2,2,0.5,,,1,True
+741,2,2,0.5,576644,Axiopsis serratifrons,1,True
+742,2,2,0.5,1569442,Oulenziella bakeri,1,True
+743,8,8,0.125,,,1,True
+744,3,3,0.3333333333333333,,,1,True
+745,2,2,0.5,197536,Novistrombidium testaceum,1,True
+746,2,2,0.5,,,1,True
+747,2,2,0.5,691883,Fonticula alba,1,True
+748,3,3,0.3333333333333333,576301,Minibiotus gumersindoi,1,True
+749,2,2,0.5,121149,Acartia longiremis,1,True
+750,6,6,0.16666666666666666,1003112,Stenopterobia curvula,1,True
+751,6,6,0.16666666666666666,,,1,True
+752,2,2,0.5,140671,Vitreochlamys aulata,1,True
+753,2,2,0.5,,,1,True
+754,2,2,0.5,307584,Galeola lindleyana,1,True
+755,2,2,0.5,1202470,Filisoma rizalinum,1,True
+756,3,3,0.3333333333333333,295944,Sphindus dubius,1,True
+757,2,2,0.5,1797455,Unguizetes incertus,1,True
+758,3,3,0.3333333333333333,73922,Paracanthonchus caecus,1,True
+759,2,2,0.5,,,1,True
+760,2,2,0.5,868049,Syllis alternata,1,True
+761,2,2,0.5,1951397,Surirella striatula,1,True
+762,2,2,0.5,95536,Scolelepis squamata,1,True
+763,2,2,0.5,296197,Horreolanus orphanus,1,True
+764,2,2,0.5,168771,Phacellophora camtschatica,1,True
+765,3,3,0.3333333333333333,188451,Eunice vittata,1,True
+766,2,2,0.5,105987,Glaciozyma antarctica,1,True
+767,2,2,0.5,1547318,Sterreria rubra,1,True
+768,3,3,0.3333333333333333,936282,Prorocentrum glenanicum,1,True
+769,2,2,0.5,,,1,True
+770,4,4,0.25,153507,Haementeria lutzi,1,True
+771,2,2,0.5,311332,Paranebalia longipes,1,True
+772,2,2,0.5,1454941,Antarctonemertes valida,1,True
+773,2,2,0.5,1675617,Gyptis hians,1,True
+774,2,2,0.5,1519501,Coleochlamys oleifera,1,True
+775,2,2,0.5,46460,Milnesium tardigradum,1,True
+776,4,4,0.25,1586101,Salda littoralis,1,True
+777,4,4,0.25,435743,Tetrameres fissipina,1,True
+778,2,2,0.5,44926,Magnolia tripetala,1,True
+779,3,3,0.3333333333333333,2066005,Galgupha australis,1,True
+780,4,4,0.25,1710679,Tremella huuskonenii,1,True
+781,10,10,0.1,693933,Amphisiella sinica,1,True
+782,3,3,0.3333333333333333,1208774,Pararhagadochir flavicollis,1,True
+783,3,3,0.3333333333333333,1924735,Salpingoeca punica,1,True
+784,3,3,0.3333333333333333,2758538,Olindias muelleri,1,True
+785,2,2,0.5,483988,Volvatella viridis,1,True
+786,2,2,0.5,5818,Sarcocystis tenella,1,True
+787,3,3,0.3333333333333333,1444762,Echinoderes komatsui,1,True
+788,2,2,0.5,1144614,Phyxelida bifoveata,1,True
+789,2,2,0.5,418962,Prymnesium pienaarii,1,True
+790,3,3,0.3333333333333333,1810875,Chtonobdella tanae,1,True
+791,2,2,0.5,182345,Kudoa crumena,1,True
+792,5,5,0.2,2126981,Metopus minor,1,True
+793,3,3,0.3333333333333333,1109207,Mecomerinx heterocentroti,1,True
+794,3,2,0.6666666666666666,,,2,True
+795,7,3,0.7142857142857143,,,5,True
+796,4,4,0.25,639591,Calcigorgia beringi,1,True
+797,2,2,0.5,1538492,Filenchus aquilonius,1,True
+798,3,3,0.3333333333333333,947592,Drepanogigas albolineatus,1,True
+799,5,5,0.2,91188,Didymocystis inermis,1,True
+800,4,4,0.25,497513,Solmundella bitentaculata,1,True
+801,2,2,0.5,1661944,Zearchaea fiordensis,1,True
+802,4,4,0.25,261097,Kappamyces laurelensis,1,True
+803,5,5,0.2,353008,Octospora hygrohypnophila,1,True
+804,2,2,0.5,2752754,Spiophanes cf. bombyx VVP-2020,1,True
+805,2,2,0.5,1055079,Saron marmoratus,1,True
+806,2,2,0.5,1764286,Chloropicon sieburthii,1,True
+807,3,3,0.3333333333333333,479469,Calliotropis pagodiformis,1,True
+808,4,4,0.25,69337,Chara foliolosa,1,True
+809,3,3,0.3333333333333333,,,1,True
+810,2,2,0.5,288479,Thonus minutus,1,True
+811,2,2,0.5,242718,Colpophyllia natans,1,True
+812,3,3,0.3333333333333333,370546,Petrochirus diogenes,1,True
+813,3,3,0.3333333333333333,310905,Cyclotella choctawhatcheeana,1,True
+814,2,2,0.5,419518,Meterythrops robusta,1,True
+815,3,3,0.3333333333333333,,,1,True
+816,2,2,0.5,5730,Tetratrichomonas gallinarum,1,True
+817,2,2,0.5,130813,Saccharomycopsis lassenensis,1,True
+818,7,7,0.14285714285714285,1574454,Gomphonema subclavatum var. commutatum,1,True
+819,7,7,0.14285714285714285,1683868,Poseidonemertes maslakovae,1,True
+820,4,3,0.5,,,2,True
+821,3,3,0.3333333333333333,88271,Picocystis salinarum,1,True
+822,6,6,0.16666666666666666,1789750,Pteroclava krempfi,1,True
+823,2,2,0.5,201929,Lulwoidea lignoarenaria,1,True
+824,3,3,0.3333333333333333,1525078,Uncinorhynchus flavidus,1,True
+825,2,2,0.5,323732,Babesia duncani,1,True
+826,2,2,0.5,230383,Macrobrachium aemulum,1,True
+827,2,2,0.5,52679,Cylindrocapsa geminella,1,True
+828,2,2,0.5,46900,Pseudobensingtonia musae,1,True
+829,3,3,0.3333333333333333,3144,Chlorokybus atmophyticus,1,True
+830,4,4,0.25,614125,Baculofractum insigne,1,True
+831,3,3,0.3333333333333333,411789,Scolia verticalis,1,True
+832,3,3,0.3333333333333333,177579,Scopalina lophyropoda,1,True
+833,2,2,0.5,178375,Cyphoderia ampulla,1,True
+834,2,2,0.5,1678285,Isospora serinuse,1,True
+835,5,5,0.2,251237,Americobdella valdiviana,1,True
+836,3,3,0.3333333333333333,45607,Wickerhamiella sorbophila,1,True
+837,4,3,0.5,,,2,True
+838,2,2,0.5,74811,Laxus oneistus,1,True
+839,2,2,0.5,700691,Vidole capensis,1,True
+840,5,5,0.2,2751899,Earleria panicula,1,True
+841,2,2,0.5,170400,Radiococcus polycoccus,1,True
+842,2,2,0.5,856778,Antholoba achates,1,True
+843,2,2,0.5,1143023,Anotylus hamatus,1,True
+844,5,5,0.2,473813,Salpingoeca urceolata,1,True
+845,6,6,0.16666666666666666,,,1,True
+846,2,2,0.5,164321,Gymnodinium microreticulatum,1,True
+847,2,2,0.5,187809,Cephalothrix filiformis,1,True
+848,2,2,0.5,44633,Underwoodia columnaris,1,True
+849,4,4,0.25,173371,Cephaleuros virescens,1,True
+850,2,2,0.5,878037,Hydraena riparia,1,True
+851,4,4,0.25,529579,Loxanthera speciosa,1,True
+852,2,2,0.5,397380,Chaunochiton kappleri,1,True
+853,2,2,0.5,2267791,Psammodrilus fauveli,1,True
+854,2,2,0.5,,,1,True
+855,2,2,0.5,288561,Clavicaudoides trophurus,1,True
+856,2,2,0.5,49694,Apostasia stylidioides,1,True
+857,2,2,0.5,224616,Antrodiaetus unicolor,1,True
+858,4,4,0.25,1400029,Nesticella falcata,1,True
+859,2,2,0.5,1511279,Microvelia douglasi,1,True
+860,3,3,0.3333333333333333,1003021,Biddulphia alternans,1,True
+861,4,4,0.25,662000,Opercularella lacerata,1,True
+862,2,2,0.5,225041,Chlamydomonas chlamydogama,1,True
+863,4,4,0.25,157483,Lichina pygmaea,1,True
+864,5,5,0.2,303462,Cymatopleura elliptica,1,True
+865,3,3,0.3333333333333333,707164,Cyphoderia littoralis,1,True
+866,2,2,0.5,1215714,Paracentrophyes anurus,1,True
+867,2,2,0.5,181587,Metanophrys sinensis,1,True
+868,2,2,0.5,285082,Aulacoseira granulata,1,True
+869,4,4,0.25,1346492,Frontonia mengi,1,True
+870,6,6,0.16666666666666666,1525044,Opisthocystis goettei,1,True
+871,4,4,0.25,1345008,Nucula atacellana,1,True
+872,2,2,0.5,1400012,Pseudopleurococcus printzii,1,True
+873,6,6,0.16666666666666666,1654958,Mangua gunni,1,True
+874,4,4,0.25,536583,Eubrianax edwardsii,1,True
+875,2,2,0.5,,,1,True
+876,2,2,0.5,293282,Inosperma mutatum,1,True
+877,3,3,0.3333333333333333,,,1,True
+878,6,6,0.16666666666666666,304461,Spirocerca lupi,1,True
+879,2,2,0.5,332500,Sciurothamnion stegengae,1,True
+880,2,2,0.5,78445,Pyropia onoi,1,True
+881,3,3,0.3333333333333333,108529,Haematoloechus longiplexus,1,True
+882,2,2,0.5,374047,Helicotheca tamesis,1,True
+883,4,4,0.25,1435237,Saccocirrus pussicus,1,True
+884,2,2,0.5,2040472,Goniochloris smithii,1,True
+885,5,5,0.2,1525615,Longidorus hangzhouensis,1,True
+886,3,3,0.3333333333333333,1797409,Crotonia reticulata,1,True
+887,2,2,0.5,,,1,True
+888,3,3,0.3333333333333333,109897,Gaertneriomyces semiglobifer,1,True
+889,2,2,0.5,714599,Aglaophamus elamellata,1,True
+890,3,3,0.3333333333333333,1712239,Metarhombognathus armatus,1,True
+891,5,5,0.2,1554533,Nocticola babindaensis,1,True
+892,5,5,0.2,587184,Pratylenchus araucensis,1,True
+893,2,2,0.5,1925692,Nesticella kaohsiungensis,1,True
+894,2,2,0.5,1400037,Nesticella yui,1,True
+895,2,2,0.5,1234422,Discocephalus pararotatorius,1,True
+896,3,3,0.3333333333333333,344733,Peridinium palatinum,1,True
+897,4,4,0.25,1003121,Surirella minuta,1,True
+898,3,3,0.3333333333333333,302480,Dinothrix rugata,1,True
+899,4,1,1.0,,,4,True
+900,3,3,0.3333333333333333,399975,Centropages furcatus,1,True
+901,2,2,0.5,49249,Ditylum brightwellii,1,True
+902,3,3,0.3333333333333333,435730,Rhigonema thysanophora,1,True
+903,6,6,0.16666666666666666,85269,Spathiphyllum wallisii,1,True
+904,7,7,0.14285714285714285,91920,Exophiala alcalophila,1,True
+905,2,2,0.5,218848,Proterospongia choanojuncta,1,True
+906,10,10,0.1,536601,Monosporus pedicellatus,1,True
+907,2,2,0.5,,,1,True
+908,6,6,0.16666666666666666,1616682,Nematocarcinus crosnieri,1,True
+909,2,2,0.5,139980,Bangiopsis subsimplex,1,True
+910,2,2,0.5,270882,Ceuthophilus utahensis,1,True
+911,2,2,0.5,36025,Nakazawaea holstii,1,True
+912,7,7,0.14285714285714285,1230127,Pseudokeronopsis erythrina,1,True
+913,3,3,0.3333333333333333,702563,Rimostrombidium veniliae,1,True
+914,9,9,0.1111111111111111,1468198,Prorhynchus alpinus,1,True
+915,3,3,0.3333333333333333,544692,Euchaeta concinna,1,True
+916,5,5,0.2,529749,Margarites helicinus,1,True
+917,3,3,0.3333333333333333,182588,Pontocythere subjaponica,1,True
+918,2,2,0.5,1003022,Biddulphia tridens,1,True
+919,7,7,0.14285714285714285,420353,Chlamydomonas sordida,1,True
+920,3,3,0.3333333333333333,723190,Clio pyramidata antarctica,1,True
+921,2,2,0.5,283435,Monanchora arbuscula,1,True
+922,6,6,0.16666666666666666,195188,Curimopsis setigera,1,True
+923,2,2,0.5,1112787,Cypria exsculpta,1,True
+924,2,2,0.5,28971,Viviania marifolia,1,True
+925,3,3,0.3333333333333333,1129571,Pleurodasys helgolandicus,1,True
+926,4,4,0.25,568149,Vanniopsis howense,1,True
+927,4,4,0.25,1712431,Odontocepheus oblongus,1,True
+928,4,4,0.25,90339,Rhinosporidium seeberi,1,True
+929,2,2,0.5,4992,Kondoa miscanthi,1,True
+930,2,2,0.5,1531405,Cartodere constricta,1,True
+931,4,4,0.25,1902840,Mesothuria oktaknemus,1,True
+932,2,2,0.5,764119,Ulothrix fimbriata,1,True
+933,3,3,0.3333333333333333,435893,Omegastrombidium elegans,1,True
+934,2,2,0.5,,,1,True
+935,2,2,0.5,1969770,Tubiluchus soyoae,1,True
+936,5,5,0.2,1502899,Vibone vetusta,1,True
+937,2,2,0.5,655708,Sertularella sanmatiasensis,1,True
+938,4,4,0.25,378366,Micropodarke dubia,1,True
+939,2,2,0.5,114068,Calanus helgolandicus,1,True
+940,3,3,0.3333333333333333,71516,Clione limacina,1,True
+941,2,2,0.5,2051697,Bakericheyla chanayi,1,True
+942,4,4,0.25,1837151,Sagriva vittata,1,True
+943,2,2,0.5,1475339,Basiliolella grayi,1,True
+944,2,2,0.5,107736,Prostheceraeus vittatus,1,True
+945,3,3,0.3333333333333333,85986,Paxillus filamentosus,1,True
+946,2,2,0.5,5870,Babesia rodhaini,1,True
+947,2,2,0.5,473178,Phonognatha graeffei,1,True
+948,2,2,0.5,261837,Hemidinium nasutum,1,True
+949,2,2,0.5,62645,Rhamphospora nymphaeae,1,True
+950,2,2,0.5,1133979,Polydora onagawaensis,1,True
+951,5,5,0.2,1111151,Histiostoma inquilinum,1,True
+952,3,3,0.3333333333333333,485289,Akalyptoischion atrichos,1,True
+953,2,2,0.5,641229,Pseudotontonia simplicidens,1,True
+954,3,3,0.3333333333333333,35080,Balanoglossus carnosus,1,True
+955,2,2,0.5,664466,Thoracostoma trachygaster,1,True
+956,2,2,0.5,1462453,Protodrilus gracilis,1,True
+957,2,2,0.5,552514,Troglophilus neglectus,1,True
+958,3,3,0.3333333333333333,3005,Rhizosolenia setigera,1,True
+959,2,2,0.5,2735107,Metarhabditis rainai,1,True
+960,2,2,0.5,1950229,Entomoneis pulchra,1,True
+961,2,2,0.5,425018,Heterocypris incongruens,1,True
+962,5,5,0.2,91922,Exophiala castellanii,1,True
+963,2,2,0.5,1416570,Aepinus septemspinosus,1,True
+964,4,4,0.25,299244,Cantao ocellatus,1,True
+965,2,2,0.5,942637,Hymeniacidon kitchingi,1,True
+966,2,2,0.5,655661,Wilbertia typica,1,True
+967,2,2,0.5,298513,Exumella mediterranea,1,True
+968,3,3,0.3333333333333333,295588,Ptinella errabunda,1,True
+969,2,2,0.5,857302,Musculus cupreus,1,True
+970,5,2,0.8,,,4,True
+971,3,3,0.3333333333333333,652833,Isomermis lairdi,1,True
+972,4,4,0.25,1301101,Ascoidea asiatica,1,True
+973,2,2,0.5,2291667,Tursiocola alata,1,True
+974,2,2,0.5,2060439,Halacarus omului,1,True
+975,2,2,0.5,,,1,True
+976,2,2,0.5,646408,Annectocyma tubulosa,1,True
+977,2,2,0.5,1415222,Centroderes spinosus,1,True
+978,2,2,0.5,373304,Pentapycnon charcoti,1,True
+979,2,2,0.5,1408141,Spongotrochus glacialis,1,True
+980,6,6,0.16666666666666666,1131437,Terebella lapidaria,1,True
+981,3,3,0.3333333333333333,92955,Goffeauzyma gastrica,1,True
+982,2,2,0.5,1210413,Sthenelais limicola,1,True
+983,3,3,0.3333333333333333,626267,Diplosolen obelia,1,True
+984,2,2,0.5,1177079,Anisodevonia ohshimai,1,True
+985,2,2,0.5,507024,Conorhinopsylla stanfordi,1,True
+986,2,2,0.5,863952,Erebomaster flavescens flavescens,1,True
+987,2,2,0.5,35097,Cohnilembus verminus,1,True
+988,4,4,0.25,1345003,Acharax gadirae,1,True
+989,2,2,0.5,687548,Kanakythyris pachyrhynchos,1,True
+990,8,8,0.125,1617811,Kudoa igami,1,True
+991,4,4,0.25,398533,Amphisiella milnei,1,True
+992,2,2,0.5,1271885,Ancistrum mytili,1,True
+993,4,4,0.25,527273,Freya decorata,1,True
+994,2,2,0.5,201319,Chloromonas nivalis,1,True
+995,7,7,0.14285714285714285,2267793,Psammodrilus norenburgi,1,True
+996,2,2,0.5,181593,Cynoscionicola branquialis,1,True
+997,2,2,0.5,1003059,Hantzschia amphioxys var. major,1,True
+998,2,2,0.5,1311990,Protoplanella simplex,1,True
+999,2,2,0.5,168710,Aegina citrea,1,True
+1000,4,4,0.25,2986,Ochromonas danica,1,True
+1001,2,2,0.5,768838,Loxomitra mizugamaensis,1,True
+1002,6,6,0.16666666666666666,1428006,Pseudodiploria strigosa,1,True
+1003,2,2,0.5,889455,Dictyococcus varians,1,True
+1004,2,2,0.5,33182,Malbranchea gypsea,1,True
+1005,12,12,0.08333333333333333,2069334,Chloromonas remiasii,1,True
+1006,2,2,0.5,157291,Kuraishia hungarica,1,True
+1007,2,2,0.5,45575,Sugiyamaella paludigena,1,True
+1008,2,2,0.5,105771,Pseudomicrostroma phylloplanum,1,True
+1009,3,3,0.3333333333333333,,,1,True
+1010,7,7,0.14285714285714285,2267790,Psammodrilus didomenicoi,1,True
+1011,2,2,0.5,580068,Parastacus varicosus,1,True
+1012,3,3,0.3333333333333333,391283,Phagocata vitta,1,True
+1013,2,2,0.5,295621,Myllaena dubia,1,True
+1014,3,3,0.3333333333333333,145388,Monoraphidium neglectum,1,True
+1015,4,4,0.25,1045409,Exogone fustifera,1,True
+1016,3,3,0.3333333333333333,856711,Hebrus nipponicus,1,True
+1017,2,2,0.5,1898697,Pavelius uschakovi,1,True
+1018,4,4,0.25,202709,Asterostroma andinum,1,True
+1019,3,3,0.3333333333333333,1522702,Enoplometopus macrodontus,1,True
+1020,3,3,0.3333333333333333,173495,Neodangemannia microcystis,1,True
+1021,5,5,0.2,,,1,True
+1022,8,8,0.125,396330,Pannychia moseleyi,1,True
+1023,6,6,0.16666666666666666,1425582,Longitarsus melanocephalus,1,True
+1024,7,7,0.14285714285714285,184741,Erpobdella obscura,1,True
+1025,3,3,0.3333333333333333,2044469,Labyrinthulochytrium arktikum,1,True
+1026,2,2,0.5,106001,Buckleyzyma armeniaca,1,True
+1027,2,2,0.5,332222,Neochlorosarcina pseudominor,1,True
+1028,2,2,0.5,1155033,Bathypalaemonetes brevirostris,1,True
+1029,2,2,0.5,646322,Hornera foliacea,1,True
+1030,7,7,0.14285714285714285,1484655,Nipponnemertes ogumai,1,True
+1031,3,3,0.3333333333333333,5495,[Candida] nitratophila,1,True
+1032,2,2,0.5,261852,Temora longicornis,1,True
+1033,4,4,0.25,433960,,1,True
+1034,2,2,0.5,1416583,Inachoides laevis,1,True
+1035,5,5,0.2,878013,Eusphalerum torquatum,1,True
+1036,2,2,0.5,,,1,True
+1037,2,2,0.5,57136,Sarcodon imbricatus,1,True
+1038,2,2,0.5,2751896,Cyclocanna producta,1,True
+1039,4,4,0.25,1857292,Endelus gyoerfii,1,True
+1040,2,2,0.5,,,1,True
+1041,4,4,0.25,338287,Filinia longiseta,1,True
+1042,4,4,0.25,578952,Kroyeria sphyrnae,1,True
+1043,2,2,0.5,1080933,Rhabdochona guerreroensis,1,True
+1044,5,5,0.2,44079,Saccharomycopsis synnaedendra,1,True
+1045,2,2,0.5,57509,Urostyla grandis,1,True
+1046,3,3,0.3333333333333333,1917271,Coeloseris mayeri,1,True
+1047,4,4,0.25,592036,Nucleotaenium eifelense,1,True
+1048,2,2,0.5,1519608,Micrura dellechiajei,1,True
+1049,2,2,0.5,127444,Elongisporangium undulatum,1,True
+1050,4,4,0.25,696194,Uronychia sinica,1,True
+1051,6,6,0.16666666666666666,497490,Aglaura hemistoma,1,True
+1052,2,2,0.5,59250,Contracaecum multipapillatum,1,True
+1053,2,2,0.5,307512,Monoraphidium pusillum,1,True
+1054,3,3,0.3333333333333333,1898701,Paramytha ossicola,1,True
+1055,2,2,0.5,46685,Ascaridia galli,1,True
+1056,3,3,0.3333333333333333,942645,Dictyonella obtusa,1,True
+1057,4,4,0.25,210803,Phascolosoma stephensoni,1,True
+1058,4,4,0.25,160032,Phlebia albomellea,1,True
+1059,5,5,0.2,,,1,True
+1060,2,2,0.5,993596,Leptochiton saitoi,1,True
+1061,3,3,0.3333333333333333,5298,Puccinia poarum,1,True
+1062,4,4,0.25,13579,Juncus effusus,1,True
+1063,3,3,0.3333333333333333,338299,Haplognathia rosea,1,True
+1064,2,2,0.5,1276540,Dipolydora bidentata,1,True
+1065,4,4,0.25,115352,Scymnus suturalis,1,True
+1066,2,2,0.5,169010,Nematobrachion flexipes,1,True
+1067,4,4,0.25,1003053,Fallacia monoculata,1,True
+1068,3,3,0.3333333333333333,50265,Ogataea naganishii,1,True
+1069,5,5,0.2,1897521,Uroleptus stueberi,1,True
+1070,3,3,0.3333333333333333,5443,Buckleyzyma salicina,1,True
+1071,2,2,0.5,31228,Pseudosuccinea columella,1,True
+1072,2,2,0.5,295915,Enicmus transversus,1,True
+1073,2,2,0.5,,,1,True
+1074,3,3,0.3333333333333333,1143041,Dasycerus carolinensis,1,True
+1075,3,3,0.3333333333333333,1513194,Chloromonas vernalis,1,True
+1076,4,4,0.25,1484664,Sonnenemertes cantelli,1,True
+1077,2,2,0.5,2052648,Neosabellides lizae,1,True
+1078,2,2,0.5,1525056,Phonorhynchella biarcuata,1,True
+1079,2,2,0.5,360645,Collotheca campanulata,1,True
+1080,5,5,0.2,237413,Catostylus mosaicus,1,True
+1081,2,2,0.5,87091,Chloromonas augustae,1,True
+1082,2,2,0.5,1442378,Parascedosporium putredinis,1,True
+1083,6,6,0.16666666666666666,298507,,1,True
+1084,2,2,0.5,1983166,Ascuta parornata,1,True
+1085,2,2,0.5,1177087,Melliteryx puncticulata,1,True
+1086,4,4,0.25,1766110,Nuncia roeweri seditiosa,1,True
+1087,6,6,0.16666666666666666,1589715,Tenagobia incerta,1,True
+1088,3,3,0.3333333333333333,34588,Helobdella stagnalis,1,True
+1089,2,2,0.5,,,1,True
+1090,2,2,0.5,55639,Psychropotes longicauda,1,True
+1091,7,7,0.14285714285714285,,,1,True
+1092,7,7,0.14285714285714285,132389,Oxyuris equi,1,True
+1093,4,4,0.25,389870,Atypoides gertschi,1,True
+1094,2,2,0.5,1271891,Conchophthirus lamellidens,1,True
+1095,3,3,0.3333333333333333,6503,Aplysia parvula,1,True
+1096,4,4,0.25,2049014,Paraenchelys terricola,1,True
+1097,2,2,0.5,1046766,Chaerilus julietteae,1,True
+1098,2,2,0.5,1956548,Stedocys pagodas,1,True
+1099,5,5,0.2,356159,Erpobdella ochoterenai,1,True
+1100,4,4,0.25,116916,Orchipedum tracheicola,1,True
+1101,2,2,0.5,52053,Nemertinoides elongatus,1,True
+1102,4,4,0.25,759312,Eunice notata,1,True
+1103,4,4,0.25,1468191,Baicalellia canadensis,1,True
+1104,2,2,0.5,445025,Hygrophorus poetarum,1,True
+1105,3,3,0.3333333333333333,1525064,Psammorhynchus tubulipenis,1,True
+1106,3,3,0.3333333333333333,164621,Sorogena stoianovitchae,1,True
+1107,2,2,0.5,,,1,True
+1108,2,2,0.5,,,1,True
+1109,2,2,0.5,1336860,Higginsia anfractuosa,1,True
+1110,11,11,0.09090909090909091,435740,Spirocamallanus istiblenni,1,True
+1111,2,2,0.5,592142,Zosterodasys agamalievi,1,True
+1112,6,5,0.3333333333333333,,,2,True
+1113,2,2,0.5,1702332,Grania brasiliensis,1,True
+1114,9,9,0.1111111111111111,179866,Heterochlamydomonas inaequalis,1,True
+1115,2,2,0.5,88928,Micrura fasciolata,1,True
+1116,3,3,0.3333333333333333,,,1,True
+1117,3,3,0.3333333333333333,,,1,True
+1118,2,2,0.5,2052635,Auchenoplax worsfoldi,1,True
+1119,5,5,0.2,6262,Heterocheilus tunicatus,1,True
+1120,3,3,0.3333333333333333,576665,,1,True
+1121,2,2,0.5,396654,Burmannia itoana,1,True
+1122,2,2,0.5,72425,Euastacus bispinosus,1,True
+1123,3,3,0.3333333333333333,471278,Eimeria intestinalis,1,True
+1124,6,6,0.16666666666666666,154758,Sistotrema sernanderi,1,True
+1125,3,3,0.3333333333333333,1037658,Coeloplana anthostella,1,True
+1126,2,2,0.5,109902,Rhizophydium sphaerotheca,1,True
+1127,2,2,0.5,1414717,Hygrocybe noninquinans,1,True
+1128,2,2,0.5,231610,Austrognatharia strunki,1,True
+1129,5,5,0.2,1507871,Rachicladosporium inconspicuum,1,True
+1130,3,3,0.3333333333333333,1344031,Oxyspirura petrowi,1,True
+1131,6,6,0.16666666666666666,1564079,Pycnophyes zelinkaei,1,True
+1132,4,4,0.25,1873960,Pseudocercospora fijiensis,1,True
+1133,3,3,0.3333333333333333,1545211,Piesma maculatum,1,True
+1134,2,2,0.5,,,1,True
+1135,2,2,0.5,155003,Nia vibrissa,1,True
+1136,3,3,0.3333333333333333,578973,Tripaphylus elongatus,1,True
+1137,2,2,0.5,1468216,Acholades asteris,1,True
+1138,2,2,0.5,50177,Araucaria excelsa,1,True
+1139,2,2,0.5,1659692,Scabies crispata,1,True
+1140,3,3,0.3333333333333333,308667,Anthohebella parasitica,1,True
+1141,3,3,0.3333333333333333,2267794,Psammodrilus swedmarki,1,True
+1142,2,2,0.5,714617,Micronephthys stammeri,1,True
+1143,4,3,0.5,,,2,True
+1144,2,2,0.5,1651840,Rhizorhina ohtsukai,1,True
+1145,4,3,0.5,,,2,True
+1146,2,2,0.5,35684,Pseudopedinella elastica,1,True
+1147,7,7,0.14285714285714285,655981,Pseudogymnoascus destructans,1,True
+1148,2,2,0.5,58919,Tilletiopsis washingtonensis,1,True
+1149,4,4,0.25,1838253,Vermeijius pallidus,1,True
+1150,3,3,0.3333333333333333,1416604,Teleophrys cristulipes,1,True
+1151,4,4,0.25,1647974,Hodophilus hymenocephalus,1,True
+1152,2,2,0.5,527218,Levicoleps biwae,1,True
+1153,5,5,0.2,407017,Thrips nigropilosus,1,True
+1154,4,4,0.25,166032,Hubrechtella dubia,1,True
+1155,2,2,0.5,1881137,Halamphora catenulafalsa,1,True
+1156,3,3,0.3333333333333333,278010,Arthopyrenia salicis,1,True
+1157,2,2,0.5,5630,Laetiporus sulphureus,1,True
+1158,2,2,0.5,863998,Pellobunus insularis,1,True
+1159,2,2,0.5,191687,Ankistrodesmus fusiformis,1,True
+1160,3,3,0.3333333333333333,106125,Dorometra aegyptica,1,True
+1161,3,3,0.3333333333333333,2072709,Calohypsibius verrucosus,1,True
+1162,2,2,0.5,,,1,True
+1163,5,5,0.2,2212933,Merizocera cruciata,1,True
+1164,4,4,0.25,237593,Catenulostroma elginense,1,True
+1165,2,2,0.5,1968801,Metopus hasei,1,True
+1166,2,2,0.5,364019,Hymeniacidon sinapium,1,True
+1167,3,3,0.3333333333333333,,,1,True
+1168,4,4,0.25,196565,Byssoloma leucoblepharum,1,True
+1169,3,3,0.3333333333333333,1415233,Semnoderes armiger,1,True
+1170,2,2,0.5,,,1,True
+1171,4,4,0.25,1958864,Afrothismia amietii,1,True
+1172,4,4,0.25,2094192,Pelagospilus aureus,1,True
+1173,3,3,0.3333333333333333,1134079,Geranomyces hawaiiensis,1,True
+1174,5,5,0.2,1983170,Maoriata magna,1,True
+1175,2,2,0.5,2025166,Chaetopterus cautus,1,True
+1176,2,2,0.5,406841,,1,True
+1177,4,4,0.25,6879,Centruroides exilicauda,1,True
+1178,3,3,0.3333333333333333,59252,Cruzia americana,1,True
+1179,2,2,0.5,4644,Globba curtisii,1,True
+1180,2,2,0.5,100951,Naganishia albida,1,True
+1181,2,2,0.5,2068669,Trigonostomum tori,1,True
+1182,3,3,0.3333333333333333,1263277,Aotearoa magna,1,True
+1183,3,3,0.3333333333333333,1545410,Rotylenchus striaticeps,1,True
+1184,2,2,0.5,1630118,Corynelia africana,1,True
+1185,2,2,0.5,4872,Endogone pisiformis,1,True
+1186,4,4,0.25,,,1,True
+1187,3,3,0.3333333333333333,215701,Leucotelium pruni-persicae,1,True
+1188,7,7,0.14285714285714285,74448,Dendostrea frons,1,True
+1189,2,2,0.5,110093,Polychytrium aggregatum,1,True
+1190,2,2,0.5,190390,Trichodorus similis,1,True
+1191,3,3,0.3333333333333333,1137951,Metatithaeus rubidus,1,True
+1192,2,2,0.5,1312012,Trigonostomum watsoni,1,True
+1193,3,3,0.3333333333333333,181602,Kuraishia floccosa,1,True
+1194,5,5,0.2,148097,Martiniozyma asiatica,1,True
+1195,4,4,0.25,1956488,Neozimiris pubescens,1,True
+1196,2,2,0.5,280858,Paramonas globosa,1,True
+1197,2,2,0.5,1210001,Neogyptis hinehina,1,True
+1198,3,3,0.3333333333333333,61847,Axiothella rubrocincta,1,True
+1199,3,3,0.3333333333333333,431580,Pinnularia substreptoraphe,1,True
+1200,6,6,0.16666666666666666,5435,Symmetrospora gracilis,1,True
+1201,4,4,0.25,62876,Glossus humanus,1,True
+1202,3,3,0.3333333333333333,1956627,Dendrolycosa cruciata cruciata,1,True
+1203,8,8,0.125,1431936,Neocatenulostroma germanicum,1,True
+1204,3,3,0.3333333333333333,1605534,Cymatodera californica,1,True
+1205,4,4,0.25,1818029,Cirrophorus branchiatus,1,True
+1206,2,2,0.5,315201,Heyderia abietis,1,True
+1207,6,2,0.8333333333333334,,,5,True
+1208,2,2,0.5,4920,Millerozyma farinosa,1,True
+1209,2,2,0.5,1346493,Frontonia magna,1,True
+1210,3,3,0.3333333333333333,82106,Cladophialophora boppii,1,True
+1211,3,3,0.3333333333333333,1271884,Ancistrum japonicum,1,True
+1212,2,2,0.5,1311875,Promesostoma cochleare,1,True
+1213,2,2,0.5,1953763,Cethegus fugax,1,True
+1214,2,2,0.5,198652,Rogerpetersonia torreyae,1,True
+1215,2,2,0.5,34136,Cladophora vagabunda,1,True
+1216,3,3,0.3333333333333333,353027,Rhodotarzetta rosea,1,True
+1217,2,2,0.5,239119,Phaeomarasmius proximans,1,True
+1218,10,10,0.1,913634,Achaeta bifollicula,1,True
+1219,2,2,0.5,216975,Glauconema trihymene,1,True
+1220,5,5,0.2,2066691,Leiochone japonica,1,True
+1221,5,5,0.2,2060440,Limnohalacarus cultellatus,1,True
+1222,2,2,0.5,1615677,Bulgariella pulla,1,True
+1223,3,3,0.3333333333333333,1291289,Pseudanaphothrips araucariae,1,True
+1224,3,3,0.3333333333333333,584655,Arcuseries petzi,1,True
+1225,2,2,0.5,6565,Crassostrea virginica,1,True
+1226,2,2,0.5,1111208,Alloptes crassipes,1,True
+1227,3,3,0.3333333333333333,2184070,Sicuophora multigranularis,1,True
+1228,3,3,0.3333333333333333,69348,Chara zeylanica,1,True
+1229,2,1,1.0,,,2,True
+1230,2,2,0.5,1194624,Lepidochaetus zelinkai,1,True
+1231,2,2,0.5,93117,Lecanora intumescens,1,True
+1232,3,3,0.3333333333333333,,,1,True
+1233,3,3,0.3333333333333333,263429,Teredo navalis,1,True
+1234,2,2,0.5,458502,Lissodendoryx isodictyalis,1,True
+1235,2,2,0.5,2047823,Ripella tribonemae,1,True
+1236,5,5,0.2,1956337,Phanotea sathegyna,1,True
+1237,3,3,0.3333333333333333,1304667,Zoropsis spinimana,1,True
+1238,2,2,0.5,1582126,Crassatella subquadrata,1,True
+1239,2,2,0.5,129377,Neopsylla bidentatiformis,1,True
+1240,3,3,0.3333333333333333,764665,Micropsephodes lundgreni,1,True
+1241,2,2,0.5,,,1,True
+1242,3,3,0.3333333333333333,389058,Tengella radiata,1,True
+1243,5,5,0.2,140714,Tunga monositus,1,True
+1244,2,2,0.5,,,1,True
+1245,3,3,0.3333333333333333,1688452,Cladorhiza abyssicola,1,True
+1246,3,2,0.6666666666666666,,,2,True
+1247,2,2,0.5,256104,Mopalia muscosa,1,True
+1248,5,5,0.2,1956444,Habronestes raveni,1,True
+1249,2,2,0.5,1983125,Subantarctia fiordensis,1,True
+1250,2,2,0.5,486295,Notoligotoma hardyi,1,True
+1251,2,2,0.5,2006572,Pisione hartmannschroederae,1,True
+1252,2,2,0.5,1045405,Erinaceusyllis serratosetosa,1,True
+1253,5,1,1.0,,,5,True
+1254,3,3,0.3333333333333333,418352,Sphaerosyllis hirsuta,1,True
+1255,2,2,0.5,140706,Coptopsylla africana,1,True
+1256,3,3,0.3333333333333333,139426,Velesunio ambiguus,1,True
+1257,3,3,0.3333333333333333,31347,Bangia atropurpurea,1,True
+1258,3,3,0.3333333333333333,756024,Xylogone sphaerospora,1,True
+1259,3,3,0.3333333333333333,1956556,Teminius insularis,1,True
+1260,2,1,1.0,,,2,True
+1261,3,3,0.3333333333333333,1262162,Kallistoskypha incarnata,1,True
+1262,2,2,0.5,1199094,Coniochaeta fodinicola,1,True
+1263,2,2,0.5,1771337,Pimoa rupicola,1,True
+1264,3,1,1.0,,,3,True
+1265,3,2,0.6666666666666666,,,2,True
+1266,3,3,0.3333333333333333,1525905,Kilyana hendersoni,1,True
+1267,2,1,1.0,,,2,True
+1268,3,3,0.3333333333333333,202714,Candelabrochaete africana,1,True
+1269,15,3,0.8666666666666667,,,13,True
+-1,4597,4240,0.0,NOISE,NOISE,0,True

@@ -438,7 +438,7 @@ def main():
         taxonomy_file='./dataset/ssu_accession_full_lineage.tsv'
     )
     
-    results = evaluator.generate_evaluation_report('dataset/evalutaion/evaluation_report.txt')
+    results = evaluator.generate_evaluation_report('dataset/evaluation/evaluation_report.txt')
     
     print("\n" + "=" * 80)
     print(f"Overall Clustering Quality: {results['clustering_quality_score']:.3f}/1.0")

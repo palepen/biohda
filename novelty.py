@@ -265,8 +265,8 @@ def main():
     print(f"Detected {len(novel_sequences)} novel sequences")
     
     # Generate reports
-    detector.generate_report('novelty_report.txt')
-    detector.save_novel_sequences('novel_sequences.txt')
+    detector.generate_report('dataset/novelty/novelty_report.txt')
+    detector.save_novel_sequences('dataset/novelty/novel_sequences.txt')
     
     print("\nNovelty detection complete!")
 
