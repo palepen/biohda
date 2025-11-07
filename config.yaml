@@ -79,16 +79,16 @@ training:
 # ============================================================================
 clustering:
   # Minimum cluster size
-  min_cluster_size: 5
+  min_cluster_size: 2
   
   # Minimum samples
-  min_samples: 3
+  min_samples: 1
   
   # Cluster selection epsilon
-  cluster_selection_epsilon: 0.0
+  cluster_selection_epsilon: 0.5
   
   # Distance metric
-  metric: "euclidean"
+  metric: "l2"
   
   # Normalize embeddings before clustering
   normalize: true

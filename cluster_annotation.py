@@ -40,8 +40,8 @@ class ClusterAnnotator:
                  identity_threshold_novel: float = 95.0,
                  identity_threshold_species: float = 97.0,
                  delay_between_requests: float = 3.0,
-                 database: str = "nt",
-                 use_local_blast: bool = False,
+                 database: str = "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA",
+                 use_local_blast: bool = True,
                  batch_size: int = None,
                  resume: bool = False):
         """
@@ -97,7 +97,7 @@ class ClusterAnnotator:
         """Load all sequences from FASTA files"""
         logger.info("\nLoading FASTA sequences...")
         
-        fasta_files = ['ITS_clean.fasta', 'LSU_clean.fasta', 'SSU_clean.fasta']
+        fasta_files = ['SSU_clean.fasta']
         sequences = {}
         
         for fasta_file in fasta_files:
