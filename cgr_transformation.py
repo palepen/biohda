@@ -67,8 +67,8 @@ class CGRTransformer:
         
         # FASTA files
         self.fasta_files = [
-            'ITS_clean.fasta',
-            'LSU_clean.fasta',
+            # 'ITS_clean.fasta',
+            # 'LSU_clean.fasta',
             'SSU_clean.fasta'
         ]
     
