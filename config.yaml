@@ -1,64 +1,217 @@
-# Unified Configuration for Novel Taxa Discovery Pipeline
+# config.yaml
+# ===========
+# Configuration for eDNA Analysis Pipeline with Enhanced Evaluation
 
-# Directory paths
+# ============================================================================
+# PATHS
+# ============================================================================
 paths:
+  # Raw data
   raw_dir: "dataset/raw"
-  fasta_dir: "dataset/fasta"
+  
+  # Processed data
   processed_dir: "dataset/processed"
+  
+  # CGR images
   cgr_dir: "dataset/cgr"
+  
+  # Trained models
   models_dir: "models"
+  
+  # Embeddings
   embeddings_dir: "dataset/embeddings"
+  
+  # Clustering results
   clusters_dir: "dataset/clusters"
-  novelty_dir: "dataset/novelty"
+  
+  # Cluster annotations (NEW)
+  annotation_dir: "dataset/annotation"
+  
+  # Evaluation results
   evaluation_dir: "dataset/evaluation"
-  validation_dir: "dataset/validation"
-  visualization_dir: "dataset/visualizations"
+  
+  # Visualizations
+  visualization_dir: "dataset/visualization"
+  
+  # Ground truth taxonomy file
   taxonomy_file: "dataset/ssu_accession_full_lineage.tsv"
 
-# Preprocessing parameters
-preprocessing:
-  min_length: 100
-  max_ambiguous_ratio: 0.10
 
-# CGR transformation parameters
+# ============================================================================
+# CGR TRANSFORMATION
+# ============================================================================
 cgr:
-  image_size: 128
+  # Image size (64x64 or 128x128)
+  image_size: 64
+  
+  # Apply log transformation to frequencies
   log_transform: true
 
-# CNN encoder parameters
-encoder:
-  embedding_dim: 128
-  batch_size: 128
-  num_epochs: 50
-  learning_rate: 0.001
-  device: "cuda"
 
-# HDBSCAN clustering parameters
+# ============================================================================
+# CNN TRAINING
+# ============================================================================
+training:
+  # Embedding dimension
+  embedding_dim: 128
+  
+  # Batch size
+  batch_size: 128
+  
+  # Number of epochs
+  num_epochs: 50
+  
+  # Learning rate
+  learning_rate: 0.001
+  
+  # Device (cuda or cpu)
+  device: "cuda"
+  
+  # Weight decay for regularization
+  weight_decay: 0.0001
+  
+  # Contrastive loss temperature
+  temperature: 0.5
+
+
+# ============================================================================
+# CLUSTERING (HDBSCAN)
+# ============================================================================
 clustering:
-  min_cluster_size: 2
-  min_samples: 2
-  cluster_selection_epsilon: 0.02
+  # Minimum cluster size
+  min_cluster_size: 5
+  
+  # Minimum samples
+  min_samples: 3
+  
+  # Cluster selection epsilon
+  cluster_selection_epsilon: 0.0
+  
+  # Distance metric
   metric: "euclidean"
+  
+  # Normalize embeddings before clustering
   normalize: true
 
-# Novelty detection parameters
-novelty:
-  novelty_threshold: 0.5
-  min_cluster_size: 1
-  unassigned_weight: 0.4
-  diversity_weight: 0.3
-  probability_weight: 0.2
-  size_weight: 0.1
 
-# BLAST validation parameters
-blast:
-  identity_threshold_novel: 95.0
-  identity_threshold_species: 97.0
-  max_candidates: 50
-  delay_between_requests: 3.0
-  database: "nt"
+# ============================================================================
+# CLUSTER ANNOTATION (NEW)
+# ============================================================================
+annotation:
+  # Identity thresholds
+  identity_threshold_novel: 95.0      # Below this = novel
+  identity_threshold_species: 97.0    # Above this = same species
+  
+  # BLAST settings
+  delay_between_requests: 3.0         # Seconds between online BLAST requests
+  database: "nt"                      # NCBI database (nt, nr, etc.)
+  use_local_blast: false              # Use local BLAST database if true
+  
+  # Processing options
+  max_clusters_to_annotate: null      # null = all clusters, or set a limit
+  batch_size: null                    # Process in batches (null = no batching)
+  resume_from_checkpoint: false       # Resume interrupted annotation
+  
+  # Validation
+  min_alignment_length: 100           # Minimum BLAST alignment length
+  max_evalue: 0.00001                 # Maximum acceptable e-value
 
-# Visualization parameters
+
+# ============================================================================
+# EVALUATION (ENHANCED)
+# ============================================================================
+evaluation:
+  # Taxonomic levels to evaluate
+  taxonomic_levels:
+    - genus
+    - species
+  
+  # Novelty detection thresholds
+  novelty_confidence_threshold: 0.5
+  
+  # Cluster purity threshold
+  high_purity_threshold: 0.8
+
+
+# ============================================================================
+# VISUALIZATION
+# ============================================================================
 visualization:
-  max_umap_points: 20000
+  # Maximum points for UMAP (to avoid memory issues)
+  max_umap_points: 10000
+  
+  # Number of top clusters to display
   top_clusters_display: 20
+  
+  # Figure DPI
+  figure_dpi: 300
+  
+  # Color palette
+  color_palette: "tab20"
+
+
+# ============================================================================
+# PREPROCESSING
+# ============================================================================
+preprocessing:
+  # Minimum sequence length (bp)
+  min_length: 100
+  
+  # Maximum ratio of ambiguous bases
+  max_ambiguous_ratio: 0.10
+
+
+# ============================================================================
+# COMPUTATIONAL RESOURCES
+# ============================================================================
+resources:
+  # Number of CPU workers for data loading
+  num_workers: 4
+  
+  # Enable GPU acceleration where available
+  use_gpu: true
+  
+  # Memory map mode for large files
+  use_mmap: true
+
+
+# ============================================================================
+# LOGGING
+# ============================================================================
+logging:
+  # Logging level (DEBUG, INFO, WARNING, ERROR)
+  level: "INFO"
+  
+  # Save logs to file
+  save_logs: true
+  
+  # Log directory
+  log_dir: "logs"
+
+
+# ============================================================================
+# EXPERIMENTAL FEATURES
+# ============================================================================
+experimental:
+  # Use cuML for GPU-accelerated HDBSCAN
+  use_cuml: false
+  
+  # Enable multi-marker integration
+  multi_marker: true
+  
+  # Use ensemble clustering
+  ensemble_clustering: false
+
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# This configuration supports the enhanced evaluation pipeline that compares
+# Ground Truth OTU (from taxonomy TSV) with Predicted OTU (from BLAST annotation)
+#
+# Key features:
+# 1. Representative BLAST per cluster (not per sequence)
+# 2. Direct accuracy calculation at genus/species levels
+# 3. Proper novelty detection metrics (precision, recall, F1)
+# 4. Cluster purity analysis
+# 5. Misclassification pattern detection

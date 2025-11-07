@@ -1,452 +1,469 @@
 """
-Evaluation Module for HDBScan Clustering and Novelty Detection
-Evaluates clustering quality and validates detected novel sequences
+evaluation.py
+=============
+Enhanced Evaluation Module
+
+Compares Ground Truth OTU (from TSV) with Predicted OTU (from cluster annotation)
+Calculates accuracy metrics at multiple taxonomic levels
+
+Usage:
+    python evaluation.py
 """
 
 import pandas as pd
 import numpy as np
+from pathlib import Path
 from collections import Counter, defaultdict
-from typing import Dict, List, Tuple, Set
-from scipy.stats import entropy
+from typing import Dict, List, Tuple
+import logging
+import json
 
-class ClusteringEvaluator:
-    def __init__(self, 
-                 cluster_file: str,
-                 taxonomy_file: str,
-                 novel_sequences_file: str = None):
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+class EnhancedEvaluator:
+    """Evaluate clustering quality using Ground Truth vs Predicted OTU"""
+    
+    def __init__(self,
+                 predictions_file: str = "dataset/annotation/sequence_predictions.csv",
+                 ground_truth_file: str = "dataset/ssu_accession_full_lineage.tsv",
+                 output_dir: str = "dataset/evaluation"):
         """
-        Initialize the evaluator.
+        Initialize evaluator
         
         Args:
-            cluster_file: Path to HDBScan output CSV
-            taxonomy_file: Path to taxonomy assignment file
-            novel_sequences_file: Optional path to novel sequences detected
+            predictions_file: CSV with seqID, cluster_id, predicted_otu
+            ground_truth_file: TSV with seqID, taxID, species, full_taxonomy
+            output_dir: Directory to save evaluation results
         """
-        self.clusters = pd.read_csv(cluster_file)
-        self.taxonomy = self._load_taxonomy(taxonomy_file)
+        self.predictions_file = Path(predictions_file)
+        self.ground_truth_file = Path(ground_truth_file)
+        self.output_dir = Path(output_dir)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Merge data
-        self.data = self.clusters.merge(self.taxonomy, on='seqID', how='left')
-        
-        # Load novel sequences if provided
-        self.novel_sequences = []
-        if novel_sequences_file:
-            with open(novel_sequences_file, 'r') as f:
-                self.novel_sequences = [line.strip() for line in f if line.strip() and line.strip() != 'seqID']
-        
-        self.evaluation_results = {}
+        self.tax_levels = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
     
-    def _load_taxonomy(self, taxonomy_file: str) -> pd.DataFrame:
-        """Load and parse taxonomy TSV file."""
-        # Use pandas to read TSV file with proper handling
-        taxonomy_df = pd.read_csv(
-            taxonomy_file, 
-            sep='\t', 
+    def load_ground_truth(self) -> pd.DataFrame:
+        """Load ground truth taxonomy from TSV"""
+        logger.info("\nLoading ground truth taxonomy...")
+        
+        gt_df = pd.read_csv(
+            self.ground_truth_file,
+            sep='\t',
             header=None,
-            names=['seqID', 'tax_id', 'species', 'full_taxonomy'],
+            names=['seqID', 'taxID', 'species', 'full_taxonomy'],
             dtype=str,
-            keep_default_na=False  # Don't convert strings to NaN
+            keep_default_na=False
         )
         
-        # Fill empty taxonomy strings
-        taxonomy_df['full_taxonomy'] = taxonomy_df['full_taxonomy'].replace('', pd.NA)
+        # Parse full taxonomy into levels
+        gt_df['parsed_taxonomy'] = gt_df['full_taxonomy'].apply(self._parse_taxonomy)
         
-        return taxonomy_df
+        # Expand into separate columns
+        for level in self.tax_levels:
+            gt_df[f'gt_{level}'] = gt_df['parsed_taxonomy'].apply(lambda x: x.get(level))
+        
+        gt_df = gt_df.drop(columns=['parsed_taxonomy'])
+        
+        logger.info(f"  Loaded {len(gt_df):,} ground truth records")
+        
+        return gt_df
     
     def _parse_taxonomy(self, tax_string: str) -> Dict[str, str]:
-        """Parse taxonomy string into taxonomic levels."""
-        levels = ['domain', 'kingdom', 'phylum', 'class', 'order', 
-                  'family', 'genus', 'species']
-        parts = tax_string.split(';')
-        taxonomy = {}
+        """Parse semicolon-delimited taxonomy string"""
+        if pd.isna(tax_string) or tax_string == '':
+            return {level: None for level in self.tax_levels}
+        
+        parts = [p.strip() for p in tax_string.split(';') if p.strip()]
+        parsed = {}
+        
         for i, part in enumerate(parts):
-            if i < len(levels):
-                taxonomy[levels[i]] = part.strip()
-        return taxonomy
+            if i < len(self.tax_levels):
+                parsed[self.tax_levels[i]] = part
+        
+        # Fill missing levels
+        for level in self.tax_levels:
+            parsed.setdefault(level, None)
+        
+        return parsed
     
-    def evaluate_cluster_purity(self, level: str = 'genus') -> Dict:
+    def load_predictions(self) -> pd.DataFrame:
+        """Load predicted OTU labels"""
+        logger.info("\nLoading predictions...")
+        
+        pred_df = pd.read_csv(self.predictions_file)
+        
+        # Parse predicted_otu
+        pred_df['pred_genus'], pred_df['pred_species'] = zip(*pred_df['predicted_otu'].apply(self._parse_predicted_otu))
+        
+        logger.info(f"  Loaded {len(pred_df):,} predictions")
+        
+        return pred_df
+    
+    def _parse_predicted_otu(self, otu_string: str) -> Tuple[str, str]:
         """
-        Evaluate taxonomic purity of clusters at a given taxonomic level.
-        
-        Args:
-            level: Taxonomic level to evaluate (genus, family, order, etc.)
-        
-        Returns:
-            Dictionary with purity metrics
+        Parse predicted OTU string
+        Examples:
+          "Genus, Species" -> ("Genus", "Species")
+          "Novel (BLAST-Divergent)" -> (None, None)
         """
-        print(f"\nEvaluating cluster purity at {level} level...")
+        if pd.isna(otu_string) or 'Novel' in otu_string or 'Unknown' in otu_string:
+            return (None, None)
         
-        cluster_purities = {}
-        cluster_entropies = {}
+        parts = [p.strip() for p in otu_string.split(',')]
+        genus = parts[0] if len(parts) > 0 else None
+        species = parts[1] if len(parts) > 1 else None
         
-        # Get non-noise clusters
-        valid_clusters = self.data[self.data['cluster_id'] != -1]
-        unique_clusters = valid_clusters['cluster_id'].unique()
+        return (genus, species)
+    
+    def create_master_table(self, pred_df: pd.DataFrame, gt_df: pd.DataFrame) -> pd.DataFrame:
+        """Merge predictions with ground truth"""
+        logger.info("\nCreating master evaluation table...")
         
-        for cluster_id in unique_clusters:
-            cluster_data = valid_clusters[valid_clusters['cluster_id'] == cluster_id]
-            
-            # Extract taxonomic labels at specified level
-            taxa = []
-            for tax_str in cluster_data['full_taxonomy'].dropna():
-                parsed = self._parse_taxonomy(tax_str)
-                if level in parsed and parsed[level]:
-                    taxa.append(parsed[level])
-                else:
-                    taxa.append('Unassigned')
-            
-            if not taxa:
-                continue
-            
-            # Calculate purity (fraction of most common taxon)
-            taxon_counts = Counter(taxa)
-            most_common_count = taxon_counts.most_common(1)[0][1]
-            purity = most_common_count / len(taxa)
-            cluster_purities[cluster_id] = {
-                'purity': purity,
-                'size': len(taxa),
-                'taxa_distribution': dict(taxon_counts),
-                'dominant_taxon': taxon_counts.most_common(1)[0][0]
+        master_df = pred_df.merge(gt_df, on='seqID', how='left')
+        
+        # Mark sequences with/without ground truth
+        master_df['has_ground_truth'] = ~master_df['gt_genus'].isna()
+        
+        logger.info(f"  Total sequences: {len(master_df):,}")
+        logger.info(f"  With ground truth: {master_df['has_ground_truth'].sum():,}")
+        logger.info(f"  Without ground truth: {(~master_df['has_ground_truth']).sum():,}")
+        
+        return master_df
+    
+    def calculate_accuracy_at_level(self, master_df: pd.DataFrame, level: str) -> Dict:
+        """Calculate accuracy at a specific taxonomic level"""
+        logger.info(f"\nCalculating accuracy at {level} level...")
+        
+        gt_col = f'gt_{level}'
+        pred_col = f'pred_{level}'
+        
+        # Filter to sequences with ground truth
+        eval_df = master_df[master_df['has_ground_truth'] & master_df[gt_col].notna()].copy()
+        
+        if len(eval_df) == 0:
+            logger.warning(f"  No sequences with ground truth at {level} level")
+            return {
+                'level': level,
+                'total_sequences': 0,
+                'correct': 0,
+                'accuracy': 0.0
             }
-            
-            # Calculate entropy (lower is better - less diversity)
-            probs = np.array(list(taxon_counts.values())) / len(taxa)
-            cluster_entropies[cluster_id] = entropy(probs)
         
-        # Overall statistics
-        purities = [v['purity'] for v in cluster_purities.values()]
-        entropies = list(cluster_entropies.values())
+        # Compare
+        matches = eval_df[gt_col] == eval_df[pred_col]
+        correct = matches.sum()
+        accuracy = correct / len(eval_df)
+        
+        logger.info(f"  Total sequences: {len(eval_df):,}")
+        logger.info(f"  Correct: {correct:,}")
+        logger.info(f"  Accuracy: {accuracy:.2%}")
         
         return {
             'level': level,
-            'cluster_purities': cluster_purities,
-            'cluster_entropies': cluster_entropies,
-            'mean_purity': np.mean(purities) if purities else 0,
-            'median_purity': np.median(purities) if purities else 0,
-            'mean_entropy': np.mean(entropies) if entropies else 0,
-            'high_purity_clusters': sum(1 for p in purities if p >= 0.8),
-            'total_clusters': len(purities)
+            'total_sequences': len(eval_df),
+            'correct': int(correct),
+            'accuracy': float(accuracy)
         }
     
-    def evaluate_cluster_coherence(self) -> Dict:
+    def evaluate_novelty_detection(self, master_df: pd.DataFrame) -> Dict:
         """
-        Evaluate cluster coherence using probability scores.
-        High coherence means sequences have high probability of belonging to cluster.
+        Evaluate novelty detection performance
+        
+        True Positive: Ground Truth = NA, Predicted = Novel
+        False Positive: Ground Truth = Known, Predicted = Novel
+        True Negative: Ground Truth = Known, Predicted = Known (correct)
+        False Negative: Ground Truth = NA, Predicted = Known
         """
-        print("\nEvaluating cluster coherence...")
+        logger.info("\nEvaluating novelty detection...")
         
-        valid_clusters = self.data[self.data['cluster_id'] != -1]
-        unique_clusters = valid_clusters['cluster_id'].unique()
+        # Define Novel predictions
+        is_predicted_novel = (
+            master_df['predicted_otu'].str.contains('Novel', na=False) |
+            master_df['predicted_otu'].str.contains('Unknown', na=False)
+        )
         
-        cluster_coherence = {}
-        for cluster_id in unique_clusters:
-            cluster_data = valid_clusters[valid_clusters['cluster_id'] == cluster_id]
-            probs = cluster_data['cluster_probability'].values
+        # Define Known ground truth
+        has_ground_truth = master_df['has_ground_truth']
+        
+        # Calculate confusion matrix
+        tp = ((~has_ground_truth) & is_predicted_novel).sum()
+        fp = (has_ground_truth & is_predicted_novel).sum()
+        tn = (has_ground_truth & ~is_predicted_novel & (master_df['gt_genus'] == master_df['pred_genus'])).sum()
+        fn = ((~has_ground_truth) & ~is_predicted_novel).sum()
+        
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+        accuracy = (tp + tn) / len(master_df) if len(master_df) > 0 else 0
+        
+        logger.info(f"  True Positives: {tp:,}")
+        logger.info(f"  False Positives: {fp:,}")
+        logger.info(f"  True Negatives: {tn:,}")
+        logger.info(f"  False Negatives: {fn:,}")
+        logger.info(f"  Precision: {precision:.3f}")
+        logger.info(f"  Recall: {recall:.3f}")
+        logger.info(f"  F1-Score: {f1_score:.3f}")
+        logger.info(f"  Accuracy: {accuracy:.3f}")
+        
+        return {
+            'true_positives': int(tp),
+            'false_positives': int(fp),
+            'true_negatives': int(tn),
+            'false_negatives': int(fn),
+            'precision': float(precision),
+            'recall': float(recall),
+            'f1_score': float(f1_score),
+            'accuracy': float(accuracy)
+        }
+    
+    def analyze_misclassifications(self, master_df: pd.DataFrame) -> Dict:
+        """Analyze common misclassification patterns"""
+        logger.info("\nAnalyzing misclassifications...")
+        
+        # Focus on sequences with ground truth that were misclassified
+        misclassified = master_df[
+            master_df['has_ground_truth'] & 
+            (master_df['gt_genus'] != master_df['pred_genus'])
+        ].copy()
+        
+        if len(misclassified) == 0:
+            logger.info("  No misclassifications found")
+            return {'total_misclassified': 0}
+        
+        # Common misclassification pairs
+        misclass_pairs = Counter(
+            zip(misclassified['gt_genus'].fillna('NA'), 
+                misclassified['pred_genus'].fillna('Novel'))
+        )
+        
+        top_10_pairs = misclass_pairs.most_common(10)
+        
+        logger.info(f"  Total misclassified: {len(misclassified):,}")
+        logger.info(f"  Top 10 misclassification patterns:")
+        for (gt, pred), count in top_10_pairs:
+            logger.info(f"    {gt} -> {pred}: {count}")
+        
+        return {
+            'total_misclassified': len(misclassified),
+            'misclassification_rate': len(misclassified) / master_df['has_ground_truth'].sum(),
+            'top_patterns': [{'ground_truth': gt, 'predicted': pred, 'count': count} 
+                           for (gt, pred), count in top_10_pairs]
+        }
+    
+    def calculate_cluster_purity(self, master_df: pd.DataFrame) -> Dict:
+        """Calculate taxonomic purity of clusters"""
+        logger.info("\nCalculating cluster purity...")
+        
+        cluster_purity = []
+        
+        for cluster_id in master_df['cluster_id'].unique():
+            if cluster_id == -1:
+                continue
             
-            cluster_coherence[cluster_id] = {
-                'mean_probability': np.mean(probs),
-                'median_probability': np.median(probs),
-                'std_probability': np.std(probs),
-                'min_probability': np.min(probs),
-                'size': len(probs),
-                'high_confidence_count': sum(probs >= 0.8),
-                'low_confidence_count': sum(probs < 0.5)
-            }
-        
-        all_means = [v['mean_probability'] for v in cluster_coherence.values()]
-        
-        return {
-            'cluster_coherence': cluster_coherence,
-            'overall_mean_probability': np.mean(all_means) if all_means else 0,
-            'high_coherence_clusters': sum(1 for m in all_means if m >= 0.8),
-            'total_clusters': len(all_means)
-        }
-    
-    def evaluate_noise_cluster(self) -> Dict:
-        """Evaluate sequences assigned to noise cluster (-1)."""
-        print("\nEvaluating noise cluster...")
-        
-        noise_data = self.data[self.data['cluster_id'] == -1]
-        
-        if len(noise_data) == 0:
-            return {'noise_count': 0}
-        
-        # Check how many noise sequences are actually unassigned taxonomically
-        unassigned = noise_data['tax_id'].eq('0') | noise_data['species'].eq('N/A')
-        
-        # Get taxonomic diversity in noise
-        taxa_counts = defaultdict(int)
-        for tax_str in noise_data['full_taxonomy'].dropna():
-            parsed = self._parse_taxonomy(tax_str)
-            if 'genus' in parsed:
-                taxa_counts[parsed['genus']] += 1
-        
-        return {
-            'noise_count': len(noise_data),
-            'noise_ratio': len(noise_data) / len(self.data),
-            'unassigned_in_noise': unassigned.sum(),
-            'assigned_in_noise': len(noise_data) - unassigned.sum(),
-            'unique_genera_in_noise': len(taxa_counts),
-            'mean_probability': noise_data['cluster_probability'].mean()
-        }
-    
-    def evaluate_novel_sequences(self) -> Dict:
-        """
-        Evaluate detected novel sequences to validate if they are truly novel.
-        """
-        if not self.novel_sequences:
-            print("\nNo novel sequences to evaluate.")
-            return {'total_novel_detected': 0}
-        
-        print(f"\nEvaluating {len(self.novel_sequences)} novel sequences...")
-        
-        novel_data = self.data[self.data['seqID'].isin(self.novel_sequences)]
-        
-        # True positives: Novel sequences that are unassigned
-        truly_unassigned = novel_data['tax_id'].eq('0') | novel_data['species'].eq('N/A')
-        true_positive_count = truly_unassigned.sum()
-        
-        # False positives: Novel sequences that are actually assigned
-        false_positive_count = len(novel_data) - true_positive_count
-        
-        # Get details of false positives
-        false_positives = novel_data[~truly_unassigned]
-        false_positive_taxa = []
-        for _, row in false_positives.iterrows():
-            if pd.notna(row['full_taxonomy']):
-                parsed = self._parse_taxonomy(row['full_taxonomy'])
-                false_positive_taxa.append({
-                    'seqID': row['seqID'],
-                    'species': row['species'],
-                    'genus': parsed.get('genus', 'Unknown'),
-                    'cluster_id': row['cluster_id']
+            cluster_data = master_df[
+                (master_df['cluster_id'] == cluster_id) & 
+                master_df['has_ground_truth']
+            ]
+            
+            if len(cluster_data) == 0:
+                continue
+            
+            # Calculate genus-level purity
+            genus_counts = cluster_data['gt_genus'].value_counts()
+            if len(genus_counts) > 0:
+                most_common_count = genus_counts.iloc[0]
+                purity = most_common_count / len(cluster_data)
+                
+                cluster_purity.append({
+                    'cluster_id': cluster_id,
+                    'size': len(cluster_data),
+                    'purity': purity,
+                    'dominant_genus': genus_counts.index[0]
                 })
         
-        # Check if novel sequences from same clusters
-        cluster_distribution = Counter(novel_data['cluster_id'].values)
+        if cluster_purity:
+            purity_df = pd.DataFrame(cluster_purity)
+            mean_purity = purity_df['purity'].mean()
+            
+            logger.info(f"  Mean cluster purity: {mean_purity:.3f}")
+            logger.info(f"  High purity clusters (>0.8): {(purity_df['purity'] > 0.8).sum()}")
+            
+            return {
+                'mean_purity': float(mean_purity),
+                'median_purity': float(purity_df['purity'].median()),
+                'high_purity_clusters': int((purity_df['purity'] > 0.8).sum()),
+                'total_clusters': len(purity_df)
+            }
         
-        # Calculate precision
-        precision = true_positive_count / len(novel_data) if len(novel_data) > 0 else 0
-        
-        return {
-            'total_novel_detected': len(self.novel_sequences),
-            'true_positives': true_positive_count,
-            'false_positives': false_positive_count,
-            'precision': precision,
-            'false_positive_details': false_positive_taxa,
-            'cluster_distribution': dict(cluster_distribution),
-            'in_noise_cluster': cluster_distribution.get(-1, 0)
-        }
+        return {'mean_purity': 0.0}
     
-    def calculate_cluster_homogeneity(self, level: str = 'genus') -> float:
-        """
-        Calculate overall homogeneity score across all clusters.
-        Based on how well clusters separate different taxonomic groups.
-        """
-        valid_clusters = self.data[self.data['cluster_id'] != -1]
+    def generate_report(self, master_df: pd.DataFrame, accuracy_results: List[Dict], 
+                       novelty_results: Dict, misclass_results: Dict, purity_results: Dict):
+        """Generate comprehensive evaluation report"""
+        logger.info(f"\n{'='*80}")
+        logger.info("GENERATING EVALUATION REPORT")
+        logger.info(f"{'='*80}")
         
-        # Get taxonomic assignments
-        taxon_to_clusters = defaultdict(set)
-        cluster_to_taxa = defaultdict(set)
+        report_file = self.output_dir / "evaluation_report.txt"
         
-        for _, row in valid_clusters.iterrows():
-            if pd.notna(row['full_taxonomy']):
-                parsed = self._parse_taxonomy(row['full_taxonomy'])
-                if level in parsed and parsed[level]:
-                    taxon = parsed[level]
-                    cluster_id = row['cluster_id']
-                    taxon_to_clusters[taxon].add(cluster_id)
-                    cluster_to_taxa[cluster_id].add(taxon)
-        
-        # Calculate homogeneity: average number of clusters per taxon (lower is better)
-        # and average number of taxa per cluster (lower is better)
-        avg_clusters_per_taxon = np.mean([len(clusters) for clusters in taxon_to_clusters.values()])
-        avg_taxa_per_cluster = np.mean([len(taxa) for taxa in cluster_to_taxa.values()])
-        
-        # Normalize to 0-1 score (1 is perfect homogeneity)
-        homogeneity_score = 1 / (1 + avg_taxa_per_cluster)
-        
-        return {
-            'homogeneity_score': homogeneity_score,
-            'avg_clusters_per_taxon': avg_clusters_per_taxon,
-            'avg_taxa_per_cluster': avg_taxa_per_cluster,
-            'unique_taxa': len(taxon_to_clusters),
-            'unique_clusters': len(cluster_to_taxa)
-        }
-    
-    def generate_evaluation_report(self, output_file: str = 'evaluation_report.txt'):
-        """Generate comprehensive evaluation report."""
-        print("\n" + "=" * 80)
-        print("Running comprehensive evaluation...")
-        print("=" * 80)
-        
-        # Run all evaluations
-        purity_genus = self.evaluate_cluster_purity('genus')
-        purity_family = self.evaluate_cluster_purity('family')
-        coherence = self.evaluate_cluster_coherence()
-        noise_eval = self.evaluate_noise_cluster()
-        novel_eval = self.evaluate_novel_sequences()
-        homogeneity = self.calculate_cluster_homogeneity('genus')
-        
-        # Write report
-        with open(output_file, 'w') as f:
-            f.write("=" * 80 + "\n")
-            f.write("CLUSTERING AND NOVELTY DETECTION EVALUATION REPORT\n")
-            f.write("=" * 80 + "\n\n")
+        with open(report_file, 'w') as f:
+            f.write("="*80 + "\n")
+            f.write("ENHANCED EVALUATION REPORT\n")
+            f.write("Ground Truth vs Predicted OTU Comparison\n")
+            f.write("="*80 + "\n\n")
             
             # Dataset overview
             f.write("DATASET OVERVIEW\n")
-            f.write("-" * 80 + "\n")
-            f.write(f"Total sequences: {len(self.data)}\n")
-            f.write(f"Total clusters (excluding noise): {len(self.data[self.data['cluster_id'] != -1]['cluster_id'].unique())}\n")
-            f.write(f"Sequences in noise cluster: {noise_eval['noise_count']} ({noise_eval.get('noise_ratio', 0):.1%})\n\n")
+            f.write("-"*80 + "\n")
+            f.write(f"Total sequences: {len(master_df):,}\n")
+            f.write(f"Sequences with ground truth: {master_df['has_ground_truth'].sum():,}\n")
+            f.write(f"Sequences without ground truth: {(~master_df['has_ground_truth']).sum():,}\n")
+            f.write(f"Total clusters: {master_df['cluster_id'].nunique()}\n\n")
             
-            # Clustering quality
-            f.write("=" * 80 + "\n")
-            f.write("1. CLUSTERING QUALITY EVALUATION\n")
-            f.write("=" * 80 + "\n\n")
+            # Accuracy at each level
+            f.write("="*80 + "\n")
+            f.write("1. ACCURACY AT TAXONOMIC LEVELS\n")
+            f.write("="*80 + "\n\n")
             
-            f.write("1.1 Taxonomic Purity\n")
-            f.write("-" * 80 + "\n")
-            f.write(f"Genus Level:\n")
-            f.write(f"  Mean Purity: {purity_genus['mean_purity']:.3f}\n")
-            f.write(f"  Median Purity: {purity_genus['median_purity']:.3f}\n")
-            f.write(f"  Mean Entropy: {purity_genus['mean_entropy']:.3f}\n")
-            f.write(f"  High Purity Clusters (≥0.8): {purity_genus['high_purity_clusters']}/{purity_genus['total_clusters']}\n\n")
+            for result in accuracy_results:
+                f.write(f"{result['level'].upper()} Level:\n")
+                f.write(f"  Total sequences: {result['total_sequences']:,}\n")
+                f.write(f"  Correct predictions: {result['correct']:,}\n")
+                f.write(f"  Accuracy: {result['accuracy']:.2%}\n\n")
             
-            f.write(f"Family Level:\n")
-            f.write(f"  Mean Purity: {purity_family['mean_purity']:.3f}\n")
-            f.write(f"  Median Purity: {purity_family['median_purity']:.3f}\n")
-            f.write(f"  High Purity Clusters (≥0.8): {purity_family['high_purity_clusters']}/{purity_family['total_clusters']}\n\n")
+            # Novelty detection
+            f.write("="*80 + "\n")
+            f.write("2. NOVELTY DETECTION PERFORMANCE\n")
+            f.write("="*80 + "\n\n")
             
-            # Show top impure clusters
-            f.write("Clusters with Low Purity (<0.5):\n")
-            low_purity = {k: v for k, v in purity_genus['cluster_purities'].items() 
-                         if v['purity'] < 0.5}
-            if low_purity:
-                for cluster_id in sorted(low_purity.keys())[:10]:
-                    info = low_purity[cluster_id]
-                    f.write(f"  Cluster {cluster_id}: Purity={info['purity']:.3f}, Size={info['size']}\n")
-                    f.write(f"    Taxa: {info['taxa_distribution']}\n")
-            else:
-                f.write("  None found\n")
-            f.write("\n")
+            f.write(f"True Positives (Novel detected as novel): {novelty_results['true_positives']:,}\n")
+            f.write(f"False Positives (Known detected as novel): {novelty_results['false_positives']:,}\n")
+            f.write(f"True Negatives (Known detected as known): {novelty_results['true_negatives']:,}\n")
+            f.write(f"False Negatives (Novel detected as known): {novelty_results['false_negatives']:,}\n\n")
             
-            f.write("1.2 Cluster Coherence (Probability Scores)\n")
-            f.write("-" * 80 + "\n")
-            f.write(f"Overall Mean Probability: {coherence['overall_mean_probability']:.3f}\n")
-            f.write(f"High Coherence Clusters (≥0.8): {coherence['high_coherence_clusters']}/{coherence['total_clusters']}\n\n")
+            f.write(f"Precision: {novelty_results['precision']:.3f}\n")
+            f.write(f"Recall: {novelty_results['recall']:.3f}\n")
+            f.write(f"F1-Score: {novelty_results['f1_score']:.3f}\n")
+            f.write(f"Accuracy: {novelty_results['accuracy']:.3f}\n\n")
             
-            # Show problematic clusters
-            f.write("Clusters with Low Coherence (<0.6):\n")
-            low_coherence = {k: v for k, v in coherence['cluster_coherence'].items() 
-                           if v['mean_probability'] < 0.6}
-            if low_coherence:
-                for cluster_id in sorted(low_coherence.keys())[:10]:
-                    info = low_coherence[cluster_id]
-                    f.write(f"  Cluster {cluster_id}: Mean Prob={info['mean_probability']:.3f}, "
-                           f"Size={info['size']}, Low Conf={info['low_confidence_count']}\n")
-            else:
-                f.write("  None found\n")
-            f.write("\n")
+            # Cluster purity
+            f.write("="*80 + "\n")
+            f.write("3. CLUSTER QUALITY (PURITY)\n")
+            f.write("="*80 + "\n\n")
             
-            f.write("1.3 Homogeneity Score\n")
-            f.write("-" * 80 + "\n")
-            f.write(f"Homogeneity Score: {homogeneity['homogeneity_score']:.3f}\n")
-            f.write(f"Avg Taxa per Cluster: {homogeneity['avg_taxa_per_cluster']:.2f}\n")
-            f.write(f"Avg Clusters per Taxon: {homogeneity['avg_clusters_per_taxon']:.2f}\n\n")
+            f.write(f"Mean purity: {purity_results.get('mean_purity', 0):.3f}\n")
+            f.write(f"Median purity: {purity_results.get('median_purity', 0):.3f}\n")
+            f.write(f"High purity clusters (>0.8): {purity_results.get('high_purity_clusters', 0)}\n\n")
             
-            f.write("1.4 Noise Cluster Analysis\n")
-            f.write("-" * 80 + "\n")
-            f.write(f"Sequences in noise: {noise_eval['noise_count']}\n")
-            f.write(f"Unassigned in noise: {noise_eval.get('unassigned_in_noise', 0)}\n")
-            f.write(f"Assigned in noise: {noise_eval.get('assigned_in_noise', 0)}\n")
-            f.write(f"Unique genera in noise: {noise_eval.get('unique_genera_in_noise', 0)}\n\n")
+            # Misclassifications
+            f.write("="*80 + "\n")
+            f.write("4. MISCLASSIFICATION ANALYSIS\n")
+            f.write("="*80 + "\n\n")
             
-            # Novelty detection evaluation
-            f.write("=" * 80 + "\n")
-            f.write("2. NOVELTY DETECTION EVALUATION\n")
-            f.write("=" * 80 + "\n\n")
+            f.write(f"Total misclassified: {misclass_results.get('total_misclassified', 0):,}\n")
+            if 'misclassification_rate' in misclass_results:
+                f.write(f"Misclassification rate: {misclass_results['misclassification_rate']:.2%}\n\n")
             
-            if novel_eval['total_novel_detected'] > 0:
-                f.write(f"Total Novel Sequences Detected: {novel_eval['total_novel_detected']}\n")
-                f.write(f"True Positives (actually unassigned): {novel_eval['true_positives']}\n")
-                f.write(f"False Positives (have assignments): {novel_eval['false_positives']}\n")
-                f.write(f"Precision: {novel_eval['precision']:.3f}\n\n")
-                
-                f.write(f"Novel sequences in noise cluster: {novel_eval['in_noise_cluster']}\n")
-                f.write(f"Novel sequences in valid clusters: {novel_eval['total_novel_detected'] - novel_eval['in_noise_cluster']}\n\n")
-                
-                if novel_eval['false_positive_details']:
-                    f.write("False Positive Examples:\n")
-                    for fp in novel_eval['false_positive_details'][:20]:
-                        f.write(f"  {fp['seqID']}: {fp['species']} (genus: {fp['genus']}, cluster: {fp['cluster_id']})\n")
-                    f.write("\n")
-            else:
-                f.write("No novel sequences were detected or provided for evaluation.\n\n")
+            if 'top_patterns' in misclass_results:
+                f.write("Top misclassification patterns:\n")
+                for pattern in misclass_results['top_patterns'][:10]:
+                    f.write(f"  {pattern['ground_truth']} -> {pattern['predicted']}: {pattern['count']}\n")
+                f.write("\n")
             
             # Overall assessment
-            f.write("=" * 80 + "\n")
-            f.write("3. OVERALL ASSESSMENT\n")
-            f.write("=" * 80 + "\n\n")
+            f.write("="*80 + "\n")
+            f.write("5. OVERALL ASSESSMENT\n")
+            f.write("="*80 + "\n\n")
             
-            # Clustering quality score
-            clustering_score = (purity_genus['mean_purity'] + 
-                              coherence['overall_mean_probability'] + 
-                              homogeneity['homogeneity_score']) / 3
+            avg_accuracy = np.mean([r['accuracy'] for r in accuracy_results if r['total_sequences'] > 0])
             
-            f.write(f"Overall Clustering Quality Score: {clustering_score:.3f}/1.0\n\n")
+            f.write(f"Average Accuracy (Genus/Species): {avg_accuracy:.2%}\n")
+            f.write(f"Novelty Detection F1-Score: {novelty_results['f1_score']:.3f}\n")
+            f.write(f"Cluster Purity: {purity_results.get('mean_purity', 0):.3f}\n\n")
             
-            f.write("Interpretation:\n")
-            if clustering_score >= 0.8:
-                f.write("  EXCELLENT: Clusters are highly pure and coherent\n")
-            elif clustering_score >= 0.6:
-                f.write("  GOOD: Clustering is generally reliable\n")
-            elif clustering_score >= 0.4:
-                f.write("  FAIR: Some clusters may need refinement\n")
+            # Performance rating
+            if avg_accuracy >= 0.8 and novelty_results['f1_score'] >= 0.7:
+                f.write("EXCELLENT: High agreement with ground truth and strong novelty detection\n")
+            elif avg_accuracy >= 0.6 and novelty_results['f1_score'] >= 0.5:
+                f.write("GOOD: Reasonable performance across metrics\n")
+            elif avg_accuracy >= 0.4 or novelty_results['f1_score'] >= 0.4:
+                f.write("FAIR: Moderate performance, consider parameter tuning\n")
             else:
-                f.write("  POOR: Consider adjusting clustering parameters\n")
-            
-            f.write("\nNovelty Detection Performance:\n")
-            if novel_eval['total_novel_detected'] > 0:
-                if novel_eval['precision'] >= 0.8:
-                    f.write("  EXCELLENT: Most detected novel sequences are truly unassigned\n")
-                elif novel_eval['precision'] >= 0.6:
-                    f.write("  GOOD: Majority of novel detections are accurate\n")
-                elif novel_eval['precision'] >= 0.4:
-                    f.write("  FAIR: Moderate rate of false positives\n")
-                else:
-                    f.write("  POOR: High false positive rate, consider adjusting threshold\n")
-            
-        print(f"\nEvaluation report saved to {output_file}")
+                f.write("POOR: Low performance, significant improvements needed\n")
         
-        # Return summary for programmatic use
-        return {
-            'clustering_quality_score': clustering_score,
-            'purity': purity_genus,
-            'coherence': coherence,
-            'homogeneity': homogeneity,
-            'noise': noise_eval,
-            'novelty': novel_eval
+        logger.info(f"  Report saved: {report_file}")
+        
+        # Save master table
+        master_file = self.output_dir / "master_evaluation_table.csv"
+        master_df.to_csv(master_file, index=False)
+        logger.info(f"  Master table saved: {master_file}")
+        
+        # Save metrics as JSON
+        metrics = {
+            'accuracy_by_level': accuracy_results,
+            'novelty_detection': novelty_results,
+            'cluster_purity': purity_results,
+            'misclassifications': misclass_results
         }
+        
+        metrics_file = self.output_dir / "evaluation_metrics.json"
+        with open(metrics_file, 'w') as f:
+            json.dump(metrics, f, indent=2)
+        logger.info(f"  Metrics saved: {metrics_file}")
+    
+    def run_evaluation(self):
+        """Execute complete evaluation pipeline"""
+        logger.info(f"\n{'='*80}")
+        logger.info("ENHANCED EVALUATION PIPELINE")
+        logger.info(f"{'='*80}\n")
+        
+        # Load data
+        gt_df = self.load_ground_truth()
+        pred_df = self.load_predictions()
+        
+        # Create master table
+        master_df = self.create_master_table(pred_df, gt_df)
+        
+        # Calculate metrics
+        accuracy_results = []
+        for level in ['genus', 'species']:
+            result = self.calculate_accuracy_at_level(master_df, level)
+            accuracy_results.append(result)
+        
+        novelty_results = self.evaluate_novelty_detection(master_df)
+        misclass_results = self.analyze_misclassifications(master_df)
+        purity_results = self.calculate_cluster_purity(master_df)
+        
+        # Generate report
+        self.generate_report(master_df, accuracy_results, novelty_results, 
+                           misclass_results, purity_results)
+        
+        logger.info(f"\n{'='*80}")
+        logger.info("EVALUATION COMPLETE")
+        logger.info(f"{'='*80}")
 
 
 def main():
-    """Example usage."""
-    evaluator = ClusteringEvaluator(
-        cluster_file='./dataset/clusters/clusters.csv',
-        taxonomy_file='./dataset/ssu_accession_full_lineage.tsv'
+    evaluator = EnhancedEvaluator(
+        predictions_file="dataset/annotation/sequence_predictions.csv",
+        ground_truth_file="dataset/ssu_accession_full_lineage.tsv",
+        output_dir="dataset/evaluation"
     )
     
-    results = evaluator.generate_evaluation_report('dataset/evaluation/evaluation_report.txt')
-    
-    print("\n" + "=" * 80)
-    print(f"Overall Clustering Quality: {results['clustering_quality_score']:.3f}/1.0")
-    if results['novelty']['total_novel_detected'] > 0:
-        print(f"Novelty Detection Precision: {results['novelty']['precision']:.3f}")
-    print("=" * 80)
-    print("\nEvaluation complete!")
+    try:
+        evaluator.run_evaluation()
+        return 0
+    except Exception as e:
+        logger.error(f"Error: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    exit(main())
