@@ -1,0 +1,133 @@
+================================================================================
+ENHANCED EVALUATION REPORT
+Ground Truth vs Predicted OTU Comparison (Multi-Level)
+Using Shared taxonomy_parser.py for consistent parsing
+================================================================================
+
+DATASET OVERVIEW
+--------------------------------------------------------------------------------
+Total sequences: 8,784
+Sequences with ground truth: 7,951
+Sequences without ground truth (N/A): 833
+Total clusters: 2161
+Noise sequences (cluster -1): 2,536
+
+================================================================================
+1. ACCURACY AT TAXONOMIC LEVELS
+================================================================================
+
+DOMAIN Level:
+  Total sequences evaluated: 5,243
+  Correct predictions: 5,243
+  Incorrect predictions: 0
+  Accuracy: 100.00%
+
+KINGDOM Level:
+  Total sequences evaluated: 3,966
+  Correct predictions: 3,661
+  Incorrect predictions: 305
+  Accuracy: 92.31%
+
+PHYLUM Level:
+  Total sequences evaluated: 4,425
+  Correct predictions: 3,233
+  Incorrect predictions: 1,192
+  Accuracy: 73.06%
+
+CLASS Level:
+  Total sequences evaluated: 1,841
+  Correct predictions: 1,566
+  Incorrect predictions: 275
+  Accuracy: 85.06%
+
+ORDER Level:
+  Total sequences evaluated: 518
+  Correct predictions: 471
+  Incorrect predictions: 47
+  Accuracy: 90.93%
+
+FAMILY Level:
+  Total sequences evaluated: 17
+  Correct predictions: 17
+  Incorrect predictions: 0
+  Accuracy: 100.00%
+
+GENUS Level:
+  Total sequences evaluated: 5,617
+  Correct predictions: 2,208
+  Incorrect predictions: 3,409
+  Accuracy: 39.31%
+
+SPECIES Level:
+  Total sequences evaluated: 5,617
+  Correct predictions: 1,969
+  Incorrect predictions: 3,648
+  Accuracy: 35.05%
+
+================================================================================
+2. NOVELTY DETECTION PERFORMANCE
+================================================================================
+
+True Positives (Novel→Novel): 202
+False Positives (Known→Novel): 2,334
+True Negatives (Known→Known, correct genus): 2,208
+False Negatives (Novel→Known): 631
+
+Precision: 0.080
+Recall: 0.242
+F1-Score: 0.120
+Accuracy: 0.274
+
+================================================================================
+3. CLUSTER QUALITY (TAXONOMIC PURITY)
+================================================================================
+
+Purity calculated at genus level
+Clusters evaluated: 2110
+Mean purity: 0.491
+Median purity: 0.500
+High purity clusters (>0.9): 272
+Medium purity clusters (0.7-0.9): 5
+Low purity clusters (<0.7): 1833
+
+================================================================================
+4. MISCLASSIFICATION ANALYSIS
+================================================================================
+
+Analysis at genus level
+Total sequences evaluated: 5,617
+Total misclassified: 3,409
+Misclassification rate: 60.69%
+
+Top 10 misclassification patterns (Genus level):
+  Trachelomonas -> Euglena: 3
+  Trachelomonas -> Phacus: 3
+  Lepocinclis -> Euglena: 3
+  Strongylostoma -> Craspedacusta: 3
+  Trypanosoma -> Herpetomonas: 3
+  Leptomonas -> Herpetomonas: 2
+  Henneguya -> Myxobolus: 2
+  Dacrymyces -> Femsjonia: 2
+  Selenidium -> Ceratomyxa: 2
+  Nakazawaea -> Thalassiosira: 2
+
+================================================================================
+5. OVERALL ASSESSMENT
+================================================================================
+
+Genus Accuracy: 39.31%
+Species Accuracy: 35.05%
+Novelty Detection F1-Score: 0.120
+Cluster Purity (Mean, Genus): 0.491
+
+Overall Rating: POOR: Low performance, significant improvements needed
+
+================================================================================
+6. RECOMMENDATIONS
+================================================================================
+
+- Species accuracy is low. Check `master_evaluation_table.csv` for common errors.
+- Tune novelty detection thresholds (identity_threshold_novel)
+- Review False Positives (Known→Novel) and False Negatives (Novel→Known)
+- Adjust clustering parameters (min_cluster_size, min_samples)
+- Consider alternative distance metrics or dimensionality reduction

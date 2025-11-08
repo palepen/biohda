@@ -13,6 +13,9 @@ import re
 import os
 import yaml
 
+# Import shared taxonomy parser
+from taxonomy_parser import parse_ncbi_lineage, get_taxonomy_levels
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -55,8 +58,8 @@ class ClusterAnnotator:
         # Get resource settings
         self.num_threads = res_cfg.get('num_workers', os.cpu_count() // 2 or 1)
         
-        # Standard taxonomic levels (must match evaluation.py)
-        self.tax_levels = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+        # Standard taxonomic levels - USE SHARED DEFINITION
+        self.tax_levels = get_taxonomy_levels()
         
         # UPDATED: Get taxonomy files (now a list)
         taxonomy_files = paths_cfg.get('taxonomy_files', [])
@@ -173,19 +176,15 @@ class ClusterAnnotator:
                             # Parse lineage into taxonomic levels
                             lineage_parts = [part.strip() for part in full_lineage.split(';')]
                             
-                            # Create taxonomy entry
+                            # Create taxonomy entry with standard structure
                             tax_entry = {
                                 'taxid': taxid,
                                 'species_name': species_name,
                                 'full_lineage': full_lineage
                             }
                             
-                            # Initialize all levels as None
-                            for level in self.tax_levels:
-                                tax_entry[level] = None
-                            
-                            # Map lineage to standard levels
-                            tax_entry = self._map_lineage_to_levels(lineage_parts, tax_entry, species_name)
+                            # Parse lineage into taxonomic levels using SHARED PARSER
+                            tax_entry.update(parse_ncbi_lineage(full_lineage, species_name))
                             
                             # Store in map (only if not already present - first occurrence wins)
                             if accession not in tax_map:
@@ -209,63 +208,6 @@ class ClusterAnnotator:
         logger.info(f"{'='*60}\n")
         
         return tax_map
-
-    def _map_lineage_to_levels(self, lineage_parts: List[str], tax_entry: Dict, species_name: str) -> Dict:
-        """
-        Map semicolon-separated lineage to standard taxonomic levels.
-        
-        Example lineage:
-        cellular organisms;Eukaryota;Sar;Alveolata;Ciliophora;Intramacronucleata;
-        Spirotrichea;Stichotrichia;Urostylida;Pseudokeronopsidae;Apokeronopsis;Apokeronopsis ovalis
-        """
-        # Common patterns in NCBI lineage
-        domain_keywords = ['Eukaryota', 'Bacteria', 'Archaea', 'Viruses']
-        kingdom_keywords = ['Metazoa', 'Fungi', 'Viridiplantae', 'Protista', 'Chromista']
-        
-        # Try to identify domain
-        for part in lineage_parts:
-            if part in domain_keywords:
-                tax_entry['domain'] = part
-                break
-        
-        # Try to identify kingdom
-        for part in lineage_parts:
-            if part in kingdom_keywords:
-                tax_entry['kingdom'] = part
-                break
-        
-        # For more specific levels, use heuristics based on position
-        if len(lineage_parts) >= 3:
-            tax_entry['phylum'] = lineage_parts[2] if lineage_parts[2] not in ['cellular organisms'] else None
-        
-        if len(lineage_parts) >= 4:
-            tax_entry['class'] = lineage_parts[3]
-        
-        if len(lineage_parts) >= 5:
-            tax_entry['order'] = lineage_parts[4]
-        
-        if len(lineage_parts) >= 6:
-            tax_entry['family'] = lineage_parts[5]
-        
-        # Genus and species from the end
-        if len(lineage_parts) >= 2:
-            # Second to last is often genus
-            tax_entry['genus'] = lineage_parts[-2]
-        
-        # Species is the last element or from species_name
-        if len(lineage_parts) >= 1:
-            tax_entry['species'] = lineage_parts[-1]
-        
-        # Fallback: parse species_name if available
-        if species_name and species_name != 'N/A':
-            parts = species_name.split()
-            if len(parts) >= 2:
-                if not tax_entry['genus']:
-                    tax_entry['genus'] = parts[0]
-                if not tax_entry['species']:
-                    tax_entry['species'] = species_name
-        
-        return tax_entry
 
     def load_clusters(self) -> pd.DataFrame:
         """Load clustering results"""
@@ -447,10 +389,19 @@ class ClusterAnnotator:
             for level in self.tax_levels:
                 tax_dict[level] = tax_entry.get(level)
             
-            logger.info(f"    ✓ Found local taxonomy: {tax_dict.get('genus')} {tax_dict.get('species')}")
+            # Debug logging to see what we're getting
+            logger.debug(f"    ✓ Found local taxonomy for {accession}:")
+            logger.debug(f"      domain: {tax_dict.get('domain')}")
+            logger.debug(f"      kingdom: {tax_dict.get('kingdom')}")
+            logger.debug(f"      phylum: {tax_dict.get('phylum')}")
+            logger.debug(f"      genus: {tax_dict.get('genus')}")
+            logger.debug(f"      species: {tax_dict.get('species')}")
+            
             return tax_dict
         else:
             logger.warning(f"    ✗ Accession {accession} not found in local taxonomy map")
+            logger.warning(f"      hit_id: {hit_id}")
+            logger.warning(f"      hit_def: {hit_def[:100]}")
             return self._parse_hit_def_fallback(hit_def)
 
     def _parse_hit_def_fallback(self, hit_def: str) -> Dict[str, str]:

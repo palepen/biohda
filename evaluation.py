@@ -6,6 +6,8 @@ Enhanced Evaluation Module
 Compares Ground Truth OTU (from TSV) with Predicted OTU (from cluster annotation)
 Calculates accuracy metrics at multiple taxonomic levels
 
+NOW USES SHARED taxonomy_parser.py FOR CONSISTENT PARSING
+
 Usage:
     python evaluation.py
 """
@@ -18,6 +20,9 @@ from typing import Dict, List, Tuple
 import logging
 import json
 import re
+
+# Import shared taxonomy parser
+from taxonomy_parser import parse_ncbi_lineage, get_taxonomy_levels, normalize_taxonomy_for_comparison
 
 logging.basicConfig(
     level=logging.INFO,
@@ -46,11 +51,11 @@ class EnhancedEvaluator:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Standard taxonomic levels
-        self.tax_levels = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+        # Standard taxonomic levels - USE SHARED DEFINITION
+        self.tax_levels = get_taxonomy_levels()
     
     def load_ground_truth(self) -> pd.DataFrame:
-        """Load ground truth taxonomy from TSV"""
+        """Load ground truth taxonomy from TSV using SHARED PARSER"""
         logger.info("\nLoading ground truth taxonomy...")
         
         if not self.ground_truth_file.exists():
@@ -67,17 +72,16 @@ class EnhancedEvaluator:
             na_values=['', 'N/A']
         )
         
-        # Parse full taxonomy into levels
-        parsed_tax = gt_df['full_taxonomy'].apply(self._parse_ground_truth_taxonomy)
+        # Parse full taxonomy into levels using SHARED PARSER
+        logger.info("  Parsing taxonomy using shared parser...")
+        parsed_tax = gt_df.apply(
+            lambda row: parse_ncbi_lineage(row['full_taxonomy'], row['species_name']),
+            axis=1
+        )
         
         # Expand into separate columns
         for level in self.tax_levels:
             gt_df[f'gt_{level}'] = parsed_tax.apply(lambda x: x.get(level))
-        
-        # Use the dedicated species_name column as the definitive species
-        # and re-parse genus from it
-        gt_df['gt_species'] = gt_df['species_name']
-        gt_df['gt_genus'] = gt_df['species_name'].apply(lambda x: x.split(' ')[0] if pd.notna(x) and ' ' in x else None)
         
         # Handle N/A
         gt_df['has_taxonomy'] = gt_df['full_taxonomy'].notna() & (gt_df['full_taxonomy'] != '')
@@ -86,73 +90,18 @@ class EnhancedEvaluator:
         logger.info(f"  Records with taxonomy: {gt_df['has_taxonomy'].sum():,}")
         logger.info(f"  Records without taxonomy (N/A): {(~gt_df['has_taxonomy']).sum():,}")
         
+        # Log sample of parsed taxonomy for debugging
+        sample_idx = gt_df[gt_df['has_taxonomy']].index[0] if gt_df['has_taxonomy'].any() else None
+        if sample_idx is not None:
+            logger.info(f"\n  Sample GROUND TRUTH parsing (seqID: {gt_df.loc[sample_idx, 'seqID']}):")
+            logger.info(f"    Raw lineage: {gt_df.loc[sample_idx, 'full_taxonomy'][:100]}...")
+            for level in self.tax_levels:
+                val = gt_df.loc[sample_idx, f'gt_{level}']
+                if val:
+                    logger.info(f"    gt_{level}: {val}")
+        
         return gt_df
     
-    def _parse_ground_truth_taxonomy(self, tax_string: str) -> Dict[str, str]:
-        """
-        Parse semicolon-delimited taxonomy string from ground truth
-        Example: "cellular organisms;Eukaryota;Sar;Alveolata;Ciliophora;..."
-        """
-        parsed = {level: None for level in self.tax_levels}
-        
-        if pd.isna(tax_string) or tax_string == '' or tax_string == 'N/A':
-            return parsed
-        
-        parts = [p.strip() for p in tax_string.split(';') if p.strip()]
-        
-        # Simple heuristic mapping for SILVA/NCBI-style lineage
-        # This is approximate and can be improved with a rank-aware parser
-        
-        # Domain/Kingdom
-        if len(parts) > 1:
-            if parts[0] == 'cellular organisms':
-                parsed['domain'] = parts[1]
-                parsed['kingdom'] = parts[1] # Often Eukaryota is listed as domain/kingdom
-            else:
-                parsed['domain'] = parts[0]
-                parsed['kingdom'] = parts[0]
-        
-        # Species and Genus (most specific)
-        if len(parts) >= 2:
-            species_name = parts[-1]
-            genus_name = parts[-2]
-            
-            # Check if last part is binomial
-            if ' ' in species_name and species_name.startswith(genus_name):
-                parsed['species'] = species_name
-                parsed['genus'] = genus_name
-            else:
-                # Assume last part is genus, no species info
-                parsed['genus'] = species_name
-        elif len(parts) == 1:
-            parsed['genus'] = parts[0] # Or maybe species? Ambiguous
-        
-        # This is a very rough heuristic for intermediate ranks
-        # A more robust parser would map ranks explicitly
-        rank_map = {
-            'Eukaryota': 'domain',
-            'Metazoa': 'kingdom',
-            'Viridiplantae': 'kingdom',
-            'Fungi': 'kingdom',
-            'Chordata': 'phylum',
-            'Arthropoda': 'phylum',
-            'Mollusca': 'phylum',
-            'Mammalia': 'class',
-            'Insecta': 'class',
-            'Primates': 'order',
-            'Carnivora': 'order',
-            'Hominidae': 'family',
-            'Felidae': 'family',
-        }
-        
-        for part in parts:
-            if part in rank_map:
-                rank = rank_map[part]
-                if parsed[rank] is None:
-                    parsed[rank] = part
-        
-        return parsed
-
     def load_predictions(self) -> pd.DataFrame:
         """Load predicted OTU labels from cluster_annotation.py"""
         logger.info("\nLoading predictions...")
@@ -176,8 +125,18 @@ class EnhancedEvaluator:
         logger.info(f"  Novel predictions: {pred_df['classification_type'].str.contains('novel|noise', case=False, na=False).sum():,}")
         logger.info(f"  Known predictions: {pred_df['classification_type'].str.contains('known', case=False, na=False).sum():,}")
         
+        # Log sample of predicted taxonomy for debugging
+        sample_idx = pred_df[pred_df['pred_genus'].notna()].index[0] if pred_df['pred_genus'].notna().any() else None
+        if sample_idx is not None:
+            logger.info(f"\n  Sample predicted taxonomy (seqID: {pred_df.loc[sample_idx, 'seqID']}):")
+            for level in self.tax_levels:
+                col = f'pred_{level}'
+                if col in pred_df.columns:
+                    val = pred_df.loc[sample_idx, col]
+                    if pd.notna(val):
+                        logger.info(f"    pred_{level}: {val}")
+        
         return pred_df
-    
     
     def create_master_table(self, pred_df: pd.DataFrame, gt_df: pd.DataFrame) -> pd.DataFrame:
         """Merge predictions with ground truth"""
@@ -232,9 +191,9 @@ class EnhancedEvaluator:
                 'accuracy': 0.0
             }
         
-        # Normalize strings for comparison (case-insensitive, strip whitespace)
-        eval_df[f'{gt_col}_norm'] = eval_df[gt_col].str.lower().str.strip()
-        eval_df[f'{pred_col}_norm'] = eval_df[pred_col].str.lower().str.strip()
+        # Normalize strings for comparison using SHARED FUNCTION
+        eval_df[f'{gt_col}_norm'] = eval_df[gt_col].apply(normalize_taxonomy_for_comparison)
+        eval_df[f'{pred_col}_norm'] = eval_df[pred_col].apply(normalize_taxonomy_for_comparison)
         
         # Compare
         matches = eval_df[f'{gt_col}_norm'] == eval_df[f'{pred_col}_norm']
@@ -246,6 +205,24 @@ class EnhancedEvaluator:
         logger.info(f"  Correct: {correct:,}")
         logger.info(f"  Incorrect: {incorrect:,}")
         logger.info(f"  Accuracy: {accuracy:.2%}")
+        
+        # Log sample mismatches for debugging (always show at least 10)
+        if incorrect > 0:
+            num_samples = min(10, incorrect)
+            logger.info(f"\n  Sample mismatches (showing {num_samples}):")
+            mismatches = eval_df[~matches].head(num_samples)
+            for idx, row in mismatches.iterrows():
+                logger.info(f"    {row['seqID']}:")
+                logger.info(f"      GT:   {row[gt_col]}")
+                logger.info(f"      PRED: {row[pred_col]}")
+        
+        # Also show some correct matches for comparison
+        if correct > 0:
+            num_samples = min(5, correct)
+            logger.info(f"\n  Sample correct matches (showing {num_samples}):")
+            correct_matches = eval_df[matches].head(num_samples)
+            for idx, row in correct_matches.iterrows():
+                logger.info(f"    {row['seqID']}: {row[gt_col]} ✓")
         
         return {
             'level': level,
@@ -277,10 +254,9 @@ class EnhancedEvaluator:
         has_ground_truth = master_df['has_ground_truth']
         
         # Check for correct genus match for True Negatives
-        is_correct_genus = (
-            master_df['gt_genus'].str.lower().str.strip() == 
-            master_df['pred_genus'].str.lower().str.strip()
-        )
+        gt_genus_norm = master_df['gt_genus'].apply(normalize_taxonomy_for_comparison)
+        pred_genus_norm = master_df['pred_genus'].apply(normalize_taxonomy_for_comparison)
+        is_correct_genus = (gt_genus_norm == pred_genus_norm)
         is_correct_genus = is_correct_genus.fillna(False)
         
         # Calculate confusion matrix
@@ -335,8 +311,8 @@ class EnhancedEvaluator:
             return {'total_misclassified': 0}
         
         # Normalize for comparison
-        eval_df[f'{gt_col}_norm'] = eval_df[gt_col].str.lower().str.strip()
-        eval_df[f'{pred_col}_norm'] = eval_df[pred_col].str.lower().str.strip()
+        eval_df[f'{gt_col}_norm'] = eval_df[gt_col].apply(normalize_taxonomy_for_comparison)
+        eval_df[f'{pred_col}_norm'] = eval_df[pred_col].apply(normalize_taxonomy_for_comparison)
         
         misclassified = eval_df[eval_df[f'{gt_col}_norm'] != eval_df[f'{pred_col}_norm']].copy()
         
@@ -421,7 +397,7 @@ class EnhancedEvaluator:
                 'mean_purity': float(mean_purity),
                 'median_purity': float(median_purity),
                 'high_purity_clusters': int((purity_df['purity'] > 0.9).sum()),
-                'medium_purity_clusters': int((purity_df['purity'] > 0.7).sum() & (purity_df['purity'] <= 0.9).sum()),
+                'medium_purity_clusters': int(((purity_df['purity'] > 0.7) & (purity_df['purity'] <= 0.9)).sum()),
                 'low_purity_clusters': int((purity_df['purity'] <= 0.7).sum()),
                 'total_clusters': len(purity_df),
                 'purity_distribution': purity_df['purity'].describe().to_dict()
@@ -443,6 +419,7 @@ class EnhancedEvaluator:
             f.write("="*80 + "\n")
             f.write("ENHANCED EVALUATION REPORT\n")
             f.write("Ground Truth vs Predicted OTU Comparison (Multi-Level)\n")
+            f.write("Using Shared taxonomy_parser.py for consistent parsing\n")
             f.write("="*80 + "\n\n")
             
             # Dataset overview
@@ -551,8 +528,7 @@ class EnhancedEvaluator:
             f.write("="*80 + "\n\n")
             
             if species_acc < 0.7:
-                f.write("- Species accuracy is low. This may be due to 'species' vs 'Genus species' mismatch.\n")
-                f.write("- Check `master_evaluation_table.csv` for common errors.\n")
+                f.write("- Species accuracy is low. Check `master_evaluation_table.csv` for common errors.\n")
             
             if novelty_results['f1_score'] < 0.5:
                 f.write("- Tune novelty detection thresholds (identity_threshold_novel)\n")
@@ -596,6 +572,7 @@ class EnhancedEvaluator:
         """Execute complete evaluation pipeline"""
         logger.info(f"\n{'='*80}")
         logger.info("ENHANCED EVALUATION PIPELINE (Multi-Level)")
+        logger.info("Using Shared taxonomy_parser.py for Consistent Parsing")
         logger.info(f"{'='*80}\n")
         
         try:

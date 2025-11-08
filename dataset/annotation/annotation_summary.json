@@ -1,0 +1,19 @@
+{
+  "total_clusters": 2161,
+  "total_sequences": 8784,
+  "classification_distribution": {
+    "known_species": 2160,
+    "noise": 1
+  },
+  "parameters": {
+    "identity_threshold_novel": 95.0,
+    "identity_threshold_species": 97.0,
+    "databases": [
+      "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
+    ],
+    "num_databases": 1,
+    "use_local_blast": true,
+    "num_threads": 12,
+    "local_taxonomy_entries": 7951
+  }
+}

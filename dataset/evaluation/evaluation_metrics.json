@@ -1,0 +1,152 @@
+{
+  "dataset_overview": {
+    "total_sequences": 8784,
+    "sequences_with_ground_truth": 7951,
+    "sequences_without_ground_truth": 833
+  },
+  "accuracy_by_level": [
+    {
+      "level": "domain",
+      "total_sequences": 5243,
+      "correct": 5243,
+      "incorrect": 0,
+      "accuracy": 1.0
+    },
+    {
+      "level": "kingdom",
+      "total_sequences": 3966,
+      "correct": 3661,
+      "incorrect": 305,
+      "accuracy": 0.9230963187090268
+    },
+    {
+      "level": "phylum",
+      "total_sequences": 4425,
+      "correct": 3233,
+      "incorrect": 1192,
+      "accuracy": 0.7306214689265537
+    },
+    {
+      "level": "class",
+      "total_sequences": 1841,
+      "correct": 1566,
+      "incorrect": 275,
+      "accuracy": 0.850624660510592
+    },
+    {
+      "level": "order",
+      "total_sequences": 518,
+      "correct": 471,
+      "incorrect": 47,
+      "accuracy": 0.9092664092664092
+    },
+    {
+      "level": "family",
+      "total_sequences": 17,
+      "correct": 17,
+      "incorrect": 0,
+      "accuracy": 1.0
+    },
+    {
+      "level": "genus",
+      "total_sequences": 5617,
+      "correct": 2208,
+      "incorrect": 3409,
+      "accuracy": 0.3930923980772654
+    },
+    {
+      "level": "species",
+      "total_sequences": 5617,
+      "correct": 1969,
+      "incorrect": 3648,
+      "accuracy": 0.3505429944810397
+    }
+  ],
+  "novelty_detection": {
+    "true_positives": 202,
+    "false_positives": 2334,
+    "true_negatives": 2208,
+    "false_negatives": 631,
+    "precision": 0.07965299684542587,
+    "recall": 0.2424969987995198,
+    "f1_score": 0.1199168892846542,
+    "accuracy": 0.27436247723132967
+  },
+  "cluster_purity_genus": {
+    "level": "genus",
+    "mean_purity": 0.49078087920504976,
+    "median_purity": 0.5,
+    "high_purity_clusters": 272,
+    "medium_purity_clusters": 5,
+    "low_purity_clusters": 1833,
+    "total_clusters": 2110,
+    "purity_distribution": {
+      "count": 2110.0,
+      "mean": 0.49078087920504976,
+      "std": 0.22620530866570923,
+      "min": 0.09090909090909091,
+      "25%": 0.3333333333333333,
+      "50%": 0.5,
+      "75%": 0.5,
+      "max": 1.0
+    }
+  },
+  "misclassifications_genus": {
+    "level": "genus",
+    "total_misclassified": 3409,
+    "total_evaluated": 5617,
+    "misclassification_rate": 0.6069076019227345,
+    "top_patterns": [
+      {
+        "ground_truth": "Trachelomonas",
+        "predicted": "Euglena",
+        "count": 3
+      },
+      {
+        "ground_truth": "Trachelomonas",
+        "predicted": "Phacus",
+        "count": 3
+      },
+      {
+        "ground_truth": "Lepocinclis",
+        "predicted": "Euglena",
+        "count": 3
+      },
+      {
+        "ground_truth": "Strongylostoma",
+        "predicted": "Craspedacusta",
+        "count": 3
+      },
+      {
+        "ground_truth": "Trypanosoma",
+        "predicted": "Herpetomonas",
+        "count": 3
+      },
+      {
+        "ground_truth": "Leptomonas",
+        "predicted": "Herpetomonas",
+        "count": 2
+      },
+      {
+        "ground_truth": "Henneguya",
+        "predicted": "Myxobolus",
+        "count": 2
+      },
+      {
+        "ground_truth": "Dacrymyces",
+        "predicted": "Femsjonia",
+        "count": 2
+      },
+      {
+        "ground_truth": "Selenidium",
+        "predicted": "Ceratomyxa",
+        "count": 2
+      },
+      {
+        "ground_truth": "Nakazawaea",
+        "predicted": "Thalassiosira",
+        "count": 2
+      }
+    ]
+  }
+}
