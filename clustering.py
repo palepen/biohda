@@ -34,9 +34,10 @@ class HDBSCANClustering:
             config = yaml.safe_load(f)
         
         self.embeddings_dir = Path(config['paths']['embeddings_dir'])
-        self.metadata_file = Path(config['paths']['processed_dir']).parent / "metadata.csv"
+
         self.output_dir = Path(config['paths']['clusters_dir'])
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.taxonomy_files = config['paths']['taxonomy_files']
         
         cluster_cfg = config['clustering']
         self.min_cluster_size = cluster_cfg['min_cluster_size']
@@ -64,9 +65,74 @@ class HDBSCANClustering:
         return embeddings, metadata
 
     def load_taxonomy(self):
-        logger.info("Loading taxonomy...")
-        metadata_df = pd.read_csv(self.metadata_file, dtype={'taxID': str})
-        logger.info(f"Records: {len(metadata_df):,}")
+        logger.info("Loading taxonomy from config file list...")
+        
+        if not self.taxonomy_files:
+            logger.error("No files found in 'paths.taxonomy_files' list in config.")
+            raise ValueError("Config 'paths.taxonomy_files' is empty.")
+
+        logger.info(f"Found {len(self.taxonomy_files)} TSV files specified in config...")
+
+        # --- MODIFICATION: Define column names based on your data snippet ---
+        # Your data has 4 columns: accession, taxid, species_name, full_lineage
+        col_names = ['accession', 'taxid', 'species_name', 'full_lineage']
+        # --- End of MODIFICATION ---
+
+        all_dfs = []
+        for file_path_str in self.taxonomy_files:
+            file_path = Path(file_path_str)
+            if not file_path.exists():
+                logger.warning(f"File not found, skipping: {file_path_str}")
+                continue
+                
+            try:
+                # --- MODIFICATION: Add header=None and names=col_names ---
+                df = pd.read_csv(
+                    file_path, 
+                    sep='\t',
+                    header=None,     # Tell pandas there is NO header row
+                    names=col_names, # Manually provide the column names
+                    dtype={'taxid': str} 
+                )
+                # --- End of MODIFICATION ---
+
+                all_dfs.append(df)
+                logger.info(f"  Loaded {file_path.name} ({len(df):,} records)")
+            except Exception as e:
+                logger.warning(f"Failed to load {file_path.name}: {e}")
+        
+        if not all_dfs:
+            logger.error("No data loaded. All specified TSV files failed to parse or were not found.")
+            raise ValueError("No valid taxonomy data loaded from 'paths.taxonomy_files'.")
+            
+        # Combine all individual DataFrames into one
+        metadata_df = pd.concat(all_dfs, ignore_index=True)
+
+        # This rename block is still correct and NECESSARY
+        logger.info("Normalizing taxonomy column names...")
+        column_map = {
+            'accession': 'seqID',
+            'taxid': 'taxID',
+            'species_name': 'scientific_name'
+            # 'full_lineage' is also loaded, but not renamed (which is fine)
+        }
+        
+        cols_to_rename = {k: v for k, v in column_map.items() if k in metadata_df.columns}
+        
+        if cols_to_rename:
+            metadata_df.rename(columns=cols_to_rename, inplace=True)
+            logger.info(f"Renamed columns: {cols_to_rename}")
+
+        logger.info(f"Total records loaded: {len(metadata_df):,}")
+        
+        # This check should now pass
+        expected_cols = ['seqID', 'taxID', 'scientific_name']
+        if not all(col in metadata_df.columns for col in expected_cols):
+            logger.warning("Loaded data is still missing one or more expected columns: "
+                           "'seqID', 'taxID', 'scientific_name'. Check TSV format.")
+        else:
+            logger.info("Taxonomy columns 'seqID', 'taxID', 'scientific_name' loaded successfully.")
+                           
         return metadata_df
 
     def normalize_embeddings(self, embeddings):

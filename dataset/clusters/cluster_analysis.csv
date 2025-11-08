@@ -1,29 +1,29 @@
 cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_taxonomy
 0,2,2,0.5,1825104,Percutemincola moriokae,1,True
-1,7,7,0.14285714285714285,,,1,True
+1,7,6,0.16666666666666666,38123,Pachypsylla venusta,1,True
 2,3,3,0.3333333333333333,373612,Phacus hamelii,1,True
 3,2,2,0.5,1247838,Reticulamoeba gemmipara,1,True
 4,3,3,0.3333333333333333,154028,Isopora cuneata,1,True
-5,4,3,0.5,,,2,True
-6,4,2,0.75,,,3,True
+5,4,2,0.5,154968,Nuclearia delicatula,1,True
+6,4,1,1.0,439316,Gambierdiscus belizeanus,1,True
 7,2,2,0.5,2049360,Monocercomonoides acer,1,True
 8,2,2,0.5,273006,Leitoscoloplos pugettensis,1,True
-9,4,2,0.75,,,3,True
+9,4,1,1.0,40302,Vairimorpha ceranae,1,True
 10,2,2,0.5,30068,Anopheles punctulatus,1,True
 11,3,3,0.3333333333333333,130081,Galdieria sulphuraria,1,True
 12,2,2,0.5,1310155,Neozygites cinarae,1,True
 13,6,6,0.16666666666666666,560880,Nallachius americanus,1,True
-14,3,3,0.3333333333333333,1131513,Neonaesa rugosa,1,True
+14,3,2,0.5,1131513,Neonaesa rugosa,1,True
 15,3,3,0.3333333333333333,560884,Sisyra vicaria,1,True
 16,3,3,0.3333333333333333,344911,Discoplastis adunca,1,True
 17,3,3,0.3333333333333333,5699,Trypanosoma vivax,1,True
 18,2,2,0.5,2301598,Vexillifera kereti,1,True
 19,4,4,0.25,478127,Chroomonas coerulea,1,True
-20,3,3,0.3333333333333333,1655641,Collosphaera tuberosa,1,True
+20,3,2,0.5,1655641,Collosphaera tuberosa,1,True
 21,3,3,0.3333333333333333,468697,Asilus crabroniformis,1,True
 22,2,2,0.5,2203272,Merocystis kathae,1,True
 23,2,2,0.5,52288,Plasmodium inui,1,True
-24,3,1,1.0,,,3,True
+24,3,0,0.0,NA,NA,0,False
 25,2,2,0.5,1131506,Exosphaeroma varicolor,1,True
 26,2,2,0.5,468698,Asilus sericeus,1,True
 27,2,2,0.5,63950,Pachyteles striola,1,True
@@ -32,45 +32,45 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 30,3,3,0.3333333333333333,435744,Wellcomia siamensis,1,True
 31,2,2,0.5,546859,Sappinia platani,1,True
 32,2,2,0.5,1141744,Avitellina centripunctata,1,True
-33,5,4,0.4,,,2,True
+33,5,3,0.3333333333333333,161568,Joeropsis coralicola,1,True
 34,2,2,0.5,525769,Parahistomonas wenrichi,1,True
 35,3,3,0.3333333333333333,1476524,Dendrodoris arborescens,1,True
-36,7,7,0.14285714285714285,1077153,Paramoeba atlantica,1,True
+36,7,6,0.16666666666666666,1077153,Paramoeba atlantica,1,True
 37,2,2,0.5,255879,Plasmodium cathemerium,1,True
 38,2,2,0.5,1141746,Thysaniezia giardi,1,True
 39,2,2,0.5,271729,Aetea anguina,1,True
 40,5,5,0.2,927768,Proceraea madeirensis,1,True
-41,2,2,0.5,,,1,True
+41,2,1,1.0,5850,Plasmodium knowlesi,1,True
 42,4,4,0.25,929451,Samla bilas,1,True
 43,2,2,0.5,910326,Spurilla major,1,True
 44,3,3,0.3333333333333333,560952,Theristria imperfecta,1,True
 45,3,3,0.3333333333333333,468774,Ommatius tibialis,1,True
 46,2,2,0.5,82341,Blastocystis cycluri,1,True
-47,4,4,0.25,,,1,True
+47,4,3,0.3333333333333333,373839,Nothochrysa californica,1,True
 48,2,2,0.5,363763,Phyllocaulis tuberculosus,1,True
 49,2,2,0.5,1683865,Callinera kasyanovi,1,True
 50,2,2,0.5,101606,Xyris difformis,1,True
 51,2,2,0.5,31381,Ceramium diaphanum,1,True
-52,3,2,0.6666666666666666,,,2,True
-53,3,3,0.3333333333333333,472109,Microphasma agassizi,1,True
+52,3,1,1.0,479617,Ventsia tricarinata,1,True
+53,3,2,0.5,472109,Microphasma agassizi,1,True
 54,4,4,0.25,155713,Riggia paranensis,1,True
 55,3,3,0.3333333333333333,1129588,Amblyospora modestium,1,True
-56,2,2,0.5,1261140,Sporanauta perivermis,1,True
+56,2,1,1.0,1261140,Sporanauta perivermis,1,True
 57,3,3,0.3333333333333333,1226471,Entamoeba bangladeshi,1,True
 58,3,3,0.3333333333333333,763133,Tritonia festiva,1,True
 59,4,4,0.25,348837,Spironucleus salmonicida,1,True
-60,3,3,0.3333333333333333,,,1,True
-61,2,2,0.5,1525730,Ptolemeba noxubium,1,True
+60,3,2,0.5,200885,Hyalinocysta chapmani,1,True
+61,2,1,1.0,1525730,Ptolemeba noxubium,1,True
 62,2,2,0.5,2211651,Zopfochytrium polystomum,1,True
-63,2,2,0.5,,,1,True
+63,2,1,1.0,298305,Lepocinclis acus,1,True
 64,2,2,0.5,1701258,Corlissina maricaensis,1,True
 65,5,5,0.2,283045,Batoteuthis skolops,1,True
 66,3,3,0.3333333333333333,121824,Calophya schini,1,True
 67,2,2,0.5,513067,Acropora horrida,1,True
-68,2,2,0.5,1223329,Zschokkella soleae,1,True
+68,2,1,1.0,1223329,Zschokkella soleae,1,True
 69,3,3,0.3333333333333333,763126,Eubranchus sanjuanensis,1,True
 70,2,2,0.5,285689,Staurojoenina assimilis,1,True
-71,3,3,0.3333333333333333,,,1,True
+71,3,2,0.5,1393010,Takaokaspora nipponicus,1,True
 72,2,2,0.5,516622,Joeropsis antarctica,1,True
 73,2,2,0.5,516618,Iathrippa sarsi,1,True
 74,2,2,0.5,910386,Stygobromus gracilipes,1,True
@@ -80,37 +80,37 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 78,2,2,0.5,1955313,Hymenolepis microps,1,True
 79,2,2,0.5,692447,Vibilia armata,1,True
 80,2,2,0.5,1105343,Vexillifera fluvialis,1,True
-81,6,3,0.6666666666666666,,,4,True
+81,6,2,0.5,215771,Discoplastis spathirhyncha,1,True
 82,5,5,0.2,648696,Blastocrithidia largi,1,True
 83,2,2,0.5,59747,Meloidogyne chitwoodi,1,True
-84,2,2,0.5,,,1,True
+84,2,1,1.0,668997,Coronympha koidzumia,1,True
 85,4,4,0.25,1798883,Globulispora mitoportans,1,True
 86,10,10,0.1,533280,Huashanentulus huashanensis,1,True
-87,5,5,0.2,766121,Choutagus longicephalus,1,True
-88,4,3,0.5,,,2,True
+87,5,4,0.25,766121,Choutagus longicephalus,1,True
+88,4,2,0.5,1685800,Lepocinclis spinosa,1,True
 89,3,3,0.3333333333333333,208475,Dinenympha fimbriata,1,True
 90,2,2,0.5,1091208,Metatrichoniscoides leydigii,1,True
 91,2,2,0.5,49923,Anopheles walkeri,1,True
-92,3,3,0.3333333333333333,,,1,True
+92,3,2,0.5,261705,Tetramitus thermacidophilus,1,True
 93,3,3,0.3333333333333333,103858,Anopheles clowi,1,True
 94,2,2,0.5,186214,Bovicola ovis,1,True
 95,3,3,0.3333333333333333,1430926,Phacus mariae,1,True
 96,2,2,0.5,191592,Amblyospora indicola,1,True
-97,4,3,0.5,,,2,True
+97,4,2,0.5,1485075,Endostelium amerosporum,1,True
 98,2,2,0.5,763128,Orienthella trilineata,1,True
-99,2,2,0.5,,,1,True
+99,2,1,1.0,392896,Euglena hiemalis,1,True
 100,2,2,0.5,876016,Nicolea zostericola,1,True
-101,6,5,0.3333333333333333,,,2,True
+101,6,4,0.25,253971,Trachelomonas lefevrei,1,True
 102,2,2,0.5,251736,Taeniella carcini,1,True
-103,3,1,1.0,,,3,True
+103,3,0,0.0,NA,NA,0,False
 104,2,2,0.5,10212,Bugula neritina,1,True
-105,3,3,0.3333333333333333,,,1,True
-106,2,2,0.5,38278,Euglena stellata,1,True
+105,3,2,0.5,1129592,Amblyospora timirasia,1,True
+106,2,1,1.0,38278,Euglena stellata,1,True
 107,3,3,0.3333333333333333,199206,Proceraea nigropunctata,1,True
 108,3,3,0.3333333333333333,560202,Ironus longicaudatus,1,True
-109,3,3,0.3333333333333333,,,1,True
-110,2,2,0.5,215770,Phacus limnophila,1,True
-111,5,4,0.4,,,2,True
+109,3,2,0.5,200899,Oligosporidium occidentalis,1,True
+110,2,1,1.0,215770,Phacus limnophila,1,True
+111,5,3,0.3333333333333333,1112788,Dolerocypria mukaishimensis,1,True
 112,4,4,0.25,79923,Clonorchis sinensis,1,True
 113,2,2,0.5,1348407,Dysteria lanceolata,1,True
 114,2,2,0.5,647300,Trichia alpina,1,True
@@ -119,7 +119,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 117,2,2,0.5,78923,Dispira cornuta,1,True
 118,2,2,0.5,139300,Ditiola radicata,1,True
 119,2,2,0.5,359306,Entamoeba ecuadoriensis,1,True
-120,2,2,0.5,,,1,True
+120,2,1,1.0,56466,Peranema trichophorum,1,True
 121,3,3,0.3333333333333333,570749,Neosemidalis farinosa,1,True
 122,2,2,0.5,545529,Phacus applanatus,1,True
 123,3,3,0.3333333333333333,1151109,Tubulinosema hippodamiae,1,True
@@ -135,46 +135,46 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 133,3,3,0.3333333333333333,2068663,Ptychopera unicornis,1,True
 134,3,3,0.3333333333333333,65590,Sphaerozoum punctatum,1,True
 135,2,2,0.5,322840,Eudistoma gilboviride,1,True
-136,5,4,0.4,,,2,True
-137,8,4,0.625,,,5,True
+136,5,3,0.3333333333333333,1607784,Helicoprorodon maximus,1,True
+137,8,3,0.3333333333333333,1512276,Cochliopodium kieliense,1,True
 138,2,2,0.5,82763,Idotea baltica,1,True
 139,2,2,0.5,96870,Porcellionides pruinosus,1,True
 140,5,5,0.2,187812,Tubulanus punctatus,1,True
 141,2,2,0.5,191598,Parathelohania obesa,1,True
 142,2,2,0.5,265970,Blastocrithidia miridarum,1,True
-143,2,1,1.0,,,2,True
+143,2,0,0.0,NA,NA,0,False
 144,4,4,0.25,399066,Pottsia serenei,1,True
-145,3,3,0.3333333333333333,6932,Pholcus phalangioides,1,True
+145,3,2,0.5,6932,Pholcus phalangioides,1,True
 146,5,5,0.2,947157,Calohypsibius ornatus,1,True
 147,4,4,0.25,1607835,Nolandia orientalis,1,True
-148,3,2,0.6666666666666666,,,2,True
+148,3,1,1.0,158829,Phacus orbicularis,1,True
 149,4,4,0.25,2060460,Isobactrus uniscutatus,1,True
 150,2,2,0.5,1402965,Barbatospora ambicaudata,1,True
-151,5,3,0.6,,,3,True
+151,5,2,0.5,650292,Protomagalhaensia wolfi,1,True
 152,6,6,0.16666666666666666,1955015,Myxobolus taibaiensis,1,True
 153,2,2,0.5,102172,Caudospora palustris,1,True
 154,3,3,0.3333333333333333,940419,Hyperietta vosseleri,1,True
 155,3,3,0.3333333333333333,538611,Peltodytes dispersus,1,True
-156,2,2,0.5,,,1,True
+156,2,1,1.0,215710,Euglenaria anabaena var. minima,1,True
 157,2,2,0.5,76012,Neoconidiobolus thromboides,1,True
 158,2,2,0.5,77034,Phaeothamnion confervicola,1,True
-159,2,2,0.5,279110,Chloromyxum legeri,1,True
+159,2,1,1.0,279110,Chloromyxum legeri,1,True
 160,3,3,0.3333333333333333,1704139,Hemolivia stellata,1,True
 161,4,4,0.25,462840,Gammarus glabratus,1,True
 162,4,4,0.25,59189,Anopheles hinesorum,1,True
 163,4,4,0.25,1091204,Trichoniscus pygmaeus,1,True
 164,3,3,0.3333333333333333,1752933,Lecudina pellucida,1,True
 165,2,2,0.5,96650,Pelodera teres,1,True
-166,2,2,0.5,,,1,True
+166,2,1,1.0,102910,Colacium vesiculosum,1,True
 167,2,2,0.5,281684,Prodontorhabditis wirthi,1,True
-168,4,4,0.25,1974276,Zoothamnium florens,1,True
-169,2,2,0.5,,,1,True
+168,4,3,0.3333333333333333,1974276,Zoothamnium florens,1,True
+169,2,1,1.0,151077,Chilodonella uncinata,1,True
 170,2,2,0.5,2014993,Pseudotrichonympha pearti,1,True
 171,2,2,0.5,107923,Peltodytes rotundatus,1,True
-172,3,2,0.6666666666666666,,,2,True
-173,2,2,0.5,248767,Siphonosoma vastum,1,True
+172,3,1,1.0,1968265,Heliconympha glossotermitis,1,True
+173,2,1,1.0,248767,Siphonosoma vastum,1,True
 174,2,2,0.5,2083428,Thaumastosoma diva,1,True
-175,7,7,0.14285714285714285,1129591,Amblyospora shegaria,1,True
+175,7,6,0.16666666666666666,1129591,Amblyospora shegaria,1,True
 176,2,2,0.5,1129594,Parathelohania tomski,1,True
 177,3,3,0.3333333333333333,347308,Cerylon ferrugineum,1,True
 178,4,4,0.25,1981924,Balaustium murorum,1,True
@@ -183,42 +183,42 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 181,2,2,0.5,745925,Rhodachlya hawaiiana,1,True
 182,5,5,0.2,337420,Coelopleurus floridanus,1,True
 183,4,4,0.25,225164,Lottia gigantea,1,True
-184,4,4,0.25,1329970,Nosema pieriae,1,True
+184,4,3,0.3333333333333333,1329970,Nosema pieriae,1,True
 185,4,4,0.25,186209,Degeeriella fulva,1,True
 186,2,2,0.5,2077196,Bysmatrum gregarium,1,True
-187,5,5,0.2,,,1,True
+187,5,4,0.25,521161,Trichonympha collaris,1,True
 188,4,4,0.25,172001,Ligidium germanicum,1,True
 189,2,2,0.5,2031164,Henneguya gilbert,1,True
 190,5,5,0.2,362532,Bonamia exitiosa,1,True
 191,3,3,0.3333333333333333,1777197,Limnoperla jaffueli,1,True
 192,3,3,0.3333333333333333,1109092,Meloimorpha japonica,1,True
 193,5,5,0.2,1382697,Raillietiella orientalis,1,True
-194,3,3,0.3333333333333333,,,1,True
+194,3,2,0.5,473640,Scruparia chelata,1,True
 195,2,2,0.5,2019424,Amphicteis gunneri,1,True
 196,5,5,0.2,1579382,Ceratomyxa leatherjacketi,1,True
-197,4,2,0.75,,,3,True
-198,3,2,0.6666666666666666,,,2,True
+197,4,1,1.0,216757,Campylodiscus ralfsii,1,True
+198,3,1,1.0,1580587,Mastigella erinacea,1,True
 199,3,3,0.3333333333333333,229749,Rhysotritia duplicata,1,True
 200,3,3,0.3333333333333333,213640,Montipora circumvallata,1,True
-201,2,1,1.0,,,2,True
+201,2,0,0.0,NA,NA,0,False
 202,2,2,0.5,55976,Acropora valida,1,True
-203,6,6,0.16666666666666666,1042828,Stygamoeba regulata,1,True
+203,6,5,0.2,1042828,Stygamoeba regulata,1,True
 204,2,2,0.5,516617,Ianthopsis nasicornis,1,True
-205,5,5,0.2,702660,Swima bombiviridis,1,True
+205,5,4,0.25,702660,Swima bombiviridis,1,True
 206,3,3,0.3333333333333333,1589682,Thaumastocoris safordi,1,True
 207,3,3,0.3333333333333333,1582353,Ailadinium reticulatum,1,True
-208,5,4,0.4,,,2,True
+208,5,3,0.3333333333333333,1129584,Amblyospora kazankia,1,True
 209,2,2,0.5,1682154,Thaidasys tongiorgii,1,True
 210,2,2,0.5,277987,Phacus skujae,1,True
 211,2,2,0.5,85758,Phlebotomus neglectus,1,True
 212,2,2,0.5,178514,Amphimedon compressa,1,True
 213,3,3,0.3333333333333333,1209611,Deladenus durus,1,True
 214,5,5,0.2,361114,Cavenderia bifurcata,1,True
-215,6,5,0.3333333333333333,,,2,True
-216,2,2,0.5,1664300,Obama anthropophila,1,True
+215,6,4,0.25,1574029,Ballarra longipalpus,1,True
+216,2,1,1.0,1664300,Obama anthropophila,1,True
 217,2,2,0.5,1321401,Polyplicarium translucidae,1,True
 218,3,3,0.3333333333333333,338279,Tenuignathia rikerae,1,True
-219,2,2,0.5,,,1,True
+219,2,1,1.0,623139,Zygotylenchus guevarai,1,True
 220,3,3,0.3333333333333333,257588,Sonderopelta coriacea,1,True
 221,5,5,0.2,13561,Hernandia ovigera,1,True
 222,4,4,0.25,2049391,Wraios longiembolus,1,True
@@ -228,9 +228,9 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 226,2,2,0.5,1535461,Faronus parallelus,1,True
 227,3,3,0.3333333333333333,472211,Semperella schulzei,1,True
 228,5,5,0.2,28024,Porphyridium sordidum,1,True
-229,2,2,0.5,,,1,True
+229,2,1,1.0,78084,Trypanosoma godfreyi,1,True
 230,2,2,0.5,1486477,Opisthomitus longiflagellatus,1,True
-231,5,5,0.2,393849,Pholcus manueli,1,True
+231,5,4,0.25,393849,Pholcus manueli,1,True
 232,3,3,0.3333333333333333,1115717,Lamproderma pulveratum,1,True
 233,3,3,0.3333333333333333,947576,Carcinonemertes carcinophila,1,True
 234,2,2,0.5,35688,Porphyridium purpureum,1,True
@@ -241,14 +241,14 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 239,4,4,0.25,178948,Arytainilla spartiophila,1,True
 240,2,2,0.5,1074278,Ruehmaphelenchus digitulus,1,True
 241,2,2,0.5,406067,Paraechinophallus japonicus,1,True
-242,11,6,0.5454545454545454,,,6,True
+242,11,5,0.2,1869201,Neovahlkampfia nana,1,True
 243,3,3,0.3333333333333333,51553,Mesoperlina pecircai,1,True
 244,3,3,0.3333333333333333,1002077,Platypus incompertus,1,True
-245,6,6,0.16666666666666666,182616,Hirsutocythere hanaii,1,True
+245,6,5,0.2,182616,Hirsutocythere hanaii,1,True
 246,2,2,0.5,295517,Delevea bertrandi,1,True
 247,3,3,0.3333333333333333,1210419,Hermenia verruculosa,1,True
-248,2,2,0.5,,,1,True
-249,5,4,0.4,,,2,True
+248,2,1,1.0,1745345,Rhizomastix elongata,1,True
+249,5,3,0.3333333333333333,60946,Ozobranchus margoi,1,True
 250,3,3,0.3333333333333333,1647939,Capillaria anatis,1,True
 251,5,5,0.2,2218057,Neophyllura bicolor,1,True
 252,3,3,0.3333333333333333,1521698,Neglectella peisonis,1,True
@@ -258,11 +258,11 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 256,2,2,0.5,326993,Myxobolus bilobus,1,True
 257,4,4,0.25,1607865,Dysteria paraprocera,1,True
 258,8,8,0.125,1401271,Tritegeus bisulcatus,1,True
-259,2,2,0.5,419540,Eurobowmaniella simulans,1,True
+259,2,1,1.0,419540,Eurobowmaniella simulans,1,True
 260,3,3,0.3333333333333333,396898,Dictyoplax lecus,1,True
-261,3,3,0.3333333333333333,108280,Anthobothrium laciniatum,1,True
+261,3,2,0.5,108280,Anthobothrium laciniatum,1,True
 262,2,2,0.5,1920002,Bryopa melitensis,1,True
-263,2,2,0.5,,,1,True
+263,2,1,1.0,71804,Trypanosoma grayi,1,True
 264,2,2,0.5,1481722,Monopylocystis disparata,1,True
 265,2,2,0.5,5932,Ichthyophthirius multifiliis,1,True
 266,3,3,0.3333333333333333,1170556,Pseudochilodonopsis fluviatilis,1,True
@@ -271,7 +271,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 269,2,2,0.5,646004,Scoloplos normalis,1,True
 270,4,4,0.25,5041,Malbranchea cinnamomea,1,True
 271,3,3,0.3333333333333333,223603,Herpetomonas mirabilis,1,True
-272,2,2,0.5,,,1,True
+272,2,1,1.0,1539903,Prototrachelocerca fasciolata,1,True
 273,2,2,0.5,1921426,Myxobolus voremkhai,1,True
 274,3,3,0.3333333333333333,420988,Theileria ornithorhynchi,1,True
 275,3,3,0.3333333333333333,1485074,Endostelium crystalliferum,1,True
@@ -288,22 +288,22 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 286,4,4,0.25,1129590,Amblyospora severinia,1,True
 287,4,4,0.25,186217,Hoplopleura pacifica,1,True
 288,3,3,0.3333333333333333,1662338,Scolecobasidium phaeophorum,1,True
-289,6,3,0.6666666666666666,,,4,True
-290,2,2,0.5,,,1,True
+289,6,2,0.5,437603,Paramoeba perurans,1,True
+290,2,1,1.0,164418,Conidiobolus obscurus,1,True
 291,5,5,0.2,2012621,Trichonympha deweyi,1,True
 292,3,3,0.3333333333333333,361118,Cavenderia mexicana,1,True
 293,2,2,0.5,1913629,Triangula percae,1,True
 294,2,2,0.5,178554,Xestospongia testudinaria,1,True
-295,7,7,0.14285714285714285,,,1,True
+295,7,6,0.16666666666666666,150583,Trachelomonas volvocinopsis var. spiralis,1,True
 296,3,3,0.3333333333333333,340201,Pterospora floridiensis,1,True
 297,2,2,0.5,181058,Pandora dipterigena,1,True
 298,3,3,0.3333333333333333,29031,Phlebotomus papatasi,1,True
 299,2,2,0.5,386631,Sirodotia delicatula,1,True
-300,2,2,0.5,,,1,True
+300,2,1,1.0,3040,Euglena viridis,1,True
 301,3,3,0.3333333333333333,150590,Trachelomonas pertyi,1,True
 302,2,2,0.5,430611,Strombomonas verrucosa,1,True
 303,4,4,0.25,543858,Ephelota truncata,1,True
-304,2,2,0.5,135494,Lepocinclis tripteris,1,True
+304,2,1,1.0,135494,Lepocinclis tripteris,1,True
 305,2,2,0.5,1503872,Crithidia pragensis,1,True
 306,4,4,0.25,186195,Heterodoxus calabyi,1,True
 307,3,3,0.3333333333333333,53701,Galathealinum brachiosum,1,True
@@ -317,9 +317,9 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 315,2,2,0.5,881145,Cephaloflexa bergi,1,True
 316,2,2,0.5,77743,Cyclestheria hislopi,1,True
 317,2,2,0.5,1003325,Acineta flava,1,True
-318,4,3,0.5,,,2,True
+318,4,2,0.5,253970,Trachelomonas similis,1,True
 319,2,2,0.5,435410,Cavostelium apophysatum,1,True
-320,5,4,0.4,,,2,True
+320,5,3,0.3333333333333333,270628,Nitzschia pusilla,1,True
 321,2,2,0.5,1527803,Coscinodiscus jonesianus,1,True
 322,3,3,0.3333333333333333,1576587,Kentomonas sorsogonicus,1,True
 323,2,2,0.5,996673,Proporus brochii,1,True
@@ -338,9 +338,9 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 336,4,4,0.25,1101367,Leptomonas rigidus,1,True
 337,4,4,0.25,60952,Haementeria gracilis,1,True
 338,3,3,0.3333333333333333,388780,Haliotrema cromileptis,1,True
-339,2,2,0.5,,,1,True
+339,2,1,1.0,674965,Anaperus rubellus,1,True
 340,3,3,0.3333333333333333,6306,Meloidogyne incognita,1,True
-341,3,3,0.3333333333333333,1128104,Balanophora tobiracola,1,True
+341,3,2,0.5,1128104,Balanophora tobiracola,1,True
 342,4,4,0.25,1347741,Cnizocoris sinensis,1,True
 343,2,2,0.5,189623,Callithamnion pikeanum,1,True
 344,2,2,0.5,483153,Trichuris discolor,1,True
@@ -349,7 +349,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 347,2,2,0.5,224359,Nesiotinus demersus,1,True
 348,3,3,0.3333333333333333,473180,Tylorida striata,1,True
 349,3,3,0.3333333333333333,482403,Troglodytella abrassarti,1,True
-350,3,3,0.3333333333333333,,,1,True
+350,3,2,0.5,1165163,Microgemma carolinus,1,True
 351,2,2,0.5,399243,Mesohomotoma hibisci,1,True
 352,2,2,0.5,1134600,Myxobolus machidai,1,True
 353,2,2,0.5,1334514,Arcyodes incarnata,1,True
@@ -361,17 +361,17 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 359,2,2,0.5,1546190,Pleuronema puytoraci,1,True
 360,2,2,0.5,468725,Dysmachus trigonus,1,True
 361,2,2,0.5,1914956,Limnocnida tanganjicae,1,True
-362,2,2,0.5,,,1,True
-363,2,2,0.5,298260,Euplatypus hintzi,1,True
-364,3,3,0.3333333333333333,,,1,True
+362,2,1,1.0,391285,Spathula alba,1,True
+363,2,1,1.0,298260,Euplatypus hintzi,1,True
+364,3,2,0.5,188472,Schistomeringos rudolphi,1,True
 365,2,2,0.5,361120,Cavenderia microspora,1,True
-366,2,2,0.5,64574,Radiomyces spectabilis,1,True
+366,2,1,1.0,64574,Radiomyces spectabilis,1,True
 367,2,2,0.5,2797826,Pseudopolydora aff. achaeta HA-2020,1,True
 368,2,2,0.5,293646,Gonyaulax polygramma,1,True
 369,2,2,0.5,356160,Barbronia arcana,1,True
 370,2,2,0.5,492103,Paradinium poucheti,1,True
-371,3,3,0.3333333333333333,77750,Acantholeberis curvirostris,1,True
-372,2,2,0.5,66574,Gehypochthonius urticinus,1,True
+371,3,2,0.5,77750,Acantholeberis curvirostris,1,True
+372,2,1,1.0,66574,Gehypochthonius urticinus,1,True
 373,7,7,0.14285714285714285,7394,Glossina morsitans,1,True
 374,2,2,0.5,202919,Acanthamoeba divionensis,1,True
 375,3,3,0.3333333333333333,142831,Coremiostelium polycephalum,1,True
@@ -379,23 +379,23 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 377,2,2,0.5,293572,Macrotrophurus arbusticola,1,True
 378,2,2,0.5,136944,Mediaster aequalis,1,True
 379,2,2,0.5,533281,Huhentomon plicatunguis,1,True
-380,7,4,0.5714285714285714,,,4,True
+380,7,3,0.3333333333333333,293874,Prionchulus punctatus,1,True
 381,2,2,0.5,2053823,Gromia melinus,1,True
 382,5,5,0.2,1111194,Aniacarus mexicanus,1,True
 383,3,3,0.3333333333333333,1296328,Haplosporidium littoralis,1,True
 384,3,3,0.3333333333333333,1490879,Hypotrichomonas hampli,1,True
-385,5,5,0.2,1647940,Capillaria pudendotecta,1,True
+385,5,4,0.25,1647940,Capillaria pudendotecta,1,True
 386,5,5,0.2,1928862,Amathia verticillata,1,True
 387,2,2,0.5,96644,Mesorhabditis spiculigera,1,True
 388,3,3,0.3333333333333333,551521,Lankesteria chelyosomae,1,True
 389,2,2,0.5,352968,Anthracobia macrocystis,1,True
 390,2,2,0.5,1129586,Amblyospora mavlukevia,1,True
-391,2,2,0.5,,,1,True
+391,2,1,1.0,96784,Monomorphina pyrum,1,True
 392,2,2,0.5,126936,Henia vesuviana,1,True
-393,2,2,0.5,,,1,True
+393,2,1,1.0,197648,Echinamoeba thermarum,1,True
 394,5,5,0.2,301284,Neosilurus hyrtlii,1,True
 395,5,5,0.2,585572,Islandinium tricingulatum,1,True
-396,3,3,0.3333333333333333,5621,Zygoascus hellenicus,1,True
+396,3,2,0.5,5621,Zygoascus hellenicus,1,True
 397,3,3,0.3333333333333333,1920005,Dallocardia muricata,1,True
 398,3,3,0.3333333333333333,295825,Atomaria testacea,1,True
 399,3,3,0.3333333333333333,63960,Apotomus rufithorax,1,True
@@ -417,32 +417,32 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 415,3,3,0.3333333333333333,1954219,Hemidiscus cuneiformis,1,True
 416,3,3,0.3333333333333333,2184876,Hemicriconemoides paracamelliae,1,True
 417,5,5,0.2,1499376,Polycopetta quadrispinata,1,True
-418,2,2,0.5,,,1,True
+418,2,1,1.0,242545,Thecamoeba similis,1,True
 419,3,3,0.3333333333333333,135772,Nannoperca oxleyana,1,True
 420,3,3,0.3333333333333333,650989,Sphaeromyxa balbianii,1,True
 421,2,2,0.5,1291249,Caprithrips moundi,1,True
 422,3,3,0.3333333333333333,165478,Neocondeellum dolichotarsum,1,True
-423,2,2,0.5,,,1,True
-424,2,2,0.5,,,1,True
+423,2,1,1.0,145522,Nannochloropsis oceanica,1,True
+424,2,1,1.0,27987,Cryptosporidium baileyi,1,True
 425,2,2,0.5,178543,Haliclona vansoesti,1,True
 426,4,4,0.25,351519,Scirtes hemisphaericus,1,True
-427,2,2,0.5,,,1,True
+427,2,1,1.0,109871,Batrachochytrium dendrobatidis,1,True
 428,6,6,0.16666666666666666,140709,Megarthroglossus divisus,1,True
 429,2,2,0.5,16752,Houttuynia cordata,1,True
 430,3,3,0.3333333333333333,88017,Heteromysis formosa,1,True
-431,2,2,0.5,122233,Chaetoceros debilis,1,True
+431,2,1,1.0,122233,Chaetoceros debilis,1,True
 432,4,4,0.25,195231,Melasis buprestoides,1,True
 433,2,2,0.5,441232,Mecopoda elongata,1,True
-434,3,2,0.6666666666666666,,,2,True
+434,3,1,1.0,515472,Campylodiscus thuretii,1,True
 435,5,5,0.2,859642,Chattonella marina var. antiqua,1,True
-436,4,1,1.0,,,4,True
+436,4,0,0.0,NA,NA,0,False
 437,3,3,0.3333333333333333,1070814,Microplana robusta,1,True
 438,3,3,0.3333333333333333,61348,Cyrtopleura costata,1,True
 439,2,2,0.5,294745,Hepatozoon felis,1,True
 440,3,3,0.3333333333333333,118569,Astrobunus grallator,1,True
 441,2,2,0.5,289951,Physarum cinereum,1,True
-442,3,3,0.3333333333333333,,,1,True
-443,2,2,0.5,,,1,True
+442,3,2,0.5,1745344,Rhizomastix bicoronata,1,True
+443,2,1,1.0,364607,Sphaerularia bombi,1,True
 444,3,3,0.3333333333333333,693871,Boveria subcylindrica,1,True
 445,2,2,0.5,1118970,Schizoporella dunkeri,1,True
 446,2,2,0.5,182243,Diplonema ambulator,1,True
@@ -451,12 +451,12 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 449,3,3,0.3333333333333333,1045444,Typosyllis heronislandensis,1,True
 450,3,3,0.3333333333333333,1436802,Thismia clavarioides,1,True
 451,3,3,0.3333333333333333,1742606,Salpingoeca oahu,1,True
-452,2,2,0.5,,,1,True
-453,2,1,1.0,,,2,True
-454,2,1,1.0,,,2,True
+452,2,1,1.0,42068,Pneumocystis jirovecii,1,True
+453,2,0,0.0,NA,NA,0,False
+454,2,0,0.0,NA,NA,0,False
 455,2,2,0.5,66750,Bipalium kewense,1,True
-456,4,2,0.75,,,3,True
-457,3,3,0.3333333333333333,,,1,True
+456,4,1,1.0,37003,Kryptolebias marmoratus,1,True
+457,3,2,0.5,569951,Flabellula citata,1,True
 458,3,3,0.3333333333333333,472228,Rossella nuda,1,True
 459,2,2,0.5,1964568,Crisulipora occidentalis,1,True
 460,2,2,0.5,1554459,Henneguya bulbosus,1,True
@@ -465,28 +465,28 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 463,2,2,0.5,203171,Cadulus subfusiformis,1,True
 464,2,2,0.5,655730,Antarctoscyphus spiralis,1,True
 465,2,2,0.5,2018024,Blepharisma halophilum,1,True
-466,3,3,0.3333333333333333,121841,Ctenarytaina eucalypti,1,True
-467,2,2,0.5,,,1,True
+466,3,2,0.5,121841,Ctenarytaina eucalypti,1,True
+467,2,1,1.0,5000,Kockovaella thailandica,1,True
 468,2,2,0.5,2066961,Vairimorpha subcoccinellae,1,True
-469,2,2,0.5,,,1,True
+469,2,1,1.0,81526,Monosiga ovata,1,True
 470,2,2,0.5,1194618,Xenotrichula velox,1,True
 471,5,5,0.2,271932,Tetracapsuloides bryosalmonae,1,True
-472,4,1,1.0,,,4,True
-473,2,2,0.5,,,1,True
+472,4,0,0.0,NA,NA,0,False
+473,2,1,1.0,534649,Conicochernes crassus,1,True
 474,3,3,0.3333333333333333,263202,Ilyarachna antarctica,1,True
 475,5,5,0.2,105867,Brisingaster robillardi,1,True
 476,2,2,0.5,375518,Branchellion parkeri,1,True
 477,2,2,0.5,374822,Macrodasys caudatus,1,True
 478,2,2,0.5,2034295,Selenidium sabellae,1,True
 479,3,3,0.3333333333333333,2008460,Euphyllura phillyreae,1,True
-480,3,3,0.3333333333333333,1463232,Blechomonas campbelli,1,True
+480,3,2,0.5,1463232,Blechomonas campbelli,1,True
 481,2,2,0.5,48000,Chlorococcum echinozygotum,1,True
-482,2,2,0.5,,,1,True
-483,4,4,0.25,,,1,True
+482,2,1,1.0,127567,Chrysocampanula spinifera,1,True
+483,4,3,0.3333333333333333,1502546,Alvania ogasawarana,1,True
 484,2,2,0.5,1588160,Hyperoscelis veternosa,1,True
 485,2,2,0.5,37524,Liriope tetraphylla,1,True
 486,2,2,0.5,1736112,Platysulcus tardus,1,True
-487,2,1,1.0,,,2,True
+487,2,0,0.0,NA,NA,0,False
 488,3,3,0.3333333333333333,35118,Plagiopyla nasuta,1,True
 489,2,2,0.5,435723,Echinuria borealis,1,True
 490,2,2,0.5,1193083,Alatina alata,1,True
@@ -494,67 +494,67 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 492,3,3,0.3333333333333333,2138262,Bitectipora retepora,1,True
 493,2,2,0.5,690712,Grellamoeba robusta,1,True
 494,7,7,0.14285714285714285,1940169,Henneguya laseeae,1,True
-495,4,2,0.75,,,3,True
+495,4,1,1.0,1129785,Harpagon schusteri,1,True
 496,3,3,0.3333333333333333,1561996,Uthina luzonica,1,True
 497,2,2,0.5,452392,Orius agilis,1,True
 498,2,2,0.5,133378,Smittium caudatum,1,True
 499,5,5,0.2,51028,Enterobius vermicularis,1,True
 500,3,3,0.3333333333333333,33642,Coscinodiscus radiatus,1,True
-501,4,3,0.5,,,2,True
+501,4,2,0.5,1745346,Rhizomastix vacuolata,1,True
 502,2,2,0.5,172808,Bittacus pilicornis,1,True
-503,4,4,0.25,,,1,True
-504,4,4,0.25,295609,Euaesthetus ruficapillus,1,True
+503,4,3,0.3333333333333333,481677,Nosema thomsoni,1,True
+504,4,3,0.3333333333333333,295609,Euaesthetus ruficapillus,1,True
 505,3,3,0.3333333333333333,1925705,,1,True
 506,2,2,0.5,1407745,Ankistrodinium armigerum,1,True
 507,2,2,0.5,1688445,Asbestopluma lycopodium,1,True
 508,4,4,0.25,203904,Hemileia vastatrix,1,True
-509,4,4,0.25,,,1,True
-510,5,3,0.6,,,3,True
+509,4,3,0.3333333333333333,83916,Paramecium calkinsi,1,True
+510,5,2,0.5,406069,Philobythoides stunkardi,1,True
 511,2,2,0.5,516612,Haploniscus rostratus,1,True
 512,4,4,0.25,1111205,Afrolistrophorus congoicola,1,True
 513,3,3,0.3333333333333333,267983,Skeletonema japonicum,1,True
 514,2,2,0.5,173125,Peziza badiofusca,1,True
 515,2,2,0.5,253956,Trachelomonas variabilis,1,True
 516,2,2,0.5,1404257,Tubulanus tamias,1,True
-517,3,3,0.3333333333333333,,,1,True
+517,3,2,0.5,673456,Spirotontonia taiwanica,1,True
 518,2,2,0.5,489706,Acanthobothrium brevissime,1,True
-519,3,3,0.3333333333333333,1967301,Lafontella mariadeanei,1,True
+519,3,2,0.5,1967301,Lafontella mariadeanei,1,True
 520,2,2,0.5,295951,Melittomma brasiliense,1,True
-521,6,6,0.16666666666666666,619355,Salinamexus koreanus,1,True
+521,6,5,0.2,619355,Salinamexus koreanus,1,True
 522,2,2,0.5,468723,Dioctria rufipes,1,True
 523,2,2,0.5,1336823,Petrosia weinbergi,1,True
 524,2,2,0.5,227046,Scolecobasidium constrictum,1,True
-525,2,2,0.5,1226028,Aureobasidium iranianum,1,True
+525,2,1,1.0,1226028,Aureobasidium iranianum,1,True
 526,5,5,0.2,433966,Dacrymyces san-augustinii,1,True
-527,4,4,0.25,,,1,True
+527,4,3,0.3333333333333333,91197,Pectinodesmus pectinatus,1,True
 528,2,2,0.5,2093271,Typhlocaris ayyaloni,1,True
 529,3,3,0.3333333333333333,576189,Systellaspis debilis,1,True
 530,3,3,0.3333333333333333,687987,Chlamydocillium curvulum,1,True
-531,2,2,0.5,,,1,True
-532,2,2,0.5,,,1,True
+531,2,1,1.0,1333699,Enterocytospora artemiae,1,True
+532,2,1,1.0,715123,Entamoeba bovis,1,True
 533,3,3,0.3333333333333333,1542244,Ipelates latus,1,True
 534,3,3,0.3333333333333333,516627,Mesosignum weddellensis,1,True
 535,2,2,0.5,1956286,Austrochilus forsteri,1,True
 536,2,2,0.5,187712,Xenylla grisea,1,True
-537,3,1,1.0,,,3,True
+537,3,0,0.0,NA,NA,0,False
 538,2,2,0.5,2720087,Berthelinia limax,1,True
 539,2,2,0.5,319737,Billbergia pyramidalis,1,True
 540,2,2,0.5,1099909,Nephasoma columbaris,1,True
 541,3,3,0.3333333333333333,1463241,Psoralges libertus,1,True
-542,4,3,0.5,,,2,True
+542,4,2,0.5,2813746,Heterosiphonia sp. 1muelleri,1,True
 543,2,2,0.5,2093352,Ketosoma werneri,1,True
 544,2,2,0.5,1769407,Lytocarpia canepa,1,True
-545,4,2,0.75,,,3,True
+545,4,1,1.0,27973,Encephalitozoon hellem,1,True
 546,7,7,0.14285714285714285,54199,Cyniclomyces guttulatus,1,True
 547,3,3,0.3333333333333333,44995,Elasis hirsuta,1,True
 548,2,2,0.5,288455,Axonchium propinquum,1,True
 549,4,4,0.25,1793893,Caudikeronopsis marina,1,True
-550,3,3,0.3333333333333333,,,1,True
+550,3,2,0.5,67680,Visvesvaria algerae,1,True
 551,2,2,0.5,884645,Epigamia magna,1,True
 552,2,2,0.5,1616674,Bathypalaemonella serratipalma,1,True
-553,4,4,0.25,2022782,Saprodinium dentatum,1,True
+553,4,3,0.3333333333333333,2022782,Saprodinium dentatum,1,True
 554,5,5,0.2,3083,Edaphochlorella mirabilis,1,True
-555,4,4,0.25,,,1,True
+555,4,3,0.3333333333333333,450992,Haplothrips froggatti,1,True
 556,5,5,0.2,44080,Saccharomycopsis schoenii,1,True
 557,2,2,0.5,402894,Caduceia versatilis,1,True
 558,2,2,0.5,457650,Myadora brevis,1,True
@@ -563,7 +563,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 561,2,2,0.5,13616,Monodelphis domestica,1,True
 562,2,2,0.5,933988,Pandora nouryi,1,True
 563,2,2,0.5,434259,Unilacryma unispora,1,True
-564,2,2,0.5,,,1,True
+564,2,1,1.0,165851,Pseudodactylogyrus haze,1,True
 565,2,2,0.5,1712805,Sphaerodoropsis minuta,1,True
 566,3,3,0.3333333333333333,1577843,Flamella pleistocenica,1,True
 567,2,2,0.5,172254,Lamyctinus coeculus,1,True
@@ -586,7 +586,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 584,3,3,0.3333333333333333,295610,Oxyporus maxillosus,1,True
 585,3,3,0.3333333333333333,1037948,Dictyostelium maeandriforme,1,True
 586,3,3,0.3333333333333333,1046754,Apocheiridium reddelli,1,True
-587,2,1,1.0,,,2,True
+587,2,0,0.0,NA,NA,0,False
 588,3,3,0.3333333333333333,1492928,Hydrometra greeni,1,True
 589,2,2,0.5,228495,Entodesma navicula,1,True
 590,3,3,0.3333333333333333,1104407,Vischeria stellata,1,True
@@ -594,27 +594,27 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 592,2,2,0.5,1593410,Ophidiogorgia kuekenthali,1,True
 593,2,2,0.5,1392986,Namalycastis jaya,1,True
 594,2,2,0.5,37094,Thraustochytrium kinnei,1,True
-595,4,4,0.25,478417,Phymanthus loligo,1,True
-596,2,2,0.5,,,1,True
+595,4,3,0.3333333333333333,478417,Phymanthus loligo,1,True
+596,2,1,1.0,35845,Acetabularia acetabulum,1,True
 597,2,2,0.5,996737,Haploposthia vandula,1,True
 598,4,4,0.25,13583,Knema latericia,1,True
-599,4,4,0.25,1094326,Caenorhabditis wallacei,1,True
-600,3,1,1.0,,,3,True
+599,4,3,0.3333333333333333,1094326,Caenorhabditis wallacei,1,True
+600,3,0,0.0,NA,NA,0,False
 601,3,3,0.3333333333333333,908625,Sphaerospora testicularis,1,True
 602,3,3,0.3333333333333333,2052642,Amage sculpta,1,True
-603,3,3,0.3333333333333333,188950,Bodomorpha minima,1,True
+603,3,2,0.5,188950,Bodomorpha minima,1,True
 604,4,4,0.25,219213,Microphallus fusiformis,1,True
 605,3,3,0.3333333333333333,5535,Rhodotorula glutinis,1,True
-606,5,5,0.2,228471,Lyonsia norwegica,1,True
-607,6,3,0.6666666666666666,,,4,True
+606,5,4,0.25,228471,Lyonsia norwegica,1,True
+607,6,2,0.5,259042,Bodo rostratus,1,True
 608,11,11,0.09090909090909091,73352,Proctoeces maculatus,1,True
 609,4,4,0.25,1770059,Phytomonas nordicus,1,True
 610,2,2,0.5,658077,Hicanonectes teleskopos,1,True
 611,2,2,0.5,328836,Waitkera waitakerensis,1,True
-612,5,4,0.4,,,2,True
+612,5,3,0.3333333333333333,348844,Chondracanthus merluccii,1,True
 613,2,2,0.5,479127,Conchoderma auritum,1,True
 614,3,3,0.3333333333333333,323307,Melicertum octocostatum,1,True
-615,2,2,0.5,,,1,True
+615,2,1,1.0,167851,Euglena terricola,1,True
 616,4,4,0.25,418384,Trypanosyllis zebra,1,True
 617,2,2,0.5,198414,Oecobius cellariorum,1,True
 618,3,3,0.3333333333333333,84282,Arhythmorhynchus brevis,1,True
@@ -626,10 +626,10 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 624,3,3,0.3333333333333333,985821,Polystomoides tunisiensis,1,True
 625,2,2,0.5,1505949,Sebacina candida,1,True
 626,3,3,0.3333333333333333,293832,Theristus agilis,1,True
-627,7,7,0.14285714285714285,486159,Oscheius chongmingensis,1,True
-628,2,2,0.5,,,1,True
+627,7,6,0.16666666666666666,486159,Oscheius chongmingensis,1,True
+628,2,1,1.0,103851,Phaeonectriella lignicola,1,True
 629,2,2,0.5,683716,Macrostomum quiritium,1,True
-630,3,3,0.3333333333333333,,,1,True
+630,3,2,0.5,1336442,Sheraphelenchus entomophagus,1,True
 631,2,2,0.5,1712415,Stygiella agilis,1,True
 632,2,2,0.5,1044904,Nucleocercomonas praelonga,1,True
 633,2,2,0.5,257374,Dione arcuata,1,True
@@ -638,8 +638,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 636,2,2,0.5,2040466,Goniochloris mutica,1,True
 637,2,2,0.5,5961,Blepharisma japonicum,1,True
 638,2,2,0.5,1313345,Arixenia esau,1,True
-639,2,1,1.0,,,2,True
-640,2,2,0.5,,,1,True
+639,2,0,0.0,NA,NA,0,False
+640,2,1,1.0,359166,Nereis sandersi,1,True
 641,2,2,0.5,4278,Securidaca diversifolia,1,True
 642,2,2,0.5,259922,Amphidinium gibbosum,1,True
 643,4,4,0.25,569437,Doliolum denticulatum,1,True
@@ -648,7 +648,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 646,4,4,0.25,27883,Tetracerasta blepta,1,True
 647,3,3,0.3333333333333333,1955061,Parvilucifera corolla,1,True
 648,2,2,0.5,1603985,Zoothamnium grossi,1,True
-649,2,2,0.5,,,1,True
+649,2,1,1.0,181045,Capillidium pumilum,1,True
 650,2,2,0.5,55291,Polypterus senegalus,1,True
 651,2,2,0.5,289451,Eosentomon communis,1,True
 652,3,3,0.3333333333333333,181055,Furia neopyralidarum,1,True
@@ -657,15 +657,15 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 655,3,3,0.3333333333333333,1956478,Monoblemma browni,1,True
 656,2,2,0.5,50054,Schmidtea polychroa,1,True
 657,2,2,0.5,1647947,Aonchotheca musimon,1,True
-658,2,2,0.5,,,1,True
-659,4,4,0.25,2040455,Sulfonecta uniserialis,1,True
+658,2,1,1.0,371676,Rhizopus stolonifer var. lyococcos,1,True
+659,4,3,0.3333333333333333,2040455,Sulfonecta uniserialis,1,True
 660,3,3,0.3333333333333333,2080267,Crouania mucosa,1,True
-661,4,4,0.25,996655,Actinoposthia haplovata,1,True
+661,4,3,0.3333333333333333,996655,Actinoposthia haplovata,1,True
 662,2,2,0.5,1291314,Thrips simplex,1,True
 663,5,5,0.2,1311963,Bresslauilla relicta,1,True
-664,3,3,0.3333333333333333,,,1,True
+664,3,2,0.5,551522,Lankesteria cystodytae,1,True
 665,3,3,0.3333333333333333,679525,Orborhabdostyla bromelicola,1,True
-666,2,2,0.5,,,1,True
+666,2,1,1.0,396664,Gymnosiphon breviflorus,1,True
 667,3,3,0.3333333333333333,2006545,Pigoraptor vietnamica,1,True
 668,2,2,0.5,680344,Henneguya tunisiensis,1,True
 669,4,4,0.25,198568,Begonia scapigera,1,True
@@ -678,19 +678,19 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 676,2,2,0.5,688643,Leptusa kitazawai,1,True
 677,9,9,0.1111111111111111,48957,Mastophoropsis canaliculata,1,True
 678,2,2,0.5,417182,Myconymphaea yatsukahoi,1,True
-679,5,5,0.2,1896767,Stellarchytrium dubum,1,True
+679,5,4,0.25,1896767,Stellarchytrium dubum,1,True
 680,3,3,0.3333333333333333,1652649,Rurikoplites armatus,1,True
 681,5,5,0.2,1450334,Kudoa hexapunctata,1,True
 682,3,3,0.3333333333333333,1206570,Branchioglossum bipinnatifidum,1,True
 683,2,2,0.5,1931086,Brachonella contorta,1,True
 684,3,3,0.3333333333333333,1127203,Gigartacon muelleri,1,True
-685,2,2,0.5,,,1,True
+685,2,1,1.0,296779,Mecynostomum auritum,1,True
 686,2,2,0.5,173434,Magnisphaera spartinae,1,True
-687,2,2,0.5,,,1,True
+687,2,1,1.0,2008647,Pseudotrichonympha aurea,1,True
 688,3,3,0.3333333333333333,1411920,Ctenoides scaber,1,True
 689,6,6,0.16666666666666666,1896765,Aplanochytrium blankum,1,True
 690,2,2,0.5,389321,Dissonus manteri,1,True
-691,3,2,0.6666666666666666,,,2,True
+691,3,1,1.0,187676,Oncopodura crassicornis,1,True
 692,3,3,0.3333333333333333,1490869,Hypotrichomonas osmaniae,1,True
 693,4,4,0.25,1501395,Madanidinium loirii,1,True
 694,2,2,0.5,560882,Semidalis vicina,1,True
@@ -704,40 +704,40 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 702,4,4,0.25,53038,Cypripedium calceolus,1,True
 703,2,2,0.5,1411939,Donacilla cornea,1,True
 704,3,3,0.3333333333333333,1454043,Castula fusca,1,True
-705,3,3,0.3333333333333333,1449959,Thysanotohaptor rex,1,True
+705,3,2,0.5,1449959,Thysanotohaptor rex,1,True
 706,2,2,0.5,1973089,Ataxiodinium choane,1,True
 707,3,3,0.3333333333333333,75425,Mayaca fluviatilis,1,True
 708,2,2,0.5,492055,Phoronis ovalis,1,True
 709,2,2,0.5,582578,Henneguya pellis,1,True
-710,4,4,0.25,692525,Paracineta limbata,1,True
+710,4,3,0.3333333333333333,692525,Paracineta limbata,1,True
 711,3,3,0.3333333333333333,2212870,Althepus languensis,1,True
 712,2,2,0.5,48574,Suillus lakei,1,True
-713,3,3,0.3333333333333333,,,1,True
+713,3,2,0.5,2051709,Chrysomelobia labidomerae,1,True
 714,2,2,0.5,362230,Rhodospora sordida,1,True
 715,2,2,0.5,4623,Goeppertia loeseneri,1,True
 716,3,3,0.3333333333333333,1431099,Phacus claviformis,1,True
 717,2,2,0.5,2492705,Corallinales sp. Y_Twist-2019,1,True
 718,2,2,0.5,418371,Syllis hyalina,1,True
 719,3,3,0.3333333333333333,333148,Euptilota molle,1,True
-720,4,2,0.75,,,3,True
-721,4,4,0.25,338262,Onychognathia rhombocephala,1,True
+720,4,1,1.0,373098,Gambierdiscus toxicus,1,True
+721,4,3,0.3333333333333333,338262,Onychognathia rhombocephala,1,True
 722,3,3,0.3333333333333333,328845,Dictyosporium elegans,1,True
 723,2,2,0.5,457847,Caecella horsfieldi,1,True
 724,5,5,0.2,1514140,Trieres chinensis,1,True
-725,4,4,0.25,2025167,Mesochaetopterus sagittarius,1,True
+725,4,3,0.3333333333333333,2025167,Mesochaetopterus sagittarius,1,True
 726,5,5,0.2,547537,Isolda pulchella,1,True
 727,4,4,0.25,361140,Rostrostelium ellipticum,1,True
 728,2,2,0.5,116892,Microphallus primas,1,True
 729,5,5,0.2,1925689,Nesticella hongheensis,1,True
 730,4,4,0.25,190576,Paragordionus rautheri,1,True
 731,2,2,0.5,931296,Asaphidion alaskanum,1,True
-732,2,2,0.5,,,1,True
+732,2,1,1.0,116871,Hymenocotta mulli,1,True
 733,2,2,0.5,941795,Herennia multipuncta,1,True
 734,2,2,0.5,1616698,Lissosabinea unispinosa,1,True
 735,3,3,0.3333333333333333,228490,Thracia meridionalis,1,True
-736,3,3,0.3333333333333333,,,1,True
-737,4,4,0.25,,,1,True
-738,3,3,0.3333333333333333,1230094,Discotricha papillifera,1,True
+736,3,2,0.5,1045435,Syllis pectinans,1,True
+737,4,3,0.3333333333333333,1677990,Palustrimonas yorkeensis,1,True
+738,3,2,0.5,1230094,Discotricha papillifera,1,True
 739,3,3,0.3333333333333333,7755,Mordacia mordax,1,True
 740,3,3,0.3333333333333333,1291241,Ankothrips yuccae,1,True
 741,4,4,0.25,882543,Hypotrichomonas mariae,1,True
@@ -745,8 +745,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 743,3,3,0.3333333333333333,1411941,Haliris fischeriana,1,True
 744,3,3,0.3333333333333333,1336875,Oceanapia isodictyiformis,1,True
 745,2,2,0.5,101922,Nemalionopsis tortuosa,1,True
-746,2,2,0.5,,,1,True
-747,2,1,1.0,,,2,True
+746,2,1,1.0,197897,Hemiophrys macrostoma,1,True
+747,2,0,0.0,NA,NA,0,False
 748,2,2,0.5,173108,Marcelleina persoonii,1,True
 749,3,3,0.3333333333333333,1501715,Gramastacus lacus,1,True
 750,5,5,0.2,1938373,Iphione muricata,1,True
@@ -764,14 +764,14 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 762,2,2,0.5,2202868,Damaeobelba minutissima,1,True
 763,2,2,0.5,468738,Hoplistomerus nobilis,1,True
 764,2,2,0.5,2218120,Homotoma ficus,1,True
-765,2,2,0.5,,,1,True
+765,2,1,1.0,50936,Physcia aipolia,1,True
 766,3,3,0.3333333333333333,1080940,Echinocephalus overstreeti,1,True
 767,4,4,0.25,13632,Lucilia sericata,1,True
 768,2,2,0.5,565426,Paraphaeosphaeria minitans,1,True
 769,3,3,0.3333333333333333,238029,Euastacus sulcatus,1,True
 770,2,2,0.5,116953,Steringophorus margolisi,1,True
 771,3,3,0.3333333333333333,2051727,Pseudopygmephorellus mazandaranicus,1,True
-772,3,3,0.3333333333333333,,,1,True
+772,3,2,0.5,122942,Urocentrum turbo,1,True
 773,2,2,0.5,1435003,Viridiraptor invadens,1,True
 774,2,2,0.5,516675,Iais pubescens,1,True
 775,2,2,0.5,1499380,Kliecope mihoensis,1,True
@@ -782,28 +782,28 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 780,3,3,0.3333333333333333,459245,Bryometopus atypicus,1,True
 781,2,2,0.5,2268910,Urceolaria parakorschelti,1,True
 782,2,2,0.5,317945,Novocrania anomala,1,True
-783,2,2,0.5,,,1,True
+783,2,1,1.0,244455,Pleuronichthys cornutus,1,True
 784,3,3,0.3333333333333333,154510,Coleochaete sieminskiana,1,True
 785,3,3,0.3333333333333333,1880589,Calliblepharis psammophilus,1,True
 786,2,2,0.5,202346,Doru spiculiferum,1,True
 787,2,2,0.5,1804151,Sorodiplophrys stercorea,1,True
 788,3,3,0.3333333333333333,1956334,Palpimanus transvaalicus,1,True
 789,3,3,0.3333333333333333,759128,Petalomonas sphagnophila,1,True
-790,5,5,0.2,159974,Pteroxanium insularum,1,True
+790,5,4,0.25,159974,Pteroxanium insularum,1,True
 791,2,2,0.5,2029591,Laetmonice hystrix,1,True
-792,2,2,0.5,,,1,True
+792,2,1,1.0,83216,Calostoma cinnabarinum,1,True
 793,2,2,0.5,402029,Spirostomum minus,1,True
-794,2,2,0.5,,,1,True
-795,4,4,0.25,643841,Kudoa inornata,1,True
+794,2,1,1.0,439314,Gambierdiscus pacificus,1,True
+795,4,3,0.3333333333333333,643841,Kudoa inornata,1,True
 796,3,3,0.3333333333333333,99772,Gramastacus insolitus,1,True
 797,3,3,0.3333333333333333,118080,Phaeocystis jahnii,1,True
 798,4,4,0.25,2212938,Thaiderces vulgaris,1,True
 799,4,4,0.25,1035121,Dactylopodola baltica,1,True
 800,3,3,0.3333333333333333,1643671,Niea torta,1,True
-801,8,2,0.875,,,7,True
+801,8,1,1.0,8083,Xiphophorus maculatus,1,True
 802,4,4,0.25,82748,Orius strigicollis,1,True
 803,4,4,0.25,173132,Ionopezia gerardii,1,True
-804,3,3,0.3333333333333333,1290580,,1,True
+804,3,2,0.5,1290580,,1,True
 805,2,2,0.5,378740,Henneguya doneci,1,True
 806,3,3,0.3333333333333333,702011,Extremus antarcticus,1,True
 807,4,4,0.25,539210,Neodiplogaster acaloleptae,1,True
@@ -811,19 +811,19 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 809,4,4,0.25,1136786,Pseudohaptolina arctica,1,True
 810,3,3,0.3333333333333333,1985122,Heterias exul,1,True
 811,3,3,0.3333333333333333,1170431,Etoschophrya inornata,1,True
-812,3,3,0.3333333333333333,1430944,Phacus acuminatus var. triquetra,1,True
+812,3,2,0.5,1430944,Phacus acuminatus var. triquetra,1,True
 813,2,2,0.5,1909703,Fisculla margaritae,1,True
 814,4,4,0.25,73399,Haemadipsa zeylanica,1,True
 815,3,3,0.3333333333333333,1902855,Enypniastes eximia,1,True
 816,4,4,0.25,1003025,Campylodiscus clypeus,1,True
-817,6,3,0.6666666666666666,,,4,True
+817,6,2,0.5,1151058,Psammosa atlantica,1,True
 818,2,2,0.5,361093,Cavenderia granulophora,1,True
-819,3,3,0.3333333333333333,69135,Craterocephalus stercusmuscarum,1,True
-820,2,1,1.0,,,2,True
+819,3,2,0.5,69135,Craterocephalus stercusmuscarum,1,True
+820,2,0,0.0,NA,NA,0,False
 821,3,3,0.3333333333333333,468714,Cyrtopogon rattus,1,True
 822,3,3,0.3333333333333333,993670,Notocaryoplana arctica,1,True
-823,2,1,1.0,,,2,True
-824,2,2,0.5,184743,Cosmocalanus darwinii,1,True
+823,2,0,0.0,NA,NA,0,False
+824,2,1,1.0,184743,Cosmocalanus darwinii,1,True
 825,4,4,0.25,1336852,Dysidea janiae,1,True
 826,3,3,0.3333333333333333,1484655,Nipponnemertes ogumai,1,True
 827,2,2,0.5,463661,Thesium subsucculentum,1,True
@@ -832,19 +832,19 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 830,5,5,0.2,145682,Corypha utan,1,True
 831,2,2,0.5,1003024,Caloneis lewisii,1,True
 832,3,3,0.3333333333333333,140722,Myodopsylla palposa,1,True
-833,2,2,0.5,,,1,True
+833,2,1,1.0,576220,Leptochela papulata,1,True
 834,2,2,0.5,1323720,Hemileius singularis,1,True
-835,4,3,0.5,,,2,True
-836,2,2,0.5,659319,Dugesia aethiopica,1,True
+835,4,2,0.5,1401992,Rangelia vitalii,1,True
+836,2,1,1.0,659319,Dugesia aethiopica,1,True
 837,3,3,0.3333333333333333,2030947,Pseudotachidius bipartitus,1,True
 838,5,5,0.2,1588040,Mesenchytraeus nivalis,1,True
 839,2,2,0.5,4968,Eremascus albus,1,True
 840,2,2,0.5,1471042,Spirostomum yagiui,1,True
-841,5,5,0.2,,,1,True
+841,5,4,0.25,252671,Clytia hemisphaerica,1,True
 842,2,2,0.5,60590,Pseudarchaster parelii,1,True
 843,3,3,0.3333333333333333,93110,Thalloidima sedifolium,1,True
 844,5,5,0.2,1689133,Insulatricha hippai,1,True
-845,3,3,0.3333333333333333,2797268,Pachyphlodes melanoxantha,1,True
+845,3,2,0.5,2797268,Pachyphlodes melanoxantha,1,True
 846,2,2,0.5,40301,Nosema furnacalis,1,True
 847,2,2,0.5,234884,Clinostomum marginatum,1,True
 848,5,5,0.2,480490,Cyttaria gunnii,1,True
@@ -852,7 +852,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 850,3,3,0.3333333333333333,2213236,Tropidoatractus spinosus,1,True
 851,2,2,0.5,361078,Dictyostelium laterosorum,1,True
 852,5,5,0.2,1857261,Coraebus diminutus,1,True
-853,5,5,0.2,,,1,True
+853,5,4,0.25,1925695,Nesticella phami,1,True
 854,2,2,0.5,216801,Guinardia flaccida,1,True
 855,2,2,0.5,692980,Kudoa whippsi,1,True
 856,2,2,0.5,1818077,Lysippe labiata,1,True
@@ -860,26 +860,26 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 858,3,3,0.3333333333333333,2116680,Vorticella oceanica,1,True
 859,5,5,0.2,2212874,Althepus stonei,1,True
 860,2,2,0.5,199572,Syllis armillaris,1,True
-861,2,2,0.5,1249914,Nerthra indica,1,True
+861,2,1,1.0,1249914,Nerthra indica,1,True
 862,2,2,0.5,298170,Martesia striata,1,True
 863,4,4,0.25,619348,Liparocephalus litoralis,1,True
 864,3,3,0.3333333333333333,1216359,Condylostoma arenarium,1,True
 865,5,5,0.2,331074,Pilobolus sphaerosporus,1,True
-866,6,6,0.16666666666666666,135755,Gadopsis marmoratus,1,True
+866,6,5,0.2,135755,Gadopsis marmoratus,1,True
 867,6,6,0.16666666666666666,13529,Flagellaria indica,1,True
 868,3,3,0.3333333333333333,51318,Carteria radiosa,1,True
 869,4,4,0.25,338301,Mesognatharia remanei,1,True
 870,2,2,0.5,1463350,Blechomonas danrayi,1,True
-871,2,2,0.5,1286065,Strongylidium orientale,1,True
-872,3,3,0.3333333333333333,34480,Basidiobolus ranarum,1,True
-873,4,4,0.25,,,1,True
+871,2,1,1.0,1286065,Strongylidium orientale,1,True
+872,3,2,0.5,34480,Basidiobolus ranarum,1,True
+873,4,3,0.3333333333333333,188041,Pseudmecynostomum phoca,1,True
 874,2,2,0.5,1572343,Coelodendrum furcatissimum,1,True
 875,2,2,0.5,221997,Dorvillea erucaeformis,1,True
-876,2,2,0.5,,,1,True
-877,3,3,0.3333333333333333,2212869,Althepus lakmueangensis,1,True
+876,2,1,1.0,402028,Spirostomum teres,1,True
+877,3,2,0.5,2212869,Althepus lakmueangensis,1,True
 878,3,3,0.3333333333333333,1492743,Haplosporidium patagon,1,True
 879,2,2,0.5,308574,Plumularia setacea,1,True
-880,2,2,0.5,,,1,True
+880,2,1,1.0,478399,Heteractis aurora,1,True
 881,3,3,0.3333333333333333,560765,Mycetobia divergens,1,True
 882,3,3,0.3333333333333333,1352462,Pseudodiaptomus euryhalinus,1,True
 883,3,3,0.3333333333333333,1036732,Sarocladium zeae,1,True
@@ -889,34 +889,34 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 887,2,2,0.5,860613,Epiphyllum shenzhenense,1,True
 888,2,2,0.5,435737,Protozoophaga obesa,1,True
 889,2,2,0.5,79782,Cimex lectularius,1,True
-890,2,2,0.5,,,1,True
-891,7,7,0.14285714285714285,1525027,Duplacrorhynchus megalophallus,1,True
+890,2,1,1.0,907460,Crenatula modiolaris,1,True
+891,7,6,0.16666666666666666,1525027,Duplacrorhynchus megalophallus,1,True
 892,2,2,0.5,1130816,Colossobolus semicyclus,1,True
-893,4,4,0.25,45553,Wickerhamiella galacta,1,True
+893,4,3,0.3333333333333333,45553,Wickerhamiella galacta,1,True
 894,2,2,0.5,69890,Gymnoascus reessii,1,True
 895,2,2,0.5,163350,Bitricha tasmaniensis,1,True
 896,2,2,0.5,1967942,Tintinnopsis kiangsuensis,1,True
 897,3,3,0.3333333333333333,468778,Pegesimallus laticornis,1,True
 898,3,3,0.3333333333333333,468717,Damalis monochaetes,1,True
-899,6,6,0.16666666666666666,,,1,True
+899,6,5,0.2,1311917,Strongylostoma devleeschouweri,1,True
 900,2,2,0.5,1311977,Coronhelmis multispinosus,1,True
 901,5,5,0.2,1909270,Wickerhamomyces orientalis,1,True
 902,2,2,0.5,1177067,Litigiella pacifica,1,True
 903,2,2,0.5,1112727,Metanarthecium luteoviride,1,True
 904,2,2,0.5,309565,Attenella margarita,1,True
-905,2,1,1.0,,,2,True
-906,2,2,0.5,,,1,True
+905,2,0,0.0,NA,NA,0,False
+906,2,1,1.0,48693,Macrobiotus hufelandi,1,True
 907,2,2,0.5,347305,Cephennium gallicum,1,True
 908,3,3,0.3333333333333333,445480,Microrhagus pygmaeus,1,True
-909,3,2,0.6666666666666666,,,2,True
-910,5,5,0.2,1206573,Cumathamnion serrulatum,1,True
+909,3,1,1.0,351715,Procryptobia sorokini,1,True
+910,5,4,0.25,1206573,Cumathamnion serrulatum,1,True
 911,2,2,0.5,560219,Thalassoalaimus pirum,1,True
 912,2,2,0.5,2080269,Apoglossum spathulatum,1,True
 913,3,3,0.3333333333333333,2213235,Tropidoatractus levanderi,1,True
 914,3,3,0.3333333333333333,3092,Characiopodium hindakii,1,True
 915,3,3,0.3333333333333333,1077140,Scutellospora striata,1,True
 916,2,2,0.5,1045408,Exogone aristata,1,True
-917,3,3,0.3333333333333333,2059835,Exopassalora zambiae,1,True
+917,3,2,0.5,2059835,Exopassalora zambiae,1,True
 918,2,2,0.5,371682,Skeletonema ardens,1,True
 919,2,2,0.5,326149,Amphidiniella sedentaria,1,True
 920,3,3,0.3333333333333333,576302,Murrayon dianeae,1,True
@@ -932,7 +932,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 930,5,5,0.2,158506,Gloeomonas rubrifilum,1,True
 931,2,2,0.5,193053,Hansenocaris itoi,1,True
 932,3,3,0.3333333333333333,251249,Mesobdella gemmata,1,True
-933,9,9,0.1111111111111111,228462,Cetomya bacata,1,True
+933,9,8,0.125,228462,Cetomya bacata,1,True
 934,3,3,0.3333333333333333,1001829,Procerovum varium,1,True
 935,2,2,0.5,1088133,Bembidion mimekara,1,True
 936,3,3,0.3333333333333333,160064,Pedinomonas tuberculata,1,True
@@ -941,33 +941,33 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 939,3,3,0.3333333333333333,1961076,Thismia hillii,1,True
 940,2,2,0.5,1973076,Impagidinium pallidum,1,True
 941,2,2,0.5,74082,Vahlkampfia avara,1,True
-942,3,3,0.3333333333333333,392813,Metopus es,1,True
+942,3,2,0.5,392813,Metopus es,1,True
 943,3,3,0.3333333333333333,2017521,Helminthosporium genistae,1,True
 944,3,3,0.3333333333333333,1895288,Atopospira galeata,1,True
 945,3,3,0.3333333333333333,1917241,Blastomussa omanensis,1,True
 946,2,2,0.5,1697046,Ellingsenius indicus,1,True
 947,2,2,0.5,2821077,Albatrellopsis flettii,1,True
 948,5,5,0.2,1525013,Carcharodorhynchus flavidus,1,True
-949,2,2,0.5,1797455,Unguizetes incertus,1,True
+949,2,1,1.0,1797455,Unguizetes incertus,1,True
 950,2,2,0.5,763123,Doto antarctica,1,True
-951,8,8,0.125,1416570,Aepinus septemspinosus,1,True
+951,8,7,0.14285714285714285,1416570,Aepinus septemspinosus,1,True
 952,2,2,0.5,1902869,Orphnurgus glaber,1,True
 953,3,3,0.3333333333333333,70245,Paratrichodorus pachydermus,1,True
 954,2,2,0.5,650286,Paraschneideria metamorphosa,1,True
 955,2,2,0.5,233135,Dactylopodola typhle,1,True
-956,4,4,0.25,84155,Philactinoposthia saliens,1,True
+956,4,3,0.3333333333333333,84155,Philactinoposthia saliens,1,True
 957,2,2,0.5,186205,Neophilopterus incompletus,1,True
-958,3,3,0.3333333333333333,,,1,True
+958,3,2,0.5,253942,Strombomonas balvayi,1,True
 959,5,5,0.2,1685954,Prorocentrum sipadanense,1,True
 960,2,2,0.5,1248377,Zonaria flabellata,1,True
 961,2,2,0.5,474288,Sennertionyx manicati,1,True
 962,4,4,0.25,575411,Prototheca cutis,1,True
-963,9,8,0.2222222222222222,,,2,True
+963,9,7,0.14285714285714285,2038323,Durinskia kwazulunatalensis,1,True
 964,3,3,0.3333333333333333,150495,Stylocheiron maximum,1,True
-965,2,2,0.5,,,1,True
+965,2,1,1.0,36144,Isotomurus palustris,1,True
 966,3,3,0.3333333333333333,993383,Trachelius ovum,1,True
 967,3,3,0.3333333333333333,54551,Pichia terricola,1,True
-968,7,7,0.14285714285714285,178361,Euglypha tuberculata,1,True
+968,7,6,0.16666666666666666,178361,Euglypha tuberculata,1,True
 969,2,2,0.5,441329,Camarophyllopsis schulzeri,1,True
 970,3,3,0.3333333333333333,727949,Systellaspis pellucida,1,True
 971,2,2,0.5,1030620,Woodruffides metabolicus,1,True
@@ -983,18 +983,18 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 981,2,2,0.5,293888,Coomansus parvus,1,True
 982,3,3,0.3333333333333333,1227244,Bolbosoma turbinella,1,True
 983,2,2,0.5,796061,Sugiyamaella bullrunensis,1,True
-984,2,2,0.5,,,1,True
+984,2,1,1.0,111861,Balbiania investiens,1,True
 985,5,5,0.2,1978353,Helgicirrha cari,1,True
 986,2,2,0.5,45954,Dreissena polymorpha,1,True
 987,4,4,0.25,40469,Inonotus hispidus,1,True
 988,5,5,0.2,1444762,Echinoderes komatsui,1,True
 989,3,3,0.3333333333333333,1431835,Chlorobotrys regularis,1,True
 990,2,2,0.5,2231128,Gedaniella flavovirens,1,True
-991,9,7,0.3333333333333333,,,3,True
+991,9,6,0.16666666666666666,1286873,Sinophysis verruculosa,1,True
 992,3,3,0.3333333333333333,253513,Marsupella emarginata,1,True
 993,2,2,0.5,69827,Kudoa amamiensis,1,True
 994,2,2,0.5,101607,Aponogeton crispus,1,True
-995,4,4,0.25,1311982,Dochmiotrema limicola,1,True
+995,4,3,0.3333333333333333,1311982,Dochmiotrema limicola,1,True
 996,3,3,0.3333333333333333,1519116,Tomocerus vulgaris,1,True
 997,2,2,0.5,1539158,Thismia megalongensis,1,True
 998,2,2,0.5,538602,Clambus seminulum,1,True
@@ -1002,7 +1002,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1000,2,2,0.5,147570,Myriangium duriaei,1,True
 1001,2,2,0.5,1769400,Aglaophenia rhynchocarpa,1,True
 1002,2,2,0.5,576190,Tozeuma serratum,1,True
-1003,3,3,0.3333333333333333,,,1,True
+1003,3,2,0.5,104778,Seison nebaliae,1,True
 1004,3,3,0.3333333333333333,1556157,Amphileptus dragescoi,1,True
 1005,2,2,0.5,1209610,Aphelenchoides blastophthorus,1,True
 1006,2,2,0.5,463671,Osyridicarpos schimperianus,1,True
@@ -1011,7 +1011,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1009,2,2,0.5,47111,Protodrilus ciliatus,1,True
 1010,3,3,0.3333333333333333,1810875,Chtonobdella tanae,1,True
 1011,2,2,0.5,864142,Plasmodium ovale wallikeri,1,True
-1012,3,3,0.3333333333333333,536585,Aglaothamnion feldmanniae,1,True
+1012,3,2,0.5,536585,Aglaothamnion feldmanniae,1,True
 1013,7,7,0.14285714285714285,69337,Chara foliolosa,1,True
 1014,4,4,0.25,795121,Neobakuella flava,1,True
 1015,4,4,0.25,288480,Microdorylaimus modestus,1,True
@@ -1021,44 +1021,44 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1019,2,2,0.5,452409,Physopleurella armata,1,True
 1020,3,3,0.3333333333333333,435721,Truttaedacnitis truttae,1,True
 1021,2,2,0.5,55326,Zostera noltei,1,True
-1022,7,7,0.14285714285714285,,,1,True
+1022,7,6,0.16666666666666666,1538491,Filenchus andrassyi,1,True
 1023,3,3,0.3333333333333333,1655005,Arboramoeba reticulata,1,True
 1024,3,3,0.3333333333333333,234823,Xenasma rimicola,1,True
 1025,2,2,0.5,989645,Enchelys gasterosteus,1,True
 1026,5,5,0.2,109897,Gaertneriomyces semiglobifer,1,True
 1027,2,2,0.5,419526,Pseudomysis dactylops,1,True
-1028,4,4,0.25,,,1,True
+1028,4,3,0.3333333333333333,5730,Tetratrichomonas gallinarum,1,True
 1029,2,2,0.5,211859,Phaxas pellucidus,1,True
 1030,3,3,0.3333333333333333,1547318,Sterreria rubra,1,True
-1031,3,3,0.3333333333333333,2762,Cyanophora paradoxa,1,True
+1031,3,2,0.5,2762,Cyanophora paradoxa,1,True
 1032,3,3,0.3333333333333333,1959303,Kryptonesticus eremita,1,True
 1033,3,3,0.3333333333333333,46460,Milnesium tardigradum,1,True
-1034,8,8,0.125,1003112,Stenopterobia curvula,1,True
-1035,2,1,1.0,,,2,True
+1034,8,7,0.14285714285714285,1003112,Stenopterobia curvula,1,True
+1035,2,0,0.0,NA,NA,0,False
 1036,2,2,0.5,2782,Gracilariopsis lemaneiformis,1,True
-1037,5,2,0.8,,,4,True
+1037,5,1,1.0,2047822,Ripella decalvata,1,True
 1038,2,2,0.5,173153,Marcelleina tuberculispora,1,True
 1039,5,5,0.2,468728,Emphysomera pallidapex,1,True
 1040,2,2,0.5,318479,Dracunculus medinensis,1,True
 1041,2,2,0.5,2100529,Meloidogyne oleae,1,True
 1042,10,10,0.1,1617811,Kudoa igami,1,True
-1043,3,3,0.3333333333333333,,,1,True
+1043,3,2,0.5,578953,Lepeophtheirus natalensis,1,True
 1044,3,3,0.3333333333333333,1940831,Sudhausia floridensis,1,True
 1045,2,2,0.5,1524988,Thylacorhynchus conglobatus,1,True
-1046,3,3,0.3333333333333333,,,1,True
-1047,3,3,0.3333333333333333,1541899,Myzostoma josefinae,1,True
+1046,3,2,0.5,2662032,Montagnia macrospora,1,True
+1047,3,2,0.5,1541899,Myzostoma josefinae,1,True
 1048,5,5,0.2,1803847,Protoeuglena noctilucae,1,True
 1049,2,2,0.5,586131,Diversispora trimurales,1,True
 1050,3,3,0.3333333333333333,281681,Caenorhabditis plicata,1,True
-1051,3,3,0.3333333333333333,2035042,Frontonia terricola,1,True
+1051,3,2,0.5,2035042,Frontonia terricola,1,True
 1052,2,2,0.5,1879264,Nectoneanthes oxypoda,1,True
 1053,3,3,0.3333333333333333,937382,Entrophospora etunicata,1,True
 1054,2,2,0.5,265527,Navicula phyllepta,1,True
 1055,3,3,0.3333333333333333,155206,Eimeria ahsata,1,True
-1056,4,4,0.25,,,1,True
-1057,2,2,0.5,1525078,Uncinorhynchus flavidus,1,True
+1056,4,3,0.3333333333333333,1572402,Entocannula infundibulum,1,True
+1057,2,1,1.0,1525078,Uncinorhynchus flavidus,1,True
 1058,2,2,0.5,575836,Paraplea frontalis,1,True
-1059,2,2,0.5,,,1,True
+1059,2,1,1.0,439315,Fukuyoa yasumotoi,1,True
 1060,2,2,0.5,139825,Sparassis crispa,1,True
 1061,4,4,0.25,1586101,Salda littoralis,1,True
 1062,2,2,0.5,1289575,Adrisa magna,1,True
@@ -1071,11 +1071,11 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1069,4,4,0.25,264053,Ectopleura wrighti,1,True
 1070,2,2,0.5,884648,Myrianida dentalia,1,True
 1071,3,3,0.3333333333333333,1487718,Cultellothrix coemeterii,1,True
-1072,2,2,0.5,,,1,True
+1072,2,1,1.0,996741,Kuma albiventer,1,True
 1073,2,2,0.5,295227,Plakortis angulospiculatus,1,True
 1074,4,4,0.25,360536,Nephasoma pellucidum,1,True
 1075,2,2,0.5,34504,Paragonimus westermani,1,True
-1076,3,3,0.3333333333333333,1035643,Tsitsikamma favus,1,True
+1076,3,2,0.5,1035643,Tsitsikamma favus,1,True
 1077,5,5,0.2,1166770,Bembidion variegatum,1,True
 1078,4,4,0.25,288561,Clavicaudoides trophurus,1,True
 1079,4,4,0.25,45230,Balansia henningsiana,1,True
@@ -1083,7 +1083,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1081,2,2,0.5,1689221,Sinistrostrombidium cupiformum,1,True
 1082,3,3,0.3333333333333333,418962,Prymnesium pienaarii,1,True
 1083,2,2,0.5,2109806,Heth tuxtlensis,1,True
-1084,4,3,0.5,,,2,True
+1084,4,2,0.5,1365472,Discostella woltereckii,1,True
 1085,2,2,0.5,2057009,Spinitectus macrospinosus,1,True
 1086,6,6,0.16666666666666666,1838253,Vermeijius pallidus,1,True
 1087,2,2,0.5,1368613,Hoplotylus femina,1,True
@@ -1096,7 +1096,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1094,3,3,0.3333333333333333,403590,Bursaphelenchus platzeri,1,True
 1095,3,3,0.3333333333333333,206671,Holothuria impatiens,1,True
 1096,2,2,0.5,1501436,Tokophrya huangmeiensis,1,True
-1097,5,5,0.2,1046841,Torrenticola amplexa,1,True
+1097,5,4,0.25,1046841,Torrenticola amplexa,1,True
 1098,2,2,0.5,271679,Polykrikos kofoidii,1,True
 1099,4,4,0.25,1654948,Tylorida ventralis,1,True
 1100,3,3,0.3333333333333333,281027,Metromonas simplex,1,True
@@ -1107,28 +1107,28 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1105,3,3,0.3333333333333333,707164,Cyphoderia littoralis,1,True
 1106,4,4,0.25,5298,Puccinia poarum,1,True
 1107,3,3,0.3333333333333333,288434,Paraxonchium laetificans,1,True
-1108,5,5,0.2,435743,Tetrameres fissipina,1,True
-1109,3,2,0.6666666666666666,,,2,True
+1108,5,4,0.25,435743,Tetrameres fissipina,1,True
+1109,3,1,1.0,33190,Rhodosporidiobolus fluvialis,1,True
 1110,2,2,0.5,181054,Eryniopsis caroliniana,1,True
 1111,3,3,0.3333333333333333,1849576,Paramya recluzi,1,True
-1112,4,3,0.5,,,2,True
+1112,4,2,0.5,1678285,Isospora serinuse,1,True
 1113,2,2,0.5,257370,Caligus elongatus,1,True
 1114,2,2,0.5,1572307,Protocystis vicina,1,True
 1115,5,5,0.2,856711,Hebrus nipponicus,1,True
 1116,2,2,0.5,337180,Thalassiosira anguste-lineata,1,True
 1117,3,3,0.3333333333333333,1956486,Neato beerwah,1,True
 1118,2,2,0.5,646318,Cinctipora elegans,1,True
-1119,4,4,0.25,,,1,True
-1120,2,2,0.5,,,1,True
+1119,4,3,0.3333333333333333,431391,Mayamaea atomus,1,True
+1120,2,1,1.0,1322251,Kudoa cheilodipteri,1,True
 1121,5,5,0.2,71516,Clione limacina,1,True
-1122,6,6,0.16666666666666666,1522702,Enoplometopus macrodontus,1,True
-1123,5,5,0.2,1797449,Rhynchoribates mirus,1,True
+1122,6,5,0.2,1522702,Enoplometopus macrodontus,1,True
+1123,5,4,0.25,1797449,Rhynchoribates mirus,1,True
 1124,2,2,0.5,702836,Hemitoma octoradiata,1,True
 1125,3,3,0.3333333333333333,1909701,Fisculla asini,1,True
 1126,2,2,0.5,1564072,Echinoderes aureus,1,True
-1127,2,2,0.5,,,1,True
+1127,2,1,1.0,105785,Cryptotermes secundus,1,True
 1128,3,3,0.3333333333333333,332221,Neochlorosarcina negevensis,1,True
-1129,7,7,0.14285714285714285,2037922,Quadricilia rotundata,1,True
+1129,7,6,0.16666666666666666,2037922,Quadricilia rotundata,1,True
 1130,3,3,0.3333333333333333,1525017,Cicerina tetradactyla,1,True
 1131,2,2,0.5,2051725,Proteonematalycus wagneri,1,True
 1132,2,2,0.5,388913,Stachybotrys chlorohalonata,1,True
@@ -1145,13 +1145,13 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1143,2,2,0.5,1890380,Alofia merki,1,True
 1144,2,2,0.5,283597,Dysidea etheria,1,True
 1145,4,4,0.25,218848,Proterospongia choanojuncta,1,True
-1146,3,3,0.3333333333333333,316187,Rhizophysa filiformis,1,True
+1146,3,2,0.5,316187,Rhizophysa filiformis,1,True
 1147,7,7,0.14285714285714285,515473,Chaetoceros radicans,1,True
-1148,3,3,0.3333333333333333,315938,Anzia opuntiella,1,True
+1148,3,2,0.5,315938,Anzia opuntiella,1,True
 1149,8,8,0.125,327092,Chlorosarcinopsis bastropiensis,1,True
 1150,3,3,0.3333333333333333,295944,Sphindus dubius,1,True
 1151,7,7,0.14285714285714285,91920,Exophiala alcalophila,1,True
-1152,2,2,0.5,,,1,True
+1152,2,1,1.0,1519501,Coleochlamys oleifera,1,True
 1153,4,4,0.25,159749,Thalassiosira oceanica,1,True
 1154,2,2,0.5,80646,Boletinellus merulioides,1,True
 1155,4,4,0.25,45547,Starmerella etchellsii,1,True
@@ -1167,7 +1167,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1165,2,2,0.5,1468201,Prorhynchus stagnalis,1,True
 1166,2,2,0.5,2006546,Pigoraptor chileana,1,True
 1167,5,5,0.2,182608,Bicornucythere bisanensis,1,True
-1168,5,5,0.2,1003022,Biddulphia tridens,1,True
+1168,5,4,0.25,1003022,Biddulphia tridens,1,True
 1169,2,2,0.5,1202470,Filisoma rizalinum,1,True
 1170,2,2,0.5,3144,Chlorokybus atmophyticus,1,True
 1171,3,3,0.3333333333333333,2004843,Sacciforma sacciformis,1,True
@@ -1179,10 +1179,10 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1177,2,2,0.5,1003121,Surirella minuta,1,True
 1178,2,2,0.5,1521743,Radiosphaera negevensis,1,True
 1179,3,3,0.3333333333333333,181587,Metanophrys sinensis,1,True
-1180,2,2,0.5,,,1,True
+1180,2,1,1.0,216888,Ceramium codicola,1,True
 1181,6,6,0.16666666666666666,396600,Gymnodinium impudicum,1,True
-1182,4,4,0.25,1081906,Gymnodinium litoralis,1,True
-1183,2,2,0.5,,,1,True
+1182,4,3,0.3333333333333333,1081906,Gymnodinium litoralis,1,True
+1183,2,1,1.0,344169,Adenolinum lewisii,1,True
 1184,4,4,0.25,93112,Bacidia rosella,1,True
 1185,3,3,0.3333333333333333,1769244,Psammodrilus curinigallettii,1,True
 1186,2,2,0.5,163307,Eremosphaera viridis,1,True
@@ -1194,28 +1194,28 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1192,4,4,0.25,211349,Tylencholaimellus striatus,1,True
 1193,2,2,0.5,2030977,Speleophria bivexilla,1,True
 1194,4,4,0.25,1562322,Abollifer globosa,1,True
-1195,2,2,0.5,,,1,True
+1195,2,1,1.0,180228,Paramoeba pemaquidensis,1,True
 1196,2,2,0.5,75329,Misgurnus anguillicaudatus,1,True
 1197,3,3,0.3333333333333333,1745963,Hydrocytium acuminatum,1,True
 1198,4,4,0.25,251246,Limnatis nilotica,1,True
 1199,7,7,0.14285714285714285,2792,Porphyridium aerugineum,1,True
 1200,2,2,0.5,1525024,Djeziraia pardii,1,True
-1201,3,3,0.3333333333333333,,,1,True
-1202,4,4,0.25,764119,Ulothrix fimbriata,1,True
+1201,3,2,0.5,130813,Saccharomycopsis lassenensis,1,True
+1202,4,3,0.3333333333333333,764119,Ulothrix fimbriata,1,True
 1203,2,2,0.5,37863,Steinernema glaseri,1,True
 1204,2,2,0.5,172824,Amastigomonas mutabilis,1,True
 1205,2,2,0.5,1712233,Alpaida alto,1,True
 1206,2,2,0.5,1074276,Bursaphelenchus parathailandae,1,True
 1207,6,6,0.16666666666666666,629184,Vombisidris bilongrudi,1,True
-1208,2,2,0.5,62089,Acaulospora lacunosa,1,True
+1208,2,1,1.0,62089,Acaulospora lacunosa,1,True
 1209,3,3,0.3333333333333333,289017,Carcharodiscus banaticus,1,True
 1210,2,2,0.5,1647945,Aonchotheca putorii,1,True
 1211,4,4,0.25,655708,Sertularella sanmatiasensis,1,True
 1212,2,2,0.5,1148156,Ive ptychoderae,1,True
 1213,7,7,0.14285714285714285,240364,Chaetoceros neogracilis,1,True
-1214,3,3,0.3333333333333333,1345091,Isias clavipes,1,True
+1214,3,2,0.5,1345091,Isias clavipes,1,True
 1215,7,7,0.14285714285714285,378366,Micropodarke dubia,1,True
-1216,2,1,1.0,,,2,True
+1216,2,0,0.0,NA,NA,0,False
 1217,4,4,0.25,1112802,Uncinocythere occidentalis,1,True
 1218,4,4,0.25,1938906,Namalycastis hawaiiensis,1,True
 1219,2,2,0.5,264926,Septofusidium herbarum,1,True
@@ -1244,7 +1244,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1242,4,4,0.25,1577735,Velundella trypanoides,1,True
 1243,3,3,0.3333333333333333,217105,Spinastacoides insignis,1,True
 1244,4,4,0.25,1511279,Microvelia douglasi,1,True
-1245,3,3,0.3333333333333333,,,1,True
+1245,3,2,0.5,57562,Belonolaimus longicaudatus,1,True
 1246,4,4,0.25,723190,Clio pyramidata antarctica,1,True
 1247,2,2,0.5,62645,Rhamphospora nymphaeae,1,True
 1248,2,2,0.5,875623,Tetranephris brasiliensis,1,True
@@ -1262,27 +1262,27 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1260,2,2,0.5,1654956,Eryciniolia purpurapunctata,1,True
 1261,3,3,0.3333333333333333,1470012,Pontohedyle wenzli,1,True
 1262,4,4,0.25,687548,Kanakythyris pachyrhynchos,1,True
-1263,4,4,0.25,2060439,Halacarus omului,1,True
+1263,4,3,0.3333333333333333,2060439,Halacarus omului,1,True
 1264,2,2,0.5,581057,Botrylloides violaceus,1,True
-1265,4,4,0.25,27309,Alloascoidea africana,1,True
+1265,4,3,0.3333333333333333,27309,Alloascoidea africana,1,True
 1266,3,3,0.3333333333333333,245175,Wallemia muriae,1,True
 1267,3,3,0.3333333333333333,297412,Litucivis serpens,1,True
 1268,3,3,0.3333333333333333,2008739,Vernalophrys algivore,1,True
-1269,3,3,0.3333333333333333,,,1,True
+1269,3,2,0.5,1127100,Acanthocolla cruciata,1,True
 1270,4,4,0.25,228475,Nausitora fusticula,1,True
 1271,2,2,0.5,1956344,Scytodes globula,1,True
-1272,4,4,0.25,1797409,Crotonia reticulata,1,True
+1272,4,3,0.3333333333333333,1797409,Crotonia reticulata,1,True
 1273,2,2,0.5,1112804,Metacypris digitiformis,1,True
-1274,2,2,0.5,,,1,True
+1274,2,1,1.0,71558,Taphrina carnea,1,True
 1275,3,3,0.3333333333333333,570251,Catenula turgida,1,True
 1276,4,4,0.25,1902840,Mesothuria oktaknemus,1,True
-1277,6,6,0.16666666666666666,,,1,True
-1278,4,3,0.5,,,2,True
+1277,6,5,0.2,1974277,Zoothamnium bucciniiformum,1,True
+1278,4,2,0.5,88167,Poterioochromonas malhamensis,1,True
 1279,2,2,0.5,1561963,Amorphochlora amoebiformis,1,True
 1280,3,3,0.3333333333333333,219465,Metretopus borealis,1,True
 1281,2,2,0.5,308623,Aglaophenia tubiformis,1,True
 1282,3,3,0.3333333333333333,1925706,Nesticella xixia,1,True
-1283,3,3,0.3333333333333333,,,1,True
+1283,3,2,0.5,365608,Gymnodinium dorsalisulcum,1,True
 1284,3,3,0.3333333333333333,1400029,Nesticella falcata,1,True
 1285,2,2,0.5,1286915,Piptocephalis lepidula,1,True
 1286,2,2,0.5,203149,Dentalium austini,1,True
@@ -1291,17 +1291,17 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1289,3,3,0.3333333333333333,158379,Ascogregarina taiwanensis,1,True
 1290,3,3,0.3333333333333333,295612,Stenus providus,1,True
 1291,2,2,0.5,668367,Schizoplasmodiopsis pseudoendospora,1,True
-1292,3,3,0.3333333333333333,,,1,True
+1292,3,2,0.5,1502933,Oxytricha paragranulifera,1,True
 1293,2,2,0.5,912563,Koerneria lucani,1,True
 1294,2,2,0.5,172177,Paralamyctes grayi,1,True
-1295,2,2,0.5,,,1,True
+1295,2,1,1.0,65008,Planoprotostelium aurantium,1,True
 1296,2,2,0.5,2094170,Chrysoreinhardia muelleri,1,True
 1297,2,2,0.5,265193,Apiotrichum siamense,1,True
 1298,2,2,0.5,168771,Phacellophora camtschatica,1,True
-1299,5,5,0.2,413849,Halodaphnea panulirata,1,True
+1299,5,4,0.25,413849,Halodaphnea panulirata,1,True
 1300,2,2,0.5,197160,Hexagenia rigida,1,True
 1301,4,4,0.25,1527026,Suigetsumonas clinomigrationis,1,True
-1302,2,2,0.5,,,1,True
+1302,2,1,1.0,183495,Fimbria fimbriata,1,True
 1303,2,2,0.5,1589713,Sinorsillus piliferus,1,True
 1304,3,3,0.3333333333333333,376364,Diplopsalis lenticula,1,True
 1305,2,2,0.5,2051697,Bakericheyla chanayi,1,True
@@ -1319,8 +1319,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1317,3,3,0.3333333333333333,315769,Peltospira delicata,1,True
 1318,4,4,0.25,1525080,Xenocicerina gracilis,1,True
 1319,4,4,0.25,52053,Nemertinoides elongatus,1,True
-1320,4,1,1.0,,,4,True
-1321,4,4,0.25,1003021,Biddulphia alternans,1,True
+1320,4,0,0.0,NA,NA,0,False
+1321,4,3,0.3333333333333333,1003021,Biddulphia alternans,1,True
 1322,2,2,0.5,999882,Subulatomonas tetraspora,1,True
 1323,2,2,0.5,39448,Prorocentrum lima,1,True
 1324,2,2,0.5,6141,Tripedalia cystophora,1,True
@@ -1332,24 +1332,24 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1330,2,2,0.5,2109566,Haptophrya planariarum,1,True
 1331,3,3,0.3333333333333333,389493,Cololejeunea biddlecomiae,1,True
 1332,2,2,0.5,1009504,Schoepfia chinensis,1,True
-1333,3,3,0.3333333333333333,1973198,Chaetoceros dichatoensis,1,True
+1333,3,2,0.5,1973198,Chaetoceros dichatoensis,1,True
 1334,3,3,0.3333333333333333,435893,Omegastrombidium elegans,1,True
 1335,2,2,0.5,419530,Stilomysis grandis,1,True
 1336,2,2,0.5,273041,Maldane sarsi,1,True
 1337,3,3,0.3333333333333333,633969,Cybaeus giganteus,1,True
 1338,3,3,0.3333333333333333,1789750,Pteroclava krempfi,1,True
 1339,3,3,0.3333333333333333,304461,Spirocerca lupi,1,True
-1340,2,2,0.5,,,1,True
+1340,2,1,1.0,1572356,Medusetta parthenopaea,1,True
 1341,4,4,0.25,1542968,Balantidium duodeni,1,True
 1342,5,5,0.2,293684,Acrobeles complexus,1,True
 1343,3,3,0.3333333333333333,3005,Rhizosolenia setigera,1,True
-1344,3,3,0.3333333333333333,2758538,Olindias muelleri,1,True
-1345,4,3,0.5,,,2,True
+1344,3,2,0.5,2758538,Olindias muelleri,1,True
+1345,4,2,0.5,168248,Opercularia microdiscum,1,True
 1346,3,3,0.3333333333333333,1415228,Pycnophyes robustus,1,True
 1347,4,4,0.25,527273,Freya decorata,1,True
-1348,3,3,0.3333333333333333,1712239,Metarhombognathus armatus,1,True
+1348,3,2,0.5,1712239,Metarhombognathus armatus,1,True
 1349,5,5,0.2,398533,Amphisiella milnei,1,True
-1350,4,4,0.25,,,1,True
+1350,4,3,0.3333333333333333,293856,Bastiania gracilis,1,True
 1351,4,4,0.25,1525038,Limipolycystis wallbergi,1,True
 1352,2,2,0.5,2291667,Tursiocola alata,1,True
 1353,4,4,0.25,1502899,Vibone vetusta,1,True
@@ -1378,11 +1378,11 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1376,2,2,0.5,692909,Sathrophilus planus,1,True
 1377,3,3,0.3333333333333333,1112798,Terrestricythere pratensis,1,True
 1378,7,7,0.14285714285714285,1766110,Nuncia roeweri seditiosa,1,True
-1379,2,2,0.5,,,1,True
+1379,2,1,1.0,644659,Dendrogaster ludwigi,1,True
 1380,2,2,0.5,913928,Latyspora scomberomori,1,True
 1381,2,2,0.5,714599,Aglaophamus elamellata,1,True
 1382,3,3,0.3333333333333333,646408,Annectocyma tubulosa,1,True
-1383,2,2,0.5,,,1,True
+1383,2,1,1.0,431339,Caloneis lauta,1,True
 1384,3,3,0.3333333333333333,1920013,Mutela hargeri,1,True
 1385,3,3,0.3333333333333333,878037,Hydraena riparia,1,True
 1386,3,3,0.3333333333333333,332500,Sciurothamnion stegengae,1,True
@@ -1394,21 +1394,21 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1392,2,2,0.5,450196,Sterreria psammicola,1,True
 1393,3,3,0.3333333333333333,442091,Neuraphes angulatus,1,True
 1394,3,3,0.3333333333333333,397380,Chaunochiton kappleri,1,True
-1395,2,1,1.0,,,2,True
+1395,2,0,0.0,NA,NA,0,False
 1396,2,2,0.5,480486,Cordierites guianensis,1,True
 1397,3,3,0.3333333333333333,1732396,Decastava edaphica,1,True
 1398,3,3,0.3333333333333333,229834,Galumna lanceata,1,True
-1399,2,2,0.5,229789,Carabodes coriaceus,1,True
+1399,2,1,1.0,229789,Carabodes coriaceus,1,True
 1400,2,2,0.5,107442,Geoglossum nigritum,1,True
 1401,2,2,0.5,234818,Repetobasidium mirificum,1,True
 1402,2,2,0.5,109353,Paramecium nephridiatum,1,True
 1403,3,3,0.3333333333333333,283435,Monanchora arbuscula,1,True
 1404,3,3,0.3333333333333333,2055834,Stygocapitella minuta,1,True
-1405,3,3,0.3333333333333333,,,1,True
+1405,3,2,0.5,215406,Aesopia cornuta,1,True
 1406,2,2,0.5,1008953,Oophila amblystomatis,1,True
 1407,2,2,0.5,45788,Wickerhamiella domercqiae,1,True
 1408,3,3,0.3333333333333333,459430,Isohypsibius prosostomus,1,True
-1409,2,2,0.5,,,1,True
+1409,2,1,1.0,252464,Varicosporium elodeae,1,True
 1410,3,3,0.3333333333333333,2704139,Diddensiella santjacobensis,1,True
 1411,4,4,0.25,1306390,Saxomyces alpinus,1,True
 1412,3,3,0.3333333333333333,871656,Mastophora rosea,1,True
@@ -1430,9 +1430,9 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1428,2,2,0.5,188973,Spongomonas minima,1,True
 1429,2,2,0.5,105771,Pseudomicrostroma phylloplanum,1,True
 1430,4,4,0.25,85986,Paxillus filamentosus,1,True
-1431,7,7,0.14285714285714285,2079236,Scapheremaeus nakanoshimensis,1,True
+1431,7,6,0.16666666666666666,2079236,Scapheremaeus nakanoshimensis,1,True
 1432,6,6,0.16666666666666666,1525044,Opisthocystis goettei,1,True
-1433,3,3,0.3333333333333333,1052859,Trypanosoma culicavium,1,True
+1433,3,2,0.5,1052859,Trypanosoma culicavium,1,True
 1434,2,2,0.5,1861914,Testudodinium magnum,1,True
 1435,2,2,0.5,37392,Jungermannia leiantha,1,True
 1436,6,6,0.16666666666666666,338299,Haplognathia rosea,1,True
@@ -1451,8 +1451,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1449,2,2,0.5,1542158,Hydraena californica,1,True
 1450,3,3,0.3333333333333333,2267791,Psammodrilus fauveli,1,True
 1451,3,3,0.3333333333333333,1291225,Frankliniella australis,1,True
-1452,3,2,0.6666666666666666,,,2,True
-1453,2,2,0.5,163323,Radiofilum conjunctivum,1,True
+1452,3,1,1.0,1346496,Lynchella nordica,1,True
+1453,2,1,1.0,163323,Radiofilum conjunctivum,1,True
 1454,4,4,0.25,351366,Polytomella piriformis,1,True
 1455,2,2,0.5,243547,Neoephemera youngi,1,True
 1456,4,4,0.25,510509,Boudemos flokati,1,True
@@ -1468,35 +1468,35 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1466,5,5,0.2,1428006,Pseudodiploria strigosa,1,True
 1467,2,2,0.5,60719,Eidmannella pallida,1,True
 1468,2,2,0.5,105769,Microstroma bacarum,1,True
-1469,9,9,0.1111111111111111,,,1,True
+1469,9,8,0.125,382372,Thalassiosira nodulolineata,1,True
 1470,2,2,0.5,385029,Pseudokeronopsis carnea,1,True
 1471,2,2,0.5,52057,Microstomum lineare,1,True
 1472,2,2,0.5,1254591,Pelagostrobilidium liui,1,True
-1473,5,5,0.2,361129,Heterostelium asymetricum,1,True
-1474,4,4,0.25,45607,Wickerhamiella sorbophila,1,True
+1473,5,4,0.25,361129,Heterostelium asymetricum,1,True
+1474,4,3,0.3333333333333333,45607,Wickerhamiella sorbophila,1,True
 1475,3,3,0.3333333333333333,83371,Detonula confervacea,1,True
 1476,2,2,0.5,2030961,Neomormonilla minor,1,True
 1477,3,3,0.3333333333333333,1208774,Pararhagadochir flavicollis,1,True
 1478,2,2,0.5,1072581,Haemogregarina balli,1,True
 1479,3,3,0.3333333333333333,507059,Jordanopsylla becki,1,True
 1480,3,3,0.3333333333333333,198302,Tectocepheus minor,1,True
-1481,2,2,0.5,89770,Paraphysomonas bandaiensis,1,True
+1481,2,1,1.0,89770,Paraphysomonas bandaiensis,1,True
 1482,3,3,0.3333333333333333,2751899,Earleria panicula,1,True
-1483,2,2,0.5,314084,,1,True
+1483,2,1,1.0,314084,,1,True
 1484,8,8,0.125,1416604,Teleophrys cristulipes,1,True
 1485,4,4,0.25,416811,Baseodiscus mexicanus,1,True
 1486,3,3,0.3333333333333333,83568,Hyphodontia sambuci,1,True
-1487,12,1,1.0,,,12,True
+1487,12,0,0.0,NA,NA,0,False
 1488,2,2,0.5,2572395,Gracilaria caudata,1,True
-1489,7,7,0.14285714285714285,335849,Apiospora marii,1,True
-1490,2,2,0.5,693421,Raabena bella,1,True
+1489,7,6,0.16666666666666666,335849,Apiospora marii,1,True
+1490,2,1,1.0,693421,Raabena bella,1,True
 1491,2,2,0.5,172109,Nemertoderma westbladi,1,True
 1492,2,2,0.5,2052646,Grubianella klugei,1,True
 1493,3,3,0.3333333333333333,1936243,Acrostichus floridensis,1,True
 1494,4,4,0.25,575831,Aphelocheirus ellipsoideus,1,True
 1495,2,2,0.5,2267790,Psammodrilus didomenicoi,1,True
 1496,3,3,0.3333333333333333,1513194,Chloromonas vernalis,1,True
-1497,2,2,0.5,,,1,True
+1497,2,1,1.0,1072566,Klossia helicina,1,True
 1498,4,4,0.25,1271891,Conchophthirus lamellidens,1,True
 1499,2,2,0.5,2752754,Spiophanes cf. bombyx VVP-2020,1,True
 1500,3,3,0.3333333333333333,4784,Phytophthora capsici,1,True
@@ -1506,36 +1506,36 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1504,4,4,0.25,578952,Kroyeria sphyrnae,1,True
 1505,5,5,0.2,1276540,Dipolydora bidentata,1,True
 1506,3,3,0.3333333333333333,328823,Micrura rubramaculosa,1,True
-1507,2,2,0.5,,,1,True
+1507,2,1,1.0,449650,Southwellina hispida,1,True
 1508,2,2,0.5,91188,Didymocystis inermis,1,True
 1509,3,3,0.3333333333333333,126839,Micractinium pusillum,1,True
 1510,5,5,0.2,1589715,Tenagobia incerta,1,True
 1511,2,2,0.5,45533,Trigonopsis cantarellii,1,True
-1512,7,7,0.14285714285714285,396330,Pannychia moseleyi,1,True
+1512,7,6,0.16666666666666666,396330,Pannychia moseleyi,1,True
 1513,2,2,0.5,1130814,Spiromimus triaureus,1,True
-1514,6,6,0.16666666666666666,198218,Linuparus trigonus,1,True
-1515,2,2,0.5,,,1,True
+1514,6,5,0.2,198218,Linuparus trigonus,1,True
+1515,2,1,1.0,281913,Catenomyces persicinus,1,True
 1516,2,2,0.5,192633,Parelaphostrongylus odocoilei,1,True
 1517,2,2,0.5,91922,Exophiala castellanii,1,True
 1518,2,2,0.5,1430941,Phacus platalea,1,True
 1519,5,5,0.2,759312,Eunice notata,1,True
 1520,5,5,0.2,1425582,Longitarsus melanocephalus,1,True
 1521,3,3,0.3333333333333333,646322,Hornera foliacea,1,True
-1522,2,2,0.5,,,1,True
+1522,2,1,1.0,315533,Nolandella abertawensis,1,True
 1523,2,2,0.5,168245,Epistylis galea,1,True
 1524,2,2,0.5,692523,Leptoamphisiella vermis,1,True
-1525,5,2,0.8,,,4,True
-1526,2,2,0.5,,,1,True
+1525,5,1,1.0,1916233,Gambierdiscus lapillus,1,True
+1526,2,1,1.0,35862,Acetabularia peniculus,1,True
 1527,4,4,0.25,89928,Phaeotremella skinneri,1,True
 1528,3,3,0.3333333333333333,702563,Rimostrombidium veniliae,1,True
-1529,3,3,0.3333333333333333,,,1,True
+1529,3,2,0.5,1238391,Auricularia cornea,1,True
 1530,2,2,0.5,173118,,1,True
 1531,2,2,0.5,2735107,Metarhabditis rainai,1,True
 1532,5,5,0.2,44079,Saccharomycopsis synnaedendra,1,True
 1533,3,3,0.3333333333333333,187809,Cephalothrix filiformis,1,True
 1534,4,4,0.25,93931,Haptolina fragaria,1,True
 1535,2,2,0.5,1541908,Myzostoma australe,1,True
-1536,5,5,0.2,1702332,Grania brasiliensis,1,True
+1536,5,4,0.25,1702332,Grania brasiliensis,1,True
 1537,4,4,0.25,1545211,Piesma maculatum,1,True
 1538,2,2,0.5,356161,Erpobdella triannulata,1,True
 1539,4,4,0.25,210803,Phascolosoma stephensoni,1,True
@@ -1558,7 +1558,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1556,2,2,0.5,655725,Oswaldella laertesi,1,True
 1557,2,2,0.5,140719,Hystrichopsylla talpae talpae,1,True
 1558,3,3,0.3333333333333333,34588,Helobdella stagnalis,1,True
-1559,5,5,0.2,1897521,Uroleptus stueberi,1,True
+1559,5,4,0.25,1897521,Uroleptus stueberi,1,True
 1560,4,4,0.25,2578422,Sanguina aurantia,1,True
 1561,2,2,0.5,1046790,Hydrachna conjecta,1,True
 1562,2,2,0.5,993092,Jenufa minuta,1,True
@@ -1567,35 +1567,35 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1565,2,2,0.5,1956476,Molycria broadwater,1,True
 1566,2,2,0.5,90339,Rhinosporidium seeberi,1,True
 1567,2,2,0.5,244293,Kudoa hypoepicardialis,1,True
-1568,2,2,0.5,,,1,True
+1568,2,1,1.0,33085,Entamoeba invadens,1,True
 1569,3,3,0.3333333333333333,299244,Cantao ocellatus,1,True
 1570,2,2,0.5,281460,Nerada mexicana,1,True
 1571,4,4,0.25,44633,Underwoodia columnaris,1,True
 1572,4,4,0.25,1291224,Arorathrips mexicanus,1,True
 1573,2,2,0.5,332380,Heteromurus tenuicornis,1,True
 1574,2,2,0.5,1956548,Stedocys pagodas,1,True
-1575,4,4,0.25,,,1,True
-1576,2,2,0.5,,,1,True
+1575,4,3,0.3333333333333333,1162740,Sinophysis grandis,1,True
+1576,2,1,1.0,39272,Allacma fusca,1,True
 1577,2,2,0.5,188220,Limnodriloides appendiculatus,1,True
 1578,2,2,0.5,1055079,Saron marmoratus,1,True
-1579,3,2,0.6666666666666666,,,2,True
+1579,3,1,1.0,693284,Psychodiella chagasi,1,True
 1580,3,3,0.3333333333333333,57509,Urostyla grandis,1,True
-1581,2,2,0.5,1956293,Carathea parawea,1,True
+1581,2,1,1.0,1956293,Carathea parawea,1,True
 1582,2,2,0.5,195065,Chroomonas mesostigmatica,1,True
 1583,4,4,0.25,164621,Sorogena stoianovitchae,1,True
-1584,5,5,0.2,1051109,Bracteacoccus ruber,1,True
+1584,5,4,0.25,1051109,Bracteacoccus ruber,1,True
 1585,3,3,0.3333333333333333,672012,Phoronis architecta,1,True
-1586,3,3,0.3333333333333333,,,1,True
+1586,3,2,0.5,907340,Cyberlindnera saturnus,1,True
 1587,2,2,0.5,216908,Paralia sol,1,True
 1588,7,7,0.14285714285714285,1873960,Pseudocercospora fijiensis,1,True
-1589,5,2,0.8,,,4,True
+1589,5,1,1.0,54411,Nucleospora salmonis,1,True
 1590,2,2,0.5,425018,Heterocypris incongruens,1,True
 1591,3,3,0.3333333333333333,265543,Minutocellus polymorphus,1,True
 1592,4,4,0.25,55789,Seleborca complexa,1,True
 1593,2,2,0.5,947578,Lineus lacteus,1,True
 1594,4,4,0.25,356159,Erpobdella ochoterenai,1,True
 1595,2,2,0.5,298488,Ecbathyrion prolixicauda,1,True
-1596,4,4,0.25,,,1,True
+1596,4,3,0.3333333333333333,51322,Hafniomonas reticulata,1,True
 1597,2,2,0.5,911672,Hysterolecithoides guangdongensis,1,True
 1598,4,4,0.25,155003,Nia vibrissa,1,True
 1599,3,3,0.3333333333333333,1985156,Holostichides heterotypicus,1,True
@@ -1608,7 +1608,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1606,2,2,0.5,1502107,Deasonia prolifera,1,True
 1607,4,4,0.25,1254451,Stomatolepas elegans,1,True
 1608,2,2,0.5,396589,Skvortzovia furfurella,1,True
-1609,4,4,0.25,435730,Rhigonema thysanophora,1,True
+1609,4,3,0.3333333333333333,435730,Rhigonema thysanophora,1,True
 1610,2,2,0.5,1502115,Chlorococcum lobatum,1,True
 1611,2,2,0.5,1194729,Chelonibia manati,1,True
 1612,4,4,0.25,433960,,1,True
@@ -1620,59 +1620,59 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1618,2,2,0.5,37415,Physcomitrium pyriforme,1,True
 1619,2,2,0.5,2496511,Montfortula variegata,1,True
 1620,2,2,0.5,881147,Choeradoplana iheringi,1,True
-1621,3,3,0.3333333333333333,159593,Euptilota formosissima,1,True
+1621,3,2,0.5,159593,Euptilota formosissima,1,True
 1622,2,2,0.5,314579,Billardia subrufa,1,True
 1623,2,2,0.5,89920,Vishniacozyma dimennae,1,True
 1624,2,2,0.5,1045398,Branchiosyllis cirropunctata,1,True
 1625,2,2,0.5,2044469,Labyrinthulochytrium arktikum,1,True
 1626,2,2,0.5,2813651,Orbilia oligospora,1,True
-1627,5,5,0.2,,,1,True
+1627,5,4,0.25,160032,Phlebia albomellea,1,True
 1628,3,3,0.3333333333333333,1336809,Clathria atrasanguinea,1,True
-1629,2,1,1.0,,,2,True
+1629,2,0,0.0,NA,NA,0,False
 1630,2,2,0.5,1301101,Ascoidea asiatica,1,True
-1631,3,2,0.6666666666666666,,,2,True
+1631,3,1,1.0,1524323,Gambierdiscus scabrosus,1,True
 1632,4,4,0.25,1679498,Sebacina aureomagnifica,1,True
 1633,2,2,0.5,1574424,Anomoeoneis fogedii,1,True
 1634,4,4,0.25,1344031,Oxyspirura petrowi,1,True
 1635,2,2,0.5,13535,Galbulimima belgraveana,1,True
 1636,2,2,0.5,1435237,Saccocirrus pussicus,1,True
-1637,2,2,0.5,,,1,True
+1637,2,1,1.0,1749069,Sarcocystis bovifelis,1,True
 1638,6,6,0.16666666666666666,62876,Glossus humanus,1,True
-1639,2,2,0.5,,,1,True
+1639,2,1,1.0,388029,Saccinobaculus doroaxostylus,1,True
 1640,2,2,0.5,1305767,Saccharomycopsis fodiens,1,True
 1641,2,2,0.5,593441,Arkys cornutus,1,True
 1642,3,3,0.3333333333333333,353001,Melastiza cornubiensis,1,True
-1643,2,2,0.5,578957,,1,True
-1644,2,1,1.0,,,2,True
+1643,2,1,1.0,578957,,1,True
+1644,2,0,0.0,NA,NA,0,False
 1645,2,2,0.5,396654,Burmannia itoana,1,True
 1646,5,5,0.2,166032,Hubrechtella dubia,1,True
 1647,5,5,0.2,1616682,Nematocarcinus crosnieri,1,True
 1648,2,2,0.5,243739,Xiphinema krugi,1,True
-1649,2,2,0.5,157483,Lichina pygmaea,1,True
+1649,2,1,1.0,157483,Lichina pygmaea,1,True
 1650,3,3,0.3333333333333333,1230127,Pseudokeronopsis erythrina,1,True
 1651,3,3,0.3333333333333333,1659692,Scabies crispata,1,True
 1652,3,3,0.3333333333333333,2212875,Althepus tibiatus,1,True
-1653,2,1,1.0,,,2,True
+1653,2,0,0.0,NA,NA,0,False
 1654,2,2,0.5,231078,Ignatius tetrasporus,1,True
 1655,3,3,0.3333333333333333,289012,Pungentus silvestris,1,True
 1656,2,2,0.5,199554,Eusyllis blomstrandi,1,True
-1657,3,3,0.3333333333333333,485289,Akalyptoischion atrichos,1,True
-1658,2,2,0.5,,,1,True
+1657,3,2,0.5,485289,Akalyptoischion atrichos,1,True
+1658,2,1,1.0,2094246,Sungminbooa caribensis,1,True
 1659,2,2,0.5,1712224,Brignolia parumpunctata,1,True
 1660,3,3,0.3333333333333333,1468191,Baicalellia canadensis,1,True
-1661,3,3,0.3333333333333333,,,1,True
+1661,3,2,0.5,56890,Dacrydium cupressinum,1,True
 1662,2,2,0.5,1076432,Purpureomyces khaoyaiensis,1,True
 1663,3,3,0.3333333333333333,1983166,Ascuta parornata,1,True
 1664,5,5,0.2,1968801,Metopus hasei,1,True
-1665,4,4,0.25,2068669,Trigonostomum tori,1,True
+1665,4,3,0.3333333333333333,2068669,Trigonostomum tori,1,True
 1666,3,3,0.3333333333333333,6262,Heterocheilus tunicatus,1,True
 1667,4,4,0.25,410738,Pfiesteria shumwayae,1,True
 1668,2,2,0.5,1414717,Hygrocybe noninquinans,1,True
 1669,3,3,0.3333333333333333,308667,Anthohebella parasitica,1,True
 1670,2,2,0.5,2068662,Ptychopera japonica,1,True
-1671,2,1,1.0,,,2,True
+1671,2,0,0.0,NA,NA,0,False
 1672,2,2,0.5,2957,Protodinium simplex,1,True
-1673,2,2,0.5,,,1,True
+1673,2,1,1.0,385409,Cyclotella gamma,1,True
 1674,6,6,0.16666666666666666,1042464,Parhedyle cryptophthalma,1,True
 1675,6,6,0.16666666666666666,1956627,Dendrolycosa cruciata cruciata,1,True
 1676,2,2,0.5,529579,Loxanthera speciosa,1,True
@@ -1706,9 +1706,9 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1704,6,6,0.16666666666666666,1630118,Corynelia africana,1,True
 1705,4,4,0.25,1369829,Osedax antarcticus,1,True
 1706,4,4,0.25,1230111,Hippocomos salinus,1,True
-1707,7,6,0.2857142857142857,,,2,True
+1707,7,5,0.2,1661947,Mecysmauchenioides nordenskjoldi,1,True
 1708,2,2,0.5,1511711,Gloeomonas anomalipyrenoides,1,True
-1709,3,3,0.3333333333333333,,,1,True
+1709,3,2,0.5,329754,Blidingia dawsonii,1,True
 1710,3,3,0.3333333333333333,202697,Jaapia argillacea,1,True
 1711,2,2,0.5,592036,Nucleotaenium eifelense,1,True
 1712,2,2,0.5,1538653,Fereydounia khargensis,1,True
@@ -1726,10 +1726,10 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1724,2,2,0.5,134354,Microxiphium citri,1,True
 1725,2,2,0.5,1205592,Brachynopus latus,1,True
 1726,2,2,0.5,645347,Chiropsalmus quadrumanus,1,True
-1727,2,2,0.5,,,1,True
-1728,3,2,0.6666666666666666,,,2,True
+1727,2,1,1.0,1462458,Protodrilus oculifer,1,True
+1728,3,1,1.0,1321612,Paramoeba invadens,1,True
 1729,3,3,0.3333333333333333,760241,,1,True
-1730,2,2,0.5,460592,Conchodytes meleagrinae,1,True
+1730,2,1,1.0,460592,Conchodytes meleagrinae,1,True
 1731,5,5,0.2,6405,Macrobdella decora,1,True
 1732,2,2,0.5,416860,Micrura verrilli,1,True
 1733,3,3,0.3333333333333333,54206,Nyssopsora echinata,1,True
@@ -1749,16 +1749,16 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1747,2,2,0.5,1554544,Anaplecta asema,1,True
 1748,2,2,0.5,29908,Sporothrix schenckii,1,True
 1749,2,2,0.5,659323,Dugesia notogaea,1,True
-1750,2,2,0.5,,,1,True
+1750,2,1,1.0,211840,Cryptoplax japonica,1,True
 1751,2,2,0.5,261097,Kappamyces laurelensis,1,True
 1752,2,2,0.5,91984,Sakaguchia lamellibrachiae,1,True
 1753,2,2,0.5,236580,Siriella clausi,1,True
-1754,5,5,0.2,328561,Epizoanthus illoricatus,1,True
+1754,5,4,0.25,328561,Epizoanthus illoricatus,1,True
 1755,2,2,0.5,197862,Paranophrys magna,1,True
 1756,3,3,0.3333333333333333,497513,Solmundella bitentaculata,1,True
 1757,2,2,0.5,2749911,Pseudictyota dubia,1,True
 1758,4,4,0.25,132389,Oxyuris equi,1,True
-1759,2,2,0.5,,,1,True
+1759,2,1,1.0,1608360,Charonina ventriculi,1,True
 1760,3,3,0.3333333333333333,1230130,Pseudoplatynematum denticulatum,1,True
 1761,3,3,0.3333333333333333,863972,Stygnoplus clavotibialis,1,True
 1762,2,2,0.5,1956450,Indicoblemma monticola,1,True
@@ -1770,7 +1770,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1768,4,4,0.25,329447,Nereiphylla lutea,1,True
 1769,2,2,0.5,1956331,Oonops procerus,1,True
 1770,4,4,0.25,53649,Ogataea methylovora,1,True
-1771,3,1,1.0,,,3,True
+1771,3,0,0.0,NA,NA,0,False
 1772,2,2,0.5,92969,Pythiopsis cymosa,1,True
 1773,3,3,0.3333333333333333,239963,Pontellina plumata,1,True
 1774,2,2,0.5,1798948,Trachyrhizium urniformis,1,True
@@ -1785,10 +1785,10 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1783,2,2,0.5,5046,Sarocladium strictum,1,True
 1784,3,3,0.3333333333333333,237593,Catenulostroma elginense,1,True
 1785,2,2,0.5,1311802,Placorhynchus octaculeatus,1,True
-1786,2,2,0.5,,,1,True
+1786,2,1,1.0,1431103,Phacus viridioryza,1,True
 1787,2,2,0.5,44926,Magnolia tripetala,1,True
 1788,2,2,0.5,497490,Aglaura hemistoma,1,True
-1789,2,2,0.5,,,1,True
+1789,2,1,1.0,1867896,Gambierdiscus balechii,1,True
 1790,2,2,0.5,1857292,Endelus gyoerfii,1,True
 1791,2,2,0.5,105811,Naematelia aurantia,1,True
 1792,2,2,0.5,507531,Aurospio dibranchiata,1,True
@@ -1799,12 +1799,12 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1797,2,2,0.5,587028,Trichodina meretricis,1,True
 1798,2,2,0.5,342808,Paratrimastix pyriformis,1,True
 1799,2,2,0.5,55497,Thalassia testudinum,1,True
-1800,2,1,1.0,,,2,True
-1801,2,1,1.0,,,2,True
+1800,2,0,0.0,NA,NA,0,False
+1801,2,0,0.0,NA,NA,0,False
 1802,2,2,0.5,411789,Scolia verticalis,1,True
 1803,2,2,0.5,2048884,Paramiopsalis anadonae,1,True
 1804,4,4,0.25,2049014,Paraenchelys terricola,1,True
-1805,2,2,0.5,,,1,True
+1805,2,1,1.0,2231147,Serratifera takanoi,1,True
 1806,2,2,0.5,210801,Phascolosoma perlucens,1,True
 1807,2,2,0.5,52960,Ankistrodesmus falcatus,1,True
 1808,3,3,0.3333333333333333,1345008,Nucula atacellana,1,True
@@ -1814,7 +1814,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1812,2,2,0.5,1225600,Psaltoda moerens,1,True
 1813,3,3,0.3333333333333333,1227248,Profilicollis bullocki,1,True
 1814,2,2,0.5,234812,Dacryobolus sudans,1,True
-1815,2,2,0.5,,,1,True
+1815,2,1,1.0,1263283,Mesarchaea bellavista,1,True
 1816,3,3,0.3333333333333333,1983125,Subantarctia fiordensis,1,True
 1817,2,2,0.5,1094239,Aliatypus trophonius,1,True
 1818,3,3,0.3333333333333333,2072709,Calohypsibius verrucosus,1,True
@@ -1823,8 +1823,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1821,2,2,0.5,198248,Plagiostomum lemani,1,True
 1822,9,9,0.1111111111111111,1956337,Phanotea sathegyna,1,True
 1823,2,2,0.5,528331,Opephora guenter-grassii,1,True
-1824,5,5,0.2,1956488,Neozimiris pubescens,1,True
-1825,2,1,1.0,,,2,True
+1824,5,4,0.25,1956488,Neozimiris pubescens,1,True
+1825,2,0,0.0,NA,NA,0,False
 1826,2,2,0.5,1560657,Epopella simplex,1,True
 1827,2,2,0.5,461210,Phacus inflexus,1,True
 1828,2,2,0.5,73922,Paracanthonchus caecus,1,True
@@ -1834,23 +1834,23 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1832,7,7,0.14285714285714285,202714,Candelabrochaete africana,1,True
 1833,2,2,0.5,190390,Trichodorus similis,1,True
 1834,3,3,0.3333333333333333,433959,Cerinomyces albosporus,1,True
-1835,3,3,0.3333333333333333,,,1,True
+1835,3,2,0.5,1825909,Anteholosticha randani,1,True
 1836,3,3,0.3333333333333333,1111151,Histiostoma inquilinum,1,True
 1837,2,2,0.5,863998,Pellobunus insularis,1,True
 1838,2,2,0.5,1468216,Acholades asteris,1,True
 1839,2,2,0.5,34136,Cladophora vagabunda,1,True
 1840,2,2,0.5,345461,Gemma gemma,1,True
-1841,2,2,0.5,201937,Corollospora lacera,1,True
+1841,2,1,1.0,201937,Corollospora lacera,1,True
 1842,3,3,0.3333333333333333,364019,Hymeniacidon sinapium,1,True
 1843,2,2,0.5,1519607,Cephalothrix bipunctata,1,True
 1844,3,3,0.3333333333333333,58141,Caddo agilis,1,True
 1845,3,3,0.3333333333333333,536601,Monosporus pedicellatus,1,True
 1846,3,3,0.3333333333333333,1080973,Ectobius sylvestris,1,True
-1847,2,2,0.5,,,1,True
+1847,2,1,1.0,1046772,Chthonius dacnodes,1,True
 1848,2,2,0.5,2006709,Syssomonas multiformis,1,True
 1849,4,4,0.25,1554533,Nocticola babindaensis,1,True
 1850,2,2,0.5,497499,Halicreas minimum,1,True
-1851,20,3,0.9,,,18,True
+1851,20,2,0.5,481673,Nosema disstriae,1,True
 1852,2,2,0.5,234815,Kavinia himantia,1,True
 1853,2,2,0.5,181511,Megalodicopia hians,1,True
 1854,2,2,0.5,4477,Pistia stratiotes,1,True
@@ -1860,26 +1860,26 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1858,2,2,0.5,1311875,Promesostoma cochleare,1,True
 1859,2,2,0.5,1564079,Pycnophyes zelinkaei,1,True
 1860,2,2,0.5,993596,Leptochiton saitoi,1,True
-1861,4,4,0.25,,,1,True
+1861,4,3,0.3333333333333333,1542312,Acavomonas peruviana,1,True
 1862,5,5,0.2,1111208,Alloptes crassipes,1,True
-1863,2,2,0.5,2708273,Sittisax ranieri,1,True
+1863,2,1,1.0,2708273,Sittisax ranieri,1,True
 1864,2,2,0.5,1094237,Aliatypus gulosus,1,True
 1865,2,2,0.5,388226,Protoperidinium thulesense,1,True
 1866,3,3,0.3333333333333333,295588,Ptinella errabunda,1,True
 1867,4,4,0.25,2069334,Chloromonas remiasii,1,True
-1868,6,2,0.8333333333333334,,,5,True
+1868,6,1,1.0,1295219,Ecytonucleospora nucleophila,1,True
 1869,3,3,0.3333333333333333,191687,Ankistrodesmus fusiformis,1,True
 1870,2,2,0.5,295197,Clastoptera proteus,1,True
-1871,2,2,0.5,,,1,True
-1872,4,3,0.5,,,2,True
-1873,3,2,0.6666666666666666,,,2,True
-1874,3,3,0.3333333333333333,,,1,True
+1871,2,1,1.0,163800,Holwaya mucida subsp. nipponica,1,True
+1872,4,2,0.5,548267,Lophonectes gallus,1,True
+1873,3,1,1.0,881006,Porpostoma notata,1,True
+1874,3,2,0.5,241643,Nosema cheracis,1,True
 1875,2,2,0.5,435740,Spirocamallanus istiblenni,1,True
 1876,3,3,0.3333333333333333,1712448,Eutrombicula splendens,1,True
 1877,2,2,0.5,1162739,Sinophysis microcephala,1,True
 1878,3,3,0.3333333333333333,1215707,Dracoderes abei,1,True
 1879,3,3,0.3333333333333333,1593395,Dasystenella austasensis,1,True
-1880,3,1,1.0,,,3,True
+1880,3,0,0.0,NA,NA,0,False
 1881,2,2,0.5,58794,Chaetopleura apiculata,1,True
 1882,2,2,0.5,168710,Aegina citrea,1,True
 1883,2,2,0.5,184738,Erpobdella dubia,1,True
@@ -1893,25 +1893,25 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1891,2,2,0.5,445457,Archaeospora schenckii,1,True
 1892,2,2,0.5,293681,Eucephalobus striatus,1,True
 1893,2,2,0.5,173814,Oreophoetes peruana,1,True
-1894,2,2,0.5,2231155,Stauroforma rinceana,1,True
-1895,3,3,0.3333333333333333,282340,Purpureofilum apyrenoidigerum,1,True
+1894,2,1,1.0,2231155,Stauroforma rinceana,1,True
+1895,3,2,0.5,282340,Purpureofilum apyrenoidigerum,1,True
 1896,2,2,0.5,1347776,Chrysosphaerella rotundata,1,True
 1897,3,3,0.3333333333333333,324739,Kregervanrija delftensis,1,True
 1898,2,2,0.5,2069450,Aquavolon hoantrani,1,True
 1899,3,3,0.3333333333333333,1975050,Urostomides darwini,1,True
 1900,3,3,0.3333333333333333,2751896,Cyclocanna producta,1,True
-1901,3,3,0.3333333333333333,1647974,Hodophilus hymenocephalus,1,True
+1901,3,2,0.5,1647974,Hodophilus hymenocephalus,1,True
 1902,2,2,0.5,1521735,Lobosphaeropsis pyrenoidosa,1,True
-1903,2,2,0.5,,,1,True
+1903,2,1,1.0,5992,Chaenea vorax,1,True
 1904,8,8,0.125,6852,Tachypleus gigas,1,True
 1905,2,2,0.5,608155,Haliclona curacaoensis,1,True
 1906,3,3,0.3333333333333333,5442,Buckleyzyma phyllomatis,1,True
-1907,7,3,0.7142857142857143,,,5,True
+1907,7,2,0.5,332525,Nosema antheraeae,1,True
 1908,2,2,0.5,86635,Rhizopus microsporus var. microsporus,1,True
 1909,3,3,0.3333333333333333,263429,Teredo navalis,1,True
 1910,2,2,0.5,1336821,Petromica ciocalyptoides,1,True
-1911,2,2,0.5,,,1,True
-1912,3,3,0.3333333333333333,1572364,Porospathis holostoma,1,True
+1911,2,1,1.0,1321400,Polyplicarium lacrimae,1,True
+1912,3,2,0.5,1572364,Porospathis holostoma,1,True
 1913,2,2,0.5,352461,Thaumatomonas coloniensis,1,True
 1914,2,2,0.5,1921094,Mesocrista spitzbergensis,1,True
 1915,4,4,0.25,82106,Cladophialophora boppii,1,True
@@ -1921,8 +1921,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1919,2,2,0.5,990178,Protospathidium muscicola,1,True
 1920,3,3,0.3333333333333333,515461,Eunotogramma laevis,1,True
 1921,4,4,0.25,1304667,Zoropsis spinimana,1,True
-1922,2,2,0.5,1543324,Dysteria nabia,1,True
-1923,2,2,0.5,,,1,True
+1922,2,1,1.0,1543324,Dysteria nabia,1,True
+1923,2,1,1.0,574145,Demodex brevis,1,True
 1924,2,2,0.5,188456,Marphysa bellii,1,True
 1925,2,2,0.5,43226,Capronia mansonii,1,True
 1926,4,4,0.25,2060440,Limnohalacarus cultellatus,1,True
@@ -1944,8 +1944,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1942,2,2,0.5,863948,Theromaster brunnea,1,True
 1943,2,2,0.5,1311988,Opistomum arsenii,1,True
 1944,2,2,0.5,293685,Acrobeloides apiculatus,1,True
-1945,2,2,0.5,,,1,True
-1946,2,2,0.5,,,1,True
+1945,2,1,1.0,410835,Sugiyamaella chiloensis,1,True
+1946,2,1,1.0,1492817,Colponema vietnamica,1,True
 1947,2,2,0.5,431580,Pinnularia substreptoraphe,1,True
 1948,2,2,0.5,212818,Exophiala mesophila,1,True
 1949,4,4,0.25,196565,Byssoloma leucoblepharum,1,True
@@ -1954,7 +1954,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1952,2,2,0.5,174907,Laricobius erichsoni,1,True
 1953,2,2,0.5,1951305,Surirella sella,1,True
 1954,2,2,0.5,147071,Apteria aphylla,1,True
-1955,2,2,0.5,6293,Wuchereria bancrofti,1,True
+1955,2,1,1.0,6293,Wuchereria bancrofti,1,True
 1956,2,2,0.5,238026,Euastacus setosus,1,True
 1957,2,2,0.5,1336854,Eurypon hispidum,1,True
 1958,2,2,0.5,1134079,Geranomyces hawaiiensis,1,True
@@ -1962,8 +1962,8 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1960,3,3,0.3333333333333333,2184070,Sicuophora multigranularis,1,True
 1961,2,2,0.5,42401,Endoreticulatus schubergi,1,True
 1962,2,2,0.5,455377,Physaloptera apivori,1,True
-1963,4,4,0.25,,,1,True
-1964,2,1,1.0,,,2,True
+1963,4,3,0.3333333333333333,256104,Mopalia muscosa,1,True
+1964,2,0,0.0,NA,NA,0,False
 1965,2,2,0.5,370032,Isotomiella minor,1,True
 1966,2,2,0.5,51498,Mitrastemon yamamotoi,1,True
 1967,3,3,0.3333333333333333,515464,Pteroncola inane,1,True
@@ -1972,7 +1972,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1970,2,2,0.5,226509,Zygnemopsis minuta,1,True
 1971,3,3,0.3333333333333333,338287,Filinia longiseta,1,True
 1972,2,2,0.5,591392,Trogoderma granarium,1,True
-1973,3,1,1.0,,,3,True
+1973,3,0,0.0,NA,NA,0,False
 1974,2,2,0.5,1194293,Hartaetosiga minima,1,True
 1975,2,2,0.5,50177,Araucaria excelsa,1,True
 1976,3,3,0.3333333333333333,479631,Nietneria paniculata,1,True
@@ -1988,26 +1988,26 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 1986,3,3,0.3333333333333333,35052,Ophiopholis aculeata,1,True
 1987,3,3,0.3333333333333333,529749,Margarites helicinus,1,True
 1988,2,2,0.5,51279,Pygospio elegans,1,True
-1989,2,2,0.5,,,1,True
+1989,2,1,1.0,352448,Orthodonella apohamatus,1,True
 1990,2,2,0.5,587184,Pratylenchus araucensis,1,True
 1991,2,2,0.5,295811,Kateretes rufilabris,1,True
-1992,2,2,0.5,,,1,True
+1992,2,1,1.0,61424,Furculomyces boomerangus,1,True
 1993,2,2,0.5,2066609,Clymenella collaris,1,True
-1994,2,2,0.5,,,1,True
+1994,2,1,1.0,193549,Characiochloris sasae,1,True
 1995,4,4,0.25,154758,Sistotrema sernanderi,1,True
 1996,3,3,0.3333333333333333,5435,Symmetrospora gracilis,1,True
 1997,2,2,0.5,227237,Tetratrichomonas prowazeki,1,True
-1998,2,1,1.0,,,2,True
+1998,2,0,0.0,NA,NA,0,False
 1999,2,2,0.5,1956296,Chresiona invalida,1,True
 2000,3,3,0.3333333333333333,1346492,Frontonia mengi,1,True
 2001,2,2,0.5,39027,Sphaerocarpos donnellii,1,True
-2002,2,1,1.0,,,2,True
-2003,2,2,0.5,,,1,True
+2002,2,0,0.0,NA,NA,0,False
+2003,2,1,1.0,5611,Fellomyces polyborus,1,True
 2004,2,2,0.5,2231136,Serratifera corallina,1,True
 2005,2,2,0.5,1953763,Cethegus fugax,1,True
-2006,2,2,0.5,,,1,True
-2007,5,5,0.2,29917,Cladosporium cladosporioides,1,True
-2008,2,2,0.5,,,1,True
+2006,2,1,1.0,147497,Bimuria novae-zelandiae,1,True
+2007,5,4,0.25,29917,Cladosporium cladosporioides,1,True
+2008,2,1,1.0,303409,Surirella angusta,1,True
 2009,2,2,0.5,996657,Aphanostoma collinae,1,True
 2010,2,2,0.5,1539904,Tracheloraphis huangi,1,True
 2011,2,2,0.5,5627,Grifola frondosa,1,True
@@ -2015,13 +2015,13 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 2013,2,2,0.5,61847,Axiothella rubrocincta,1,True
 2014,2,2,0.5,2052635,Auchenoplax worsfoldi,1,True
 2015,2,2,0.5,679024,Picola caribbea,1,True
-2016,3,1,1.0,,,3,True
+2016,3,0,0.0,NA,NA,0,False
 2017,2,2,0.5,1843437,Protocruzia tuzeti,1,True
-2018,2,2,0.5,,,1,True
+2018,2,1,1.0,46605,Scoloplos armiger,1,True
 2019,2,2,0.5,1860145,Sarcocystis heydorni,1,True
 2020,3,3,0.3333333333333333,1143041,Dasycerus carolinensis,1,True
 2021,2,2,0.5,204480,Chlidophyllon kaspar,1,True
-2022,2,1,1.0,,,2,True
+2022,2,0,0.0,NA,NA,0,False
 2023,2,2,0.5,407955,Staninwardia suttonii,1,True
 2024,2,2,0.5,1688446,Asbestopluma pennatula,1,True
 2025,2,2,0.5,187406,Paracalanus parvus,1,True
@@ -2032,48 +2032,48 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 2030,2,2,0.5,1737507,Gastromyxum rafii,1,True
 2031,2,2,0.5,5495,[Candida] nitratophila,1,True
 2032,2,2,0.5,1642025,Unruhdinium jiulongense,1,True
-2033,3,1,1.0,,,3,True
+2033,3,0,0.0,NA,NA,0,False
 2034,2,2,0.5,1688452,Cladorhiza abyssicola,1,True
 2035,2,2,0.5,51975,Leifidium tenerum,1,True
 2036,3,3,0.3333333333333333,59252,Cruzia americana,1,True
 2037,2,2,0.5,1661946,Mecysmauchenioides quetrihue,1,True
-2038,3,3,0.3333333333333333,353027,Rhodotarzetta rosea,1,True
-2039,2,2,0.5,2047823,Ripella tribonemae,1,True
+2038,3,2,0.5,353027,Rhodotarzetta rosea,1,True
+2039,2,1,1.0,2047823,Ripella tribonemae,1,True
 2040,2,2,0.5,1956338,Phoroncidia scutula,1,True
 2041,3,3,0.3333333333333333,1898701,Paramytha ossicola,1,True
 2042,3,3,0.3333333333333333,1468592,Typhlonesticus idriacus,1,True
 2043,3,3,0.3333333333333333,303462,Cymatopleura elliptica,1,True
-2044,2,2,0.5,,,1,True
+2044,2,1,1.0,6287,Dirofilaria immitis,1,True
 2045,2,2,0.5,1712164,Pycnophyes ponticus,1,True
 2046,2,2,0.5,157485,Lichinella cribellifera,1,True
 2047,2,2,0.5,1272410,Protophyra ovicola,1,True
 2048,2,2,0.5,190617,Trachyspora intrusa,1,True
 2049,4,4,0.25,45279,Protocreopsis rutila,1,True
 2050,5,5,0.2,1036754,Acremonium nigrosclerotium,1,True
-2051,2,1,1.0,,,2,True
-2052,3,1,1.0,,,3,True
+2051,2,0,0.0,NA,NA,0,False
+2052,3,0,0.0,NA,NA,0,False
 2053,2,2,0.5,1881137,Halamphora catenulafalsa,1,True
 2054,2,2,0.5,389326,Pandarus smithi,1,True
-2055,2,2,0.5,,,1,True
+2055,2,1,1.0,58153,Entrophospora infrequens,1,True
 2056,2,2,0.5,875176,Australiasca laeensis,1,True
 2057,2,2,0.5,1820961,Microplana plurioculata,1,True
 2058,2,2,0.5,33182,Malbranchea gypsea,1,True
 2059,3,3,0.3333333333333333,2006572,Pisione hartmannschroederae,1,True
-2060,2,2,0.5,298507,Pontoeciella abyssicola,1,True
+2060,2,1,1.0,298507,Pontoeciella abyssicola,1,True
 2061,3,3,0.3333333333333333,418352,Sphaerosyllis hirsuta,1,True
-2062,3,1,1.0,,,3,True
+2062,3,0,0.0,NA,NA,0,False
 2063,4,4,0.25,1525905,Kilyana hendersoni,1,True
 2064,2,2,0.5,109936,Cladochytrium replicatum,1,True
 2065,2,2,0.5,6172,Geocentrophora baltica,1,True
 2066,2,2,0.5,857162,Dictyochloropsis asterochloroides,1,True
-2067,2,2,0.5,,,1,True
+2067,2,1,1.0,168244,Carchesium polypinum,1,True
 2068,2,2,0.5,1956444,Habronestes raveni,1,True
 2069,2,2,0.5,1563475,Diorchidium woodii,1,True
 2070,2,2,0.5,1109210,Notodelphys prasina,1,True
-2071,3,3,0.3333333333333333,,,1,True
+2071,3,2,0.5,945224,Ancistrum haliotis,1,True
 2072,2,2,0.5,184741,Erpobdella obscura,1,True
 2073,2,2,0.5,202369,Lopaphus sphalerus,1,True
-2074,3,1,1.0,,,3,True
+2074,3,0,0.0,NA,NA,0,False
 2075,3,3,0.3333333333333333,1530226,Planothidium frequentissimum,1,True
 2076,2,2,0.5,1313340,Menneus camelus,1,True
 2077,2,2,0.5,696239,Artheneis intricata,1,True
@@ -2084,14 +2084,14 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 2082,2,2,0.5,2267794,Psammodrilus swedmarki,1,True
 2083,2,2,0.5,713609,Engaewa reducta,1,True
 2084,2,2,0.5,1324584,Rhynchoclevelandella nipponensis,1,True
-2085,3,3,0.3333333333333333,,,1,True
+2085,3,2,0.5,200982,Rhizocarpon norvegicum,1,True
 2086,2,2,0.5,1868451,Spathidium muscicola,1,True
 2087,2,2,0.5,56166,Lepiota cristata,1,True
 2088,2,2,0.5,198281,Eupelops hirtus,1,True
-2089,3,1,1.0,,,3,True
-2090,2,2,0.5,37642,Paraphysomonas imperforata,1,True
+2089,3,0,0.0,NA,NA,0,False
+2090,2,1,1.0,37642,Paraphysomonas imperforata,1,True
 2091,4,4,0.25,91803,Anamylopsora pulcherrima,1,True
-2092,2,1,1.0,,,2,True
+2092,2,0,0.0,NA,NA,0,False
 2093,2,2,0.5,1539568,Eukoenenia mirabilis,1,True
 2094,2,2,0.5,194993,Sistotrema coronilla,1,True
 2095,2,2,0.5,487668,Cymbopleura naviculiformis,1,True
@@ -2103,7 +2103,7 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 2101,2,2,0.5,442951,Hygroaster albellus,1,True
 2102,2,2,0.5,91979,Buckleyzyma aurantiaca,1,True
 2103,2,2,0.5,2040475,Tetraedriella tumidula,1,True
-2104,2,1,1.0,,,2,True
+2104,2,0,0.0,NA,NA,0,False
 2105,3,3,0.3333333333333333,655981,Pseudogymnoascus destructans,1,True
 2106,2,2,0.5,251237,Americobdella valdiviana,1,True
 2107,2,2,0.5,764665,Micropsephodes lundgreni,1,True
@@ -2114,19 +2114,19 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 2112,2,2,0.5,361666,Fasciculochloris boldii,1,True
 2113,2,2,0.5,283546,Protosuberites denhartogi,1,True
 2114,2,2,0.5,1348332,Prorodon ovum,1,True
-2115,3,2,0.6666666666666666,,,2,True
-2116,2,2,0.5,,,1,True
+2115,3,1,1.0,1035155,Sacculospora baltica,1,True
+2116,2,1,1.0,1454046,Castula setosa,1,True
 2117,2,2,0.5,599894,Parabirojimia multinucleata,1,True
 2118,2,2,0.5,1775790,Ambispora granatensis,1,True
-2119,2,2,0.5,,,1,True
+2119,2,1,1.0,29199,Chlorarachnion reptans,1,True
 2120,2,2,0.5,140714,Tunga monositus,1,True
 2121,2,2,0.5,763143,Terebratella dorsata,1,True
-2122,2,2,0.5,,,1,True
-2123,2,1,1.0,,,2,True
-2124,3,1,1.0,,,3,True
-2125,2,2,0.5,,,1,True
+2122,2,1,1.0,928256,Longidorus henanus,1,True
+2123,2,0,0.0,NA,NA,0,False
+2124,3,0,0.0,NA,NA,0,False
+2125,2,1,1.0,42399,Vittaforma corneae,1,True
 2126,2,2,0.5,101111,Backusella indica,1,True
-2127,2,2,0.5,1911597,Amphidiniopsis korewalensis,1,True
+2127,2,1,1.0,1911597,Amphidiniopsis korewalensis,1,True
 2128,2,2,0.5,202755,Schizonella caricis-atratae,1,True
 2129,2,2,0.5,1230118,Loxophyllum rugosum,1,True
 2130,2,2,0.5,4644,Globba curtisii,1,True
@@ -2140,23 +2140,23 @@ cluster_id,size,num_taxa,purity,majority_taxid,majority_name,majority_count,has_
 2138,2,2,0.5,2066691,Leiochone japonica,1,True
 2139,2,2,0.5,389058,Tengella radiata,1,True
 2140,3,3,0.3333333333333333,468750,Leptarthrus brevirostris,1,True
-2141,2,2,0.5,,,1,True
-2142,2,2,0.5,216927,Paralia sulcata,1,True
+2141,2,1,1.0,95747,Exserohilum monoceras,1,True
+2142,2,1,1.0,216927,Paralia sulcata,1,True
 2143,2,2,0.5,645023,Zoosphaerium blandum,1,True
 2144,2,2,0.5,584655,Arcuseries petzi,1,True
-2145,2,2,0.5,,,1,True
+2145,2,1,1.0,321954,Tetratrichomonas buttreyi,1,True
 2146,2,2,0.5,2925,Alexandrium catenella,1,True
-2147,2,1,1.0,,,2,True
-2148,2,1,1.0,,,2,True
+2147,2,0,0.0,NA,NA,0,False
+2148,2,0,0.0,NA,NA,0,False
 2149,2,2,0.5,33697,Nosema pyrausta,1,True
 2150,2,2,0.5,385468,Physarum pusillum,1,True
-2151,2,2,0.5,,,1,True
+2151,2,1,1.0,281610,Protoperidinium denticulatum,1,True
 2152,2,2,0.5,179866,Heterochlamydomonas inaequalis,1,True
-2153,2,2,0.5,,,1,True
+2153,2,1,1.0,439318,Gambierdiscus polynesiensis,1,True
 2154,2,2,0.5,1499372,Parapolycope miurens,1,True
-2155,2,2,0.5,,,1,True
+2155,2,1,1.0,66527,Balamuthia mandrillaris,1,True
 2156,2,2,0.5,1240824,Pterostichus cavazzutii,1,True
-2157,2,2,0.5,,,1,True
-2158,2,2,0.5,,,1,True
-2159,2,1,1.0,,,2,True
--1,2536,2336,0.0,NOISE,NOISE,0,True
+2157,2,1,1.0,94116,Acaulospora mellea,1,True
+2158,2,1,1.0,43695,Acrasis rosea,1,True
+2159,2,0,0.0,NA,NA,0,False
+-1,2536,2335,0.0,NOISE,NOISE,0,True
