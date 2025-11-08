@@ -5,3 +5,5 @@ models/*
 !dataset/evaluation
 dataset/clusters/hdbscan_model.pkl
 dataset/clusters/scaler.pkl
+.venv
+__pycache__

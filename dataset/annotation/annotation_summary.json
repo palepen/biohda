@@ -1,8 +1,8 @@
 {
-  "total_clusters": 2161,
+  "total_clusters": 2130,
   "total_sequences": 8784,
   "classification_distribution": {
-    "known_species": 2160,
+    "known_species": 2129,
     "noise": 1
   },
   "parameters": {

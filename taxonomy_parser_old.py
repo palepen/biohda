@@ -9,36 +9,6 @@ This ensures Ground Truth and Predictions use IDENTICAL parsing logic.
 
 from typing import Dict, List
 import pandas as pd
-import sys
-from pathlib import Path
-
-# --- 1. Import and Load Global Rank Map from DB ---
-# This code runs ONCE when this module is imported.
-# It loads the comprehensive rank map from our SQLite DB.
-
-try:
-    # We assume 'test_rank_builder.py' is in the same directory
-    # or in Python's path.
-    from buildRank import build_rank_map_from_db, DB_NAME
-except ImportError:
-    print("Error: Could not import from 'test_rank_builder.py'.", file=sys.stderr)
-    print("Please make sure 'test_rank_builder.py' is in the same folder.", file=sys.stderr)
-    sys.exit(1)
-
-# Load the map from the DB file
-db_path = Path(DB_NAME)
-if not db_path.exists():
-    print(f"Error: Database file not found: {db_path}", file=sys.stderr)
-    print("Please run `create_ncbi_db.py` first to generate the database.", file=sys.stderr)
-    sys.exit(1)
-
-print(f"Loading global rank map from '{DB_NAME}'...")
-# This _GLOBAL_RANK_MAP is the comprehensive map for this module.
-_GLOBAL_RANK_MAP = build_rank_map_from_db(db_path)
-if not _GLOBAL_RANK_MAP:
-    print(f"Warning: Rank map from '{DB_NAME}' is empty.", file=sys.stderr)
-print(f"Map loaded with {len(_GLOBAL_RANK_MAP)} entries.")
-# --- End of Global Map Loader ---
 
 
 def parse_ncbi_lineage(lineage_string: str, species_name: str = None) -> Dict[str, str]:
@@ -62,46 +32,155 @@ def parse_ncbi_lineage(lineage_string: str, species_name: str = None) -> Dict[st
     
     # Handle missing/invalid lineage
     if pd.isna(lineage_string) or lineage_string == '' or lineage_string == 'N/A':
-        # Return dict with all None values
-        final_parsed_none = {k: "NA" for k in tax_levels}
-        return final_parsed_none
+        return parsed
     
     # Split and clean
     parts = [p.strip() for p in lineage_string.split(';') if p.strip()]
     
     if len(parts) == 0:
-        final_parsed_empty = {k: "NA" for k in tax_levels}
-        return final_parsed_empty
+        return parsed
     
     # Remove "cellular organisms" if present (not informative)
     if parts[0] == 'cellular organisms':
         parts = parts[1:]
     
     if len(parts) == 0:
-        final_parsed_empty = {k: "NA" for k in tax_levels}
-        return final_parsed_empty
+        return parsed
     
     # =========================================================================
-    # RANK-AWARE MAPPING (REMOVED)
+    # RANK-AWARE MAPPING
     # =========================================================================
-    # The hard-coded rank_mapping dictionary has been removed.
-    # We now use the _GLOBAL_RANK_MAP loaded from the database at the
-    # top of this file.
+    # Create a comprehensive mapping of known taxa to their ranks
+    # This is based on common NCBI taxonomy patterns
+    
+    rank_mapping = {
+        # Domains
+        'Eukaryota': 'domain',
+        'Bacteria': 'domain',
+        'Archaea': 'domain',
+        'Viruses': 'domain',
+        
+        # Kingdoms (Eukaryotic)
+        'Metazoa': 'kingdom',
+        'Viridiplantae': 'kingdom',
+        'Fungi': 'kingdom',
+        'Chromista': 'kingdom',
+        'Protozoa': 'kingdom',
+        'Opisthokonta': 'kingdom',  # Sometimes used as kingdom
+        
+        # Major Phyla
+        'Chordata': 'phylum',
+        'Arthropoda': 'phylum',
+        'Mollusca': 'phylum',
+        'Annelida': 'phylum',
+        'Platyhelminthes': 'phylum',
+        'Nematoda': 'phylum',
+        'Cnidaria': 'phylum',
+        'Echinodermata': 'phylum',
+        'Porifera': 'phylum',
+        'Bryozoa': 'phylum',
+        'Brachiopoda': 'phylum',
+        'Ascomycota': 'phylum',
+        'Basidiomycota': 'phylum',
+        'Chlorophyta': 'phylum',
+        'Rhodophyta': 'phylum',
+        'Bacillariophyta': 'phylum',
+        'Ciliophora': 'phylum',
+        'Apicomplexa': 'phylum',
+        'Streptophyta': 'phylum',
+        'Sar': 'phylum',  # Supergroup, treat as phylum
+        'Alveolata': 'phylum',
+        'Stramenopiles': 'phylum',
+        'Rhizaria': 'phylum',
+        'Amoebozoa': 'phylum',
+        'Excavata': 'phylum',
+        
+        # Major Classes
+        'Mammalia': 'class',
+        'Aves': 'class',
+        'Reptilia': 'class',
+        'Amphibia': 'class',
+        'Actinopterygii': 'class',
+        'Insecta': 'class',
+        'Arachnida': 'class',
+        'Malacostraca': 'class',
+        'Gastropoda': 'class',
+        'Bivalvia': 'class',
+        'Cephalopoda': 'class',
+        'Polychaeta': 'class',
+        'Clitellata': 'class',
+        'Turbellaria': 'class',
+        'Trematoda': 'class',
+        'Cestoda': 'class',
+        'Agaricomycetes': 'class',
+        'Sordariomycetes': 'class',
+        'Dothideomycetes': 'class',
+        'Ulvophyceae': 'class',
+        'Florideophyceae': 'class',
+        'Spirotrichea': 'class',
+        'Oligohymenophorea': 'class',
+        'Intramacronucleata': 'class',
+        
+        # Major Orders
+        'Primates': 'order',
+        'Carnivora': 'order',
+        'Rodentia': 'order',
+        'Artiodactyla': 'order',
+        'Chiroptera': 'order',
+        'Coleoptera': 'order',
+        'Lepidoptera': 'order',
+        'Diptera': 'order',
+        'Hymenoptera': 'order',
+        'Hemiptera': 'order',
+        'Passeriformes': 'order',
+        'Accipitriformes': 'order',
+        'Decapoda': 'order',
+        'Amphipoda': 'order',
+        'Isopoda': 'order',
+        'Neogastropoda': 'order',
+        'Stylommatophora': 'order',
+        'Veneroida': 'order',
+        'Mytiloida': 'order',
+        'Agaricales': 'order',
+        'Polyporales': 'order',
+        'Hypocreales': 'order',
+        'Urostylida': 'order',
+        'Euplotida': 'order',
+        
+        # Major Families (add common ones)
+        'Hominidae': 'family',
+        'Felidae': 'family',
+        'Canidae': 'family',
+        'Muridae': 'family',
+        'Bovidae': 'family',
+        'Formicidae': 'family',
+        'Scarabaeidae': 'family',
+        'Nymphalidae': 'family',
+        'Culicidae': 'family',
+        'Drosophilidae': 'family',
+        'Apidae': 'family',
+        'Corvidae': 'family',
+        'Accipitridae': 'family',
+        'Portunidae': 'family',
+        'Gammaridae': 'family',
+        'Littorinidae': 'family',
+        'Mytilidae': 'family',
+        'Veneridae': 'family',
+        'Agaricaceae': 'family',
+        'Polyporaceae': 'family',
+        'Nectriaceae': 'family',
+        'Pseudokeronopsidae': 'family',
+        'Euplotidae': 'family',
+    }
     
     # =========================================================================
-    # STEP 1: Map known taxa using the *GLOBAL* rank_mapping
+    # STEP 1: Map known taxa using rank_mapping
     # =========================================================================
-    # This logic is updated to handle the DB-generated map,
-    # including ranks like 'superkingdom'.
     for part in parts:
-        if part in _GLOBAL_RANK_MAP:
-            rank = _GLOBAL_RANK_MAP[part]
-            # Handle standard ranks. 'superkingdom' is treated as 'domain'.
-            if rank in parsed:
-                if parsed[rank] is None:
-                    parsed[rank] = part
-            elif rank == 'superkingdom' and parsed['domain'] is None:
-                parsed['domain'] = part
+        if part in rank_mapping:
+            rank = rank_mapping[part]
+            if parsed[rank] is None:  # Don't overwrite if already set
+                parsed[rank] = part
     
     # =========================================================================
     # STEP 2: Handle Genus and Species (always last 1-2 elements)
@@ -109,6 +188,7 @@ def parse_ncbi_lineage(lineage_string: str, species_name: str = None) -> Dict[st
     if len(parts) >= 2:
         # Check if last part looks like binomial species name
         last_part = parts[-1]
+        second_last_part = parts[-2]
         
         # Pattern: "Genus species" or "Genus species subspecies"
         if ' ' in last_part:
@@ -133,7 +213,7 @@ def parse_ncbi_lineage(lineage_string: str, species_name: str = None) -> Dict[st
     
     elif len(parts) == 1:
         # Only one part - could be genus or domain
-        if parts[0] not in _GLOBAL_RANK_MAP:
+        if parts[0] not in rank_mapping:
             # Assume it's genus if not in our known list
             parsed['genus'] = parts[0]
     
@@ -160,15 +240,12 @@ def parse_ncbi_lineage(lineage_string: str, species_name: str = None) -> Dict[st
         if parsed['domain'] == 'Eukaryota' and len(parts) >= 2:
             # Check if second element is a known kingdom-level group
             candidate = parts[1] if len(parts) > 1 else None
-            if candidate and candidate not in _GLOBAL_RANK_MAP:
+            if candidate and candidate not in rank_mapping:
                 # Only set if it's not already mapped to another rank
                 if candidate not in parsed.values():
                     parsed['kingdom'] = candidate
     
-    # Convert Optional[str] to str for final dict, replacing None with "NA"
-    final_parsed = {k: (v if v is not None else "NA") for k, v in parsed.items()}
-
-    return final_parsed
+    return parsed
 
 
 def normalize_taxonomy_for_comparison(tax_string: str) -> str:
