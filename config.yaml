@@ -33,8 +33,11 @@ paths:
   # Visualizations
   visualization_dir: "dataset/visualization"
   
-  # Ground truth taxonomy file
-  taxonomy_file: "dataset/ssu_accession_full_lineage.tsv"
+  # Ground truth taxonomy files (UPDATED: now a list)
+  taxonomy_files: 
+    - "dataset/ssu_accession_full_lineage.tsv"
+    
+    # Add more files as needed
 
 
 # ============================================================================
@@ -95,17 +98,19 @@ clustering:
 
 
 # ============================================================================
-# CLUSTER ANNOTATION (NEW)
+# CLUSTER ANNOTATION (UPDATED FOR LOCAL-ONLY MODE)
 # ============================================================================
 annotation:
   # Identity thresholds
   identity_threshold_novel: 95.0      # Below this = novel
   identity_threshold_species: 97.0    # Above this = same species
   
-  # BLAST settings
-  delay_between_requests: 3.0         # Seconds between online BLAST requests
-  database: "nt"                      # NCBI database (nt, nr, etc.)
-  use_local_blast: false              # Use local BLAST database if true
+  # BLAST settings (UPDATED: now a list of databases)
+  use_local_blast: true
+  databases: 
+      - "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
+
+    # Add more databases as needed
   
   # Processing options
   max_clusters_to_annotate: null      # null = all clusters, or set a limit
@@ -166,7 +171,7 @@ preprocessing:
 # ============================================================================
 resources:
   # Number of CPU workers for data loading
-  num_workers: 4
+  num_workers: 12
   
   # Enable GPU acceleration where available
   use_gpu: true
@@ -194,7 +199,7 @@ logging:
 # ============================================================================
 experimental:
   # Use cuML for GPU-accelerated HDBSCAN
-  use_cuml: false
+  use_cuml: true
   
   # Enable multi-marker integration
   multi_marker: true
@@ -206,12 +211,16 @@ experimental:
 # ============================================================================
 # NOTES
 # ============================================================================
-# This configuration supports the enhanced evaluation pipeline that compares
-# Ground Truth OTU (from taxonomy TSV) with Predicted OTU (from BLAST annotation)
+# This configuration now supports:
+# 1. MULTIPLE taxonomy TSV files (merged into single lookup table)
+# 2. MULTIPLE BLAST databases (searched sequentially, best hit kept)
+# 3. 100% LOCAL operation (no Entrez API calls)
+# 4. Fast annotation (~0.01s per cluster vs 3-5s with Entrez)
 #
-# Key features:
-# 1. Representative BLAST per cluster (not per sequence)
-# 2. Direct accuracy calculation at genus/species levels
-# 3. Proper novelty detection metrics (precision, recall, F1)
-# 4. Cluster purity analysis
-# 5. Misclassification pattern detection
+# TSV Format Expected:
+# accession<TAB>taxid<TAB>species_name<TAB>full_lineage
+# Example:
+# JF718645.1<TAB>1001139<TAB>Apokeronopsis ovalis<TAB>cellular organisms;Eukaryota;...
+#
+# BLAST databases should be formatted with makeblastdb and include the base name
+# (without .nhr, .nin, .nsq extensions)
