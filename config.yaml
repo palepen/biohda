@@ -36,6 +36,9 @@ paths:
   # Ground truth taxonomy files (UPDATED: now a list)
   taxonomy_files: 
     - "dataset/ssu_accession_full_lineage.tsv"
+    - "dataset/LSU_eukaryote_rRNA_accession_full_lineage.tsv"
+    - "dataset/ITS_eukaryote_sequences_accession_full_lineage.tsv"
+    - "dataset/16S_ribosomal_RNA_accession_full_lineage.tsv"
     
     # Add more files as needed
 
@@ -62,7 +65,7 @@ training:
   batch_size: 128
   
   # Number of epochs
-  num_epochs: 50
+  num_epochs: 100
   
   # Learning rate
   learning_rate: 0.001
@@ -109,17 +112,28 @@ annotation:
   use_local_blast: true
   databases: 
       - "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
+      - "./dataset/raw/LSU_eukaryote_rRNA/LSU_eukaryote_rRNA"
+      - "./dataset/raw/ITS_eukaryote_sequences/ITS_eukaryote_sequences"
+      - "./dataset/raw/16S_ribosomal_RNA/16S_ribosomal_RNA"
 
-    # Add more databases as needed
+  # Add more databases as needed
   
   # Processing options
   max_clusters_to_annotate: null      # null = all clusters, or set a limit
-  batch_size: null                    # Process in batches (null = no batching)
+  batch_size: 128                    # Process in batches (null = no batching)
   resume_from_checkpoint: false       # Resume interrupted annotation
   
   # Validation
   min_alignment_length: 100           # Minimum BLAST alignment length
   max_evalue: 0.00001                 # Maximum acceptable e-value
+
+  resources:
+  num_workers: 4      # Threads per individual BLAST job
+  max_workers: 8      # Number of parallel BLAST jobs
+
+  annotation:
+    parallel_blast: true   # Enable parallel execution
+    chunk_size: 1000       # Sequences per chunk (tune based on memory)
 
 
 # ============================================================================

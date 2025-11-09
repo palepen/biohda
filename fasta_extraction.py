@@ -38,9 +38,10 @@ class FASTAExtractor:
         
         # Database names mapping
         self.databases = {
-            # 'ITS_eukaryote_sequences': 'ITS_eukaryote_sequences',
-            # 'LSU_eukaryote_rRNA': 'LSU_eukaryote_rRNA',
-            'SSU_eukaryote_rRNA': 'SSU_eukaryote_rRNA'
+            'ITS_eukaryote_sequences': 'ITS_eukaryote_sequences',
+            'LSU_eukaryote_rRNA': 'LSU_eukaryote_rRNA',
+            'SSU_eukaryote_rRNA': 'SSU_eukaryote_rRNA',
+            '16S_ribosomal_RNA': '16S_ribosomal_RNA'
         }
     
     def check_blastdbcmd(self) -> bool:

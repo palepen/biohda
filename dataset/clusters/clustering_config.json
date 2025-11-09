@@ -5,16 +5,16 @@
     "cluster_selection_epsilon": 0.5,
     "metric": "l2",
     "normalize": true,
-    "gpu": false
+    "gpu": true
   },
   "results": {
-    "n_clusters": 2129,
-    "n_noise": 2723,
-    "n_sequences": 8784
+    "n_clusters": 28331,
+    "n_noise": 35382,
+    "n_sequences": 120295
   },
   "metrics": {
-    "silhouette_score": 0.2768624722957611,
-    "calinski_harabasz_score": 133.42266845703125,
-    "davies_bouldin_score": 0.87379264378788
+    "silhouette_score": 0.03813248127698898,
+    "calinski_harabasz_score": 53.4038200378418,
+    "davies_bouldin_score": 0.28263576946332325
   }
 }

@@ -12,6 +12,9 @@ import subprocess
 import re
 import os
 import yaml
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
+from functools import partial
+import multiprocessing as mp
 
 # Import shared taxonomy parser
 from taxonomy_parser import parse_ncbi_lineage, get_taxonomy_levels
@@ -58,6 +61,11 @@ class ClusterAnnotator:
         # Get resource settings
         self.num_threads = res_cfg.get('num_workers', os.cpu_count() // 2 or 1)
         
+        # NEW: Parallel processing settings
+        self.max_workers = res_cfg.get('max_workers', os.cpu_count() or 4)
+        self.parallel_blast = annot_cfg.get('parallel_blast', True)
+        self.chunk_size = annot_cfg.get('chunk_size', 1000)  # Sequences per BLAST chunk
+        
         # Standard taxonomic levels - USE SHARED DEFINITION
         self.tax_levels = get_taxonomy_levels()
         
@@ -66,13 +74,16 @@ class ClusterAnnotator:
         if isinstance(taxonomy_files, str):
             taxonomy_files = [taxonomy_files]  # Convert single string to list
         
+        
         self.local_tax_map = self._load_taxonomy_maps(taxonomy_files)
+
+        # print("TAX:", len(self.local_tax_map))
         
         # Validate configuration
         self._validate_configuration()
         
         logger.info("=" * 80)
-        logger.info("Cluster Annotation Configuration (LOCAL-ONLY MODE)")
+        logger.info("Cluster Annotation Configuration (OPTIMIZED LOCAL-ONLY MODE)")
         logger.info("=" * 80)
         if self.local_tax_map:
             logger.info(f"  ✓ Loaded {len(self.local_tax_map):,} taxonomy entries from {len(taxonomy_files)} file(s)")
@@ -81,7 +92,10 @@ class ClusterAnnotator:
         logger.info(f"  ✓ Using {len(self.databases)} BLAST database(s)")
         logger.info(f"  Novel threshold: <{self.identity_threshold_novel}% identity")
         logger.info(f"  Species threshold: >{self.identity_threshold_species}% identity")
-        logger.info(f"  Local BLAST threads: {self.num_threads}")
+        logger.info(f"  BLAST threads per job: {self.num_threads}")
+        logger.info(f"  Parallel workers: {self.max_workers}")
+        logger.info(f"  Parallel BLAST: {'Enabled' if self.parallel_blast else 'Disabled'}")
+        logger.info(f"  Chunk size: {self.chunk_size:,} sequences")
         logger.info("=" * 80)
 
     def _validate_configuration(self):
@@ -112,46 +126,32 @@ class ClusterAnnotator:
 
     def _load_taxonomy_maps(self, taxonomy_files: List[str]) -> Dict[str, Dict[str, str]]:
         """
-        Load and merge multiple taxonomy TSV files.
-        
-        Expected TSV format:
-        accession<TAB>taxid<TAB>species_name<TAB>full_lineage
-        
-        Example:
-        JF718645.1<TAB>1001139<TAB>Apokeronopsis ovalis<TAB>cellular organisms;Eukaryota;Sar;...
-        
-        Returns:
-        {
-            'JF718645': {
-                'taxid': '1001139',
-                'species_name': 'Apokeronopsis ovalis',
-                'domain': 'Eukaryota',
-                'kingdom': '...',
-                ...
-            }
-        }
+        Load and merge multiple taxonomy TSV files with PARALLEL processing.
         """
         if not taxonomy_files:
             logger.warning("No taxonomy files specified in config")
             return {}
         
         logger.info(f"\n{'='*60}")
-        logger.info("Loading Local Taxonomy Files")
+        logger.info("Loading Local Taxonomy Files (PARALLEL)")
         logger.info(f"{'='*60}")
         
+        # Use parallel processing to load multiple files simultaneously
         tax_map = {}
         total_entries = 0
         skipped_entries = 0
+
         
-        for tax_file in taxonomy_files:
+        def load_single_tax_file(tax_file):
+            """Helper function to load a single taxonomy file"""
             tax_path = Path(tax_file)
             
             if not tax_path.exists():
-                logger.warning(f"  ✗ File not found: {tax_file}")
-                continue
+                return None, 0, 0, tax_file
             
-            logger.info(f"  Loading: {tax_path.name}")
+            file_tax_map = {}
             file_entries = 0
+            file_skipped = 0
             
             try:
                 with open(tax_path, 'r', encoding='utf-8') as f:
@@ -162,45 +162,55 @@ class ClusterAnnotator:
                             if len(fields) < 4:
                                 continue
                             
-                            accession_full = fields[0]  # e.g., 'JF718645.1'
-                            accession = accession_full.split('.')[0]  # Remove version: 'JF718645'
+                            accession_full = fields[0]
+                            accession = accession_full.split('.')[0]
                             taxid = fields[1]
                             species_name = fields[2]
                             full_lineage = fields[3]
                             
-                            # Skip entries with no valid taxonomy
                             if taxid == '0' or taxid == 'N/A' or not full_lineage or full_lineage == 'N/A':
-                                skipped_entries += 1
+                                file_skipped += 1
                                 continue
                             
-                            # Parse lineage into taxonomic levels
-                            lineage_parts = [part.strip() for part in full_lineage.split(';')]
-                            
-                            # Create taxonomy entry with standard structure
                             tax_entry = {
                                 'taxid': taxid,
                                 'species_name': species_name,
                                 'full_lineage': full_lineage
                             }
                             
-                            # Parse lineage into taxonomic levels using SHARED PARSER
                             tax_entry.update(parse_ncbi_lineage(full_lineage, species_name))
                             
-                            # Store in map (only if not already present - first occurrence wins)
-                            if accession not in tax_map:
-                                tax_map[accession] = tax_entry
+                            if accession not in file_tax_map:
+                                file_tax_map[accession] = tax_entry
                                 file_entries += 1
                             
-                        except Exception as e:
-                            logger.debug(f"    Skipped line {line_num}: {e}")
+                        except Exception:
                             continue
                 
-                logger.info(f"    ✓ Loaded {file_entries:,} entries")
-                total_entries += file_entries
+                return file_tax_map, file_entries, file_skipped, tax_file
                 
             except Exception as e:
-                logger.error(f"    ✗ Error reading file: {e}")
-                continue
+                logger.error(f"    ✗ Error reading file {tax_file}: {e}")
+                return None, 0, 0, tax_file
+        
+        # Load files in parallel
+        with ThreadPoolExecutor(max_workers=min(len(taxonomy_files), self.max_workers)) as executor:
+            futures = [executor.submit(load_single_tax_file, tf) for tf in taxonomy_files]
+            
+            for future in as_completed(futures):
+                file_tax_map, file_entries, file_skipped, tax_file = future.result()
+                
+                if file_tax_map is not None:
+                    logger.info(f"  Loading: {Path(tax_file).name}")
+                    logger.info(f"    ✓ Loaded {file_entries:,} entries")
+                    
+                    # Merge into main map (first occurrence wins)
+                    for acc, entry in file_tax_map.items():
+                        if acc not in tax_map:
+                            tax_map[acc] = entry
+                    
+                    total_entries += file_entries
+                    skipped_entries += file_skipped
         
         logger.info(f"\n{'='*60}")
         logger.info(f"Total taxonomy entries loaded: {len(tax_map):,}")
@@ -221,22 +231,34 @@ class ClusterAnnotator:
         return clusters_df
     
     def load_fasta_sequences(self) -> Dict[str, str]:
-        """Load all sequences from FASTA files"""
-        logger.info("\nLoading FASTA sequences...")
+        """Load all sequences from FASTA files with PARALLEL processing"""
+        logger.info("\nLoading FASTA sequences (PARALLEL)...")
         
         fasta_files = list(self.fasta_dir.glob('*.fasta'))
         
-        sequences = {}
         if not fasta_files:
             logger.error(f"No FASTA files found in {self.fasta_dir}")
             return {}
 
-        for fasta_path in fasta_files:
-            logger.info(f"  Loading from {fasta_path.name}...")
+        def load_single_fasta(fasta_path):
+            """Helper to load a single FASTA file"""
+            file_seqs = {}
             for record in SeqIO.parse(fasta_path, 'fasta'):
-                sequences[record.id] = str(record.seq)
+                file_seqs[record.id] = str(record.seq)
+            return file_seqs, fasta_path.name
         
-        logger.info(f"  Loaded {len(sequences):,} sequences")
+        sequences = {}
+        
+        # Load FASTA files in parallel
+        with ThreadPoolExecutor(max_workers=min(len(fasta_files), self.max_workers)) as executor:
+            futures = [executor.submit(load_single_fasta, fp) for fp in fasta_files]
+            
+            for future in as_completed(futures):
+                file_seqs, filename = future.result()
+                logger.info(f"  Loaded {len(file_seqs):,} sequences from {filename}")
+                sequences.update(file_seqs)
+        
+        logger.info(f"  Total loaded: {len(sequences):,} sequences")
         return sequences
     
     def select_representative(self, cluster_df: pd.DataFrame) -> str:
@@ -257,75 +279,125 @@ class ClusterAnnotator:
                 cluster_df = cluster_df.sample(n=max_size, random_state=42)
         return cluster_df
     
-    def run_batch_blast_local(self,
-                              rep_sequences: List[Tuple[str, str]],
-                              batch_fasta_path: Path) -> Dict[str, Dict]:
+    def _run_blast_chunk(self, chunk_idx: int, chunk_sequences: List[Tuple[str, str]], 
+                        database: str, db_idx: int) -> Tuple[int, int, Dict[str, Dict]]:
         """
-        Run local BLAST against MULTIPLE databases and aggregate results.
-        Keeps the best hit across all databases (highest identity, lowest e-value).
+        Run BLAST on a chunk of sequences against a single database.
+        Returns: (chunk_idx, db_idx, results_dict)
         """
-        logger.info(f"\nWriting {len(rep_sequences)} representative sequences to batch file...")
-        with open(batch_fasta_path, 'w') as f:
-            for seqid, seq in rep_sequences:
-                f.write(f">{seqid}\n{seq}\n")
+        chunk_fasta = self.output_dir / f"chunk_{chunk_idx}_db{db_idx}.fasta"
+        chunk_results = self.output_dir / f"chunk_{chunk_idx}_db{db_idx}.tsv"
         
-        all_results = {}
-        
-        logger.info(f"\n{'='*60}")
-        logger.info(f"Running BLAST against {len(self.databases)} database(s)")
-        logger.info(f"{'='*60}")
-        
-        for db_idx, database in enumerate(self.databases, 1):
-            logger.info(f"\n[Database {db_idx}/{len(self.databases)}] {Path(database).name}")
+        try:
+            # Write chunk FASTA
+            with open(chunk_fasta, 'w') as f:
+                for seqid, seq in chunk_sequences:
+                    f.write(f">{seqid}\n{seq}\n")
             
-            batch_results_path = self.output_dir / f"batch_results_db{db_idx}.tsv"
-            
+            # Run BLAST
             cmd = [
                 'blastn',
-                '-query', str(batch_fasta_path),
+                '-query', str(chunk_fasta),
                 '-task', 'megablast',
                 '-db', database,
-                '-out', str(batch_results_path),
+                '-out', str(chunk_results),
                 '-outfmt', '6 qseqid sacc stitle pident length evalue bitscore',
                 '-max_target_seqs', '1',
                 '-evalue', '1e-10',
                 '-num_threads', str(self.num_threads)
             ]
             
-            logger.info(f"  Running BLAST...")
-            try:
-                result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-                logger.info(f"  ✓ BLAST complete")
+            subprocess.run(cmd, capture_output=True, text=True, check=True)
+            
+            # Parse results
+            results = self._parse_blast_results(chunk_results)
+            
+            # Cleanup
+            chunk_fasta.unlink()
+            chunk_results.unlink()
+            
+            return chunk_idx, db_idx, results
+            
+        except Exception as e:
+            logger.error(f"  ✗ BLAST chunk {chunk_idx} db {db_idx} failed: {e}")
+            if chunk_fasta.exists():
+                chunk_fasta.unlink()
+            if chunk_results.exists():
+                chunk_results.unlink()
+            return chunk_idx, db_idx, {}
+    
+    def run_batch_blast_local_parallel(self,
+                                      rep_sequences: List[Tuple[str, str]]) -> Dict[str, Dict]:
+        """
+        Run local BLAST with PARALLEL execution across chunks and databases.
+        Major speedup for large datasets.
+        """
+        logger.info(f"\n{'='*60}")
+        logger.info(f"Running PARALLEL BLAST")
+        logger.info(f"  Total sequences: {len(rep_sequences):,}")
+        logger.info(f"  Chunk size: {self.chunk_size:,}")
+        logger.info(f"  Databases: {len(self.databases)}")
+        logger.info(f"  Max parallel workers: {self.max_workers}")
+        logger.info(f"{'='*60}")
+        
+        # Split sequences into chunks
+        chunks = []
+        for i in range(0, len(rep_sequences), self.chunk_size):
+            chunk = rep_sequences[i:i + self.chunk_size]
+            chunks.append((i // self.chunk_size, chunk))
+        
+        logger.info(f"  Created {len(chunks)} chunks")
+        
+        all_results = {}
+        
+        if self.parallel_blast and len(chunks) > 1:
+            # Parallel execution: submit all chunk-database combinations
+            tasks = []
+            for chunk_idx, chunk_seqs in chunks:
+                for db_idx, database in enumerate(self.databases, 1):
+                    tasks.append((chunk_idx, chunk_seqs, database, db_idx))
+            
+            logger.info(f"  Submitting {len(tasks)} BLAST jobs...")
+            
+            with ProcessPoolExecutor(max_workers=self.max_workers) as executor:
+                futures = [
+                    executor.submit(self._run_blast_chunk, chunk_idx, chunk_seqs, db, db_idx)
+                    for chunk_idx, chunk_seqs, db, db_idx in tasks
+                ]
                 
-                # Parse results
-                db_results = self._parse_blast_results(batch_results_path)
-                logger.info(f"  ✓ Parsed {len(db_results)} hits")
-                
-                # Merge with all_results (keep best hit)
-                for qseqid, hit_data in db_results.items():
-                    if qseqid not in all_results:
-                        all_results[qseqid] = hit_data
-                    else:
-                        # Keep hit with highest identity (or lowest e-value if tied)
-                        if hit_data['identity'] > all_results[qseqid]['identity']:
-                            all_results[qseqid] = hit_data
-                        elif hit_data['identity'] == all_results[qseqid]['identity']:
-                            if hit_data['evalue'] < all_results[qseqid]['evalue']:
-                                all_results[qseqid] = hit_data
-                
-                # Clean up temporary results file
-                if batch_results_path.exists():
-                    batch_results_path.unlink()
+                completed = 0
+                for future in as_completed(futures):
+                    chunk_idx, db_idx, results = future.result()
+                    completed += 1
                     
-            except subprocess.CalledProcessError as e:
-                logger.error(f"  ✗ BLAST error: {e.stderr}")
-                continue
-            except Exception as e:
-                logger.error(f"  ✗ BLAST failed: {e}")
-                continue
+                    logger.info(f"  [{completed}/{len(tasks)}] Completed chunk {chunk_idx}, db {db_idx}: {len(results)} hits")
+                    
+                    # Merge results (keep best hit)
+                    for qseqid, hit_data in results.items():
+                        if qseqid not in all_results:
+                            all_results[qseqid] = hit_data
+                        else:
+                            if hit_data['identity'] > all_results[qseqid]['identity']:
+                                all_results[qseqid] = hit_data
+                            elif hit_data['identity'] == all_results[qseqid]['identity']:
+                                if hit_data['evalue'] < all_results[qseqid]['evalue']:
+                                    all_results[qseqid] = hit_data
+        else:
+            # Sequential execution (fallback)
+            logger.info("  Running sequentially...")
+            for chunk_idx, chunk_seqs in chunks:
+                for db_idx, database in enumerate(self.databases, 1):
+                    _, _, results = self._run_blast_chunk(chunk_idx, chunk_seqs, database, db_idx)
+                    
+                    for qseqid, hit_data in results.items():
+                        if qseqid not in all_results:
+                            all_results[qseqid] = hit_data
+                        else:
+                            if hit_data['identity'] > all_results[qseqid]['identity']:
+                                all_results[qseqid] = hit_data
         
         logger.info(f"\n{'='*60}")
-        logger.info(f"Total unique hits across all databases: {len(all_results)}")
+        logger.info(f"Total unique hits: {len(all_results):,}")
         logger.info(f"{'='*60}\n")
         
         return all_results
@@ -362,11 +434,9 @@ class ClusterAnnotator:
         max_evalue = 1e-5
         
         if blast_result['alignment_length'] < min_alignment_length:
-            logger.warning(f"    Low alignment length: {blast_result['alignment_length']} bp")
             return False
         
         if blast_result['evalue'] > max_evalue:
-            logger.warning(f"    Poor e-value: {blast_result['evalue']}")
             return False
         
         return True
@@ -378,53 +448,31 @@ class ClusterAnnotator:
         """
         tax_dict = {level: None for level in self.tax_levels}
         
-        # Extract accession from hit_id
-        # hit_id can be like 'gi|123456|ref|JF718645.1|' or just 'JF718645.1'
         accession = hit_id.split('|')[-1].split('.')[0]
         
-        # Look up in local taxonomy map
         if self.local_tax_map and accession in self.local_tax_map:
             tax_entry = self.local_tax_map[accession]
             
             for level in self.tax_levels:
                 tax_dict[level] = tax_entry.get(level)
             
-            # Debug logging to see what we're getting
-            logger.debug(f"    ✓ Found local taxonomy for {accession}:")
-            logger.debug(f"      domain: {tax_dict.get('domain')}")
-            logger.debug(f"      kingdom: {tax_dict.get('kingdom')}")
-            logger.debug(f"      phylum: {tax_dict.get('phylum')}")
-            logger.debug(f"      genus: {tax_dict.get('genus')}")
-            logger.debug(f"      species: {tax_dict.get('species')}")
-            
             return tax_dict
         else:
-            logger.warning(f"    ✗ Accession {accession} not found in local taxonomy map")
-            logger.warning(f"      hit_id: {hit_id}")
-            logger.warning(f"      hit_def: {hit_def[:100]}")
             return self._parse_hit_def_fallback(hit_def)
 
     def _parse_hit_def_fallback(self, hit_def: str) -> Dict[str, str]:
-        """
-        Fallback parser for hit_def (messy BLAST title).
-        """
+        """Fallback parser for hit_def"""
         tax_dict = {level: None for level in self.tax_levels}
         
-        # Try to extract genus and species from hit_def
         match = re.search(r'([A-Z][a-z]+)\s+([a-z]+)', hit_def)
         if match:
             tax_dict['genus'] = match.group(1)
-            tax_dict['species'] = match.group(0)  # Full "Genus species"
-            logger.info(f"    Fallback: Parsed '{tax_dict['species']}' from hit_def")
-        else:
-            logger.warning(f"    Fallback failed: Could not parse hit_def")
+            tax_dict['species'] = match.group(0)
         
         return tax_dict
     
     def classify_cluster(self, blast_result: Optional[Dict]) -> Dict:
-        """
-        Classify cluster based on BLAST result identity
-        """
+        """Classify cluster based on BLAST result identity"""
         if blast_result is None:
             return {'classification_type': 'novel_no_hits', 'identity': None}
         
@@ -443,9 +491,7 @@ class ClusterAnnotator:
                                        rep_seqid: str,
                                        sequence: str,
                                        blast_result: Optional[Dict]) -> Dict:
-        """
-        Helper function to annotate a cluster given a pre-computed BLAST result.
-        """
+        """Helper function to annotate a cluster given a pre-computed BLAST result."""
         base_annotation = {
             'cluster_id': cluster_id,
             'cluster_size': len(cluster_df),
@@ -503,39 +549,17 @@ class ClusterAnnotator:
 
         return base_annotation
 
-    def load_checkpoint(self) -> set:
-        """Load checkpoint of completed clusters"""
-        checkpoint_file = self.output_dir / "annotation_checkpoint.json"
-        
-        if self.resume and checkpoint_file.exists():
-            with open(checkpoint_file, 'r') as f:
-                checkpoint = json.load(f)
-                completed = set(checkpoint.get('completed_clusters', []))
-            logger.info(f"Resuming from checkpoint: {len(completed)} clusters already completed")
-            return completed
-        return set()
-    
-    def save_checkpoint(self, completed_clusters: set, total_clusters: int):
-        """Save checkpoint of completed clusters"""
-        checkpoint_file = self.output_dir / "annotation_checkpoint.json"
-        with open(checkpoint_file, 'w') as f:
-            json.dump({
-                'completed_clusters': list(completed_clusters),
-                'total_clusters': total_clusters,
-                'timestamp': pd.Timestamp.now().isoformat()
-            }, f)
-    
     def annotate_all_clusters(self, clusters_df: pd.DataFrame, sequences: Dict[str, str]) -> pd.DataFrame:
-        """Annotate all clusters with LOCAL BLAST and taxonomy lookup"""
+        """Annotate all clusters with OPTIMIZED LOCAL BLAST and taxonomy lookup"""
         logger.info(f"\n{'='*60}")
-        logger.info("Annotating All Clusters (LOCAL-ONLY MODE)")
+        logger.info("Annotating All Clusters (OPTIMIZED LOCAL-ONLY MODE)")
         logger.info(f"{'='*60}")
         
         unique_clusters = sorted(clusters_df['cluster_id'].unique())
         total_clusters = len(unique_clusters)
         annotations = []
         
-        # --- LOCAL BATCH BLAST WORKFLOW ---
+        # Phase 1: Select representatives
         logger.info("\nPhase 1: Selecting representative sequences...")
         rep_seq_map = {} 
         reps_to_blast = []
@@ -554,23 +578,22 @@ class ClusterAnnotator:
             if sequence and len(sequence) >= 100:
                 reps_to_blast.append((rep_seqid, sequence))
         
-        logger.info(f"  Selected {len(rep_seq_map)} representatives for {total_clusters-1} clusters")
+        logger.info(f"  Selected {len(rep_seq_map)} representatives")
 
-        logger.info("\nPhase 2: Running Batch Local BLAST against multiple databases...")
-        batch_fasta_path = self.output_dir / "batch_query.fasta"
+        # Phase 2: Run PARALLEL BLAST
+        logger.info("\nPhase 2: Running PARALLEL BLAST...")
+        blast_results_dict = self.run_batch_blast_local_parallel(reps_to_blast)
         
-        blast_results_dict = self.run_batch_blast_local(reps_to_blast, batch_fasta_path)
-        
-        if batch_fasta_path.exists():
-            batch_fasta_path.unlink()
-        
-        logger.info("\nPhase 3: Annotating clusters with BLAST results and LOCAL taxonomy...")
+        # Phase 3: Annotate with taxonomy (with progress logging)
+        logger.info("\nPhase 3: Annotating clusters with taxonomy...")
         
         taxonomy_hits = 0
         taxonomy_misses = 0
         
         for idx, cluster_id in enumerate(unique_clusters, 1):
-            logger.info(f"\n[{idx}/{total_clusters}] Annotating Cluster {cluster_id}")
+            if idx % 100 == 0 or idx == total_clusters:
+                logger.info(f"  [{idx}/{total_clusters}] Processing...")
+            
             cluster_data = clusters_df[clusters_df['cluster_id'] == cluster_id]
             
             if cluster_id == -1:
@@ -593,7 +616,7 @@ class ClusterAnnotator:
             )
             annotations.append(annotation)
 
-        # --- SUMMARY ---
+        # Summary
         annotations_df = pd.DataFrame(annotations)
         
         logger.info(f"\n{'='*60}")
@@ -602,7 +625,8 @@ class ClusterAnnotator:
         logger.info(f"Taxonomy Resolution:")
         logger.info(f"  ✓ Resolved from local TSV: {taxonomy_hits}")
         logger.info(f"  ✗ Not found in local TSV: {taxonomy_misses}")
-        logger.info(f"  Resolution rate: {taxonomy_hits/(taxonomy_hits+taxonomy_misses)*100:.1f}%")
+        if taxonomy_hits + taxonomy_misses > 0:
+            logger.info(f"  Resolution rate: {taxonomy_hits/(taxonomy_hits+taxonomy_misses)*100:.1f}%")
         logger.info(f"\nClassification Distribution:")
         
         type_counts = annotations_df['classification_type'].value_counts()
@@ -659,6 +683,9 @@ class ClusterAnnotator:
                     'num_databases': len(self.databases),
                     'use_local_blast': self.use_local_blast,
                     'num_threads': self.num_threads,
+                    'max_workers': self.max_workers,
+                    'parallel_blast': self.parallel_blast,
+                    'chunk_size': self.chunk_size,
                     'local_taxonomy_entries': len(self.local_tax_map)
                 }
             }, f, indent=2)
@@ -667,8 +694,10 @@ class ClusterAnnotator:
     def run_pipeline(self):
         """Execute complete annotation pipeline"""
         logger.info(f"\n{'='*60}")
-        logger.info("CLUSTER ANNOTATION PIPELINE (LOCAL-ONLY MODE)")
+        logger.info("CLUSTER ANNOTATION PIPELINE (OPTIMIZED LOCAL-ONLY MODE)")
         logger.info(f"{'='*60}\n")
+        
+        start_time = time.time()
         
         clusters_df = self.load_clusters()
         sequences = self.load_fasta_sequences()
@@ -685,10 +714,15 @@ class ClusterAnnotator:
         master_df = self.create_master_table(clusters_df, annotations_df)
         self.save_results(annotations_df, master_df)
         
+        elapsed_time = time.time() - start_time
+        
         logger.info(f"\n{'='*60}")
         logger.info("ANNOTATION COMPLETE")
         logger.info(f"{'='*60}")
         logger.info(f"Output directory: {self.output_dir}")
+        logger.info(f"Total time: {elapsed_time:.2f} seconds ({elapsed_time/60:.2f} minutes)")
+        logger.info(f"Time per cluster: {elapsed_time/len(annotations_df):.3f} seconds")
+        logger.info(f"{'='*60}")
         return 0
 
 
@@ -709,16 +743,29 @@ def load_config(config_path: str) -> Dict:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Annotate clusters via representative BLAST (LOCAL-ONLY MODE)',
+        description='Annotate clusters via representative BLAST (OPTIMIZED LOCAL-ONLY MODE)',
         epilog='''
 Example usage:
   python cluster_annotation.py --config config.yaml
   
-This script now operates in LOCAL-ONLY mode:
-  - Uses multiple local BLAST databases (no online BLAST)
-  - Uses multiple local taxonomy TSV files (no Entrez API)
-  - Fast annotation (~0.01s per cluster vs 3-5s with Entrez)
-  - No network connectivity required
+OPTIMIZATIONS:
+  - Parallel BLAST execution across multiple chunks
+  - Parallel taxonomy file loading
+  - Parallel FASTA file loading
+  - Batch processing with configurable chunk sizes
+  - Multi-database support with result aggregation
+  
+Config options for optimization:
+  resources:
+    num_workers: 4           # Threads per BLAST job
+    max_workers: 8           # Number of parallel BLAST jobs
+  
+  annotation:
+    parallel_blast: true     # Enable parallel BLAST
+    chunk_size: 1000         # Sequences per BLAST chunk
+    databases:               # List of BLAST databases
+      - /path/to/db1
+      - /path/to/db2
         '''
     )
     parser.add_argument('--config', default='config.yaml', help='Path to the config.yaml file')

@@ -3,20 +3,32 @@ evaluation.py
 =============
 Enhanced Evaluation Module
 
-Compares Ground Truth OTU (from TSV) with Predicted OTU (from cluster annotation)
+Compares Ground Truth OTU (from TSV files) with Predicted OTU (from cluster annotation)
 Calculates accuracy metrics at multiple taxonomic levels
 
+NOW SUPPORTS MULTIPLE GROUND TRUTH FILES
 NOW USES SHARED taxonomy_parser.py FOR CONSISTENT PARSING
 
 Usage:
     python evaluation.py
+    
+    # Or specify custom ground truth files:
+    evaluator = EnhancedEvaluator(
+        predictions_file="dataset/annotation/sequence_predictions.csv",
+        ground_truth_files=[
+            "dataset/ssu_accession_full_lineage.tsv",
+            "dataset/additional_ground_truth.tsv",
+            "dataset/more_ground_truth.tsv"
+        ],
+        output_dir="dataset/evaluation"
+    )
 """
 
 import pandas as pd
 import numpy as np
 from pathlib import Path
 from collections import Counter, defaultdict
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Union
 import logging
 import json
 import re
@@ -36,18 +48,24 @@ class EnhancedEvaluator:
     
     def __init__(self,
                  predictions_file: str = "dataset/annotation/sequence_predictions.csv",
-                 ground_truth_file: str = "dataset/ssu_accession_full_lineage.tsv",
+                 ground_truth_files: Union[str, List[str]] = ["dataset/ssu_accession_full_lineage.tsv", "dataset/16S_ribosomal_RNA_accession_full_lineage.tsv", "dataset/ITS_eukaryote_sequences_accession_full_lineage.tsv", "dataset/LSU_eukaryote_rRNA_accession_full_lineage.tsv"],
                  output_dir: str = "dataset/evaluation"):
         """
         Initialize evaluator
         
         Args:
             predictions_file: CSV with seqID, cluster_id, and pred_* columns
-            ground_truth_file: TSV with seqID, taxID, species, full_taxonomy
+            ground_truth_files: Single TSV path or list of TSV paths with seqID, taxID, species, full_taxonomy
             output_dir: Directory to save evaluation results
         """
         self.predictions_file = Path(predictions_file)
-        self.ground_truth_file = Path(ground_truth_file)
+        
+        # Convert single file to list for uniform handling
+        if isinstance(ground_truth_files, str):
+            self.ground_truth_files = [Path(ground_truth_files)]
+        else:
+            self.ground_truth_files = [Path(f) for f in ground_truth_files]
+        
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
@@ -55,52 +73,107 @@ class EnhancedEvaluator:
         self.tax_levels = get_taxonomy_levels()
     
     def load_ground_truth(self) -> pd.DataFrame:
-        """Load ground truth taxonomy from TSV using SHARED PARSER"""
-        logger.info("\nLoading ground truth taxonomy...")
+        """Load and merge ground truth taxonomy from multiple TSV files using SHARED PARSER"""
+        logger.info("\nLoading ground truth taxonomy from multiple files...")
+        logger.info(f"  Number of ground truth files: {len(self.ground_truth_files)}")
         
-        if not self.ground_truth_file.exists():
-            logger.error(f"Ground truth file not found: {self.ground_truth_file}")
-            raise FileNotFoundError(f"Ground truth file not found: {self.ground_truth_file}")
+        all_gt_dfs = []
         
-        gt_df = pd.read_csv(
-            self.ground_truth_file,
-            sep='\t',
-            header=None,
-            names=['seqID', 'taxID', 'species_name', 'full_taxonomy'],
-            dtype=str,
-            keep_default_na=False,
-            na_values=['', 'N/A']
-        )
+        for i, gt_file in enumerate(self.ground_truth_files, 1):
+            logger.info(f"\n  [{i}/{len(self.ground_truth_files)}] Loading: {gt_file.name}")
+            
+            if not gt_file.exists():
+                logger.warning(f"    File not found: {gt_file}")
+                logger.warning(f"    Skipping this file...")
+                continue
+            
+            try:
+                gt_df = pd.read_csv(
+                    gt_file,
+                    sep='\t',
+                    header=None,
+                    names=['seqID', 'taxID', 'species_name', 'full_taxonomy'],
+                    dtype=str,
+                    keep_default_na=False,
+                    na_values=['', 'N/A']
+                )
+                
+                # Parse full taxonomy into levels using SHARED PARSER
+                logger.info(f"    Parsing taxonomy using shared parser...")
+                parsed_tax = gt_df.apply(
+                    lambda row: parse_ncbi_lineage(row['full_taxonomy'], row['species_name']),
+                    axis=1
+                )
+                
+                # Expand into separate columns
+                for level in self.tax_levels:
+                    gt_df[f'gt_{level}'] = parsed_tax.apply(lambda x: x.get(level))
+                
+                # Handle N/A
+                gt_df['has_taxonomy'] = gt_df['full_taxonomy'].notna() & (gt_df['full_taxonomy'] != '')
+                
+                # Add source file tracking
+                gt_df['ground_truth_source'] = gt_file.name
+                
+                logger.info(f"    Loaded {len(gt_df):,} records")
+                logger.info(f"    Records with taxonomy: {gt_df['has_taxonomy'].sum():,}")
+                logger.info(f"    Records without taxonomy (N/A): {(~gt_df['has_taxonomy']).sum():,}")
+                
+                all_gt_dfs.append(gt_df)
+                
+            except Exception as e:
+                logger.error(f"    Error loading {gt_file.name}: {e}")
+                logger.warning(f"    Skipping this file...")
+                continue
         
-        # Parse full taxonomy into levels using SHARED PARSER
-        logger.info("  Parsing taxonomy using shared parser...")
-        parsed_tax = gt_df.apply(
-            lambda row: parse_ncbi_lineage(row['full_taxonomy'], row['species_name']),
-            axis=1
-        )
+        if not all_gt_dfs:
+            logger.error("ERROR: No ground truth files could be loaded!")
+            raise FileNotFoundError("No valid ground truth files found")
         
-        # Expand into separate columns
-        for level in self.tax_levels:
-            gt_df[f'gt_{level}'] = parsed_tax.apply(lambda x: x.get(level))
+        # Merge all ground truth dataframes
+        logger.info(f"\n  Merging {len(all_gt_dfs)} ground truth file(s)...")
+        merged_gt_df = pd.concat(all_gt_dfs, ignore_index=True)
         
-        # Handle N/A
-        gt_df['has_taxonomy'] = gt_df['full_taxonomy'].notna() & (gt_df['full_taxonomy'] != '')
+        # Check for duplicate seqIDs across files
+        duplicate_seqs = merged_gt_df[merged_gt_df.duplicated(subset='seqID', keep=False)]
+        if len(duplicate_seqs) > 0:
+            logger.warning(f"\n  WARNING: Found {duplicate_seqs['seqID'].nunique()} sequences with duplicate entries")
+            logger.warning(f"  Keeping first occurrence for each seqID")
+            
+            # Show sample duplicates
+            sample_dups = duplicate_seqs.groupby('seqID').head(2).head(10)
+            logger.info("\n  Sample duplicates (showing first 5 seqIDs):")
+            for seq_id in sample_dups['seqID'].unique()[:5]:
+                dup_entries = duplicate_seqs[duplicate_seqs['seqID'] == seq_id]
+                logger.info(f"    {seq_id}:")
+                for idx, row in dup_entries.iterrows():
+                    logger.info(f"      Source: {row['ground_truth_source']}, Species: {row['species_name']}")
+            
+            # Keep first occurrence
+            merged_gt_df = merged_gt_df.drop_duplicates(subset='seqID', keep='first')
         
-        logger.info(f"  Loaded {len(gt_df):,} ground truth records")
-        logger.info(f"  Records with taxonomy: {gt_df['has_taxonomy'].sum():,}")
-        logger.info(f"  Records without taxonomy (N/A): {(~gt_df['has_taxonomy']).sum():,}")
+        logger.info(f"\n  TOTAL ground truth records (after deduplication): {len(merged_gt_df):,}")
+        logger.info(f"  Total with taxonomy: {merged_gt_df['has_taxonomy'].sum():,}")
+        logger.info(f"  Total without taxonomy (N/A): {(~merged_gt_df['has_taxonomy']).sum():,}")
+        
+        # Show breakdown by source file
+        logger.info("\n  Records by source file:")
+        source_counts = merged_gt_df['ground_truth_source'].value_counts()
+        for source, count in source_counts.items():
+            logger.info(f"    {source}: {count:,}")
         
         # Log sample of parsed taxonomy for debugging
-        sample_idx = gt_df[gt_df['has_taxonomy']].index[0] if gt_df['has_taxonomy'].any() else None
+        sample_idx = merged_gt_df[merged_gt_df['has_taxonomy']].index[0] if merged_gt_df['has_taxonomy'].any() else None
         if sample_idx is not None:
-            logger.info(f"\n  Sample GROUND TRUTH parsing (seqID: {gt_df.loc[sample_idx, 'seqID']}):")
-            logger.info(f"    Raw lineage: {gt_df.loc[sample_idx, 'full_taxonomy'][:100]}...")
+            logger.info(f"\n  Sample GROUND TRUTH parsing (seqID: {merged_gt_df.loc[sample_idx, 'seqID']}):")
+            logger.info(f"    Source: {merged_gt_df.loc[sample_idx, 'ground_truth_source']}")
+            logger.info(f"    Raw lineage: {merged_gt_df.loc[sample_idx, 'full_taxonomy'][:100]}...")
             for level in self.tax_levels:
-                val = gt_df.loc[sample_idx, f'gt_{level}']
+                val = merged_gt_df.loc[sample_idx, f'gt_{level}']
                 if val:
                     logger.info(f"    gt_{level}: {val}")
         
-        return gt_df
+        return merged_gt_df
     
     def load_predictions(self) -> pd.DataFrame:
         """Load predicted OTU labels from cluster_annotation.py"""
@@ -153,6 +226,13 @@ class EnhancedEvaluator:
         logger.info(f"  Total sequences: {len(master_df):,}")
         logger.info(f"  With ground truth: {master_df['has_ground_truth'].sum():,}")
         logger.info(f"  Without ground truth: {(~master_df['has_ground_truth']).sum():,}")
+        
+        # Show breakdown by ground truth source
+        if 'ground_truth_source' in master_df.columns:
+            logger.info("\n  Ground truth coverage by source:")
+            source_counts = master_df[master_df['has_ground_truth']]['ground_truth_source'].value_counts()
+            for source, count in source_counts.items():
+                logger.info(f"    {source}: {count:,}")
         
         return master_df
     
@@ -420,7 +500,23 @@ class EnhancedEvaluator:
             f.write("ENHANCED EVALUATION REPORT\n")
             f.write("Ground Truth vs Predicted OTU Comparison (Multi-Level)\n")
             f.write("Using Shared taxonomy_parser.py for consistent parsing\n")
+            f.write("Supports Multiple Ground Truth Files\n")
             f.write("="*80 + "\n\n")
+            
+            # Ground truth sources
+            f.write("GROUND TRUTH SOURCES\n")
+            f.write("-"*80 + "\n")
+            f.write(f"Number of ground truth files: {len(self.ground_truth_files)}\n")
+            for gt_file in self.ground_truth_files:
+                f.write(f"  - {gt_file.name}\n")
+            f.write("\n")
+            
+            if 'ground_truth_source' in master_df.columns:
+                f.write("Records by source:\n")
+                source_counts = master_df[master_df['has_ground_truth']]['ground_truth_source'].value_counts()
+                for source, count in source_counts.items():
+                    f.write(f"  {source}: {count:,}\n")
+                f.write("\n")
             
             # Dataset overview
             f.write("DATASET OVERVIEW\n")
@@ -552,6 +648,7 @@ class EnhancedEvaluator:
         
         # Save metrics as JSON
         metrics = {
+            'ground_truth_sources': [str(f) for f in self.ground_truth_files],
             'dataset_overview': {
                 'total_sequences': len(master_df),
                 'sequences_with_ground_truth': int(master_df['has_ground_truth'].sum()),
@@ -573,6 +670,7 @@ class EnhancedEvaluator:
         logger.info(f"\n{'='*80}")
         logger.info("ENHANCED EVALUATION PIPELINE (Multi-Level)")
         logger.info("Using Shared taxonomy_parser.py for Consistent Parsing")
+        logger.info("Supporting Multiple Ground Truth Files")
         logger.info(f"{'='*80}\n")
         
         try:
@@ -617,9 +715,25 @@ class EnhancedEvaluator:
 
 
 def main():
+    """
+    Example usage with multiple ground truth files
+    """
+    # Option 1: Single file (backward compatible)
+    # evaluator = EnhancedEvaluator(
+    #     predictions_file="dataset/annotation/sequence_predictions.csv",
+    #     ground_truth_files="dataset/ssu_accession_full_lineage.tsv",
+    #     output_dir="dataset/evaluation"
+    # )
+    
+    # Option 2: Multiple files
     evaluator = EnhancedEvaluator(
         predictions_file="dataset/annotation/sequence_predictions.csv",
-        ground_truth_file="dataset/ssu_accession_full_lineage.tsv",
+        ground_truth_files=[
+            "dataset/ssu_accession_full_lineage.tsv",
+            "dataset/LSU_eukaryote_rRNA_accession_full_lineage.tsv",
+            "dataset/ITS_eukaryote_sequences_accession_full_lineage.tsv",
+            "dataset/16S_ribosomal_RNA_accession_full_lineage.tsv"
+        ],
         output_dir="dataset/evaluation"
     )
     

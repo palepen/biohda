@@ -1,4 +1,5 @@
 dataset/*
+!dataset/*.tsv
 models/*
 !dataset/clusters
 !dataset/annotation
@@ -7,3 +8,4 @@ dataset/clusters/hdbscan_model.pkl
 dataset/clusters/scaler.pkl
 .venv
 __pycache__
+taxdmp/*

@@ -1,90 +1,96 @@
 {
+  "ground_truth_sources": [
+    "dataset/ssu_accession_full_lineage.tsv",
+    "dataset/LSU_eukaryote_rRNA_accession_full_lineage.tsv",
+    "dataset/ITS_eukaryote_sequences_accession_full_lineage.tsv",
+    "dataset/16S_ribosomal_RNA_accession_full_lineage.tsv"
+  ],
   "dataset_overview": {
-    "total_sequences": 8784,
-    "sequences_with_ground_truth": 7951,
-    "sequences_without_ground_truth": 833
+    "total_sequences": 120295,
+    "sequences_with_ground_truth": 101481,
+    "sequences_without_ground_truth": 18814
   },
   "accuracy_by_level": [
     {
       "level": "domain",
-      "total_sequences": 5033,
-      "correct": 5033,
-      "incorrect": 0,
-      "accuracy": 1.0
+      "total_sequences": 62631,
+      "correct": 62301,
+      "incorrect": 330,
+      "accuracy": 0.994731043732337
     },
     {
       "level": "kingdom",
-      "total_sequences": 4924,
-      "correct": 4680,
-      "incorrect": 244,
-      "accuracy": 0.950446791226645
+      "total_sequences": 62190,
+      "correct": 56631,
+      "incorrect": 5559,
+      "accuracy": 0.910612638687892
     },
     {
       "level": "phylum",
-      "total_sequences": 4771,
-      "correct": 4107,
-      "incorrect": 664,
-      "accuracy": 0.8608258226786837
+      "total_sequences": 61994,
+      "correct": 53916,
+      "incorrect": 8078,
+      "accuracy": 0.8696970674581411
     },
     {
       "level": "class",
-      "total_sequences": 4745,
-      "correct": 3727,
-      "incorrect": 1018,
-      "accuracy": 0.7854583772391992
+      "total_sequences": 62066,
+      "correct": 50555,
+      "incorrect": 11511,
+      "accuracy": 0.8145361389488609
     },
     {
       "level": "order",
-      "total_sequences": 4665,
-      "correct": 3136,
-      "incorrect": 1529,
-      "accuracy": 0.6722400857449089
+      "total_sequences": 61713,
+      "correct": 38195,
+      "incorrect": 23518,
+      "accuracy": 0.6189133569912336
     },
     {
       "level": "family",
-      "total_sequences": 4871,
-      "correct": 2551,
-      "incorrect": 2320,
-      "accuracy": 0.523711763498255
+      "total_sequences": 61740,
+      "correct": 35301,
+      "incorrect": 26439,
+      "accuracy": 0.5717687074829932
     },
     {
       "level": "genus",
-      "total_sequences": 5417,
-      "correct": 2773,
-      "incorrect": 2644,
-      "accuracy": 0.5119069595717186
+      "total_sequences": 70763,
+      "correct": 34584,
+      "incorrect": 36179,
+      "accuracy": 0.4887299860096378
     },
     {
       "level": "species",
-      "total_sequences": 5417,
-      "correct": 1968,
-      "incorrect": 3449,
-      "accuracy": 0.363300719955695
+      "total_sequences": 70763,
+      "correct": 23642,
+      "incorrect": 47121,
+      "accuracy": 0.3341011545581731
     }
   ],
   "novelty_detection": {
-    "true_positives": 192,
-    "false_positives": 2534,
-    "true_negatives": 2773,
-    "false_negatives": 641,
-    "precision": 0.07043286867204696,
-    "recall": 0.2304921968787515,
-    "f1_score": 0.10789547625737565,
-    "accuracy": 0.3375455373406193
+    "true_positives": 4833,
+    "false_positives": 30718,
+    "true_negatives": 34584,
+    "false_negatives": 13981,
+    "precision": 0.1359455430226998,
+    "recall": 0.2568831721058786,
+    "f1_score": 0.17779821576381866,
+    "accuracy": 0.3276694791969741
   },
   "cluster_purity_genus": {
     "level": "genus",
-    "mean_purity": 0.5938533715242089,
+    "mean_purity": 0.610278827298058,
     "median_purity": 0.5,
-    "high_purity_clusters": 564,
-    "medium_purity_clusters": 28,
-    "low_purity_clusters": 1486,
-    "total_clusters": 2078,
+    "high_purity_clusters": 7952,
+    "medium_purity_clusters": 509,
+    "low_purity_clusters": 18839,
+    "total_clusters": 27300,
     "purity_distribution": {
-      "count": 2078.0,
-      "mean": 0.5938533715242089,
-      "std": 0.26918145089992135,
-      "min": 0.07692307692307693,
+      "count": 27300.0,
+      "mean": 0.610278827298058,
+      "std": 0.2731970481974488,
+      "min": 0.09090909090909091,
       "25%": 0.5,
       "50%": 0.5,
       "75%": 1.0,
@@ -93,59 +99,59 @@
   },
   "misclassifications_genus": {
     "level": "genus",
-    "total_misclassified": 2644,
-    "total_evaluated": 5417,
-    "misclassification_rate": 0.48809304042828133,
+    "total_misclassified": 36179,
+    "total_evaluated": 70763,
+    "misclassification_rate": 0.5112700139903622,
     "top_patterns": [
       {
-        "ground_truth": "Myxobolus",
-        "predicted": "Gyrodactyloides",
-        "count": 3
+        "ground_truth": "Cortinarius",
+        "predicted": "Phlegmacium",
+        "count": 36
       },
       {
-        "ground_truth": "Nitzschia",
-        "predicted": "Gyrosigma",
-        "count": 3
+        "ground_truth": "Phlegmacium",
+        "predicted": "Cortinarius",
+        "count": 29
       },
       {
-        "ground_truth": "Pterygota",
-        "predicted": "Galloisiana",
-        "count": 3
+        "ground_truth": "Cortinarius",
+        "predicted": "Calonarius",
+        "count": 18
       },
       {
-        "ground_truth": "Entrophospora",
-        "predicted": "Claroideoglomus",
-        "count": 3
+        "ground_truth": "Thaxterogaster",
+        "predicted": "Cortinarius",
+        "count": 17
       },
       {
-        "ground_truth": "Aphistogoniulus",
-        "predicted": "Colossobolus",
-        "count": 3
+        "ground_truth": "Cortinarius",
+        "predicted": "Thaxterogaster",
+        "count": 17
       },
       {
-        "ground_truth": "Bursaphelenchus",
-        "predicted": "Japanema",
-        "count": 3
+        "ground_truth": "Aspergillus",
+        "predicted": "Penicillium",
+        "count": 14
       },
       {
-        "ground_truth": "Phacus",
-        "predicted": "Lepocinclis",
-        "count": 3
+        "ground_truth": "Cortinarius",
+        "predicted": "Inocybe",
+        "count": 12
       },
       {
-        "ground_truth": "Aphelenchoides",
-        "predicted": "Trichotokara",
-        "count": 2
+        "ground_truth": "Phlegmacium",
+        "predicted": "Branchiura",
+        "count": 11
       },
       {
-        "ground_truth": "Microplana",
-        "predicted": "Dugesia",
-        "count": 2
+        "ground_truth": "Penicillium",
+        "predicted": "Aspergillus",
+        "count": 11
       },
       {
-        "ground_truth": "Eimeria",
-        "predicted": "Pleurobrachia",
-        "count": 2
+        "ground_truth": "Amblyomma",
+        "predicted": "Bothriocroton",
+        "count": 10
       }
     ]
   }

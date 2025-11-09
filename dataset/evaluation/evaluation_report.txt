@@ -2,125 +2,140 @@
 ENHANCED EVALUATION REPORT
 Ground Truth vs Predicted OTU Comparison (Multi-Level)
 Using Shared taxonomy_parser.py for consistent parsing
+Supports Multiple Ground Truth Files
 ================================================================================
+
+GROUND TRUTH SOURCES
+--------------------------------------------------------------------------------
+Number of ground truth files: 4
+  - ssu_accession_full_lineage.tsv
+  - LSU_eukaryote_rRNA_accession_full_lineage.tsv
+  - ITS_eukaryote_sequences_accession_full_lineage.tsv
+  - 16S_ribosomal_RNA_accession_full_lineage.tsv
+
+Records by source:
+  ITS_eukaryote_sequences_accession_full_lineage.tsv: 65,678
+  16S_ribosomal_RNA_accession_full_lineage.tsv: 21,278
+  ssu_accession_full_lineage.tsv: 7,951
+  LSU_eukaryote_rRNA_accession_full_lineage.tsv: 6,574
 
 DATASET OVERVIEW
 --------------------------------------------------------------------------------
-Total sequences: 8,784
-Sequences with ground truth: 7,951
-Sequences without ground truth (N/A): 833
-Total clusters: 2130
-Noise sequences (cluster -1): 2,723
+Total sequences: 120,295
+Sequences with ground truth: 101,481
+Sequences without ground truth (N/A): 18,814
+Total clusters: 28332
+Noise sequences (cluster -1): 35,382
 
 ================================================================================
 1. ACCURACY AT TAXONOMIC LEVELS
 ================================================================================
 
 DOMAIN Level:
-  Total sequences evaluated: 5,033
-  Correct predictions: 5,033
-  Incorrect predictions: 0
-  Accuracy: 100.00%
+  Total sequences evaluated: 62,631
+  Correct predictions: 62,301
+  Incorrect predictions: 330
+  Accuracy: 99.47%
 
 KINGDOM Level:
-  Total sequences evaluated: 4,924
-  Correct predictions: 4,680
-  Incorrect predictions: 244
-  Accuracy: 95.04%
+  Total sequences evaluated: 62,190
+  Correct predictions: 56,631
+  Incorrect predictions: 5,559
+  Accuracy: 91.06%
 
 PHYLUM Level:
-  Total sequences evaluated: 4,771
-  Correct predictions: 4,107
-  Incorrect predictions: 664
-  Accuracy: 86.08%
+  Total sequences evaluated: 61,994
+  Correct predictions: 53,916
+  Incorrect predictions: 8,078
+  Accuracy: 86.97%
 
 CLASS Level:
-  Total sequences evaluated: 4,745
-  Correct predictions: 3,727
-  Incorrect predictions: 1,018
-  Accuracy: 78.55%
+  Total sequences evaluated: 62,066
+  Correct predictions: 50,555
+  Incorrect predictions: 11,511
+  Accuracy: 81.45%
 
 ORDER Level:
-  Total sequences evaluated: 4,665
-  Correct predictions: 3,136
-  Incorrect predictions: 1,529
-  Accuracy: 67.22%
+  Total sequences evaluated: 61,713
+  Correct predictions: 38,195
+  Incorrect predictions: 23,518
+  Accuracy: 61.89%
 
 FAMILY Level:
-  Total sequences evaluated: 4,871
-  Correct predictions: 2,551
-  Incorrect predictions: 2,320
-  Accuracy: 52.37%
+  Total sequences evaluated: 61,740
+  Correct predictions: 35,301
+  Incorrect predictions: 26,439
+  Accuracy: 57.18%
 
 GENUS Level:
-  Total sequences evaluated: 5,417
-  Correct predictions: 2,773
-  Incorrect predictions: 2,644
-  Accuracy: 51.19%
+  Total sequences evaluated: 70,763
+  Correct predictions: 34,584
+  Incorrect predictions: 36,179
+  Accuracy: 48.87%
 
 SPECIES Level:
-  Total sequences evaluated: 5,417
-  Correct predictions: 1,968
-  Incorrect predictions: 3,449
-  Accuracy: 36.33%
+  Total sequences evaluated: 70,763
+  Correct predictions: 23,642
+  Incorrect predictions: 47,121
+  Accuracy: 33.41%
 
 ================================================================================
 2. NOVELTY DETECTION PERFORMANCE
 ================================================================================
 
-True Positives (Novel→Novel): 192
-False Positives (Known→Novel): 2,534
-True Negatives (Known→Known, correct genus): 2,773
-False Negatives (Novel→Known): 641
+True Positives (Novel→Novel): 4,833
+False Positives (Known→Novel): 30,718
+True Negatives (Known→Known, correct genus): 34,584
+False Negatives (Novel→Known): 13,981
 
-Precision: 0.070
-Recall: 0.230
-F1-Score: 0.108
-Accuracy: 0.338
+Precision: 0.136
+Recall: 0.257
+F1-Score: 0.178
+Accuracy: 0.328
 
 ================================================================================
 3. CLUSTER QUALITY (TAXONOMIC PURITY)
 ================================================================================
 
 Purity calculated at genus level
-Clusters evaluated: 2078
-Mean purity: 0.594
+Clusters evaluated: 27300
+Mean purity: 0.610
 Median purity: 0.500
-High purity clusters (>0.9): 564
-Medium purity clusters (0.7-0.9): 28
-Low purity clusters (<0.7): 1486
+High purity clusters (>0.9): 7952
+Medium purity clusters (0.7-0.9): 509
+Low purity clusters (<0.7): 18839
 
 ================================================================================
 4. MISCLASSIFICATION ANALYSIS
 ================================================================================
 
 Analysis at genus level
-Total sequences evaluated: 5,417
-Total misclassified: 2,644
-Misclassification rate: 48.81%
+Total sequences evaluated: 70,763
+Total misclassified: 36,179
+Misclassification rate: 51.13%
 
 Top 10 misclassification patterns (Genus level):
-  Myxobolus -> Gyrodactyloides: 3
-  Nitzschia -> Gyrosigma: 3
-  Pterygota -> Galloisiana: 3
-  Entrophospora -> Claroideoglomus: 3
-  Aphistogoniulus -> Colossobolus: 3
-  Bursaphelenchus -> Japanema: 3
-  Phacus -> Lepocinclis: 3
-  Aphelenchoides -> Trichotokara: 2
-  Microplana -> Dugesia: 2
-  Eimeria -> Pleurobrachia: 2
+  Cortinarius -> Phlegmacium: 36
+  Phlegmacium -> Cortinarius: 29
+  Cortinarius -> Calonarius: 18
+  Thaxterogaster -> Cortinarius: 17
+  Cortinarius -> Thaxterogaster: 17
+  Aspergillus -> Penicillium: 14
+  Cortinarius -> Inocybe: 12
+  Phlegmacium -> Branchiura: 11
+  Penicillium -> Aspergillus: 11
+  Amblyomma -> Bothriocroton: 10
 
 ================================================================================
 5. OVERALL ASSESSMENT
 ================================================================================
 
-Genus Accuracy: 51.19%
-Species Accuracy: 36.33%
-Novelty Detection F1-Score: 0.108
-Cluster Purity (Mean, Genus): 0.594
+Genus Accuracy: 48.87%
+Species Accuracy: 33.41%
+Novelty Detection F1-Score: 0.178
+Cluster Purity (Mean, Genus): 0.610
 
-Overall Rating: FAIR: Moderate performance, consider parameter tuning
+Overall Rating: POOR: Low performance, significant improvements needed
 
 ================================================================================
 6. RECOMMENDATIONS

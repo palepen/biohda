@@ -1,19 +1,27 @@
 {
-  "total_clusters": 2130,
-  "total_sequences": 8784,
+  "total_clusters": 28332,
+  "total_sequences": 120295,
   "classification_distribution": {
-    "known_species": 2129,
+    "known_species": 28277,
+    "novel_divergent": 40,
+    "known_genus": 14,
     "noise": 1
   },
   "parameters": {
     "identity_threshold_novel": 95.0,
     "identity_threshold_species": 97.0,
     "databases": [
-      "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
+      "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA",
+      "./dataset/raw/LSU_eukaryote_rRNA/LSU_eukaryote_rRNA",
+      "./dataset/raw/ITS_eukaryote_sequences/ITS_eukaryote_sequences",
+      "./dataset/raw/16S_ribosomal_RNA/16S_ribosomal_RNA"
     ],
-    "num_databases": 1,
+    "num_databases": 4,
     "use_local_blast": true,
     "num_threads": 12,
-    "local_taxonomy_entries": 7951
+    "max_workers": 8,
+    "parallel_blast": true,
+    "chunk_size": 1000,
+    "local_taxonomy_entries": 101717
   }
 }

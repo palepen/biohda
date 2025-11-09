@@ -62,7 +62,8 @@ class MinimalPreprocessor:
         self.file_mapping = {
             'ITS_eukaryote_sequences.fasta': 'ITS_clean.fasta',
             'LSU_eukaryote_rRNA.fasta': 'LSU_clean.fasta',
-            'SSU_eukaryote_rRNA.fasta': 'SSU_clean.fasta'
+            'SSU_eukaryote_rRNA.fasta': 'SSU_clean.fasta',
+            '16S_ribosomal_RNA.fasta': '16S_clean.fasta'
         }
     
     def count_ambiguous_bases(self, sequence: str) -> Tuple[int, float]:

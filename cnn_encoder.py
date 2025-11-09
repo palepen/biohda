@@ -254,7 +254,7 @@ def main():
         output_dir="models",
         embedding_dim=128,
         batch_size=128,
-        num_epochs=50,
+        num_epochs=100,
         learning_rate=1e-3,
         device='cuda'
     )
