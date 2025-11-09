@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1000 1300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="1300" fill="#fafbfc"/>
+  
+  <!-- Title -->
+  <text x="500" y="50" font-family="'Inter', -apple-system, sans-serif" font-size="32" font-weight="700" fill="#1a202c" text-anchor="middle">
+    eDNA Analysis Pipeline Architecture
+  </text>
+  <text x="500" y="78" font-family="'Inter', -apple-system, sans-serif" font-size="14" fill="#718096" text-anchor="middle">
+    Deep Learning for Novel Microbial Taxa Discovery
+  </text>
+  
+  <!-- Step 1: Data Preprocessing -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="120" width="800" height="70" rx="12" fill="#f0e6ff" stroke="#805ad5" stroke-width="2"/>
+    <circle cx="130" cy="155" r="8" fill="#805ad5"/>
+    <text x="155" y="150" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">1. Data Preprocessing</text>
+    <text x="155" y="168" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Build SQLite taxonomy database from NCBI taxdump</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 500 190 L 500 220" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: FASTA Extraction -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="220" width="800" height="70" rx="12" fill="#e6f0ff" stroke="#3182ce" stroke-width="2"/>
+    <circle cx="130" cy="255" r="8" fill="#3182ce"/>
+    <text x="155" y="250" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">2. FASTA Extraction</text>
+    <text x="155" y="268" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Extract sequences from NCBI BLAST databases</text>
+  </g>
+  
+  <path d="M 500 290 L 500 320" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Minimal Preprocessing -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="320" width="800" height="70" rx="12" fill="#fef5e7" stroke="#d69e2e" stroke-width="2"/>
+    <circle cx="130" cy="355" r="8" fill="#d69e2e"/>
+    <text x="155" y="350" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">3. Minimal Preprocessing</text>
+    <text x="155" y="368" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Quality filtering and sequence cleaning</text>
+  </g>
+  
+  <path d="M 500 390 L 500 420" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: CGR Transformation -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="420" width="800" height="70" rx="12" fill="#e6ffe6" stroke="#38a169" stroke-width="2"/>
+    <circle cx="130" cy="455" r="8" fill="#38a169"/>
+    <text x="155" y="450" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">4. CGR Transformation</text>
+    <text x="155" y="468" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Convert DNA sequences to 64×64 2D images</text>
+  </g>
+  
+  <path d="M 500 490 L 500 520" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- GPU Section Label -->
+  <rect x="80" y="510" width="840" height="360" rx="16" fill="none" stroke="#fc8181" stroke-width="2" stroke-dasharray="8,4" opacity="0.4"/>
+  <text x="90" y="535" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#e53e3e">GPU-ACCELERATED</text>
+  
+  <!-- Step 5: CNN Encoder Training -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="540" width="800" height="70" rx="12" fill="#ffe6e6" stroke="#e53e3e" stroke-width="2"/>
+    <circle cx="130" cy="575" r="8" fill="#e53e3e"/>
+    <text x="155" y="570" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">5. CNN Encoder Training</text>
+    <text x="155" y="588" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">4-layer CNN with contrastive learning (128-dim embeddings)</text>
+  </g>
+  
+  <path d="M 500 610 L 500 640" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 6: Embedding Generation -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="640" width="800" height="70" rx="12" fill="#ffe6e6" stroke="#e53e3e" stroke-width="2"/>
+    <circle cx="130" cy="675" r="8" fill="#e53e3e"/>
+    <text x="155" y="670" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">6. Embedding Generation</text>
+    <text x="155" y="688" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Batch inference using trained encoder</text>
+  </g>
+  
+  <path d="M 500 710 L 500 740" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 7: HDBSCAN Clustering -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="740" width="800" height="70" rx="12" fill="#ffe6e6" stroke="#e53e3e" stroke-width="2"/>
+    <circle cx="130" cy="775" r="8" fill="#e53e3e"/>
+    <text x="155" y="770" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">7. HDBSCAN Clustering</text>
+    <text x="155" y="788" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">GPU-accelerated density-based clustering</text>
+  </g>
+  
+  <path d="M 500 810 L 500 840" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 8: Cluster Annotation & Novelty Detection -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="890" width="800" height="70" rx="12" fill="#e6f0ff" stroke="#3182ce" stroke-width="2"/>
+    <circle cx="130" cy="925" r="8" fill="#3182ce"/>
+    <text x="155" y="920" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">8. Cluster Annotation & Novelty Detection</text>
+    <text x="155" y="938" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Multi-database BLAST search with identity-based classification</text>
+  </g>
+  
+  <path d="M 500 960 L 500 990" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 9: Evaluation -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="990" width="800" height="70" rx="12" fill="#f0e6ff" stroke="#805ad5" stroke-width="2"/>
+    <circle cx="130" cy="1025" r="8" fill="#805ad5"/>
+    <text x="155" y="1020" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#1a202c">9. Evaluation</text>
+    <text x="155" y="1038" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Multi-level accuracy and cluster purity analysis</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(150, 1100)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#1a202c">Processing Type</text>
+    
+    <rect x="0" y="15" width="24" height="24" rx="4" fill="#e6f0ff" stroke="#3182ce" stroke-width="1.5"/>
+    <text x="32" y="31" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Data I/O</text>
+    
+    <rect x="140" y="15" width="24" height="24" rx="4" fill="#fef5e7" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="172" y="31" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Cleaning/Analysis</text>
+    
+    <rect x="330" y="15" width="24" height="24" rx="4" fill="#f0e6ff" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="362" y="31" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Preparation</text>
+    
+    <rect x="500" y="15" width="24" height="24" rx="4" fill="#e6ffe6" stroke="#38a169" stroke-width="1.5"/>
+    <text x="532" y="31" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">Transform</text>
+    
+    <rect x="0" y="50" width="24" height="24" rx="4" fill="#ffe6e6" stroke="#e53e3e" stroke-width="1.5"/>
+    <text x="32" y="66" font-family="'Inter', sans-serif" font-size="12" fill="#4a5568">GPU-Accelerated</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#cbd5e0"/>
+    </marker>
+  </defs>
+</svg>
