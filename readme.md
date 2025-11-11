@@ -6,7 +6,7 @@ A comprehensive deep learning pipeline for analyzing environmental DNA (eDNA) se
 
 ## 🎯 Key Features
 
-- **Multi-marker Support**: Processes ITS, LSU, and SSU rRNA sequences
+- **Multi-marker Support**: Processes ITS, LSU, SSU, and 16S rRNA sequences
 - **Deep Learning**: CNN encoder with contrastive learning for robust embeddings
 - **GPU Acceleration**: CUDA-enabled training and cuML HDBSCAN clustering
 - **Local BLAST**: Multi-database support for offline annotation
@@ -18,7 +18,7 @@ A comprehensive deep learning pipeline for analyzing environmental DNA (eDNA) se
 ```
 Raw FASTA → Preprocessing → CGR Transform → CNN Encoder → Embeddings
                                                               ↓
-Novel Taxa ← Evaluation ← Annotation ← Clustering ← Embeddings
+         Evaluation ← Annotation ← Clustering ← Embeddings
 ```
 
 ## 🛠️ Installation
@@ -29,20 +29,31 @@ Novel Taxa ← Evaluation ← Annotation ← Clustering ← Embeddings
 - CUDA 11.8+ (for GPU support)
 - BLAST+ toolkit
 - NCBI taxonomy database
+- **Windows Users**: Use WSL2 (Windows Subsystem for Linux 2) for best compatibility
 
 ### Setup
 
 ```bash
 # Clone repository
 git clone <repository-url>
-cd edna-pipeline
+cd biohda
 
 # Create virtual environment
-python -m venv venv
+python -m venv .venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Install BLAST+ toolkit
+# Ubuntu/Debian:
+sudo apt-get update
+sudo apt-get install ncbi-blast+
+
+# macOS (with Homebrew):
+brew install blast
+
+# Or download from: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
 
 # Download NCBI taxonomy
 cd taxdmp
@@ -58,36 +69,56 @@ python buildRank.py
 ### Requirements
 
 ```
+biopython>=1.79
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
 torch>=2.0.0
-torchvision>=0.15.0
-biopython>=1.81
-numpy>=1.24.0
-pandas>=2.0.0
-scikit-learn>=1.3.0
-pyyaml>=6.0
-tqdm>=4.65.0
-hdbscan>=0.8.33
-cuml-cu11>=23.10.0  # Optional, for GPU clustering
+hdbscan>=0.8.27
+matplotlib>=3.5.0
+seaborn>=0.11.0
+tqdm>=4.62.0
+umap-learn>=0.5.3
+pyyaml>=6.0.3
 ```
 
 ## 📁 Project Structure
 
 ```
-edna-pipeline/
+biohda/
 ├── dataset/
-│   ├── raw/              # Raw BLAST databases
-│   ├── processed/        # Cleaned FASTA files
-│   ├── cgr/             # CGR images
-│   ├── embeddings/      # CNN embeddings
-│   ├── clusters/        # Clustering results
-│   ├── annotation/      # Taxonomic annotations
-│   ├── evaluation/      # Performance metrics
-│   └── novelty/         # Novel taxa candidates
-├── models/              # Trained models
-├── logs/               # Execution logs
-├── taxdmp/             # NCBI taxonomy dump
-├── config.yaml         # Configuration file
-└── *.py               # Pipeline scripts
+│   ├── raw/                    # Raw BLAST databases
+│   │   ├── SSU_eukaryote_rRNA/
+│   │   ├── LSU_eukaryote_rRNA/
+│   │   ├── ITS_eukaryote_sequences/
+│   │   └── 16S_ribosomal_RNA/
+│   ├── fasta/                  # Extracted FASTA files
+│   ├── processed/              # Cleaned FASTA files
+│   ├── cgr/                    # CGR images (npy format)
+│   ├── embeddings/             # CNN embeddings
+│   ├── clusters/               # Clustering results
+│   ├── annotation/             # Taxonomic annotations
+│   ├── evaluation/             # Performance metrics
+│   ├── ncbi_taxonomy.db        # Taxonomy database
+│   ├── ssu_accession_full_lineage.tsv
+│   ├── LSU_eukaryote_rRNA_accession_full_lineage.tsv
+│   ├── ITS_eukaryote_sequences_accession_full_lineage.tsv
+│   └── 16S_ribosomal_RNA_accession_full_lineage.tsv
+├── models/                     # Trained models
+│   ├── cgr_encoder_best.pth
+│   ├── cgr_encoder_final.pth
+│   ├── label_mapping_genus.pkl
+│   └── training_history.json
+├── taxdmp/                     # NCBI taxonomy dump
+│   ├── names.dmp
+│   ├── nodes.dmp
+│   ├── merged.dmp
+│   └── ...
+├── __pycache__/
+├── config.yaml                 # Configuration file
+├── requirements.txt
+├── readme.md
+└── *.py                        # Pipeline scripts
 ```
 
 ## 🚀 Quick Start
@@ -100,10 +131,16 @@ Edit `config.yaml`:
 paths:
   taxonomy_files: 
     - "dataset/ssu_accession_full_lineage.tsv"
+    - "dataset/LSU_eukaryote_rRNA_accession_full_lineage.tsv"
+    - "dataset/ITS_eukaryote_sequences_accession_full_lineage.tsv"
+    - "dataset/16S_ribosomal_RNA_accession_full_lineage.tsv"
   
 annotation:
   databases:
     - "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
+    - "./dataset/raw/LSU_eukaryote_rRNA/LSU_eukaryote_rRNA"
+    - "./dataset/raw/ITS_eukaryote_sequences/ITS_eukaryote_sequences"
+    - "./dataset/raw/16S_ribosomal_RNA/16S_ribosomal_RNA"
   identity_threshold_novel: 95.0
   identity_threshold_species: 97.0
 
@@ -122,29 +159,23 @@ python fasta_extraction.py
 # Step 2: Preprocess sequences
 python minimal_preprocessing.py
 
-# Step 3: Extract metadata
-python metadata_extraction.py
-
-# Step 4: Generate CGR images
+# Step 3: Generate CGR images
 python cgr_transformation.py
 
-# Step 5: Train CNN encoder
+# Step 4: Train CNN encoder
 python cnn_encoder.py
 
-# Step 6: Generate embeddings
+# Step 5: Generate embeddings
 python generate_embeddings.py
 
-# Step 7: Cluster sequences
+# Step 6: Cluster sequences
 python clustering.py
 
-# Step 8: Annotate clusters
+# Step 7: Annotate clusters
 python cluster_annotation.py
 
-# Step 9: Evaluate results
+# Step 8: Evaluate results
 python evaluation.py
-
-# Step 10: Detect novel taxa
-python novelty.py
 ```
 
 ## 📖 Pipeline Steps Explained
@@ -160,50 +191,40 @@ python novelty.py
 - Converts to uppercase
 - Preserves biological diversity (no deduplication)
 
-### Step 3: Metadata Extraction
-- Parses taxonomy from TSV files
-- Maps sequence IDs to taxonomic lineages
-- Handles missing taxonomy gracefully
-
-### Step 4: CGR Transformation
+### Step 3: CGR Transformation
 - Converts DNA sequences to 2D images
 - Image size: 64x64 or 128x128 pixels
 - Log-transforms frequency counts
 - Memory-efficient processing
 
-### Step 5: CNN Encoder Training
+### Step 4: CNN Encoder Training
 - Contrastive learning with NT-Xent loss
 - 4-layer CNN architecture
 - Generates 128-dimensional embeddings
 - GPU-accelerated training
 
-### Step 6: Embedding Generation
+### Step 5: Embedding Generation
 - Batch inference on all sequences
 - Memory-mapped data loading
 - Outputs: embeddings.npy, metadata.pkl
 
-### Step 7: HDBSCAN Clustering
+### Step 6: HDBSCAN Clustering
 - GPU-accelerated (cuML) or CPU fallback
 - Density-based clustering
 - Automatic cluster number detection
 - Identifies noise sequences
 
-### Step 8: Cluster Annotation
+### Step 7: Cluster Annotation
 - Multi-database local BLAST search
 - Taxonomy lookup from local files
 - Identity-based novelty classification
 - No API calls (fully offline)
 
-### Step 9: Evaluation
+### Step 8: Evaluation
 - Multi-level taxonomic accuracy
 - Novelty detection metrics
 - Cluster purity analysis
 - Comprehensive reporting
-
-### Step 10: Novelty Detection
-- Score-based candidate ranking
-- Considers taxonomy gaps and diversity
-- Generates prioritized candidate lists
 
 ## 📊 Input Data Format
 
@@ -264,24 +285,25 @@ Hierarchical Density-Based Spatial Clustering of Applications with Noise:
 ### Evaluation Metrics
 
 1. **Taxonomic Accuracy** (per level)
-   - Genus accuracy: ~52%
-   - Species accuracy: ~38%
+   - Domain accuracy: 99.47%
+   - Kingdom accuracy: 91.06%
+   - Phylum accuracy: 86.97%
+   - Class accuracy: 81.45%
+   - Order accuracy: 61.89%
+   - Family accuracy: 57.18%
+   - Genus accuracy: 48.87%
+   - Species accuracy: 33.41%
 
 2. **Novelty Detection**
-   - Precision: 0.070
-   - Recall: 0.230
-   - F1-score: 0.108
+   - Precision: 0.136
+   - Recall: 0.257
+   - F1-score: 0.178
+   - Accuracy: 0.328
 
 3. **Cluster Quality**
-   - Mean purity (genus): 0.594
-   - Median purity :0.500
-
-### Processing Speed
-
-- **CGR transformation**: ~1,000 sequences/second
-- **CNN inference**: ~5,000 sequences/second (GPU)
-- **Clustering**: ~10,000 sequences/second (cuML GPU)
-- **BLAST annotation**: ~0.01 seconds/cluster (local)
+   - Mean purity (genus): 0.610
+   - Median purity: 0.500
+   - High purity clusters (>0.9): 7,952 out of 27,300
 
 ### Resource Requirements
 
@@ -304,8 +326,12 @@ paths:
   clusters_dir: "dataset/clusters"
   annotation_dir: "dataset/annotation"
   evaluation_dir: "dataset/evaluation"
+  visualization_dir: "dataset/visualization"
   taxonomy_files: 
     - "dataset/ssu_accession_full_lineage.tsv"
+    - "dataset/LSU_eukaryote_rRNA_accession_full_lineage.tsv"
+    - "dataset/ITS_eukaryote_sequences_accession_full_lineage.tsv"
+    - "dataset/16S_ribosomal_RNA_accession_full_lineage.tsv"
 
 cgr:
   image_size: 64
@@ -314,7 +340,7 @@ cgr:
 training:
   embedding_dim: 128
   batch_size: 128
-  num_epochs: 50
+  num_epochs: 100
   learning_rate: 0.001
   device: "cuda"
   weight_decay: 0.0001
@@ -333,14 +359,18 @@ annotation:
   use_local_blast: true
   databases: 
     - "./dataset/raw/SSU_eukaryote_rRNA/SSU_eukaryote_rRNA"
+    - "./dataset/raw/LSU_eukaryote_rRNA/LSU_eukaryote_rRNA"
+    - "./dataset/raw/ITS_eukaryote_sequences/ITS_eukaryote_sequences"
+    - "./dataset/raw/16S_ribosomal_RNA/16S_ribosomal_RNA"
   max_clusters_to_annotate: null
-  batch_size: null
+  batch_size: 128
   resume_from_checkpoint: false
   min_alignment_length: 100
   max_evalue: 0.00001
 
 resources:
-  num_workers: 12
+  num_workers: 4
+  max_workers: 8
   use_gpu: true
   use_mmap: true
 
@@ -348,6 +378,11 @@ logging:
   level: "INFO"
   save_logs: true
   log_dir: "logs"
+
+experimental:
+  use_cuml: true
+  multi_marker: true
+  ensemble_clustering: false
 ```
 
 
