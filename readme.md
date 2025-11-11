@@ -39,11 +39,16 @@ git clone <repository-url>
 cd biohda
 
 # Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Install cuML for GPU-accelerated clustering (optional but recommended)
+# Follow installation instructions for your OS/CUDA version at:
+# https://docs.rapids.ai/install
+# Note: cuML requires NVIDIA GPU. Pipeline will fall back to CPU-based HDBSCAN if unavailable.
 
 # Install BLAST+ toolkit
 # Ubuntu/Debian:
@@ -91,7 +96,8 @@ biohda/
 │   │   ├── SSU_eukaryote_rRNA/
 │   │   ├── LSU_eukaryote_rRNA/
 │   │   ├── ITS_eukaryote_sequences/
-│   │   └── 16S_ribosomal_RNA/
+│   │   ├── 16S_ribosomal_RNA/
+│   │   └── env_nt/
 │   ├── fasta/                  # Extracted FASTA files
 │   ├── processed/              # Cleaned FASTA files
 │   ├── cgr/                    # CGR images (npy format)
