@@ -3,15 +3,12 @@ import sys
 from pathlib import Path
 from typing import Dict
 
-# --- CONFIGURATION ---
-# This must match the DB name from the *creator* script
+# CONFIGURATION
 DB_NAME = "dataset/ncbi_taxonomy.db"
-# --- END CONFIGURATION ---
 
 def build_rank_map_from_db(db_path: Path) -> Dict[str, str]:
     """
     Generates a comprehensive {name: rank} map from the local NCBI database.
-    This is the function from your prompt.
     """
     if not db_path.exists():
         print(f"Error: Database file not found: {db_path}", file=sys.stderr)
@@ -21,9 +18,7 @@ def build_rank_map_from_db(db_path: Path) -> Dict[str, str]:
     # These are the 8 ranks your original solution cared about
     target_ranks = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
     
-    # We only want to map official scientific names
     # This query joins the two tables we created
-    # Using '?' placeholders makes the query safe and efficient
     query = f"""
     SELECT
         n.name_txt,
@@ -48,7 +43,6 @@ def build_rank_map_from_db(db_path: Path) -> Dict[str, str]:
         
         for row in cur.execute(query, target_ranks):
             name, rank = row
-            # This creates the exact map your function needs
             rank_mapping[name] = rank
             
     except sqlite3.Error as e:
@@ -71,13 +65,13 @@ def main():
         print("Rank map is empty. Did the database creation succeed?")
         return
         
-    print("\n--- Rank Map Demonstration ---")
+    print("\nRank Map Demonstration")
     
     # Test cases that would fail a manual map
     test_names = {
         "Mammalia": "class",
         "Agaricales": "order",
-        "Eukaryota": "superkingdom", # Note: NCBI often uses 'superkingdom'
+        "Eukaryota": "superkingdom",
         "Bacteria": "superkingdom",
         "Homo": "genus",
         "Felis": "genus",

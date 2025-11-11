@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import sys
 
-# --- CONFIGURATION ---
+# CONFIGURATION
 # IMPORTANT:
 # Set this to the folder path where you extracted taxdump
 # Example: TAXON_DUMP_DIR = Path("C:/Users/YourUser/Downloads/taxdump")
@@ -14,7 +14,6 @@ DB_NAME = "dataset/ncbi_taxonomy.db"
 
 # We'll insert in batches for speed
 BATCH_SIZE = 50000
-# --- END CONFIGURATION ---
 
 def create_tables(con):
     """Creates the necessary tables in the SQLite database."""
@@ -34,7 +33,7 @@ def create_tables(con):
     cur.execute("CREATE INDEX IF NOT EXISTS taxa_rank_idx ON taxa (rank);")
 
     # Table from names.dmp
-    # We only store scientific names, as per the solution's goal
+    # We only store scientific names
     cur.execute("""
     CREATE TABLE IF NOT EXISTS names (
         tax_id INTEGER,
@@ -67,13 +66,13 @@ def process_nodes_dmp(con, dump_dir):
         for line in f:
             # File format: tax_id | parent_tax_id | rank | ...
             # Delimiter is '\t|\t'
-            line = line.rstrip('\t|\n') # Clean end of line
+            line = line.rstrip('\t|\n')
             cols = line.split('\t|\t')
             
             try:
                 tax_id = int(cols[0])
                 parent_tax_id = int(cols[1])
-                rank = cols[2].strip() # Clean any extra whitespace
+                rank = cols[2].strip()
                 
                 batch.append((tax_id, parent_tax_id, rank))
                 
@@ -98,7 +97,7 @@ def process_nodes_dmp(con, dump_dir):
 def process_names_dmp(con, dump_dir):
     """
     Parses names.dmp and populates the 'names' table.
-    Only 'scientific name' entries are stored, as suggested by the solution.
+    Only 'scientific name' entries are stored.
     """
     names_file = dump_dir / "names.dmp"
     if not names_file.exists():
@@ -122,7 +121,6 @@ def process_names_dmp(con, dump_dir):
             try:
                 name_class = cols[3].strip()
                 
-                # This is the key optimization from the solution:
                 # Only store the names we care about.
                 if name_class == 'scientific name':
                     tax_id = int(cols[0])
