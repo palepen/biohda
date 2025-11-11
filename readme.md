@@ -61,9 +61,9 @@ brew install blast
 # Or download from: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
 
 # Download NCBI taxonomy
-cd taxdmp
+mkdir taxdmp && cd taxdmp
 wget https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
-tar -xzf taxdump.tar.gz
+tar -xzf taxdump.tar.gz && rm -rf taxdump.tar.gz
 cd ..
 
 # Build taxonomy database
