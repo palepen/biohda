@@ -13,84 +13,84 @@
   "accuracy_by_level": [
     {
       "level": "domain",
-      "total_sequences": 62631,
-      "correct": 62301,
-      "incorrect": 330,
-      "accuracy": 0.994731043732337
+      "total_sequences": 58978,
+      "correct": 58862,
+      "incorrect": 116,
+      "accuracy": 0.9980331649089491
     },
     {
       "level": "kingdom",
-      "total_sequences": 62190,
-      "correct": 56631,
-      "incorrect": 5559,
-      "accuracy": 0.910612638687892
+      "total_sequences": 58521,
+      "correct": 54230,
+      "incorrect": 4291,
+      "accuracy": 0.9266758941234771
     },
     {
       "level": "phylum",
-      "total_sequences": 61994,
-      "correct": 53916,
-      "incorrect": 8078,
-      "accuracy": 0.8696970674581411
+      "total_sequences": 58440,
+      "correct": 51760,
+      "incorrect": 6680,
+      "accuracy": 0.8856947296372347
     },
     {
       "level": "class",
-      "total_sequences": 62066,
-      "correct": 50555,
-      "incorrect": 11511,
-      "accuracy": 0.8145361389488609
+      "total_sequences": 58356,
+      "correct": 48495,
+      "incorrect": 9861,
+      "accuracy": 0.8310199465350606
     },
     {
       "level": "order",
-      "total_sequences": 61713,
-      "correct": 38195,
-      "incorrect": 23518,
-      "accuracy": 0.6189133569912336
+      "total_sequences": 58086,
+      "correct": 37107,
+      "incorrect": 20979,
+      "accuracy": 0.6388286334056399
     },
     {
       "level": "family",
-      "total_sequences": 61740,
-      "correct": 35301,
-      "incorrect": 26439,
-      "accuracy": 0.5717687074829932
+      "total_sequences": 58118,
+      "correct": 34191,
+      "incorrect": 23927,
+      "accuracy": 0.5883031074710072
     },
     {
       "level": "genus",
-      "total_sequences": 70763,
-      "correct": 34584,
-      "incorrect": 36179,
-      "accuracy": 0.4887299860096378
+      "total_sequences": 66571,
+      "correct": 33558,
+      "incorrect": 33013,
+      "accuracy": 0.5040933739916781
     },
     {
       "level": "species",
-      "total_sequences": 70763,
-      "correct": 23642,
-      "incorrect": 47121,
-      "accuracy": 0.3341011545581731
+      "total_sequences": 66571,
+      "correct": 23191,
+      "incorrect": 43380,
+      "accuracy": 0.3483649036367187
     }
   ],
   "novelty_detection": {
-    "true_positives": 4833,
-    "false_positives": 30718,
-    "true_negatives": 34584,
-    "false_negatives": 13981,
-    "precision": 0.1359455430226998,
-    "recall": 0.2568831721058786,
-    "f1_score": 0.17779821576381866,
-    "accuracy": 0.3276694791969741
+    "true_positives": 5355,
+    "false_positives": 34910,
+    "true_negatives": 33558,
+    "false_negatives": 13459,
+    "precision": 0.1329939153110642,
+    "recall": 0.28462846816200704,
+    "f1_score": 0.181282689280455,
+    "accuracy": 0.3234797788769275
   },
   "cluster_purity_genus": {
     "level": "genus",
-    "mean_purity": 0.610278827298058,
+    "mean_purity": 0.6227298822835743,
     "median_purity": 0.5,
-    "high_purity_clusters": 7952,
-    "medium_purity_clusters": 509,
-    "low_purity_clusters": 18839,
-    "total_clusters": 27300,
+    "high_purity_clusters": 8264,
+    "medium_purity_clusters": 425,
+    "low_purity_clusters": 17963,
+    "total_clusters": 26652,
     "purity_distribution": {
-      "count": 27300.0,
-      "mean": 0.610278827298058,
-      "std": 0.2731970481974488,
-      "min": 0.09090909090909091,
+      "count": 26652.0,
+      "mean": 0.6227298822835743,
+      "std": 0.2740251434151815,
+      "min": 0.08333333333333333,
       "25%": 0.5,
       "50%": 0.5,
       "75%": 1.0,
@@ -99,29 +99,29 @@
   },
   "misclassifications_genus": {
     "level": "genus",
-    "total_misclassified": 36179,
-    "total_evaluated": 70763,
-    "misclassification_rate": 0.5112700139903622,
+    "total_misclassified": 33013,
+    "total_evaluated": 66571,
+    "misclassification_rate": 0.4959066260083219,
     "top_patterns": [
-      {
-        "ground_truth": "Cortinarius",
-        "predicted": "Phlegmacium",
-        "count": 36
-      },
       {
         "ground_truth": "Phlegmacium",
         "predicted": "Cortinarius",
-        "count": 29
+        "count": 27
       },
       {
-        "ground_truth": "Cortinarius",
-        "predicted": "Calonarius",
+        "ground_truth": "Amblyomma",
+        "predicted": "Bothriocroton",
+        "count": 19
+      },
+      {
+        "ground_truth": "Penicillium",
+        "predicted": "Aspergillus",
         "count": 18
       },
       {
-        "ground_truth": "Thaxterogaster",
-        "predicted": "Cortinarius",
-        "count": 17
+        "ground_truth": "Cortinarius",
+        "predicted": "Phlegmacium",
+        "count": 18
       },
       {
         "ground_truth": "Cortinarius",
@@ -131,26 +131,26 @@
       {
         "ground_truth": "Aspergillus",
         "predicted": "Penicillium",
-        "count": 14
+        "count": 15
       },
       {
         "ground_truth": "Cortinarius",
-        "predicted": "Inocybe",
+        "predicted": "Calonarius",
+        "count": 14
+      },
+      {
+        "ground_truth": "Digenea",
+        "predicted": "Pterygota",
         "count": 12
       },
       {
-        "ground_truth": "Phlegmacium",
-        "predicted": "Branchiura",
-        "count": 11
+        "ground_truth": "Inocybe",
+        "predicted": "Cortinarius",
+        "count": 12
       },
       {
-        "ground_truth": "Penicillium",
-        "predicted": "Aspergillus",
-        "count": 11
-      },
-      {
-        "ground_truth": "Amblyomma",
-        "predicted": "Bothriocroton",
+        "ground_truth": "Thaxterogaster",
+        "predicted": "Cortinarius",
         "count": 10
       }
     ]

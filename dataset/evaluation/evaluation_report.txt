@@ -24,118 +24,118 @@ DATASET OVERVIEW
 Total sequences: 120,295
 Sequences with ground truth: 101,481
 Sequences without ground truth (N/A): 18,814
-Total clusters: 28332
-Noise sequences (cluster -1): 35,382
+Total clusters: 27664
+Noise sequences (cluster -1): 40,097
 
 ================================================================================
 1. ACCURACY AT TAXONOMIC LEVELS
 ================================================================================
 
 DOMAIN Level:
-  Total sequences evaluated: 62,631
-  Correct predictions: 62,301
-  Incorrect predictions: 330
-  Accuracy: 99.47%
+  Total sequences evaluated: 58,978
+  Correct predictions: 58,862
+  Incorrect predictions: 116
+  Accuracy: 99.80%
 
 KINGDOM Level:
-  Total sequences evaluated: 62,190
-  Correct predictions: 56,631
-  Incorrect predictions: 5,559
-  Accuracy: 91.06%
+  Total sequences evaluated: 58,521
+  Correct predictions: 54,230
+  Incorrect predictions: 4,291
+  Accuracy: 92.67%
 
 PHYLUM Level:
-  Total sequences evaluated: 61,994
-  Correct predictions: 53,916
-  Incorrect predictions: 8,078
-  Accuracy: 86.97%
+  Total sequences evaluated: 58,440
+  Correct predictions: 51,760
+  Incorrect predictions: 6,680
+  Accuracy: 88.57%
 
 CLASS Level:
-  Total sequences evaluated: 62,066
-  Correct predictions: 50,555
-  Incorrect predictions: 11,511
-  Accuracy: 81.45%
+  Total sequences evaluated: 58,356
+  Correct predictions: 48,495
+  Incorrect predictions: 9,861
+  Accuracy: 83.10%
 
 ORDER Level:
-  Total sequences evaluated: 61,713
-  Correct predictions: 38,195
-  Incorrect predictions: 23,518
-  Accuracy: 61.89%
+  Total sequences evaluated: 58,086
+  Correct predictions: 37,107
+  Incorrect predictions: 20,979
+  Accuracy: 63.88%
 
 FAMILY Level:
-  Total sequences evaluated: 61,740
-  Correct predictions: 35,301
-  Incorrect predictions: 26,439
-  Accuracy: 57.18%
+  Total sequences evaluated: 58,118
+  Correct predictions: 34,191
+  Incorrect predictions: 23,927
+  Accuracy: 58.83%
 
 GENUS Level:
-  Total sequences evaluated: 70,763
-  Correct predictions: 34,584
-  Incorrect predictions: 36,179
-  Accuracy: 48.87%
+  Total sequences evaluated: 66,571
+  Correct predictions: 33,558
+  Incorrect predictions: 33,013
+  Accuracy: 50.41%
 
 SPECIES Level:
-  Total sequences evaluated: 70,763
-  Correct predictions: 23,642
-  Incorrect predictions: 47,121
-  Accuracy: 33.41%
+  Total sequences evaluated: 66,571
+  Correct predictions: 23,191
+  Incorrect predictions: 43,380
+  Accuracy: 34.84%
 
 ================================================================================
 2. NOVELTY DETECTION PERFORMANCE
 ================================================================================
 
-True Positives (Novel→Novel): 4,833
-False Positives (Known→Novel): 30,718
-True Negatives (Known→Known, correct genus): 34,584
-False Negatives (Novel→Known): 13,981
+True Positives (Novel→Novel): 5,355
+False Positives (Known→Novel): 34,910
+True Negatives (Known→Known, correct genus): 33,558
+False Negatives (Novel→Known): 13,459
 
-Precision: 0.136
-Recall: 0.257
-F1-Score: 0.178
-Accuracy: 0.328
+Precision: 0.133
+Recall: 0.285
+F1-Score: 0.181
+Accuracy: 0.323
 
 ================================================================================
 3. CLUSTER QUALITY (TAXONOMIC PURITY)
 ================================================================================
 
 Purity calculated at genus level
-Clusters evaluated: 27300
-Mean purity: 0.610
+Clusters evaluated: 26652
+Mean purity: 0.623
 Median purity: 0.500
-High purity clusters (>0.9): 7952
-Medium purity clusters (0.7-0.9): 509
-Low purity clusters (<0.7): 18839
+High purity clusters (>0.9): 8264
+Medium purity clusters (0.7-0.9): 425
+Low purity clusters (<0.7): 17963
 
 ================================================================================
 4. MISCLASSIFICATION ANALYSIS
 ================================================================================
 
 Analysis at genus level
-Total sequences evaluated: 70,763
-Total misclassified: 36,179
-Misclassification rate: 51.13%
+Total sequences evaluated: 66,571
+Total misclassified: 33,013
+Misclassification rate: 49.59%
 
 Top 10 misclassification patterns (Genus level):
-  Cortinarius -> Phlegmacium: 36
-  Phlegmacium -> Cortinarius: 29
-  Cortinarius -> Calonarius: 18
-  Thaxterogaster -> Cortinarius: 17
+  Phlegmacium -> Cortinarius: 27
+  Amblyomma -> Bothriocroton: 19
+  Penicillium -> Aspergillus: 18
+  Cortinarius -> Phlegmacium: 18
   Cortinarius -> Thaxterogaster: 17
-  Aspergillus -> Penicillium: 14
-  Cortinarius -> Inocybe: 12
-  Phlegmacium -> Branchiura: 11
-  Penicillium -> Aspergillus: 11
-  Amblyomma -> Bothriocroton: 10
+  Aspergillus -> Penicillium: 15
+  Cortinarius -> Calonarius: 14
+  Digenea -> Pterygota: 12
+  Inocybe -> Cortinarius: 12
+  Thaxterogaster -> Cortinarius: 10
 
 ================================================================================
 5. OVERALL ASSESSMENT
 ================================================================================
 
-Genus Accuracy: 48.87%
-Species Accuracy: 33.41%
-Novelty Detection F1-Score: 0.178
-Cluster Purity (Mean, Genus): 0.610
+Genus Accuracy: 50.41%
+Species Accuracy: 34.84%
+Novelty Detection F1-Score: 0.181
+Cluster Purity (Mean, Genus): 0.623
 
-Overall Rating: POOR: Low performance, significant improvements needed
+Overall Rating: FAIR: Moderate performance, consider parameter tuning
 
 ================================================================================
 6. RECOMMENDATIONS

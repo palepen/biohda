@@ -48,7 +48,7 @@ paths:
 # ============================================================================
 cgr:
   # Image size (64x64 or 128x128)
-  image_size: 64
+  image_size: 32
   
   # Apply log transformation to frequencies
   log_transform: true

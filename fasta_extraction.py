@@ -120,7 +120,7 @@ class FASTAExtractor:
                 with open(output_file, 'r') as f:
                     seq_count = sum(1 for line in f if line.startswith('>'))
                 
-                logger.info(f"✓ Successfully extracted {seq_count:,} sequences to {output_file}")
+                logger.info(f"Successfully extracted {seq_count:,} sequences to {output_file}")
                 logger.info(f"  File size: {output_path.stat().st_size / (1024**2):.2f} MB")
                 return True
             else:
@@ -173,7 +173,7 @@ class FASTAExtractor:
         logger.info("EXTRACTION SUMMARY")
         logger.info(f"{'='*60}")
         for db_name, success in results.items():
-            status = "✓ SUCCESS" if success else "✗ FAILED"
+            status = "SUCCESS" if success else "FAILED"
             logger.info(f"{db_name}: {status}")
         
         return results
@@ -194,10 +194,10 @@ def main():
     
     # Exit with appropriate code
     if all(results.values()):
-        logger.info("\n✓ All extractions completed successfully!")
+        logger.info("\nAll extractions completed successfully!")
         return 0
     else:
-        logger.error("\n✗ Some extractions failed. Check logs above.")
+        logger.error("\nSome extractions failed. Check logs above.")
         return 1
 
 
