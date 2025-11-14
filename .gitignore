@@ -6,6 +6,7 @@ models/*
 !dataset/evaluation
 dataset/clusters/hdbscan_model.pkl
 dataset/clusters/scaler.pkl
+!dataset/plots
 .venv
 __pycache__
 taxdmp/*
