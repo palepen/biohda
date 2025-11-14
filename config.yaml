@@ -91,7 +91,7 @@ clustering:
   min_samples: 1
   
   # Cluster selection epsilon
-  cluster_selection_epsilon: 0.5
+  cluster_selection_epsilon: 0.25
   
   # Distance metric
   metric: "l2"

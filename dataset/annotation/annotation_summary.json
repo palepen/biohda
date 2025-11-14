@@ -1,10 +1,10 @@
 {
-  "total_clusters": 28332,
+  "total_clusters": 28142,
   "total_sequences": 120295,
   "classification_distribution": {
-    "known_species": 28277,
-    "novel_divergent": 40,
-    "known_genus": 14,
+    "known_species": 28097,
+    "novel_divergent": 33,
+    "known_genus": 11,
     "noise": 1
   },
   "parameters": {
