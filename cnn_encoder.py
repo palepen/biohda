@@ -1,8 +1,7 @@
 """
-Step 5: CNN Encoder with Contrastive Learning
+Step 5: CNN Encoder (Autoencoder)
 ==============================================
-Trains encoder using contrastive loss to maximize cluster separability.
-Uses triplet loss to push similar sequences together and dissimilar apart.
+Trains encoder and decoder using Mean Squared Error (MSE) loss for reconstruction.
 """
 
 import torch
@@ -18,13 +17,16 @@ from sklearn.model_selection import train_test_split
 import json
 import gc
 import os
+import yaml # Added for config loading
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 
+# --- Data Loading (Kept the same) ---
+
 class CGRDataset(Dataset):
-    """Memory-mapped CGR dataset with triplet sampling"""
+    """Memory-mapped CGR dataset"""
     def __init__(self, cgr_path: str, indices: list, augment: bool = False):
         self.cgr = np.load(cgr_path, mmap_mode='r')
         self.indices = list(indices)
@@ -39,10 +41,12 @@ class CGRDataset(Dataset):
         arr = self.cgr[orig_idx]
         
         if self._needs_unsqueeze:
-            arr = np.expand_dims(arr, axis=0)
+            # Add channel dimension (C, H, W)
+            arr = np.expand_dims(arr, axis=0) 
         
         image = torch.from_numpy(np.array(arr, dtype=np.float32, copy=True)).float()
         
+        # Simple augmentation for robustness in AE
         if self.augment and torch.rand(1).item() > 0.5:
             image = image + torch.randn_like(image) * 0.02
             image = torch.clamp(image, 0.0, 1.0)
@@ -50,12 +54,16 @@ class CGRDataset(Dataset):
         return image
 
 
+# --- Model Architecture (Modified for AE) ---
+
 class CGREncoder(nn.Module):
-    """Improved CNN encoder with projection head for contrastive learning"""
+    """CNN Encoder for feature extraction (AE part)"""
     def __init__(self, embedding_dim: int = 128):
         super().__init__()
         self.embedding_dim = embedding_dim
         
+        # 4 blocks of Conv -> BatchNorm -> ReLU -> MaxPool(stride 2)
+        # Total downsampling factor: 2^4 = 16
         self.conv1 = nn.Sequential(
             nn.Conv2d(1, 32, 3, 1, 1), nn.BatchNorm2d(32), nn.ReLU(True), nn.MaxPool2d(2)
         )
@@ -69,64 +77,91 @@ class CGREncoder(nn.Module):
             nn.Conv2d(128, 256, 3, 1, 1), nn.BatchNorm2d(256), nn.ReLU(True), nn.MaxPool2d(2)
         )
         
+        # Global Average Pooling (maps spatial size to 1x1)
         self.gap = nn.AdaptiveAvgPool2d(1)
+        # Final embedding layer
         self.fc_embed = nn.Linear(256, embedding_dim)
-        
-        # Projection head for contrastive learning
-        self.projection = nn.Sequential(
-            nn.Linear(embedding_dim, 256),
-            nn.ReLU(True),
-            nn.Linear(256, 128)
-        )
 
-    def forward(self, x, return_projection=False):
+    def forward(self, x):
         x = self.conv1(x)
         x = self.conv2(x)
         x = self.conv3(x)
         x = self.conv4(x)
         x = self.gap(x).view(x.size(0), -1)
         embedding = self.fc_embed(x)
-        
-        if return_projection:
-            projection = self.projection(embedding)
-            return embedding, projection
         return embedding
 
 
-class ContrastiveLoss(nn.Module):
-    """NT-Xent contrastive loss"""
-    def __init__(self, temperature=0.5):
+class CGRDecoder(nn.Module):
+    """CNN Decoder for image reconstruction (AE part)"""
+    def __init__(self, embedding_dim: int = 128, final_spatial_size: int = 4):
         super().__init__()
-        self.temperature = temperature
+        
+        # 4 is for 64x64 CGRs (64 / 16 = 4)
+        # 8 is for 128x128 CGRs (128 / 16 = 8)
+        self.final_spatial_size = final_spatial_size
+        initial_input_dim = 256 * final_spatial_size * final_spatial_size
+        
+        # Linearly map latent vector back to the spatial feature size
+        self.fc_decode = nn.Linear(embedding_dim, initial_input_dim)
+        
+        # 4 upsampling blocks (reverse of encoder)
+        self.deconv4 = nn.Sequential(
+            nn.ConvTranspose2d(256, 128, 3, stride=2, padding=1, output_padding=1), 
+            nn.BatchNorm2d(128), nn.ReLU(True)
+        )
+        self.deconv3 = nn.Sequential(
+            nn.ConvTranspose2d(128, 64, 3, stride=2, padding=1, output_padding=1),
+            nn.BatchNorm2d(64), nn.ReLU(True)
+        )
+        self.deconv2 = nn.Sequential(
+            nn.ConvTranspose2d(64, 32, 3, stride=2, padding=1, output_padding=1),
+            nn.BatchNorm2d(32), nn.ReLU(True)
+        )
+        self.deconv1 = nn.Sequential(
+            nn.ConvTranspose2d(32, 1, 3, stride=2, padding=1, output_padding=1),
+            # Final activation to ensure output is in the 0-1 range like the input CGR
+            nn.Sigmoid() 
+        )
 
-    def forward(self, z_i, z_j):
-        batch_size = z_i.size(0)
-        z_i = F.normalize(z_i, dim=1)
-        z_j = F.normalize(z_j, dim=1)
+    def forward(self, z):
+        x = self.fc_decode(z)
+        # ⚠️ FIX: Use the calculated spatial size for reshaping
+        x = x.view(x.size(0), 256, self.final_spatial_size, self.final_spatial_size) 
         
-        representations = torch.cat([z_i, z_j], dim=0)
-        similarity_matrix = torch.matmul(representations, representations.T) / self.temperature
-        
-        mask = torch.eye(2 * batch_size, device=z_i.device).bool()
-        similarity_matrix.masked_fill_(mask, -9e15)
-        
-        positives = torch.cat([
-            torch.diag(similarity_matrix, batch_size),
-            torch.diag(similarity_matrix, -batch_size)
-        ], dim=0)
-        
-        negatives = similarity_matrix[~mask].view(2 * batch_size, -1)
-        logits = torch.cat([positives.unsqueeze(1), negatives], dim=1)
-        labels = torch.zeros(2 * batch_size, dtype=torch.long, device=z_i.device)
-        
-        return F.cross_entropy(logits, labels)
+        x = self.deconv4(x)
+        x = self.deconv3(x)
+        x = self.deconv2(x)
+        x = self.deconv1(x)
+        return x
 
+
+class CGRAutoencoder(nn.Module):
+    """Combined Encoder and Decoder"""
+    def __init__(self, embedding_dim: int = 128, image_size: int = 64):
+        super().__init__()
+        # Calculate the spatial size of the feature map before GAP
+        final_spatial_size = image_size // (2**4)
+        
+        self.encoder = CGREncoder(embedding_dim=embedding_dim)
+        self.decoder = CGRDecoder(embedding_dim=embedding_dim, final_spatial_size=final_spatial_size)
+        
+    def forward(self, x):
+        # 1. Encode
+        z = self.encoder(x)
+        # 2. Decode
+        x_hat = self.decoder(z)
+        return x_hat, z # Return reconstructed image and embedding
+
+
+# --- Training Logic (Modified for AE) ---
 
 class EncoderTrainer:
-    """Train encoder with contrastive learning"""
+    """Train Autoencoder with MSE loss"""
     def __init__(self, cgr_dir="dataset/cgr", output_dir="models", 
                  embedding_dim=128, batch_size=128, num_epochs=50, 
-                 learning_rate=1e-3, device='cuda'):
+                 learning_rate=1e-3, device='cuda', config_path="config.yaml"):
+        
         self.cgr_dir = Path(cgr_dir)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -136,9 +171,15 @@ class EncoderTrainer:
         self.num_epochs = num_epochs
         self.learning_rate = learning_rate
         self.device = torch.device(device if torch.cuda.is_available() else 'cpu')
-        
-        logger.info(f"Device: {self.device}")
 
+        # 1. Load image size from config to fix dimension mismatch
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        self.image_size = config['cgr']['image_size']
+        
+        logger.info(f"Device: {self.device}, CGR Image Size: {self.image_size}x{self.image_size}")
+
+    # ... (load_data is unchanged)
     def load_data(self):
         logger.info("Loading combined dataset...")
         cgr_file = self.cgr_dir / "combined_cgr.npy"
@@ -157,7 +198,7 @@ class EncoderTrainer:
         return train_ds, val_ds
 
     def train(self):
-        logger.info("\nTraining Encoder with Contrastive Learning")
+        logger.info("\nTraining Autoencoder with MSE Loss")
         
         train_ds, val_ds = self.load_data()
         
@@ -167,8 +208,11 @@ class EncoderTrainer:
         val_loader = DataLoader(val_ds, batch_size=self.batch_size * 2, shuffle=False,
                                 num_workers=num_workers, pin_memory=True, persistent_workers=True)
         
-        model = CGREncoder(self.embedding_dim).to(self.device)
-        criterion = ContrastiveLoss(temperature=0.5)
+        # Initialize Autoencoder using dynamic image size
+        model = CGRAutoencoder(self.embedding_dim, self.image_size).to(self.device)
+        
+        # Use Mean Squared Error Loss
+        criterion = nn.MSELoss() 
         optimizer = torch.optim.AdamW(model.parameters(), lr=self.learning_rate, weight_decay=1e-4)
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=self.num_epochs)
         
@@ -181,37 +225,32 @@ class EncoderTrainer:
             
             pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{self.num_epochs}", leave=False)
             for images in pbar:
+                # Images are the input (x) AND the target (y) for reconstruction
                 images = images.to(self.device, non_blocking=True)
                 
-                # Create augmented view
-                aug_images = images + torch.randn_like(images) * 0.03
-                aug_images = torch.clamp(aug_images, 0.0, 1.0)
+                # Forward pass: get reconstructed image
+                reconstructed_images, _ = model(images)
                 
-                _, z_i = model(images, return_projection=True)
-                _, z_j = model(aug_images, return_projection=True)
-                
-                loss = criterion(z_i, z_j)
+                # Calculate MSE Loss between input and output
+                loss = criterion(reconstructed_images, images)
                 
                 optimizer.zero_grad(set_to_none=True)
                 loss.backward()
                 optimizer.step()
                 
                 train_loss += loss.item()
-                pbar.set_postfix({'loss': f'{loss.item():.4f}'})
+                pbar.set_postfix({'MSE loss': f'{loss.item():.6f}'})
             
             train_loss /= len(train_loader)
             
+            # Validation step
             model.eval()
             val_loss = 0.0
             with torch.no_grad():
                 for images in val_loader:
                     images = images.to(self.device, non_blocking=True)
-                    aug_images = images + torch.randn_like(images) * 0.02
-                    aug_images = torch.clamp(aug_images, 0.0, 1.0)
-                    
-                    _, z_i = model(images, return_projection=True)
-                    _, z_j = model(aug_images, return_projection=True)
-                    loss = criterion(z_i, z_j)
+                    reconstructed_images, _ = model(images)
+                    loss = criterion(reconstructed_images, images)
                     val_loss += loss.item()
             
             val_loss /= len(val_loader)
@@ -224,19 +263,19 @@ class EncoderTrainer:
                 torch.cuda.empty_cache()
             gc.collect()
             
-            logger.info(f"Epoch {epoch+1}: Train={train_loss:.4f}, Val={val_loss:.4f}")
+            logger.info(f"Epoch {epoch+1}: Train MSE={train_loss:.6f}, Val MSE={val_loss:.6f}")
             
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
-                self.save_model(model, 'best')
-                logger.info(f"  Best model saved (val_loss={val_loss:.4f})")
+                self.save_model(model.encoder, 'best_ae_encoder') # Only save the encoder
+                logger.info(f"  Best model saved (val_loss={val_loss:.6f})")
         
-        self.save_model(model, 'final')
+        self.save_model(model.encoder, 'final_ae_encoder')
         
-        with open(self.output_dir / "training_history.json", 'w') as f:
+        with open(self.output_dir / "training_history_ae.json", 'w') as f:
             json.dump(history, f, indent=2)
         
-        logger.info(f"\nTraining complete! Best val loss: {best_val_loss:.4f}")
+        logger.info(f"\nTraining complete! Best val loss: {best_val_loss:.6f}")
         return model, history
 
     def save_model(self, model, suffix):
@@ -245,6 +284,7 @@ class EncoderTrainer:
             'embedding_dim': self.embedding_dim,
             'dataset': 'combined_ITS_LSU_SSU'
         }
+        # Save only the Encoder, as that is what is used for embeddings later
         torch.save(checkpoint, self.output_dir / f"cgr_encoder_{suffix}.pth")
 
 
@@ -256,7 +296,8 @@ def main():
         batch_size=128,
         num_epochs=100,
         learning_rate=1e-3,
-        device='cuda'
+        device='cuda',
+        config_path="config.yaml"
     )
     
     try:

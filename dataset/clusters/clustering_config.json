@@ -8,13 +8,13 @@
     "gpu": true
   },
   "results": {
-    "n_clusters": 28331,
-    "n_noise": 35382,
+    "n_clusters": 25148,
+    "n_noise": 18187,
     "n_sequences": 120295
   },
   "metrics": {
-    "silhouette_score": 0.03813248127698898,
-    "calinski_harabasz_score": 53.4038200378418,
-    "davies_bouldin_score": 0.28263576946332325
+    "silhouette_score": 0.017482826486229897,
+    "calinski_harabasz_score": 124.85777282714844,
+    "davies_bouldin_score": 0.4478098609600772
   }
 }

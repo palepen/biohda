@@ -87,6 +87,8 @@ class EmbeddingGenerator:
         return model
 
     def generate_batch(self, cgr_batch):
+        if cgr_batch.ndim == 3:
+            cgr_batch = np.expand_dims(cgr_batch, axis=1)
         cgr_tensor = torch.from_numpy(cgr_batch).float().to(self.device)
         with torch.no_grad():
             embeddings = self.model(cgr_tensor)
