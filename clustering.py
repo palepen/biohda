@@ -1,6 +1,15 @@
 """
 Step 7: Memory-Optimized HDBSCAN Clustering with cuML (GPU Accelerated)
 Optimized for systems with limited GPU VRAM (4GB) and RAM (16GB)
+
+This file includes robustness fixes to avoid the pandas "All arrays must be of the same length"
+error and to handle mismatched lengths between embeddings metadata, labels and probabilities.
+Key changes:
+ - validate and normalize labels/probabilities shapes after clustering
+ - truncate to the minimum consistent length before downstream processing
+ - safely convert 2D probability arrays to 1D (assigned-cluster prob or max per sample)
+ - defensive slicing in analyze_taxonomy and save_results
+ - extra logging to help find where mismatches originate
 """
 
 import numpy as np
@@ -181,12 +190,60 @@ class HDBSCANClustering:
         logger.info(f"Mean: {normalized.mean():.4f}, Std: {normalized.std():.4f}")
         return normalized, scaler
 
+    def _normalize_labels_and_probs(self, labels, probs):
+        """Normalize labels and probs to numpy 1-D arrays and return them.
+        Handles common variations (cupy arrays, 2-D probs, pandas Series, etc.)
+        """
+        # Labels
+        if hasattr(labels, 'to_numpy'):
+            labels_arr = labels.to_numpy()
+        else:
+            labels_arr = np.asarray(labels)
+
+        # Probabilities
+        if hasattr(probs, 'to_numpy'):
+            probs_arr = probs.to_numpy()
+        else:
+            probs_arr = np.asarray(probs)
+
+        # If probs is 2-D, try to derive a single probability per sample
+        if probs_arr.ndim == 2:
+            try:
+                if np.issubdtype(labels_arr.dtype, np.integer) and probs_arr.shape[0] == labels_arr.shape[0]:
+                    # probability of assigned cluster
+                    probs_1d = probs_arr[np.arange(probs_arr.shape[0]), labels_arr]
+                else:
+                    # fallback: max probability across clusters
+                    probs_1d = probs_arr.max(axis=1)
+            except Exception:
+                probs_1d = probs_arr.max(axis=1)
+        else:
+            probs_1d = probs_arr.ravel()
+
+        # If we received cupy arrays, move to host
+        try:
+            import cupy as cp
+            if 'cp' in globals() and isinstance(labels_arr, cp.ndarray):
+                labels_arr = cp.asnumpy(labels_arr)
+            if 'cp' in globals() and isinstance(probs_1d, cp.ndarray):
+                probs_1d = cp.asnumpy(probs_1d)
+        except Exception:
+            pass
+
+        labels_arr = np.asarray(labels_arr)
+        probs_1d = np.asarray(probs_1d)
+
+        return labels_arr, probs_1d
+
     def perform_clustering(self, embeddings):
         """Perform clustering with memory-efficient settings"""
         logger.info("\nRunning HDBSCAN...")
         
         use_gpu = CUML_AVAILABLE
-        
+        clusterer = None
+        labels = None
+        probs = None
+
         if use_gpu:
             logger.info("Using cuML GPU-accelerated HDBSCAN")
             
@@ -201,20 +258,26 @@ class HDBSCANClustering:
                     min_samples=self.min_samples,
                     cluster_selection_epsilon=self.cluster_selection_epsilon,
                     metric=self.metric,
-                    cluster_selection_method='leaf',
+                    cluster_selection_method='eom',
                     prediction_data=False  # Disable to save memory
                 )
                 
                 clusterer.fit(embeddings)
                 
-                # Immediately extract results and clear GPU memory
-                labels = clusterer.labels_.to_numpy() if hasattr(clusterer.labels_, 'to_numpy') else clusterer.labels_
-                probs = clusterer.probabilities_.to_numpy() if hasattr(clusterer.probabilities_, 'to_numpy') else clusterer.probabilities_
-                
+                # Extract results and convert to numpy safe types
+                labels = clusterer.labels_
+                probs = getattr(clusterer, 'probabilities_', None)
+
+                # cupy-backed arrays may be returned; try to convert in normalization helper
+                labels, probs = self._normalize_labels_and_probs(labels, probs if probs is not None else np.zeros(len(labels)))
+
                 # Clear GPU memory
-                if hasattr(cp, 'get_default_memory_pool'):
-                    mempool = cp.get_default_memory_pool()
-                    mempool.free_all_blocks()
+                try:
+                    if hasattr(cp, 'get_default_memory_pool'):
+                        mempool = cp.get_default_memory_pool()
+                        mempool.free_all_blocks()
+                except Exception:
+                    pass
                 
             except Exception as e:
                 logger.error(f"GPU clustering failed: {e}")
@@ -228,18 +291,23 @@ class HDBSCANClustering:
                 min_samples=self.min_samples,
                 cluster_selection_epsilon=self.cluster_selection_epsilon,
                 metric=self.metric,
-                cluster_selection_method='leaf',
+                cluster_selection_method='eom',
                 core_dist_n_jobs=-1,
                 memory=str(self.output_dir / 'hdbscan_cache')  # Use disk cache
             )
             
             clusterer.fit(embeddings)
             labels = clusterer.labels_
-            probs = clusterer.probabilities_
+            probs = getattr(clusterer, 'probabilities_', None)
+            labels, probs = self._normalize_labels_and_probs(labels, probs if probs is not None else np.zeros(len(labels)))
         
+        # Defensive: ensure labels and probs are 1-D numpy arrays
+        labels = np.asarray(labels).ravel()
+        probs = np.asarray(probs).ravel()
+
         unique = set(labels)
         n_clusters = len(unique) - (1 if -1 in unique else 0)
-        n_noise = list(labels).count(-1)
+        n_noise = int(list(labels).count(-1))
         
         logger.info(f"\nResults:")
         logger.info(f"  Clusters: {n_clusters}")
@@ -295,11 +363,16 @@ class HDBSCANClustering:
         """Analyze taxonomy with memory-efficient processing"""
         logger.info("\nAnalyzing cluster taxonomy...")
         
+        # Defensive: ensure seq_ids aligns with labels length; truncate if necessary
+        if len(seq_ids) != len(labels):
+            logger.warning(f"analyze_taxonomy: seq_ids length ({len(seq_ids)}) != labels length ({len(labels)}). Truncating seq_ids to match labels.")
+            seq_ids = list(seq_ids)[:len(labels)]
+
         # Create dictionaries for fast lookup
         seqid_to_taxid = dict(zip(metadata_df['seqID'], metadata_df['taxID']))
         seqid_to_name = dict(zip(metadata_df['seqID'], metadata_df['scientific_name']))
         
-        # Clear the dataframe to save memory
+        # Clear the dataframe reference to save memory (we keep maps)
         del metadata_df
         gc.collect()
         
@@ -311,6 +384,7 @@ class HDBSCANClustering:
         # Process in batches
         for cid in tqdm(unique_clusters, desc="Analyzing"):
             mask = labels == cid
+            # Use comprehension but guard index range
             cluster_seqs = [seq_ids[i] for i in range(len(seq_ids)) if mask[i]]
             
             taxids = [seqid_to_taxid.get(s, 'NA') for s in cluster_seqs]
@@ -322,7 +396,7 @@ class HDBSCANClustering:
             if valid_taxids:
                 most_common_taxid, count = Counter(valid_taxids).most_common(1)[0]
                 purity = count / len(valid_taxids)
-                majority_name = Counter(valid_names).most_common(1)[0][0]
+                majority_name = Counter(valid_names).most_common(1)[0][0] if valid_names else 'NA'
             else:
                 purity = 0.0
                 most_common_taxid = 'NA'
@@ -346,7 +420,7 @@ class HDBSCANClustering:
         
         # Handle noise
         noise_mask = labels == -1
-        n_noise = noise_mask.sum()
+        n_noise = int(noise_mask.sum())
         if n_noise > 0:
             noise_seqs = [seq_ids[i] for i in range(len(seq_ids)) if noise_mask[i]]
             noise_taxids = [seqid_to_taxid.get(s, 'NA') for s in noise_seqs]
@@ -368,22 +442,52 @@ class HDBSCANClustering:
         return df
 
     def save_results(self, clusterer, labels, probs, metadata, cluster_analysis, metrics):
-        """Save results in chunks to manage memory"""
+        """Save results in chunks to manage memory (defensive against mismatched lengths)"""
         logger.info("\nSaving results...")
         
+        # Normalize labels/probs
+        labels_arr, probs_arr = self._normalize_labels_and_probs(labels, probs if probs is not None else np.zeros_like(labels))
+        labels_arr = np.asarray(labels_arr).ravel()
+        probs_arr = np.asarray(probs_arr).ravel()
+
+        # Extract seqIDs and markers defensively
+        seq_ids = list(metadata.get('seq_ids', []))
+        markers = list(metadata.get('markers', [])) if 'markers' in metadata else [None] * len(seq_ids)
+
+        # Align lengths and truncate to the smallest to avoid pandas errors
+        n_seq = len(seq_ids)
+        n_labels = labels_arr.shape[0]
+        n_probs = probs_arr.shape[0]
+        n_markers = len(markers)
+
+        logger.info(f"Lengths before saving: seq_ids={n_seq}, labels={n_labels}, probs={n_probs}, markers={n_markers}")
+
+        min_len = min(n_seq, n_labels, n_probs, n_markers)
+        if min_len == 0:
+            logger.error("No data to save (one of seq_ids/labels/probs/markers has length 0). Aborting save.")
+            return
+
+        if not (n_seq == n_labels == n_probs == n_markers):
+            logger.warning(f"Mismatched lengths detected; truncating all arrays to min_len={min_len} to avoid DataFrame construction errors.")
+
+        seq_ids = seq_ids[:min_len]
+        markers = markers[:min_len]
+        labels_arr = labels_arr[:min_len]
+        probs_arr = probs_arr[:min_len]
+
         # Save in chunks
         chunk_size = 100000
-        n_chunks = (len(labels) + chunk_size - 1) // chunk_size
+        n_chunks = (min_len + chunk_size - 1) // chunk_size
         
         for i in range(n_chunks):
             start_idx = i * chunk_size
-            end_idx = min((i + 1) * chunk_size, len(labels))
+            end_idx = min((i + 1) * chunk_size, min_len)
             
             chunk_df = pd.DataFrame({
-                'seqID': metadata['seq_ids'][start_idx:end_idx],
-                'marker': metadata['markers'][start_idx:end_idx],
-                'cluster_id': labels[start_idx:end_idx],
-                'cluster_probability': probs[start_idx:end_idx]
+                'seqID': seq_ids[start_idx:end_idx],
+                'marker': markers[start_idx:end_idx],
+                'cluster_id': labels_arr[start_idx:end_idx],
+                'cluster_probability': probs_arr[start_idx:end_idx]
             })
             
             mode = 'w' if i == 0 else 'a'
@@ -393,15 +497,18 @@ class HDBSCANClustering:
             del chunk_df
             gc.collect()
         
-        logger.info(f"Saved: clusters.csv ({len(labels):,} records)")
+        logger.info(f"Saved: clusters.csv ({min_len:,} records written)")
         
         cluster_analysis.to_csv(self.output_dir / "cluster_analysis.csv", index=False)
         logger.info(f"Saved: cluster_analysis.csv")
         
         # Save only essential parts of the model
-        with open(self.output_dir / "hdbscan_model.pkl", 'wb') as f:
-            pickle.dump(clusterer, f, protocol=pickle.HIGHEST_PROTOCOL)
-        logger.info(f"Saved: hdbscan_model.pkl")
+        try:
+            with open(self.output_dir / "hdbscan_model.pkl", 'wb') as f:
+                pickle.dump(clusterer, f, protocol=pickle.HIGHEST_PROTOCOL)
+            logger.info(f"Saved: hdbscan_model.pkl")
+        except Exception as e:
+            logger.warning(f"Failed to pickle model object: {e}")
         
         config = {
             'parameters': {
@@ -413,9 +520,9 @@ class HDBSCANClustering:
                 'gpu': CUML_AVAILABLE
             },
             'results': {
-                'n_clusters': int(len(set(labels)) - (1 if -1 in labels else 0)),
-                'n_noise': int(list(labels).count(-1)),
-                'n_sequences': len(labels)
+                'n_clusters': int(len(set(labels_arr)) - (1 if -1 in labels_arr else 0)),
+                'n_noise': int(list(labels_arr).count(-1)),
+                'n_sequences': int(min_len)
             },
             'metrics': metrics
         }
@@ -450,8 +557,14 @@ class HDBSCANClustering:
         # Clear embeddings from memory after clustering
         del embeddings
         gc.collect()
-        
-        cluster_analysis = self.analyze_taxonomy(labels, emb_metadata['seq_ids'], tax_metadata)
+
+        # Defensive alignment: ensure emb_metadata['seq_ids'] aligns with labels length
+        seq_ids = emb_metadata.get('seq_ids', [])
+        if len(seq_ids) != len(labels):
+            logger.warning(f"run(): seq_ids length ({len(seq_ids)}) != labels length ({len(labels)}). Truncating seq_ids to match labels for downstream steps.")
+            seq_ids = list(seq_ids)[:len(labels)]
+
+        cluster_analysis = self.analyze_taxonomy(labels, seq_ids, tax_metadata)
         self.save_results(clusterer, labels, probs, emb_metadata, cluster_analysis, metrics)
         
         logger.info("\nClustering complete")

@@ -1,10 +1,8 @@
 {
-  "total_clusters": 28332,
-  "total_sequences": 120295,
+  "total_clusters": 1883,
+  "total_sequences": 8784,
   "classification_distribution": {
-    "known_species": 28277,
-    "novel_divergent": 40,
-    "known_genus": 14,
+    "known_species": 1882,
     "noise": 1
   },
   "parameters": {
@@ -19,7 +17,7 @@
     "num_databases": 4,
     "use_local_blast": true,
     "num_threads": 12,
-    "max_workers": 8,
+    "max_workers": 12,
     "parallel_blast": true,
     "chunk_size": 1000,
     "local_taxonomy_entries": 101717

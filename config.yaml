@@ -59,7 +59,7 @@ cgr:
 # ============================================================================
 training:
   # Embedding dimension
-  embedding_dim: 128
+  embedding_dim: 256
   
   # Batch size
   batch_size: 128
@@ -85,13 +85,13 @@ training:
 # ============================================================================
 clustering:
   # Minimum cluster size
-  min_cluster_size: 2
+  min_cluster_size: 3
   
   # Minimum samples
   min_samples: 1
   
   # Cluster selection epsilon
-  cluster_selection_epsilon: 0.5
+  cluster_selection_epsilon: 0.7
   
   # Distance metric
   metric: "l2"

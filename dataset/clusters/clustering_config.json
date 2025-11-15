@@ -1,20 +1,20 @@
 {
   "parameters": {
-    "min_cluster_size": 2,
+    "min_cluster_size": 3,
     "min_samples": 1,
-    "cluster_selection_epsilon": 0.5,
+    "cluster_selection_epsilon": 0.7,
     "metric": "l2",
     "normalize": true,
     "gpu": true
   },
   "results": {
-    "n_clusters": 28331,
-    "n_noise": 35382,
-    "n_sequences": 120295
+    "n_clusters": 1843,
+    "n_noise": 3655,
+    "n_sequences": 8784
   },
   "metrics": {
-    "silhouette_score": 0.03813248127698898,
-    "calinski_harabasz_score": 53.4038200378418,
-    "davies_bouldin_score": 0.28263576946332325
+    "silhouette_score": 0.08035461604595184,
+    "calinski_harabasz_score": 16.587736129760742,
+    "davies_bouldin_score": 0.43052313967216316
   }
 }

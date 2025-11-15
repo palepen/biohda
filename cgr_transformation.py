@@ -36,7 +36,7 @@ class CGRTransformer:
             'C': np.array([1.0, 1.0])
         }
         
-        self.fasta_files = ['SSU_clean.fasta', 'LSU_clean.fasta', 'ITS_clean.fasta', '16S_clean.fasta']
+        self.fasta_files = ['SSU_clean.fasta', 'LSU_clean.fasta', 'ITS_clean.fasta', '16S_clean.fasta', 'SSU_clean_t1.fasta', 'LSU_clean_t1.fasta', 'ITS_clean_t1.fasta', '16S_clean_t1.fasta']
     
     def sequence_to_cgr_coords(self, sequence: str) -> np.ndarray:
         """Convert DNA sequence to CGR coordinates"""

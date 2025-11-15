@@ -63,7 +63,11 @@ class MinimalPreprocessor:
             'ITS_eukaryote_sequences.fasta': 'ITS_clean.fasta',
             'LSU_eukaryote_rRNA.fasta': 'LSU_clean.fasta',
             'SSU_eukaryote_rRNA.fasta': 'SSU_clean.fasta',
-            '16S_ribosomal_RNA.fasta': '16S_clean.fasta'
+            '16S_ribosomal_RNA.fasta': '16S_clean.fasta',
+            'ITS_eukaryote_sequences.fasta': 'ITS_clean_t1.fasta',
+            'LSU_eukaryote_rRNA.fasta': 'LSU_clean_t2.fasta',
+            'SSU_eukaryote_rRNA.fasta': 'SSU_clean_t3.fasta',
+            '16S_ribosomal_RNA.fasta': '16S_clean_t4.fasta'
         }
     
     def count_ambiguous_bases(self, sequence: str) -> Tuple[int, float]:
@@ -273,10 +277,10 @@ def main():
     
     # Check success
     if all(s['kept_sequences'] > 0 for s in stats.values()):
-        logger.info("✓ All files processed successfully!")
+        logger.info("All files processed successfully!")
         return 0
     else:
-        logger.warning("⚠ Some files had no sequences passing filters")
+        logger.warning("Some files had no sequences passing filters")
         return 1
 
 
